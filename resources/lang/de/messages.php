@@ -1,0 +1,31 @@
+<?php
+
+return [
+	"email-adress"=> "E-Mail Adresse",
+	"submit-password-reset"=> "Link senden, um das Passwort zurückzusetzen",
+	'reset-password'=> "Passwort zurücksetzen",
+	"password"=> "Passwort",
+	"confirm-password"=> "Bestätige das Passwort",
+	"remember"=> "Automatisch anmelden",
+	'login'=> "Anmelden",
+	'logout'=> "Abmelden",
+	'forgot-password'=> "Passwort vergessen",
+	'firstname'=> "Vorname",
+	'lastname'=> "Nachname",
+	'schoolid'=> "ID der Schule",
+	'register'=> "Registrieren",
+	'dashboard'=> "Dashboard",
+	'home'=> "Home",
+	'users'=> "Benutzer",
+	'settings'=> "Einstellungen",
+	'reports'=> "Berichte",
+	'students'=> "Schüler",
+	'teachers'=> "Lehrer",
+	'principles'=> "Administratoren",
+	'class'=> "Klasse",
+	'search'=> "Suchen",
+	'name'=> "Name",
+	'incidents'=> "Vorfälle",
+	'show'=> "Zeige",
+	'records'=> "Einträge"
+];

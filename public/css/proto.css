@@ -1,0 +1,44 @@
+@font-face {
+    font-family: NHG-Bold;
+    src: url(/fonts/NHaasGroteskTXPro-75Bd.ttf);
+}
+
+h1,h2,h3,h4,h5,h6, .navbar-brand{
+	font-family: NHG-Bold, sans-serif;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: normal;
+}
+
+.accent-1 {
+	background-color: #f3f5f8;
+}
+
+.accent-2 {
+	background-color: #92C4DE;
+}
+
+.accent-3 {
+	background-color: #58a2c7;
+}
+
+.accent-4 {
+	background-color: #409ed4;
+}
+
+.accent-5 {
+	background-color: #1174ba
+}
+
+a {
+	color: #1174ba;
+}
+
+.button-div {
+	height: 40px;
+	border-radius: 20px;
+}
+
+.no-underline {
+  text-decoration: none !important
+}
