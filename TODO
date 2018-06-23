@@ -1,0 +1,20 @@
+24.06.2018:
+  Today I started off by thinking about wether it was worth it to restart this whole project from scratch using Django as a framework for Python. For me, the often too slow Laravel application (about 8 Requests/Sec after some query tweaking) was simply unbearable and it was clear to me that I had to start looking out for a faster framework. After I had done this and spent some time getting to know Django, which has some major key concepts that differ from Laravel's, I rethought my decision and tried to find other ways to speed up my Laravel application. This couldn't be so hard, I thought, especially since I had read that even some big companies use Laravel as their day-to-day website backend. After some quick googling, I found the tip to enable the Apache Zend package called "OPCache", which basically caches the precompiled versions of my PHP scripts. I went on and installed it just to see how much of a difference this could make performancewise and I was rendered astonished. Using the "ab.exe" Apache Benchmark which ships with XAMPP by default, I started to notice up to 100x the R/S rate that I've had before. This tip was truly amazing. This cool improvement finally convinced me to stick to Laravel, which I prefered for its simple Model and Migration Management as well as its super-clean code anyways. So, there I was, with a blazing-fast Laravel application and a lot of interesting challenges to solve.
+
+  I soon felt the urge to put the current version of the website online, just to be able to access it from my phone or demonstrate it to my friends and the other people at Exclamo. However, I quickly realized what kind of a huge pain it would be to manually upload and reconfigure the whole project all the time and started to search for an easier Laravel deployment tool. Since all that fancy stuff like Laravel Forge or Envoyer.io would cost me real money, I decided to use deployer.org, a pretty lightweight deployment tool that is agent-free and solely based on SSH and Git. This package had the advantage that there is a pretty useful Laravel Wrapper for it which includes the config files in the config/ directory and provides a few useful php artisan commands. This can be found here: https://github.com/lorisleiva/laravel-deployer
+
+  Installing and configuring this tool was unimaginably diffuclt. It took me almost four hours to
+       1. Install the Ubuntu environment on Windows that I need for some commands like "ssh" etc.
+       2. Find the private and public keys to my VPS only to realize that I had forgotten their passphrases
+       3. Generate new keys and set them up on my VPS
+       4. Configure the config/deploy.php file to get the information about my host server right
+       5. Clean up my npm dependencies and decide which packages I need in production and which ones are only required for development
+       6.  Create a new user on my VPS, set up his r/w permissions for the various folders the script has to access during the process of        deploying the application
+       7.  Configure MySQL and Redis on my VPS as well as upgrading to PHP 7.2
+       8.  Waiting for the damn deploy script to finish after about 2 minutes
+
+   Fortunately, I somehow managed to get it all set up. This way I am now able to simply run php artisan deploy from within my Laravel directory and a few minutes later, the latest version of my webapp will be uploaded to my VPS.
+
+   This led to my last issue which is not yet resolved by the time I'm writing this. The laravel-deployer creates a directory in the var/www/ folder that is not automatically connected to the html folder. Therefore, I looked for a way to forward all the traffic that goes to a certain folder on my VPS, let's call it "app" to this other folder that is generated during deployment.
+
+   I still haven't found the solution yet after about an hour of googling and playing around with the Apache configuration. Seeing no other way to address this issue, I asked the StackOverflow Community here (https://stackoverflow.com/questions/51005223/redirect-traffic-from-folder-or-its-subfolders-to-another-folder)
