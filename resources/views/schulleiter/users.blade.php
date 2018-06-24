@@ -37,22 +37,22 @@
 					<label class="sr-only" for="search-vorname">
 						@lang('messages.firstname')
 					</label>
-					<input type="text" class="form-control col-5" id="search-vorname" placeholder="@lang('messages.firstname')">
+					<input type="text" class="form-control col-5" id="search-vorname" name="search-vorname" placeholder="@lang('messages.firstname')" value="{!! session('firstName') !!}">
 
 					<label class="sr-only" for="search-nachname">
 						@lang('messages.lastname')
 					</label>
-				 	<input type="text" class="form-control col-5" id="search-nachname" placeholder="@lang('messages.lastname')">
+				 	<input type="text" class="form-control col-5" id="search-nachname" name="search-nachname" placeholder="@lang('messages.lastname')" value="{!! session('lastName') !!}">
 
 					<label class="sr-only" for="search-klasse">
 						@lang('messages.class')
 					</label>
-				 	<input type="text" class="form-control col-2" id="search-klasse" placeholder="@lang('messages.class')">
+				 	<input type="text" class="form-control col-2" id="search-klasse" placeholder="@lang('messages.class')" value="{!! session('userClass') !!}">
 				</div>
 				<div class="input-group mb-2 col-md-5 col-12 search-settings ml-md-auto text-center">
 					<span class="col-6 mb-md-0 mb-2">
 						@lang('messages.show')
-						<input type="number" min="1" max="{{ Auth::user()->school->students()->count() }}" name="entries" value="{{ $elementsPerPage }}" class="d-inline-block form-control ml-md-auto">
+						<input type="number" min="1" max="{{ Auth::user()->school->students()->count() }}" name="entries" value="{!! session('usersPerPage') !!}" class="d-inline-block form-control ml-md-auto">
 						@lang('messages.records')
 					</span>
 					<div class="col-6">
