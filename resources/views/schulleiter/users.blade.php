@@ -3,7 +3,7 @@
 @section('content')
 	<div class="row section mt-sm-5 vdivide bg-white">
 		<div class="col-sm-4 statistic">
-			<span class="statistic-value align-middle mr-4 color-primary-2">
+			<span class="statistic-value align-middle color-primary-2">
 				{{ $numberOfUsers }}
 			</span>
 			<span class="color-primary-2 statistic-name align-middle">
@@ -11,7 +11,7 @@
 			</span>
 		</div>
 		<div class="col-sm-4 statistic">
-			<span class="statistic-value align-middle mr-4 color-primary-2">
+			<span class="statistic-value align-middle color-primary-2">
 				{{ $numberOfTeachers }}
 			</span>
 			<span class="color-primary-2 statistic-name align-middle">
@@ -19,7 +19,7 @@
 			</span>
 		</div>
 		<div class="col-sm-4 statistic">
-			<span class="statistic-value align-middle mr-4 color-primary-2">
+			<span class="statistic-value align-middle color-primary-2">
 				{{ $numberOfPrinciples }}
 			</span>
 			<span class="color-primary-2 statistic-name align-middle">
@@ -33,7 +33,7 @@
 		</h4>
 		<form class="form-inline search-form">
 			<div class="row">
-				<div class="input-group mb-2 row col-7 search-input">
+				<div class="input-group mb-2 col-md-7 col-12 search-input">
 					<label class="sr-only" for="search-vorname">
 						@lang('messages.firstname')
 					</label>
@@ -49,14 +49,14 @@
 					</label>
 				 	<input type="text" class="form-control col-2" id="search-klasse" placeholder="@lang('messages.class')">
 				</div>
-				<div class="input-group mb-2 col-5 row search-settings ml-auto">
-					<span class="col-7">
+				<div class="input-group mb-2 col-md-5 col-12 search-settings ml-md-auto text-center">
+					<span class="col-6 mb-md-0 mb-2">
 						@lang('messages.show')
-						<input type="number" min="1" max="{{ Auth::user()->school->students()->count() }}" name="entries" value="{{ $elementsPerPage }}" class="form-control ml-auto">
+						<input type="number" min="1" max="{{ Auth::user()->school->students()->count() }}" name="entries" value="{{ $elementsPerPage }}" class="d-inline-block form-control ml-md-auto">
 						@lang('messages.records')
 					</span>
-					<div class="col-5">
-						<button type="submit" class="btn btn-primary mb-2 ">
+					<div class="col-6">
+						<button type="submit" class="btn btn-primary mb-md-2 ">
 							@lang('messages.search')
 						</button>
 					</div>

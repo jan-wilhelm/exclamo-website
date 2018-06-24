@@ -197,25 +197,55 @@ hr {
 	border-top-right-radius: 20px;
 }
 
-.row.vdivide [class*='col-']:not(:last-child):after {
-  background: rgba(0,0,0,0.2);
-  width: 1px;
-  content: "";
-  display:block;
-  position: absolute;
-  top:0;
-  bottom: 0;
-  right: 0;
+.students-table {
+	width: 100%;
+	margin: auto;
+	margin-top: 20px;
 }
 
 .section {
+	padding: 15px 1rem;
 	border-top: 10px solid #007DFF;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-	padding: 15px 3rem;
 	-webkit-box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
 	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+}
+
+@media (min-width: 576px) {
+	.row.vdivide [class*='col-']:not(:last-child):after {
+	  background: rgba(0,0,0,0.2);
+	  width: 1px;
+	  content: "";
+	  display:block;
+	  position: absolute;
+	  top:0;
+	  bottom: 0;
+	  right: 0;
+	}
+
+	.section {
+		padding: 15px 1rem;
+	}
+
+	.statistic * {
+		text-align: center;
+		display: block;
+	}
+
+	.students-table {
+		width: 90%;
+	}
+}
+
+@media (min-width: 768px) {
+	.section {
+		padding: 15px 3rem;
+	}
+}
+
+@media (min-width: 991px) {
+	.students-table {
+		width: auto;
+	}
 }
 
 .section > h4 {
@@ -224,17 +254,12 @@ hr {
 }
 
 .statistic-value {
-	padding-left: 1rem;
 	font-size: 3rem;
+	line-height: 3rem;
 }
 
 .statistic-name {
 	font-weight: 500;
-}
-
-.students-table {
-	margin: auto;
-	margin-top: 20px;
 }
 
 .students-table td {
