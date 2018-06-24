@@ -151,8 +151,7 @@ return [
     |
     */
 
-    //'domain' => env('SESSION_DOMAIN', null),
-    'domain' => '.laravel.test',
+    'domain' => env('SESSION_DOMAIN', null),
     /*
     |--------------------------------------------------------------------------
     | HTTPS Only Cookies
