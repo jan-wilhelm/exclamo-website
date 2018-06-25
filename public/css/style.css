@@ -209,6 +209,21 @@ hr {
 	-webkit-box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
 	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
 }
+.case-card {
+	background: rgba(110, 192, 255, 0.87);
+	opacity: 0.5
+	width: 100%;
+	border-radius: 20px;
+	padding: 20px;
+}
+
+.case-card:not(:last-child) {
+	margin-bottom: 1rem;
+}
+
+.case-solved {
+	opacity: 0.5;
+}
 
 @media (min-width: 576px) {
 	.row.vdivide [class*='col-']:not(:last-child):after {
