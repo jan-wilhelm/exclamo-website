@@ -16,6 +16,8 @@ class CreateReportedCasesTable extends Migration
         Schema::create('reported_cases', function (Blueprint $table) {
             $table->increments('id');
 
+            $table->string('title', 300);
+
             $table->unsignedInteger('student_id');
             $table->index('student_id');
             $table->foreign('student_id')->references('id')->on('users');

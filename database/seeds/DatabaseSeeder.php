@@ -65,7 +65,7 @@ class DatabaseSeeder extends Seeder
                 $case->mentors()->save($mentors->random(1)[0]);
                 $student->reportedCases()->save($case);
 
-                $messages = factory(App\Message::class, 5)->make()->each(function($m) use ($case, $student) {
+                $messages = factory(App\Message::class, 15)->make()->each(function($m) use ($case, $student) {
                     $sender = array( $case->mentors[0], $student )[random_int(0, 1)];
                     $m->sender()->associate($sender);
                     $m->reportedCase()->associate($case);
