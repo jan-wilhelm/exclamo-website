@@ -12,17 +12,26 @@
 */
 
 // Allow GET requests to log out. By default, only POST requests are enabled
-
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
-
 Auth::routes();
 
+
+// HOME
+Route::get('/', 'HomeController@index')->name('home');
+
+
+// SCHOOLS
 Route::get('schools', 'SchoolController@index')->name('schools');
 Route::get('schools/{school}', 'SchoolController@showSchool')->name('schools.show');
 
+
+// SCHULLEITER
 Route::get('users', 'UserController@index')->name('users');
 Route::get('users/{user}', 'UserController@show')->name('users.show');
 
-Route::get('/', 'HomeController@index')->name('home');
 
+// SCHUELER
+Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
+// OTHER
 Route::post('language', 'LanguageController@changeLanguage')->name('language');
