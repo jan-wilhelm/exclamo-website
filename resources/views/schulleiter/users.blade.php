@@ -14,58 +14,6 @@
 			@lang('messages.principles')
 		@endbigstatistic
 	@endexclamosection
-	@exclamosection ([ "classes" => "vdivide mt-sm-5" ])
-		@bigstatistic (["value" => $numberOfUsers])
-			@lang('messages.students')
-		@endbigstatistic
-
-		@bigstatistic (["value" => $numberOfTeachers])
-			@lang('messages.teachers')
-		@endbigstatistic
-
-		@bigstatistic (["value" => $numberOfPrinciples])
-			@lang('messages.principles')
-		@endbigstatistic
-	@endexclamosection
-	@exclamosection ([ "classes" => "vdivide mt-sm-5" ])
-		@bigstatistic (["value" => $numberOfUsers])
-			@lang('messages.students')
-		@endbigstatistic
-
-		@bigstatistic (["value" => $numberOfTeachers])
-			@lang('messages.teachers')
-		@endbigstatistic
-
-		@bigstatistic (["value" => $numberOfPrinciples])
-			@lang('messages.principles')
-		@endbigstatistic
-	@endexclamosection
-	@exclamosection ([ "classes" => "vdivide mt-sm-5" ])
-		@bigstatistic (["value" => $numberOfUsers])
-			@lang('messages.students')
-		@endbigstatistic
-
-		@bigstatistic (["value" => $numberOfTeachers])
-			@lang('messages.teachers')
-		@endbigstatistic
-
-		@bigstatistic (["value" => $numberOfPrinciples])
-			@lang('messages.principles')
-		@endbigstatistic
-	@endexclamosection
-	@exclamosection ([ "classes" => "vdivide mt-sm-5" ])
-		@bigstatistic (["value" => $numberOfUsers])
-			@lang('messages.students')
-		@endbigstatistic
-
-		@bigstatistic (["value" => $numberOfTeachers])
-			@lang('messages.teachers')
-		@endbigstatistic
-
-		@bigstatistic (["value" => $numberOfPrinciples])
-			@lang('messages.principles')
-		@endbigstatistic
-	@endexclamosection
 	@exclamoflexsection
 		<h4>
 			@lang('messages.students')
