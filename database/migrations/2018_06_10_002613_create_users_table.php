@@ -29,6 +29,8 @@ class CreateUsersTable extends Migration
             $table->index('school_id');
             $table->foreign('school_id')->references('id')->on('schools');
 
+            $table->string('language')->default("en");
+
             $table->rememberToken();
             $table->timestamps();
         });

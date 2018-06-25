@@ -22,10 +22,14 @@ class LanguageController extends Controller
 			$language = $this->$defaultLanguage;
 		}
 
+		if (\Auth::check()) {
+			\Auth::user()->language = $language;
+			\Auth::user()->save();
+		}
+
 		session(['locale'=> $language]);
 		app()->setLocale($language);
 
-		//return session('locale');
 		return redirect()->back()->withInput();
 	}
 
