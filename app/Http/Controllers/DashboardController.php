@@ -44,7 +44,13 @@ class DashboardController extends Controller
     	// This is a lot more performent than fetching each case's mentors,
     	// since larger SQL queries are generally faster than a lot of smaller
     	// queries
-    	$cases = $user->reportedCases()->select('id')->with('mentors')->get();
+    	$cases = $user->reportedCases()->with([
+    		'mentors',
+    		// also get all the messages sorted by their creation date
+    		'messages' => function($query) {
+    			$query->orderBy('updated_at', 'desc');
+    		}
+    	])->orderBy('solved', 'asc')->get();
 
     	$numberOfCases = $cases->count();
     	$numberOfResolvedCases = $cases->reject(function($value, $key) {
@@ -53,10 +59,12 @@ class DashboardController extends Controller
 
     	$messages = $user->messages->count();
 
+    	// render the view and pass all the needed variables
 		return view("schueler.index")->with([
 			'numberOfCases' => $numberOfCases,
 			'numberOfResolvedCases' => $numberOfResolvedCases,
-			'numberOfMessages' => $messages
+			'numberOfMessages' => $messages,
+			'cases' => $cases
 		]);
     }
 

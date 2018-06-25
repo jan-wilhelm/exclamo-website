@@ -20,7 +20,7 @@ class ReportedCase extends Model
     }
 
     public function messages() {
-    	return $this->hasMany('App\Messages');
+    	return $this->hasMany('App\Message');
     }
 
     public function scopeResolved($query) {
