@@ -1,7 +1,7 @@
 @extends('layouts/app')
 
 @section('content')
-	@exclamoflexsection
-		{{ $user->first_name . " " . $user->last_name }}
+	@exclamosection ([ "classes" => "mt-4 d-flex flex-column" ])
+		Hi!
 	@endexclamosection
 @endsection

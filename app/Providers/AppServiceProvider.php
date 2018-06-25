@@ -21,6 +21,8 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('components.navbar_link', 'navlink');
         Blade::component('components.language_option', 'langoption');
         Blade::component('components.big_statistic', 'bigstatistic');
+        Blade::component('components.exclamosection', 'exclamosection');
+        Blade::component('components.exclamoflexsection', 'exclamoflexsection');
     }
 
     /**

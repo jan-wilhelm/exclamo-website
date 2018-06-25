@@ -1,11 +1,11 @@
 @extends('layouts/app')
 
 @section('content')
-	<div class="row section mt-sm-5 vdivide bg-white">
+	@exclamosection ([ "classes" => "vdivide mt-sm-5" ])
 		@bigstatistic (["value" => $numberOfUsers])
 			@lang('messages.students')
 		@endbigstatistic
-		
+
 		@bigstatistic (["value" => $numberOfTeachers])
 			@lang('messages.teachers')
 		@endbigstatistic
@@ -13,8 +13,60 @@
 		@bigstatistic (["value" => $numberOfPrinciples])
 			@lang('messages.principles')
 		@endbigstatistic
-	</div>
-	<div class="row section bg-white mt-5 d-flex flex-column">
+	@endexclamosection
+	@exclamosection ([ "classes" => "vdivide mt-sm-5" ])
+		@bigstatistic (["value" => $numberOfUsers])
+			@lang('messages.students')
+		@endbigstatistic
+
+		@bigstatistic (["value" => $numberOfTeachers])
+			@lang('messages.teachers')
+		@endbigstatistic
+
+		@bigstatistic (["value" => $numberOfPrinciples])
+			@lang('messages.principles')
+		@endbigstatistic
+	@endexclamosection
+	@exclamosection ([ "classes" => "vdivide mt-sm-5" ])
+		@bigstatistic (["value" => $numberOfUsers])
+			@lang('messages.students')
+		@endbigstatistic
+
+		@bigstatistic (["value" => $numberOfTeachers])
+			@lang('messages.teachers')
+		@endbigstatistic
+
+		@bigstatistic (["value" => $numberOfPrinciples])
+			@lang('messages.principles')
+		@endbigstatistic
+	@endexclamosection
+	@exclamosection ([ "classes" => "vdivide mt-sm-5" ])
+		@bigstatistic (["value" => $numberOfUsers])
+			@lang('messages.students')
+		@endbigstatistic
+
+		@bigstatistic (["value" => $numberOfTeachers])
+			@lang('messages.teachers')
+		@endbigstatistic
+
+		@bigstatistic (["value" => $numberOfPrinciples])
+			@lang('messages.principles')
+		@endbigstatistic
+	@endexclamosection
+	@exclamosection ([ "classes" => "vdivide mt-sm-5" ])
+		@bigstatistic (["value" => $numberOfUsers])
+			@lang('messages.students')
+		@endbigstatistic
+
+		@bigstatistic (["value" => $numberOfTeachers])
+			@lang('messages.teachers')
+		@endbigstatistic
+
+		@bigstatistic (["value" => $numberOfPrinciples])
+			@lang('messages.principles')
+		@endbigstatistic
+	@endexclamosection
+	@exclamoflexsection
 		<h4>
 			@lang('messages.students')
 		</h4>
@@ -72,5 +124,5 @@
 			@endforeach
 		</table>
 		{{ $users->appends($oldInput)->links() }}
-	</div>
+	@endexclamosection
 @endsection
