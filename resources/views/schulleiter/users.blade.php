@@ -2,30 +2,17 @@
 
 @section('content')
 	<div class="row section mt-sm-5 vdivide bg-white">
-		<div class="col-sm-4 statistic">
-			<span class="statistic-value align-middle color-primary-2">
-				{{ $numberOfUsers }}
-			</span>
-			<span class="color-primary-2 statistic-name align-middle">
-				@lang('messages.students')
-			</span>
-		</div>
-		<div class="col-sm-4 statistic">
-			<span class="statistic-value align-middle color-primary-2">
-				{{ $numberOfTeachers }}
-			</span>
-			<span class="color-primary-2 statistic-name align-middle">
-				@lang('messages.teachers')
-			</span>
-		</div>
-		<div class="col-sm-4 statistic">
-			<span class="statistic-value align-middle color-primary-2">
-				{{ $numberOfPrinciples }}
-			</span>
-			<span class="color-primary-2 statistic-name align-middle">
-				@lang('messages.principles')
-			</span>
-		</div>
+		@bigstatistic (["value" => $numberOfUsers])
+			@lang('messages.students')
+		@endbigstatistic
+		
+		@bigstatistic (["value" => $numberOfTeachers])
+			@lang('messages.teachers')
+		@endbigstatistic
+
+		@bigstatistic (["value" => $numberOfPrinciples])
+			@lang('messages.principles')
+		@endbigstatistic
 	</div>
 	<div class="row section bg-white mt-5 d-flex flex-column">
 		<h4>

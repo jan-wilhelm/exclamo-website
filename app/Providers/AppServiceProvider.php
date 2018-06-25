@@ -20,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         Blade::component('components.navbar_link', 'navlink');
         Blade::component('components.language_option', 'langoption');
+        Blade::component('components.big_statistic', 'bigstatistic');
     }
 
     /**
