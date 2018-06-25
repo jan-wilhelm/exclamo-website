@@ -27,5 +27,7 @@ return [
 	'name'=> "Name",
 	'incidents'=> "Incidents",
 	'show'=> "Show",
-	'records'=> "records"
+	'records'=> "records",
+	'messages' => "Messages",
+	'resolved_incidents' => "Resolved Incidents"
 ];

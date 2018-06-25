@@ -23,4 +23,12 @@ class ReportedCase extends Model
     	return $this->hasMany('App\Messages');
     }
 
+    public function scopeResolved($query) {
+        return $query->where('solved', true);
+    }
+
+    public function scopeOpen($query) {
+        return $query->where('solved', false);
+    }
+
 }

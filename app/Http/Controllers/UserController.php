@@ -36,7 +36,6 @@ class UserController extends Controller
         \Session::flash('firstName', $firstName);
         \Session::flash('lastName', $lastName);
 
-
         $school = Auth::user()->school;
 
         // Get the counts of the user types of the school
