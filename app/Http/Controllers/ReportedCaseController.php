@@ -62,4 +62,9 @@ class ReportedCaseController extends Controller
         ]);
     }
 
+    public function report(Request $request)
+    {
+        return view("schueler.report");
+    }
+
 }
