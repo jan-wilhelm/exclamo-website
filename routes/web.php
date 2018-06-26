@@ -33,6 +33,7 @@ Route::get('users/{user}', 'UserController@show')->name('users.show');
 // SCHUELER
 Route::get('cases', 'ReportedCaseController@index')->name('incidents');
 Route::get('cases/{case}', 'ReportedCaseController@showIncident')->name('incidents.show');
+Route::get('report', 'ReportedCaseController@report')->name('incidents.report');
 
 // OTHER
 Route::post('language', 'LanguageController@changeLanguage')->name('language');

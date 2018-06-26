@@ -29,7 +29,7 @@
 			</div>
 		@endforeach
 		<div class="create-case bg-color-primary-2 d-flex align-content-center transition">
-			<a class="m-auto text-white" href="report">@lang('messages.createcase')</a>
+			<a class="m-auto text-white" href="{{ route('incidents.report') }}">@lang('messages.createcase')</a>
 		</div>
 	@endexclamoflexsection
 @endsection
