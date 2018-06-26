@@ -23,10 +23,13 @@
 					<a href="{{ route('incidents.show', ["case" => $case]) }}">
 						<h6 class="font-weight-bold text-white">{{ $case->title }}</h6>
 					</a>
-					<span>Case #{{ $case->id }}</span>
+					<span class="small">{{ $case->messages->first()->updated_at->diffForHumans() }}</span>
 				</div>
-				<span>Update vom {{ $case->messages->first()->updated_at }}</span>
+				<span>{{ str_limit($case->messages->first()->body, 140) }}</span>
 			</div>
 		@endforeach
+		<div class="create-case bg-color-primary-2 d-flex align-content-center transition">
+			<a class="m-auto text-white" href="report">@lang('messages.createcase')</a>
+		</div>
 	@endexclamoflexsection
 @endsection

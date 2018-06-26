@@ -139,7 +139,7 @@ hr {
 	background-color: white;
 }
 
-.hover-white, .hover {
+.hover-white, .hover, .transition {
   -webkit-transition: background .2s ease-in-out;
   -moz-transition: background .2s ease-in-out;
   -ms-transition: background .2s ease-in-out;
@@ -147,7 +147,7 @@ hr {
   transition: background .2s ease-in-out;
 }
 
-.hover-white *, .hover *{
+.hover-white *, .hover *, .transition *{
   -webkit-transition: color .2s ease-in-out;
   -moz-transition: color .2s ease-in-out;
   -ms-transition: color .2s ease-in-out;
@@ -209,12 +209,15 @@ hr {
 	-webkit-box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
 	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
 }
+
+.case-card, .create-case {
+	padding: 20px;
+	border-radius: 20px;
+	width: 100%;
+}
+
 .case-card {
 	background: rgba(110, 192, 255, 0.87);
-	opacity: 0.5
-	width: 100%;
-	border-radius: 20px;
-	padding: 20px;
 }
 
 .case-card:not(:last-child) {
@@ -223,6 +226,10 @@ hr {
 
 .case-solved {
 	opacity: 0.5;
+}
+
+.transition:hover {
+	background-color: rgba(0,68,139,0.6) !important;
 }
 
 @media (min-width: 576px) {

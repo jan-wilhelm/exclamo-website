@@ -29,5 +29,6 @@ return [
 	'show'=> "Show",
 	'records'=> "records",
 	'messages' => "Messages",
-	'resolved_incidents' => "Resolved Incidents"
+	'resolved_incidents' => "Resolved Incidents",
+	'createcase' => 'Create a new case'
 ];
