@@ -232,6 +232,10 @@ hr {
 	background-color: rgba(0,68,139,0.6) !important;
 }
 
+.svg-inline--fa {
+	padding-top: 2px;
+}
+
 @media (min-width: 576px) {
 	.row.vdivide [class*='col-']:not(:last-child):after {
 	  background: rgba(0,0,0,0.2);
