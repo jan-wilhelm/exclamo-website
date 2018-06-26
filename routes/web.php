@@ -25,12 +25,12 @@ Route::get('schools', 'SchoolController@index')->name('schools');
 Route::get('schools/{school}', 'SchoolController@showSchool')->name('schools.show');
 
 
-// SCHULLEITER
+// PRINCIPLES
 Route::get('users', 'UserController@index')->name('users');
 Route::get('users/{user}', 'UserController@show')->name('users.show');
 
 
-// SCHUELER
+// STUDENTS
 Route::get('cases', 'ReportedCaseController@index')->name('incidents');
 Route::get('cases/{case}', 'ReportedCaseController@showIncident')->name('incidents.show');
 Route::get('report', 'ReportedCaseController@report')->name('incidents.report');
