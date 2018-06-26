@@ -1,3 +1,3 @@
-@navlink(["url"=>"dashboard", "route"=>"dashboard"])
-	@lang('messages.dashboard')
+@navlink(["route"=>"incidents"])
+	@lang('messages.incidents')
 @endnavlink

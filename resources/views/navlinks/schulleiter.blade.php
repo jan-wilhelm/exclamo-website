@@ -1,11 +1,11 @@
-@navlink(["url"=>"users", "route"=>"users"])
+@navlink(["route"=>"users"])
 	@lang('messages.users')
 @endnavlink
 
-@navlink(["url"=>"settings", "route"=>"schools"])
+@navlink(["route"=>"schools"])
 	@lang('messages.settings')
 @endnavlink
 
-@navlink(["url"=>"reports", "route"=>"schools"])
+@navlink(["route"=>"schools"])
 	@lang('messages.reports')
 @endnavlink
