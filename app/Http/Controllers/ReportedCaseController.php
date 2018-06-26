@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ReportedCase;
 
-class DashboardController extends Controller
+class ReportedCaseController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -17,25 +18,11 @@ class DashboardController extends Controller
     }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Request $request)
-    {
-    	if (\Auth::user()->hasRole('schueler')) {
-        	return $this->studentIndex($request);
-    	} elseif (\Auth::user()->hasRole('lehrer')) {
-        	return $this->teacherIndex($request);
-    	}
-    }
-
-    /**
-     * Render the details of the user dashboard page
+     * Render the details of the user cases page
      * @param  Request $request The HTTP Request
      * @return View           The rendered view
      */
-    private function studentIndex(Request $request)
+    public function index(Request $request)
     {    	
     	$user = \Auth::user();
 
@@ -68,9 +55,11 @@ class DashboardController extends Controller
 		]);
     }
 
-    private function teacherIndex(Request $request)
+    public function showIncident(Request $request, ReportedCase $case)
     {
-		return view("lehrer.index");
+        return view("schueler.case")->with([
+            'case' => $case
+        ]);
     }
 
 }

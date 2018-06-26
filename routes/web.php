@@ -31,7 +31,8 @@ Route::get('users/{user}', 'UserController@show')->name('users.show');
 
 
 // SCHUELER
-Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('cases', 'ReportedCaseController@index')->name('incidents');
+Route::get('cases/{case}', 'ReportedCaseController@showIncident')->name('incidents.show');
 
 // OTHER
 Route::post('language', 'LanguageController@changeLanguage')->name('language');
