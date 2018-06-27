@@ -30,5 +30,9 @@ return [
 	'records'=> "records",
 	'messages' => "Messages",
 	'resolved_incidents' => "Resolved Incidents",
-	'createcase' => 'Create a new case'
+	'createcase' => 'Create a new case',
+	'casetitle' => 'Case Title',
+	'casedescription' => 'Description',
+	'createbutton' => 'Create',
+	'mentorsselect' => 'Mentors'
 ];
