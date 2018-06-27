@@ -23,7 +23,7 @@ class User extends Authenticatable
         'password',
         'school_id',
         'language',
-        'is_mentoring',
+        'mentoring',
     ];
 
     /**
@@ -36,43 +36,126 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    public function school() {
-        return $this->belongsTo('App\School');
+
+    /**
+     * //////////////////////////////////////////////////
+     * /////////////////    METHODS    //////////////////
+     * //////////////////////////////////////////////////
+     */
+
+    /**
+     * Get the full name of the user connected with a space
+     * @return String The full name of the user
+     */
+    public function fullName() {
+        return $this->first_name . " " . $this->last_name;
     }
 
+    /**
+     * Check if the user is a mentor (i.e. either a principle or teacher)
+     */
+    public function isMentor() {
+        return $this->hasRole("lehrer") || $this->hasRole("schulleiter");
+    }
+
+
+    /**
+     * //////////////////////////////////////////////////
+     * //////////////    RELATIONSHIPS    ///////////////
+     * //////////////////////////////////////////////////
+     */
+
+    /**
+     * One-To-Many relationship to all the cases where the user
+     * is the victim.
+     *
+     * NOTE: This function does explicitly NOT return cases where
+     * the user is one of the mentors!
+     * @return Collection A collection containing all the ReportedCases
+     */
     public function reportedCases() {
         return $this->hasMany('App\ReportedCase', 'student_id');
     }
 
-    public function mentorCases() {
-        return $this->belongsToMany('App\ReportedCase', 'case_mentor', 'user_id', 'case_id');
-    }
-
+    /**
+     * Get all the messages the user has ever sent
+     * @return Collection A collection containing all the Messages
+     */
     public function messages() {
         return $this->hasMany('App\Message');
     }
 
+    /**
+     * Get all the cases in which the user is one of the assigned mentors
+     * @return Collection A collection containing all the ReportedCases
+     */
+    public function mentorCases() {
+        return $this->belongsToMany('App\ReportedCase', 'case_mentor', 'user_id', 'case_id');
+    }
+
+    /**
+     * Get the school of the user
+     * @return School The school of the user
+     */
+    public function school() {
+        return $this->belongsTo('App\School');
+    }
+
+    /**
+     * //////////////////////////////////////////////////
+     * /////////////////    SCOPES    ///////////////////
+     * //////////////////////////////////////////////////
+     */
+
+    /**
+     * Check if the user offers mentoring
+     */
+    public function scopeMentoring($query) {
+        return $query->where('mentoring', 1);
+    }
+
+    /**
+     * Check if the user is part of the school staff (i.e. not a student)
+     */
     public function scopeStaff($query) {
         return $query->whereDoesntHave('roles', function($q){
             $q->where('name', 'schueler');
         });
     }
 
+    /**
+     * Check if the user is a student
+     */
     public function scopeStudent($query) {
         return $query->whereHas('roles', function($q){
             $q->where('roles.id', '=', '1');
         });
     }
 
+    /**
+     * Check if the user is a teacher
+     */
     public function scopeTeacher($query) {
         return $query->whereHas('roles', function($q){
             $q->where('roles.id', '=', '2');
         });
     }
 
+    /**
+     * Check if the user is a principle
+     */
     public function scopePrinciple($query) {
         return $query->whereHas('roles', function($q){
             $q->where('roles.id', '=', '3');
+        });
+    }
+
+    /**
+     * Check if the user is either a principle or a teacher
+     */
+    public function scopeMentor($query) {
+        return $query->whereHas('roles', function($q){
+            $q->where('roles.id', '=', '2')->orWhere('roles.id', '=', '3');
         });
     }
 

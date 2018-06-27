@@ -23,6 +23,10 @@ class School extends Model
 		return $this->hasMany('App\User')->principle();
 	}
 
+	public function mentors() {
+		return $this->hasMany('App\User')->mentor();
+	}
+
 	public function locations() {
 		return $this->hasMany('App\Location');
 	}
