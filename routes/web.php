@@ -34,6 +34,7 @@ Route::get('users/{user}', 'UserController@show')->name('users.show');
 Route::get('cases', 'ReportedCaseController@index')->name('incidents');
 Route::get('cases/{case}', 'ReportedCaseController@showIncident')->name('incidents.show');
 Route::get('report', 'ReportedCaseController@report')->name('incidents.report');
+Route::post('create', 'ReportedCaseController@store')->name('incidents.store');
 
 // OTHER
 Route::post('language', 'LanguageController@changeLanguage')->name('language');

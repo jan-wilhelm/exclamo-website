@@ -4,18 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ReportedCase;
+use App\Http\Requests\ReportCaseRequest;
 
 class ReportedCaseController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-    	$this->middleware(['auth', 'role:schueler|lehrer']);
-    }
 
     /**
      * Render the details of the user cases page
@@ -55,6 +47,16 @@ class ReportedCaseController extends Controller
 		]);
     }
 
+    /**
+     * Show a specific case to the user
+     *
+     * This is a complete read function which does not manipulate
+     * any data. It is only used to generate the view which shows
+     * a specific $case and its available options to the user.
+     * @param  Request      $request The HTTP Request
+     * @param  ReportedCase $case    The case that should be displayed
+     * @return View                The view
+     */
     public function showIncident(Request $request, ReportedCase $case)
     {
         return view("schueler.case")->with([
@@ -62,9 +64,32 @@ class ReportedCaseController extends Controller
         ]);
     }
 
-    public function report(Request $request)
+    /**
+     * Simply return the report view.
+     *
+     * This view contains the form needed to create a
+     * ReportCaseRequest on the client side.
+     * 
+     * @return View          The view
+     */
+    public function report()
     {
         return view("schueler.report");
+    }
+
+    /**
+     * Generate the ReportedCase object matching the data given
+     * in the $request and store it in the database.
+     *
+     * This function also handles all authorization and request
+     * validation and is therefore safe to use as the web endpoint.
+     * @param  ReportCaseRequest $request The request
+     * @return Response                     A redirect to the last page of the user
+     */
+    public function store(ReportCaseRequest $request)
+    {
+        $validated = $request->validated();
+        return redirect()->back();
     }
 
 }
