@@ -17,7 +17,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'password', 'school_id', 'language'
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+        'school_id',
+        'language',
+        'is_mentoring',
     ];
 
     /**
@@ -26,7 +32,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     public function school() {
@@ -37,13 +44,17 @@ class User extends Authenticatable
         return $this->hasMany('App\ReportedCase', 'student_id');
     }
 
+    public function mentorCases() {
+        return $this->belongsToMany('App\ReportedCase', 'case_mentor', 'user_id', 'case_id');
+    }
+
     public function messages() {
-        return $this->hasManyThrough('App\Message', 'App\ReportedCase', 'student_id');
+        return $this->hasMany('App\Message');
     }
 
     public function scopeStaff($query) {
-        return $query->whereHas('roles', function($q){
-            $q->where('name', "!=", 'schueler');
+        return $query->whereDoesntHave('roles', function($q){
+            $q->where('name', 'schueler');
         });
     }
 

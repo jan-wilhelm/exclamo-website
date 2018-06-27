@@ -17,8 +17,8 @@ class CreateCaseMentorTable extends Migration
             $table->unsignedInteger('case_id');
             $table->foreign('case_id')->references('id')->on('reported_cases');
 
-            $table->unsignedInteger('mentor_id');
-            $table->foreign('mentor_id')->references('id')->on('users');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
