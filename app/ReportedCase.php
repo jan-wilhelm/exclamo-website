@@ -6,9 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class ReportedCase extends Model
 {
+
+    protected $fillable = [
+        "title",
+        "category",
+        "anonymous",
+        "student_id",
+        "location_id",
+        "solved",
+        "id"
+    ];
     
     public function victim() {
-        return $this->hasOne('App\User', 'student_id');
+        return $this->belongsTo('App\User', 'student_id');
     }
 
     public function mentors() {
