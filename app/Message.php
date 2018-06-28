@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Message extends Model
 {
+
+	protected $fillable = [
+		"body"
+	];
+
+	protected $touches = [
+		"reportedCase"
+	];
     
 	public function reportedCase() {
 		return $this->belongsTo('App\ReportedCase');
