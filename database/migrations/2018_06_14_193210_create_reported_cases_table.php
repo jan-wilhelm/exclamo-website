@@ -27,6 +27,10 @@ class CreateReportedCasesTable extends Migration
 
             $table->boolean('solved')->default(false);
 
+            $table->boolean('anonymous')->default(false);
+
+            $table->enum('category', config("exclamo.categories", ["other"]));
+
             $table->timestamps();
         });
     }
