@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ReportedCase;
 use App\Http\Requests\ReportCaseRequest;
+use App\User;
+use App\Location;
+use App\Message;
 
 class ReportedCaseController extends Controller
 {
@@ -39,12 +42,20 @@ class ReportedCaseController extends Controller
     		'messages' => function($query) {
     			$query->orderBy('updated_at', 'desc');
     		}
-    	])->orderBy('solved', 'asc')->get();
+    	])->get();
+
+        $resolvedCases = $cases->reject(function($value, $key) {
+            return $value->solved; // Get only the cases which are already resolved
+        })->sortByDesc(function ($case) {
+            return $case->messages()->first()->updated_at;
+        });
+
+        $unresolvedCases = $cases->diff($resolvedCases)->sortByDesc(function ($case) {
+            return $case->messages()->first()->updated_at;
+        }); // Get the unresolved cases;
 
     	$numberOfCases = $cases->count();
-    	$numberOfResolvedCases = $cases->reject(function($value, $key) {
-    		return $value->solved; // Get only the cases which are not yet resolved
-    	})->count();
+    	$numberOfResolvedCases = $resolvedCases->count();
 
     	$messages = $user->messages->count();
 
@@ -53,7 +64,7 @@ class ReportedCaseController extends Controller
 			'numberOfCases' => $numberOfCases,
 			'numberOfResolvedCases' => $numberOfResolvedCases,
 			'numberOfMessages' => $messages,
-			'cases' => $cases
+			'cases' => $resolvedCases->concat($unresolvedCases)
 		]);
     }
 
@@ -99,7 +110,45 @@ class ReportedCaseController extends Controller
     public function store(ReportCaseRequest $request)
     {
         $validated = $request->validated();
-        return redirect()->back();
+
+        // Retrieve all fields of the case
+        $title = $validated['title'];
+        $message = $validated['message'];
+        $mentorIDs = $validated['mentors'];
+        $category = $validated['category'];
+        $date = $validated['incident_date'];
+        $location = Location::find($validated['location']);
+        $anonymous = isset($validated['case-anonymous']) && $validated['case-anonymous'];
+
+        // Create a new ReportedCase instance with the given fields
+        $case = ReportedCase::make([
+            "title" => $title,
+            "category" => config("exclamo.categories")[$category],
+            "anonymous" => $anonymous,
+            "location" => $location
+        ]);
+
+        // Set the creator of the case and save it
+        $case->victim()->associate(auth()->user());
+        $case->save();
+        // Add the selected mentors to the case
+        $case->mentors()->saveMany(User::find($mentorIDs));
+
+        // Create the initial message from the description text
+        // and add it to the case
+        $initialMessage = Message::make([
+            "body"=> $message
+        ]);
+        $initialMessage->user_id = auth()->user()->id;
+        $initialMessage->reportedCase()->associate($case);
+        $initialMessage->save();
+
+        $case->messages()->save($initialMessage);
+        $request->session()->flash('casecreated', true);
+
+        return view("schueler.case")->with([
+            "case"=> $case
+        ]);
     }
 
 }
