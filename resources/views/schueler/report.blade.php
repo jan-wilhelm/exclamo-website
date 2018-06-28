@@ -81,7 +81,8 @@
 
             $('#case-date-picker').datetimepicker({
                 format: 'L',
-                locale: 'de'
+                locale: 'de',
+                maxDate: Date.now()
             });
 
 			$('#mentor-select-div').dropdown({
