@@ -36,5 +36,6 @@ return [
 	'createbutton' => 'Create',
 	'mentorsselect' => 'Mentors',
 	'categoryselect' => 'Category',
-	'dateselect' => 'Date of of the incident'
+	'dateselect' => 'Date of of the incident',
+	'case_should_be_anonymous' => 'This case should be created anonymously'
 ];

@@ -26,11 +26,16 @@
 						<h6 class="font-weight-bold text-white">{{ $case->title }}</h6>
 					</a>
 					<span class="small">
-						{{ $case->messages->first()->updated_at->diffForHumans() }}
+						@if($case->messages->count() > 0)
+							{{ $case->messages->first()->updated_at->diffForHumans() }}
+						@endif
 					</span>
 				</div>
 				<span>
-					{{ str_limit($case->messages->first()->body, 140) }}
+
+					@if($case->messages->count() > 0)
+						{{ str_limit($case->messages->first()->body, 140) }}
+					@endif
 				</span>
 			</div>
 		@endforeach

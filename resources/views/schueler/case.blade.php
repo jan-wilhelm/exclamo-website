@@ -10,7 +10,14 @@
 				</a>
 				<span>Case #{{ $case->id }}</span>
 			</div>
-			<span>Update vom {{ $case->messages->first()->updated_at }}</span>
+			@if($case->messages()->count() > 0)
+				<span>
+					Update vom {{ $case->messages->first()->updated_at }}
+				</span>
+				<span>
+					{{ $case->messages->first()->body }}
+				</span>
+			@endif
 		</div>
 	@endexclamoflexsection
 @endsection
