@@ -28,7 +28,7 @@ class LocationExistsInSchool implements Rule
     public function passes($attribute, $value)
     {
         $location = Location::find($value);
-        return $location && $location->school->id == $user->school->id;
+        return $location && $location->school->id == $this->user->school->id;
     }
 
     /**
