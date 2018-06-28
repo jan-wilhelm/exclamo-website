@@ -8,6 +8,16 @@ use App\Http\Requests\ReportCaseRequest;
 
 class ReportedCaseController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * Only authenticated students may create new cases
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware(['auth', 'role:schueler']);
+    }
 
     /**
      * Render the details of the user cases page
