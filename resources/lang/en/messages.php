@@ -34,5 +34,7 @@ return [
 	'casetitle' => 'Case Title',
 	'casedescription' => 'Description',
 	'createbutton' => 'Create',
-	'mentorsselect' => 'Mentors'
+	'mentorsselect' => 'Mentors',
+	'categoryselect' => 'Category',
+	'dateselect' => 'Date of of the incident'
 ];

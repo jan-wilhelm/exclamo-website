@@ -19,7 +19,7 @@
 				</label>
 				<textarea class="form-control" id="message" name="message"></textarea>
 			</div>
-			<div class="input-group">
+			<div class="form-row">
 				<div id="mentor-select-div" class="form-group col-md-6">
 					<label for="message">
 						@lang('messages.mentorsselect')
@@ -38,8 +38,33 @@
 					</select>
 				</div>
 			</div>
+			<div class="form-row">
+		        <div class="col-md-6">
+		        	<div class="form-group">
+		                <div class="input-group date" id="case-date-picker" data-target-input="nearest">
+							<label for="date">
+								@lang('messages.dateselect')
+							</label>
+							<div class="input-group">
+			                    <input type="text" class="form-control datetimepicker-input" data-target="#case-date-picker" name="date" id="date" />
+			                    <div class="input-group-append" data-target="#case-date-picker" data-toggle="datetimepicker">
+			                        <div class="input-group-text">
+			                        	<i class="fa fa-calendar"></i>
+			                        </div>
+			                    </div>
+			                </div>
+			            </div>
+		        	</div>
+                </div>
+		        <div class="col-md-6 d-flex">
+					<div class="form-check justify-content-center align-self-center mx-auto">
+						<input type="checkbox" class="form-check-input" id="exampleCheck1">
+						<label class="form-check-label" for="exampleCheck1">Check me out</label>
+					</div>
+                </div>
+			</div>
 
-			<div class="form-group text-center justify-content-center">
+			<div class="form-group text-center justify-content-center mt-3">
 				<button type="submit" class="btn btn-primary">
 					<i class="far fa-check-circle"></i>
 					@lang('messages.createbutton')
@@ -53,6 +78,11 @@
 @push('scripts')
 	<script type="text/javascript">
 		$(document).ready(function() {
+
+            $('#case-date-picker').datetimepicker({
+                format: 'L',
+                locale: 'de'
+            });
 
 			$('#mentor-select-div').dropdown({
 				multipleMode: 'label',
