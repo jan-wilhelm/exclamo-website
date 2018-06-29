@@ -54,14 +54,18 @@
 					</li>
 					@guest
 						<li class="nav-item">
-							<div class="shadow-sm form-inline button-div  bg-color-primary-0 px-4 hover-white">
-								<a href="{{ url('login') }}" class="text-white">@lang('messages.login')</a>
+							<div class="shadow-sm form-inline button-div  bg-color-primary-0 px-3 hover-white">
+								<a href="{{ url('login') }}" class="text-white mx-auto">
+									@lang('messages.login')
+								</a>
 							</div>
 						</li>
 					@else
 						<li class="nav-item">
-							<div class="shadow-sm form-inline button-div white mr-3 px-4 hover">
-								<a href="{{ url('logout') }}">@lang('messages.logout')</a>
+							<div class="shadow-sm form-inline button-div white mr-3 px-3 hover">
+								<a href="{{ url('logout') }}" class="mx-auto">
+									@lang('messages.logout')
+								</a>
 							</div>
 						</li>
 					@endguest
