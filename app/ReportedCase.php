@@ -22,7 +22,7 @@ class ReportedCase extends Model
     }
 
     public function mentors() {
-        return $this->belongsToMany('App\User', 'case_mentor', 'case_id', 'mentor_id');
+        return $this->belongsToMany('App\User', 'case_mentor', 'case_id', 'user_id');
     }
 
     public function location() {
