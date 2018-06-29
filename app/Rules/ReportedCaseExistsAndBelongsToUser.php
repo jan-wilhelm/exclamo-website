@@ -37,6 +37,6 @@ class ReportedCaseExistsAndBelongsToUser implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'There must be a case with the given ID associated to the user';
     }
 }
