@@ -146,9 +146,7 @@ class ReportedCaseController extends Controller
         $case->messages()->save($initialMessage);
         $request->session()->flash('casecreated', true);
 
-        return view("schueler.case")->with([
-            "case"=> $case
-        ]);
+        return \Redirect::route('incidents.show', [$case]);
     }
 
 }
