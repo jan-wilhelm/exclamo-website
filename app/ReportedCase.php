@@ -41,4 +41,8 @@ class ReportedCase extends Model
         return $query->where('solved', false);
     }
 
+    public function displayTitle() {
+        return $this->title ?: $this->id;
+    }
+
 }
