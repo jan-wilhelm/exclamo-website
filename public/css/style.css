@@ -156,7 +156,7 @@ hr {
 }
 
 .hover-white:hover {
-	background: white;
+	background: white !important;
 }
 
 .hover-white:hover * {
