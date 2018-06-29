@@ -111,25 +111,43 @@ class ReportedCaseController extends Controller
     {
         $validated = $request->validated();
 
-        // Retrieve all fields of the case
-        $title = $validated['title'];
-        $message = $validated['message'];
-        $mentorIDs = $validated['mentors'];
-        $category = $validated['category'];
-        $date = $validated['incident_date'];
-        $location = Location::find($validated['location']);
-        $anonymous = isset($validated['case-anonymous']) && $validated['case-anonymous'];
-
         // Create a new ReportedCase instance with the given fields
+        
+        $case = $this->createReportedCase($validated, auth()->user(), config("exclamo.categories"));
+        $request->session()->flash('casecreated', true);
+
+        return \Redirect::route('incidents.show', [$case]);
+    }
+
+    /**
+     * Creates and stores a new ReportedCase with the given parameters
+     *
+     * Note that the $user should be authorized to perform this action
+     * as this method does not check for that.
+     * @param  array    $params     An array of fields for the case
+     * @param  User|null $user       The creator of the new case
+     * @param  array    $categories An array containing the possible categories of a case
+     * @return ReportedCase                The created case
+     */
+    public function createReportedCase($params, User $user = null, $categories)
+    {
+        $title = $params['title'];
+        $message = $params['message'];
+        $mentorIDs = $params['mentors'];
+        $category = $params['category'];
+        $date = $params['incident_date'];
+        $location = Location::find($params['location']);
+        $anonymous = isset($params['case-anonymous']) && $params['case-anonymous'];
+
         $case = ReportedCase::make([
             "title" => $title,
-            "category" => config("exclamo.categories")[$category],
+            "category" => $categories[$category],
             "anonymous" => $anonymous,
             "location" => $location
         ]);
 
         // Set the creator of the case and save it
-        $case->victim()->associate(auth()->user());
+        $case->victim()->associate($user);
         $case->save();
         // Add the selected mentors to the case
         $case->mentors()->saveMany(User::find($mentorIDs));
@@ -139,14 +157,13 @@ class ReportedCaseController extends Controller
         $initialMessage = Message::make([
             "body"=> $message
         ]);
-        $initialMessage->user_id = auth()->user()->id;
+        $initialMessage->user_id = $user->id;
         $initialMessage->reportedCase()->associate($case);
         $initialMessage->save();
 
         $case->messages()->save($initialMessage);
-        $request->session()->flash('casecreated', true);
 
-        return \Redirect::route('incidents.show', [$case]);
+        return $case;
     }
 
 }
