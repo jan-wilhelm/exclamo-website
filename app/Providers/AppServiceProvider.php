@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('components.big_statistic', 'bigstatistic');
         Blade::component('components.exclamosection', 'exclamosection');
         Blade::component('components.exclamoflexsection', 'exclamoflexsection');
+        Blade::component('components.exclamocasemessages', 'exclamocasemessages');
     }
 
     /**

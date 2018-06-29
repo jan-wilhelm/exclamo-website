@@ -36,5 +36,8 @@ Route::get('cases/{case}', 'ReportedCaseController@showIncident')->name('inciden
 Route::get('report', 'ReportedCaseController@report')->name('incidents.report');
 Route::post('create', 'ReportedCaseController@store')->name('incidents.store');
 
+
+Route::post('sendmessage', 'MessageController@store')->name('sendmessage');
+
 // OTHER
 Route::post('language', 'LanguageController@changeLanguage')->name('language');

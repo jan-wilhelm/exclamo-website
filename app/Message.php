@@ -8,7 +8,9 @@ class Message extends Model
 {
 
 	protected $fillable = [
-		"body"
+		"body",
+		"user_id",
+		"reported_case_id"
 	];
 
 	protected $touches = [

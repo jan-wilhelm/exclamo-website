@@ -1,3 +1,3 @@
-<div class="{{ $classes ?? "" }} row section bg-white">
+<div class="{{ $classes ?: "" }} row section bg-white">
 	{{ $slot }}
 </div>
