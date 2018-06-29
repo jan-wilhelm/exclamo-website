@@ -261,7 +261,7 @@ hr {
 	border-bottom-left-radius: 15px;
 }
 
-.chat-message:not(:last-child) {
+.chat-message {
 	margin-bottom: 1rem;
 }
 

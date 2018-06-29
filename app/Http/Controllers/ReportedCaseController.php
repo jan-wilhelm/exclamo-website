@@ -42,18 +42,13 @@ class ReportedCaseController extends Controller
     		'messages' => function($query) {
     			$query->orderBy('updated_at', 'desc');
     		}
-    	])->get();
+    	])->orderBy('updated_at', 'desc')->get();
 
         $resolvedCases = $cases->reject(function($value, $key) {
             return $value->solved; // Get only the cases which are already resolved
-        })->sortByDesc(function ($case) {
-            return $case->messages()->first()->updated_at;
         });
 
-        $unresolvedCases = $cases->diff($resolvedCases)->sortByDesc(function ($case) {
-            return $case->messages()->first()->updated_at;
-        }); // Get the unresolved cases;
-
+        $unresolvedCases = $cases->diff($resolvedCases);
     	$numberOfCases = $cases->count();
     	$numberOfResolvedCases = $resolvedCases->count();
 
