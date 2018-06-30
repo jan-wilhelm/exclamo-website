@@ -50,7 +50,7 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <!--<script src="{{ asset('js/app.js') }}" type="text/javascript"></script>-->
+    <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
     @stack('scripts')
 </body>
 </html>

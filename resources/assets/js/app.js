@@ -15,8 +15,12 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('mentor-field', require('./components/MentorFieldComponent.vue'));
+Vue.component('mentor-fields', require('./components/MentorFieldsComponent.vue'));
+
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+    }
 });
