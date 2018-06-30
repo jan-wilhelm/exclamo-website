@@ -125,11 +125,11 @@
 				event.preventDefault();
 
 				$('.dropdown-selected').each(function (index, element) {
-					console.log(element)
+					console.log(element);
 					var id = $(element).find("i").data("id");
 					$('#mentor-select [value=' + id + ']').attr("selected", true);
 					console.log(id);
-				})
+				});
 
 				this.submit();
 			});
