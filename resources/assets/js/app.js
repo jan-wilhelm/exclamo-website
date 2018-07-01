@@ -15,9 +15,9 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('mentor-field', require('./components/MentorFieldComponent.vue'));
-Vue.component('mentor-fields', require('./components/MentorFieldsComponent.vue'));
-
+Vue.component('chat-message', require('./components/ChatMessage.vue'));
+Vue.component('chat-messages-container', require('./components/ChatMessagesContainer.vue'));
+//Vue.component('case-messages-container', require('./components/CaseMessagesContainer.vue'));
 
 const app = new Vue({
     el: '#app',

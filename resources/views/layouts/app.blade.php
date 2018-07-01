@@ -11,6 +11,11 @@
         window.Laravel = {
             csrfToken: '{{ csrf_token() }}'
         }
+        window.Exclamo = {
+            @if(Auth::check())
+                userId: {{ auth()->user()->id }}
+            @endif
+        }
     </script>
     <title>{{ config('app.name', 'Laravel') }}</title>
 

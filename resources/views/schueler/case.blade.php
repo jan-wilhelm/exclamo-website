@@ -12,8 +12,9 @@
 			})->pluck("full_name")->toArray()) }}
 		</span>
 		<hr>
-		@exclamocasemessages (["case" => $case])
-		@endexclamocasemessages
+
+		<chat-messages-container :messages="{{ json_encode($messages) }}"> </chat-messages-container>
+		
 		<form class="form-inline message-form" method="post" action="{{ route('sendmessage') }}">
 			@csrf
 			<input type="text" class="form-control col-md-10 col-sm-9 col-12" name="message" placeholder="@lang('placeholders.message')">
