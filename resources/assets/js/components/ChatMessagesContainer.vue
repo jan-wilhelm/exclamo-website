@@ -1,21 +1,94 @@
 <template>
-	<div id="chat-container" class="chat-container p-4 d-flex flex-column">
-		<chat-message v-for="message in messages" :key="message.id" :body="message.body" :date="message.date" :sent-by-user="message.sentByUser" :user="message.user">
-		</chat-message>
+	<div>
+		<div ref="container" id="chat-container" class="chat-container p-4 d-flex flex-column">
+			<chat-message v-for="message in messageObjects" :key="message.id" :body="message.body" :date="message.date" :sent-by-user="message.sentByUser" :user="message.user">
+			</chat-message>
+		</div>
+		<chat-input-form ref="input" @sendMessage="sendMessage"></chat-input-form>
 	</div>
 </template>
 
 <script>
 	
 	export default {
-
 		props: ["messages"],
 		data() {
 			return {
-
+				messageObjects: this.messages
 			}
-		}
+		},
+		methods: {
+			sendMessage(message) {
+				var text = message.text
 
+				var today = new Date(Date.now())
+				var day = today.getDate()
+				var month = today.getMonth() + 1 //January is 0!
+				var hours = today.getHours()
+				var mins = today.getMinutes()
+				var year = today.getFullYear()
+
+				if (day < 10){
+				    day = '0' + day
+				}
+				if (month < 10){
+				    month = '0' + month
+				}
+				if (hours < 10){
+				    hours = '0' + hours
+				} 
+				if (mins < 10){
+				    mins = '0' + mins
+				}
+
+				var today = day + '.' + month + '.' + year + ' ' + hours + ':' + mins
+
+				var messageObject = {
+					body: text,
+					user: {
+						first_name: "Jan",
+						last_name: "Wilhelm"
+					},
+					sentByUser: true,
+					date: today
+				}
+
+				this.messageObjects.push(messageObject)
+				this.sendMessageToServer(text);
+				this.clearField()
+				Vue.nextTick(this.scrollToBottom)
+			},
+			scrollToBottom() {
+				var cont = this.$refs.container
+				cont.scrollTop = cont.scrollHeight
+			},
+			clearField() {
+				this.$refs.input.clear()
+			},
+			sendMessageToServer(message) {
+				console.log("Send", message)
+
+				var urlSegments = window.location.href.split("/")
+				var caseId = Number(urlSegments[urlSegments.length - 1])
+
+				axios("/api/messages", {
+					method: "post",
+					data: {
+						'message': message,
+						'case': caseId
+					},
+					withCredentials: true
+				}).then(function(response) {
+					console.log(response)
+				}).catch(function(error) {
+					console.log(error);
+    				console.log(error.response)
+				})
+			}
+		},
+		mounted() {
+			this.scrollToBottom()
+		}
 	};
 
 </script>

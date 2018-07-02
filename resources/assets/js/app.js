@@ -17,6 +17,7 @@ window.Vue = require('vue');
 
 Vue.component('chat-message', require('./components/ChatMessage.vue'));
 Vue.component('chat-messages-container', require('./components/ChatMessagesContainer.vue'));
+Vue.component('chat-input-form', require('./components/ChatInputForm.vue'));
 //Vue.component('case-messages-container', require('./components/CaseMessagesContainer.vue'));
 
 const app = new Vue({

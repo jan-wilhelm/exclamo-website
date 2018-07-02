@@ -20,7 +20,7 @@ class SendApiTokenMiddleware
         if (Auth::check()) {
             $token = Auth::user()->api_token;
             $cookie = Cookie::make(
-                'API-TOKEN',        // name
+                'api_token',        // name
                 $token,             // value
                 time() + 60 * 24,   // expire
                 "/",                // path
