@@ -13,3 +13,4 @@ yarn-error.log
 .env
 .env.example
 deploy.php
+.DS_Store
