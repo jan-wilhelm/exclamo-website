@@ -30518,7 +30518,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.sending[data-v-19fb25a8] {\n\topacity: 0.5;\n}\n", ""]);
 
 // exports
 
@@ -30580,7 +30580,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
-	props: ["body", "sentByUser", "date", "user"],
+	props: {
+		body: String,
+		sentByUser: Boolean,
+		date: String,
+		user: Object,
+		sending: Boolean
+	},
 	data: function data() {
 		return {};
 	}
@@ -30598,7 +30604,10 @@ var render = function() {
     "div",
     {
       staticClass: "chat-message p-3",
-      class: [_vm.sentByUser ? "align-self-end right" : "left"]
+      class: [
+        _vm.sentByUser ? "align-self-end right" : "left",
+        _vm.sending ? "sending" : ""
+      ]
     },
     [
       !_vm.sentByUser
@@ -30781,11 +30790,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 					last_name: "Wilhelm"
 				},
 				sentByUser: true,
-				date: today
+				date: today,
+				sending: true
 			};
 
 			this.messageObjects.push(messageObject);
-			this.sendMessageToServer(text);
+			this.sendMessageToServer(messageObject);
 			this.clearField();
 			Vue.nextTick(this.scrollToBottom);
 		},
@@ -30796,21 +30806,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		clearField: function clearField() {
 			this.$refs.input.clear();
 		},
-		sendMessageToServer: function sendMessageToServer(message) {
-			console.log("Send", message);
-
+		sendMessageToServer: function sendMessageToServer(messageObject) {
 			var urlSegments = window.location.href.split("/");
 			var caseId = Number(urlSegments[urlSegments.length - 1]);
 
 			axios("/api/messages", {
 				method: "post",
 				data: {
-					'message': message,
+					'message': messageObject.body,
 					'case': caseId
 				},
 				withCredentials: true
 			}).then(function (response) {
 				console.log(response);
+				messageObject.sending = false;
 			}).catch(function (error) {
 				console.log(error);
 				console.log(error.response);
@@ -30847,7 +30856,8 @@ var render = function() {
               body: message.body,
               date: message.date,
               "sent-by-user": message.sentByUser,
-              user: message.user
+              user: message.user,
+              sending: message.sending
             }
           })
         })

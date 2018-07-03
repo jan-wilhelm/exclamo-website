@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div ref="container" id="chat-container" class="chat-container p-4 d-flex flex-column">
-			<chat-message v-for="message in messageObjects" :key="message.id" :body="message.body" :date="message.date" :sent-by-user="message.sentByUser" :user="message.user">
+			<chat-message v-for="message in messageObjects" :key="message.id" :body="message.body" :date="message.date" :sent-by-user="message.sentByUser" :user="message.user" :sending="message.sending">
 			</chat-message>
 		</div>
 		<chat-input-form ref="input" @sendMessage="sendMessage"></chat-input-form>
@@ -50,11 +50,12 @@
 						last_name: "Wilhelm"
 					},
 					sentByUser: true,
-					date: today
+					date: today,
+					sending: true
 				}
 
 				this.messageObjects.push(messageObject)
-				this.sendMessageToServer(text);
+				this.sendMessageToServer(messageObject);
 				this.clearField()
 				Vue.nextTick(this.scrollToBottom)
 			},
@@ -65,21 +66,20 @@
 			clearField() {
 				this.$refs.input.clear()
 			},
-			sendMessageToServer(message) {
-				console.log("Send", message)
-
+			sendMessageToServer(messageObject) {
 				var urlSegments = window.location.href.split("/")
 				var caseId = Number(urlSegments[urlSegments.length - 1])
 
 				axios("/api/messages", {
 					method: "post",
 					data: {
-						'message': message,
+						'message': messageObject.body,
 						'case': caseId
 					},
 					withCredentials: true
 				}).then(function(response) {
 					console.log(response)
+					messageObject.sending = false
 				}).catch(function(error) {
 					console.log(error);
     				console.log(error.response)
