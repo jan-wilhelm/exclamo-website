@@ -24,6 +24,8 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Message::class);
+
         $validated = $request->validate([
             'message'=> 'required|string',
             'case'=> [
