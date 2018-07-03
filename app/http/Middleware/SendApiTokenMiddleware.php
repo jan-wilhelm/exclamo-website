@@ -26,7 +26,7 @@ class SendApiTokenMiddleware
                 "/",                // path
                 "",                 // domain
                 false,              // secure
-                false               // http-only
+                true               // http-only
             );
             Cookie::queue($cookie);
         }
