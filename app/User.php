@@ -79,19 +79,19 @@ class User extends Authenticatable
     }
 
     /**
-     * Get all the messages the user has ever sent
-     * @return Collection A collection containing all the Messages
-     */
-    public function messages() {
-        return $this->hasMany('App\Message');
-    }
-
-    /**
      * Get all the cases in which the user is one of the assigned mentors
      * @return Collection A collection containing all the ReportedCases
      */
     public function mentorCases() {
         return $this->belongsToMany('App\ReportedCase', 'case_mentor', 'user_id', 'case_id');
+    }
+
+    /**
+     * Get all the messages the user has ever sent
+     * @return Collection A collection containing all the Messages
+     */
+    public function messages() {
+        return $this->hasMany('App\Message');
     }
 
     /**
