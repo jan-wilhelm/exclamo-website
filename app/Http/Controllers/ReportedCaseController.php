@@ -75,7 +75,7 @@ class ReportedCaseController extends Controller
      */
     public function showIncident(Request $request, ReportedCase $case)
     {
-        $messages = $case->messages()->orderBy('updated_at', 'asc')->get()->map(function($message) {
+        $messages = $case->messages()->with("sender")->orderBy('updated_at', 'asc')->get()->map(function($message) {
                 $messageJson = array();
                 $messageJson["body"] = $message->body;
                 $messageJson["date"] = $message->updated_at->format("d.m.Y G:i");
@@ -83,7 +83,7 @@ class ReportedCaseController extends Controller
                 $messageJson["user"] = $message->sender->only(['id', 'first_name', 'last_name']);
                 return $messageJson;
         });
-        
+
         return view("schueler.case")->with([
             'case' => $case,
             'messages'=> $messages
