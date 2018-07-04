@@ -15,8 +15,10 @@ class CreateLoginActivitiesTable extends Migration
     {
         Schema::create('login_activities', function (Blueprint $table) {
             $table->increments('id');
+
             $table->unsignedInteger('user_id')->index()->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('user_id')->references('id')->on('users');
+            
             $table->string('user_agent');
             $table->string('ip_address', 45);
             $table->timestamps();

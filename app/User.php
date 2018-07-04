@@ -103,6 +103,14 @@ class User extends Authenticatable
     }
 
     /**
+     * Get all the LoginActivities of the user
+     * @return Collection A collection containing all the logins
+     */
+    public function logins() {
+        return $this->hasMany('App\LoginActivity');
+    }
+
+    /**
      * //////////////////////////////////////////////////
      * /////////////////    SCOPES    ///////////////////
      * //////////////////////////////////////////////////
