@@ -68,6 +68,8 @@ class ReportedCaseController extends Controller
             ->orderBy('updated_at', 'desc')
             ->get();
 
+        //dd($cases);
+
         $resolvedCases = $this->reportedCases->resolved($cases);
         $unresolvedCases = $cases->diff($resolvedCases);
 
