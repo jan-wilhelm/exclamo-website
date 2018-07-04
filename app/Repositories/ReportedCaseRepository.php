@@ -65,4 +65,18 @@ class ReportedCaseRepository implements RepositoryInterface
         ]);
     }
 
+    public function resolved($cases)
+    {
+        return $cases->filter(function($value, $key) {
+            return $value->solved; // Get only the cases which are already resolved
+        });
+    }
+
+    public function open($cases)
+    {
+        return $cases->reject(function($value, $key) {
+            return $value->solved; // Get only the cases which are already resolved
+        });
+    }
+
 }

@@ -8,18 +8,23 @@ use App\Http\Requests\ReportCaseRequest;
 use App\User;
 use App\Location;
 use App\Message;
+use App\Repositories\ReportedCaseRepository;
 
 class ReportedCaseController extends Controller
 {
+
+    protected $reportedCases;
+
     /**
      * Create a new controller instance.
      *
      * Only authenticated students may create new cases
      * @return void
      */
-    public function __construct()
+    public function __construct(ReportedCaseRepository $reportedCases)
     {
-        $this->middleware(['auth', 'role:schueler']);
+        $this->middleware('auth');
+        $this->reportedCases = $reportedCases;
     }
 
     /**
@@ -28,39 +33,64 @@ class ReportedCaseController extends Controller
      * @return View           The rendered view
      */
     public function index(Request $request)
-    {    	
+    {
     	$user = \Auth::user();
 
-    	// Get the Reported Cases along with their assigned mentors which can
-    	// then be display in the view.
-    	// This is a lot more performent than fetching each case's mentors,
-    	// since larger SQL queries are generally faster than a lot of smaller
-    	// queries
-    	$cases = $user->reportedCases()->with([
-    		'mentors',
-    		// also get all the messages sorted by their creation date
-    		'messages' => function($query) {
-    			$query->orderBy('updated_at', 'desc');
-    		}
-    	])->orderBy('updated_at', 'desc')->get();
+        if ($user->hasRole("schueler")) {
+            return $this->studentView($request, $user);
+        } elseif ($user->mentoring) {
+            return $this->mentorView($request, $user);
+        } elseif ($user->isMentor()) {
+            return $this->inactiveMentorView($request, $user);
+        }
+    	return "Error";
+    }
 
-        $resolvedCases = $cases->reject(function($value, $key) {
-            return $value->solved; // Get only the cases which are already resolved
-        });
+    public function studentView(Request $request, User $user)
+    {
+        return $this->casesView($user);
+    }
 
+    public function mentorView(Request $request, User $user)
+    {
+        return $this->casesView($user, $this->reportedCases->whereMentoring($user));
+    }
+
+    public function casesView(User $user, $cases)
+    {
+        // Get the Reported Cases along with their assigned mentors which can
+        // then be display in the view.
+        // This is a lot more performent than fetching each case's mentors,
+        // since larger SQL queries are generally faster than a lot of smaller
+        // queries
+        $cases = $this->reportedCases
+            ->getWithData($user, $cases)
+            ->orderBy('updated_at', 'desc')
+            ->get();
+
+        $resolvedCases = $this->reportedCases->resolved($cases);
         $unresolvedCases = $cases->diff($resolvedCases);
-    	$numberOfCases = $cases->count();
-    	$numberOfResolvedCases = $resolvedCases->count();
 
-    	$messages = $user->messages->count();
+        $statistics = $this->getStatisticsForView($user, $cases, $resolvedCases);
 
-    	// render the view and pass all the needed variables
-		return view("schueler.index")->with([
-			'numberOfCases' => $numberOfCases,
-			'numberOfResolvedCases' => $numberOfResolvedCases,
-			'numberOfMessages' => $messages,
-			'cases' => $resolvedCases->concat($unresolvedCases)
-		]);
+        // render the view and pass all the needed variables
+        return view("mentor.cases")->with(
+            array_merge(
+                $statistics,
+                [
+                    'cases' => $unresolvedCases->concat($resolvedCases)
+                ]
+            )
+        );
+    }
+
+    public function getStatisticsForView(User $user, $cases, $resolvedCases)
+    {
+        return [
+            'numberOfCases' => $cases->count(),
+            'numberOfResolvedCases' => $resolvedCases->count(),
+            'numberOfMessages' => $user->messages()->count()
+        ];
     }
 
     /**
@@ -75,6 +105,8 @@ class ReportedCaseController extends Controller
      */
     public function showIncident(Request $request, ReportedCase $case)
     {
+        $this->authorize('view', $case);
+
         $messages = $case->messages()->with("sender")->orderBy('updated_at', 'asc')->get()->map(function($message) {
                 $messageJson = array();
                 $messageJson["body"] = $message->body;
@@ -84,7 +116,7 @@ class ReportedCaseController extends Controller
                 return $messageJson;
         });
 
-        return view("schueler.case")->with([
+        return view("case")->with([
             'case' => $case,
             'messages'=> $messages
         ]);
