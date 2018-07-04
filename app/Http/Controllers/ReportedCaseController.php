@@ -76,7 +76,7 @@ class ReportedCaseController extends Controller
         $statistics = $this->getStatisticsForView($user, $cases, $resolvedCases);
 
         // render the view and pass all the needed variables
-        return view("mentor.cases")->with(
+        return view("cases")->with(
             array_merge(
                 $statistics,
                 [
