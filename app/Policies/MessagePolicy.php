@@ -18,13 +18,13 @@ class MessagePolicy
 
     public function view(User $user, Message $message)
     {
-        foreach ($user->reportedCases->with('messages') as $reportedCase) {
+        foreach ($user->reportedCases()->with('messages')->get() as $reportedCase) {
         	if ($reportedCase->messages->contains($message)) {
         		return true;
         	}
         }
 
-     	foreach ($user->mentorCases->with('messages') as $reportedCase) {
+     	foreach ($user->mentorCases()->with('messages')->get() as $reportedCase) {
         	if ($reportedCase->messages->contains($message)) {
         		return true;
         	}

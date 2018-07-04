@@ -51,6 +51,7 @@ class MessageController extends Controller
      */
     public function show(Message $message)
     {
+        $this->authorize('view', $message);
         return new MessageResource($message);
     }
 
