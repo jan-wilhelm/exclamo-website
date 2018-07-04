@@ -13,8 +13,11 @@
        7.  Configure MySQL and Redis on my VPS as well as upgrading to PHP 7.2
        8.  Waiting for the damn deploy script to finish after about 2 minutes
 
-   Fortunately, I somehow managed to get it all set up. This way I am now able to simply run php artisan deploy from within my Laravel directory and a few minutes later, the latest version of my webapp will be uploaded to my VPS.
+   Fortunately, I somehow managed to get it all set up. This way I am now able to simply run php artisan deploy from within my Laravel directory and a few minutes later, the latest version of my webapp will have been uploaded to my VPS.
 
    This led to my last issue which is not yet resolved by the time I'm writing this. The laravel-deployer creates a directory in the var/www/ folder that is not automatically connected to the html folder. Therefore, I looked for a way to forward all the traffic that goes to a certain folder on my VPS, let's call it "app" to this other folder that is generated during deployment.
 
    I still haven't found the solution yet after about an hour of googling and playing around with the Apache configuration. Seeing no other way to address this issue, I asked the StackOverflow Community here (https://stackoverflow.com/questions/51005223/redirect-traffic-from-folder-or-its-subfolders-to-another-folder)
+
+TODO:
+  Create the 'incident_date' field on the reported_cases table and hydrate that field when creating new cases
