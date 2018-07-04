@@ -60,7 +60,9 @@ class DatabaseSeeder extends Seeder
                 'student_id'=> $student->id
             ]);
 
+
             foreach ($cases as $case) {
+                $updated_at = $case->updated_at;
                 $case->location()->associate($locations[array_rand($locations)]);
                 $case->mentors()->save($mentors->random(1)[0]);
                 $student->reportedCases()->save($case);
@@ -68,9 +70,11 @@ class DatabaseSeeder extends Seeder
                 $messages = factory(App\Message::class, 15)->make()->each(function($m) use ($case, $student) {
                     $sender = array( $case->mentors[0], $student )[random_int(0, 1)];
                     $m->sender()->associate($sender);
-                    $m->reportedCase()->associate($case);
+                    $case->messages()->save($m);
                     $m->save();
                 });
+                $case->updated_at = $updated_at;
+                $case->save();
             }
         }
     }
