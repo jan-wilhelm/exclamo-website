@@ -18,8 +18,7 @@ class CreateReportedCasesTable extends Migration
 
             $table->string('title', 300);
 
-            $table->unsignedInteger('student_id');
-            $table->index('student_id');
+            $table->unsignedInteger('student_id')->index();
             $table->foreign('student_id')->references('id')->on('users');
 
             $table->unsignedInteger('location_id')->nullable();
