@@ -56,7 +56,7 @@ class ReportedCaseController extends Controller
         return $this->casesView($user, $this->reportedCases->whereMentoring($user));
     }
 
-    public function casesView(User $user, $cases)
+    public function casesView(User $user, $cases = null)
     {
         // Get the Reported Cases along with their assigned mentors which can
         // then be display in the view.
