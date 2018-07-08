@@ -28,7 +28,7 @@
 
 				</ul>
 
-				<ul class="navbar-nav ml-auto nav-inline">
+				<ul class="navbar-nav ml-auto nav-md-inline">
 					<li class="nav-item dropdown">
 				        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				        	<img src="
