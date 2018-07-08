@@ -30967,7 +30967,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -30978,6 +30978,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -31017,7 +31019,7 @@ var render = function() {
     "form",
     {
       staticClass: "form-inline message-form",
-      attrs: { method: "post", action: "a" },
+      attrs: { autocomplete: "off" },
       on: {
         submit: function($event) {
           $event.preventDefault()
@@ -31029,7 +31031,7 @@ var render = function() {
       _c("input", {
         ref: "message",
         staticClass: "form-control col-md-10 col-sm-9 col-12",
-        attrs: { type: "text", name: "message", placeholder: "message" }
+        attrs: { type: "text", name: "message", autocomplete: "off" }
       }),
       _vm._v(" "),
       _c("input", { staticClass: "d-none", attrs: { type: "text" } }),
@@ -31046,7 +31048,7 @@ var staticRenderFns = [
     return _c(
       "button",
       {
-        staticClass: "btn btn-primary col-md-2 col-sm-3 col-4",
+        staticClass: "btn btn-primary col-md-2 col-sm-3 col-4 mx-auto",
         attrs: { type: "submit" }
       },
       [_c("i", { staticClass: "fas fa-paper-plane" })]

@@ -1,8 +1,10 @@
 <template>
-	<form @submit.prevent="onSubmit" class="form-inline message-form" method="post" action="a">
-		<input type="text" ref="message" class="form-control col-md-10 col-sm-9 col-12" name="message" placeholder="message">
+	<form @submit.prevent="onSubmit" class="form-inline message-form" autocomplete="off">
+		<input type="text" ref="message" class="form-control col-md-10 col-sm-9 col-12" name="message" autocomplete="off">
 		<input type="text" class="d-none">
-		<button type="submit" class="btn btn-primary col-md-2 col-sm-3 col-4"><i class="fas fa-paper-plane"></i></button>
+		<button type="submit" class="btn btn-primary col-md-2 col-sm-3 col-4 mx-auto">
+			<i class="fas fa-paper-plane"></i>
+		</button>
 	</form>
 </template>
 
