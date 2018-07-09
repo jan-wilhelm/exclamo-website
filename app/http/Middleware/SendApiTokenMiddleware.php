@@ -22,11 +22,11 @@ class SendApiTokenMiddleware
             $cookie = Cookie::make(
                 'api_token',        // name
                 $token,             // value
-                time() + 60 * 24,   // expire
+                120,      // expire
                 "/",                // path
                 "",                 // domain
                 false,              // secure
-                true               // http-only
+                true                // http-only
             );
             Cookie::queue($cookie);
         }
