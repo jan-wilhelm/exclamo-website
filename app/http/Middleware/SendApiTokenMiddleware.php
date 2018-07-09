@@ -23,7 +23,7 @@ class SendApiTokenMiddleware
             $cookie = Cookie::make(
                 'api_token',        // name
                 $token,             // value
-                120,                // expire
+                0,                  // expire
                 "/",                // path
                 "",                 // domain
                 false,              // secure
