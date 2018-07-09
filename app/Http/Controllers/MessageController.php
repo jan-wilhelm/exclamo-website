@@ -7,6 +7,10 @@ use App\User;
 use App\Message;
 use App\Http\Requests\MessageCreateRequest;
 
+/**
+ * Legacy controller to create messages via normal browser POST requests
+ * instead of AJAX requests
+ */
 class MessageController extends Controller
 {
     /**

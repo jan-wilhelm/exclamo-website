@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Cookie;
 class SendApiTokenMiddleware
 {
     /**
-     * Handle an incoming request.
+     * Send the api_token cookie to all the incoming HTTP requests so that
+     * it can be used in AJAX API requests
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
@@ -22,7 +23,7 @@ class SendApiTokenMiddleware
             $cookie = Cookie::make(
                 'api_token',        // name
                 $token,             // value
-                120,      // expire
+                120,                // expire
                 "/",                // path
                 "",                 // domain
                 false,              // secure
