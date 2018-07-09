@@ -13,8 +13,9 @@
         }
         window.Exclamo = {
             @if(Auth::check())
-                userId: {{ auth()->user()->id }}
+                userId: {{ auth()->user()->id }},
             @endif
+            url: '{{ url("/") }}'
         }
     </script>
     <title>{{ config('app.name', 'Laravel') }}</title>
