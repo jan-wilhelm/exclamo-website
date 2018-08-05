@@ -40,6 +40,8 @@ class MessageController extends Controller
             'user_id' => Auth::id()
         ]);
 
+        // Return the freshly created Message. This can be useful for the client
+        // to know the message id etc.
         return $this->show($message);
     }
 
