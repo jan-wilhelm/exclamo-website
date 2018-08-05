@@ -46,16 +46,34 @@ class ReportedCaseController extends Controller
     	return "Error";
     }
 
+    /**
+     * Show an overview of all of his / her cases to a student
+     * @param  Request $request The HTTP request
+     * @param  User    $user    The student
+     * @return view           The view
+     */
     public function studentView(Request $request, User $user)
     {
         return $this->casesView($user);
     }
 
+    /**
+     * Show an overview of all of his / her cases to a mentor
+     * @param  Request $request The HTTP request
+     * @param  User    $user    The mentor
+     * @return view           The view
+     */
     public function mentorView(Request $request, User $user)
     {
         return $this->casesView($user, $this->reportedCases->whereMentoring($user));
     }
 
+    /**
+     * Show all the cases to a user
+     * @param  User   $user  The user
+     * @param  array $cases The cases that should be displayed. This defaults to the cases where the $user is the victim
+     * @return view        The view
+     */
     public function casesView(User $user, $cases = null)
     {
         // Get the Reported Cases along with their assigned mentors which can
@@ -86,6 +104,13 @@ class ReportedCaseController extends Controller
         );
     }
 
+    /**
+     * Get the case statistics for a specified user
+     * @param  User   $user          The user
+     * @param  array $cases         The subset of cases of which the data should be included in the stats
+     * @param  array $resolvedCases The subset of the $cases argument which are already resolved
+     * @return array                An array with the statistics
+     */
     public function getStatisticsForView(User $user, $cases, $resolvedCases)
     {
         return [
@@ -109,6 +134,8 @@ class ReportedCaseController extends Controller
     {
         $this->authorize('view', $case);
 
+        // Transform the collection of messages into a dictionary that
+        // can be read by the vue components
         $messages = $case->messages()->with("sender")->orderBy('updated_at', 'asc')->get()->map(function($message) {
                 $messageJson = array();
                 $messageJson["body"] = $message->body;
@@ -153,6 +180,8 @@ class ReportedCaseController extends Controller
         // Create a new ReportedCase instance with the given fields
         
         $case = $this->createReportedCase($validated, auth()->user(), config("exclamo.categories"));
+
+        // Tell the view that a new case has been created
         $request->session()->flash('casecreated', true);
 
         return \Redirect::route('incidents.show', [$case]);

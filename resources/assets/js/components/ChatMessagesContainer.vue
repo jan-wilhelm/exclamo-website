@@ -70,7 +70,7 @@
 				var urlSegments = window.location.href.split("/")
 				var caseId = Number(urlSegments[urlSegments.length - 1])
 
-				axios("/api/messages", {
+				axios(window.Exclamo.url + "/api/messages", {
 					method: "post",
 					data: {
 						'message': messageObject.body,
