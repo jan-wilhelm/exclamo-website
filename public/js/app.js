@@ -48149,7 +48149,7 @@ exports = module.exports = __webpack_require__(10)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48167,6 +48167,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -48174,7 +48179,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		return {};
 	},
 
-	methods: {}
+	methods: {
+		onSubmit: function onSubmit() {}
+	}
 });
 
 /***/ }),
@@ -48188,7 +48195,40 @@ var render = function() {
   return _c(
     "b-modal",
     { attrs: { id: "case-options-modal", title: "Optionen" } },
-    [_c("p", { staticClass: "my-4" }, [_vm._v("Hello from modal!")])]
+    [
+      _c(
+        "form",
+        {
+          staticClass: "form-inline px-md-5",
+          attrs: { autocomplete: "off" },
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.onSubmit($event)
+            }
+          }
+        },
+        [
+          _c("input", {
+            staticClass: "form-check-input",
+            attrs: { type: "checkbox", id: "case-modal-anonymous" }
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "form-check-label",
+              attrs: { for: "case-modal-anonymous" }
+            },
+            [
+              _vm._v(
+                "\n\t\t    \tYour name should be visible to the mentors\n\t\t    "
+              )
+            ]
+          )
+        ]
+      )
+    ]
   )
 }
 var staticRenderFns = []
