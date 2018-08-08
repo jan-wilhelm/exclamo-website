@@ -54,7 +54,23 @@ class ReportedCaseController extends Controller
      */
     public function studentView(Request $request, User $user)
     {
-        return $this->casesView($user);
+        $cases = $this
+            ->reportedCases->getOrderedForView($user);
+        $unresolvedCases = $cases[0];
+        $resolvedCases = $cases[1];
+
+        $cases = $unresolvedCases->concat($resolvedCases);
+
+        $statistics = $this->getStatisticsForView($user, $cases, $resolvedCases);
+
+        return view("schueler/cases")->with(
+            array_merge(
+                $statistics,
+                [
+                    'cases' => $cases
+                ]
+            )
+        );
     }
 
     /**
@@ -65,40 +81,20 @@ class ReportedCaseController extends Controller
      */
     public function mentorView(Request $request, User $user)
     {
-        return $this->casesView($user, $this->reportedCases->whereMentoring($user));
-    }
-
-    /**
-     * Show all the cases to a user
-     * @param  User   $user  The user
-     * @param  array $cases The cases that should be displayed. This defaults to the cases where the $user is the victim
-     * @return view        The view
-     */
-    public function casesView(User $user, $cases = null)
-    {
-        // Get the Reported Cases along with their assigned mentors which can
-        // then be display in the view.
-        // This is a lot more performent than fetching each case's mentors,
-        // since larger SQL queries are generally faster than a lot of smaller
-        // queries
         $cases = $this->reportedCases
-            ->getWithData($user, $cases)
-            ->orderBy('updated_at', 'desc')
-            ->get();
+            ->getOrderedForView($user, $this->reportedCases->whereMentoring($user));
+        $unresolvedCases = $cases[0];
+        $resolvedCases = $cases[1];
 
-        //dd($cases);
-
-        $resolvedCases = $this->reportedCases->resolved($cases);
-        $unresolvedCases = $cases->diff($resolvedCases);
+        $cases = $unresolvedCases->concat($resolvedCases);
 
         $statistics = $this->getStatisticsForView($user, $cases, $resolvedCases);
 
-        // render the view and pass all the needed variables
-        return view("cases")->with(
+        return view("mentors/cases")->with(
             array_merge(
                 $statistics,
                 [
-                    'cases' => $unresolvedCases->concat($resolvedCases)
+                    'cases' => $cases
                 ]
             )
         );

@@ -79,4 +79,21 @@ class ReportedCaseRepository implements RepositoryInterface
         });
     }
 
+    public function getOrderedForView(User $user, $cases = null)
+    {
+        // Get the Reported Cases along with their assigned mentors which can
+        // then be display in the view.
+        // This is a lot more performent than fetching each case's mentors,
+        // since larger SQL queries are generally faster than a lot of smaller
+        // queries
+        $cases = $this->getWithData($user, $cases)
+            ->orderBy('updated_at', 'desc')
+            ->get();
+
+        $resolvedCases = $this->resolved($cases) ?: array();
+        $unresolvedCases = $cases->diff($resolvedCases) ?: array();
+
+        return [$unresolvedCases, $resolvedCases];
+    }
+
 }
