@@ -48149,7 +48149,7 @@ exports = module.exports = __webpack_require__(10)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48172,11 +48172,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+	props: {
+		caseData: {
+			type: String
+		}
+	},
 	data: function data() {
-		return {};
+		return {
+			anonymous: JSON.parse(this.caseData).anonymous,
+			mentors: JSON.parse(this.caseData).mentors
+		};
 	},
 
 	methods: {
@@ -48210,8 +48219,42 @@ var render = function() {
         },
         [
           _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.anonymous,
+                expression: "anonymous"
+              }
+            ],
             staticClass: "form-check-input",
-            attrs: { type: "checkbox", id: "case-modal-anonymous" }
+            attrs: { type: "checkbox", id: "case-modal-anonymous" },
+            domProps: {
+              checked: Array.isArray(_vm.anonymous)
+                ? _vm._i(_vm.anonymous, null) > -1
+                : _vm.anonymous
+            },
+            on: {
+              change: function($event) {
+                var $$a = _vm.anonymous,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.anonymous = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.anonymous = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.anonymous = $$c
+                }
+              }
+            }
           }),
           _vm._v(" "),
           _c(
@@ -48222,7 +48265,9 @@ var render = function() {
             },
             [
               _vm._v(
-                "\n\t\t    \tYour name should be visible to the mentors\n\t\t    "
+                "\n\t\t    \tYour name should be visible to the mentors " +
+                  _vm._s(_vm.anonymous) +
+                  "\n\t\t    "
               )
             ]
           )

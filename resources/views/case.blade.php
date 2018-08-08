@@ -17,11 +17,11 @@
 					Optionen
 				</a>
 			</div>
-			<case-options-modal />
+			<case-options-modal case-data='{"anonymous": true}' />
 		</div>
 		<hr>
 
-		<chat-messages-container :messages="{{ json_encode($messages) }}"> </chat-messages-container>
+		<chat-messages-container :messages="{{ json_encode($messages) }}" />
 
 	@endexclamoflexsection
 @endsection
