@@ -13,10 +13,11 @@
 				})->pluck("full_name")->toArray()) }}
 			</span>
 			<div class="form-inline button-div bordered white hover mt-md-0 mt-3 float-md-right ">
-				<a href="#" class="mx-auto">
+				<a href="#" class="mx-auto" v-b-modal.case-options-modal>
 					Optionen
 				</a>
 			</div>
+			<case-options-modal />
 		</div>
 		<hr>
 

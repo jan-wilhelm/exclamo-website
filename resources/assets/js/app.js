@@ -6,8 +6,10 @@
  */
 
 require('./bootstrap');
-
+import BootstrapVue from 'bootstrap-vue'
 window.Vue = require('vue');
+
+Vue.use(BootstrapVue);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -18,6 +20,7 @@ window.Vue = require('vue');
 Vue.component('chat-message', require('./components/ChatMessage.vue'));
 Vue.component('chat-messages-container', require('./components/ChatMessagesContainer.vue'));
 Vue.component('chat-input-form', require('./components/ChatInputForm.vue'));
+Vue.component('case-options-modal', require('./components/CaseOptionsModal.vue'));
 //Vue.component('case-messages-container', require('./components/CaseMessagesContainer.vue'));
 
 const app = new Vue({
