@@ -14,5 +14,6 @@ let mix = require('laravel-mix');
 mix.js('resources/assets/js/app.js', 'public/js');
 mix.styles([
     'node_modules/bootstrap/dist/css/bootstrap.css',
-    'node_modules/bootstrap-vue/dist/bootstrap-vue.css'
+    'node_modules/bootstrap-vue/dist/bootstrap-vue.css',
+    'resources/assets/css/style.css'
 ], 'public/css/all.css');
