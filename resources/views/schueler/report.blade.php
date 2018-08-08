@@ -33,13 +33,18 @@
 					<label for="message">
 						@lang('messages.mentorsselect')
 					</label>
-					<select id="mentor-select" class="d-none" id="mentors" name="mentors[]" multiple>
-					</select>
+
+					@mentorselect (['id' => 'mentor-select', 'parentId' => 'mentor-select-div'])
+					@foreach (auth()->user()->school->users()->mentor()->mentoring()->get() as $mentor)
+						{!! json_encode(["id" => $mentor->id, "name" => $mentor->fullName()]) !!},
+					@endforeach
+					@endmentorselect
 				</div>
 				<div class="form-group col-md-6">
 					<label for="category">
 						@lang('messages.categoryselect')
 					</label>
+
 					<select id="category-select" class="form-control" id="category" name="category">
 					@for ($i = 0; $i < sizeof(config('exclamo.categories', [])); $i++)
 						<option value="{{ $i }}">{{ ucwords(config('exclamo.categories')[$i]) }}</option>
@@ -54,8 +59,10 @@
 							<label for="date">
 								@lang('messages.dateselect')
 							</label>
+
 							<div class="input-group">
 			                    <input type="text" class="form-control datetimepicker-input" data-target="#case-date-picker" name="incident_date" id="date" />
+
 			                    <div class="input-group-append" data-target="#case-date-picker" data-toggle="datetimepicker">
 			                        <div class="input-group-text">
 			                        	<i class="fa fa-calendar"></i>
@@ -70,6 +77,7 @@
 						<label for="location">
 							@lang('messages.locationselect')
 						</label>
+
 						<select id="location-select" class="form-control" id="location" name="location">
 						@foreach(auth()->user()->school->locations as $location)
 							<option value="{{ $location->id }}">
@@ -109,17 +117,6 @@
                 locale: 'de',
                 maxDate: Date.now()
             });
-
-			$('#mentor-select-div').dropdown({
-				multipleMode: 'label',
-				input: '<input type="text" maxLength="100" placeholder="@lang("placeholders.search")">',
-				data: [
-					@foreach (auth()->user()->school->users()->mentor()->mentoring()->get() as $mentor)
-						{!! json_encode(["id" => $mentor->id, "name" => $mentor->fullName()]) !!},
-					@endforeach
-				],
-				searchable: true,
-			});
 
 			$('#case-form').submit(function(event) {
 				event.preventDefault();
