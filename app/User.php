@@ -86,6 +86,10 @@ class User extends Authenticatable
         return $this->belongsToMany('App\ReportedCase', 'case_mentor', 'user_id', 'case_id');
     }
 
+    public function combinedCases() {
+        return $this->reportedCases()->get()->concat($this->mentorCases()->get());
+    }
+
     /**
      * Get all the messages the user has ever sent
      * @return Collection A collection containing all the Messages

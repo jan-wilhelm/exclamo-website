@@ -27,7 +27,7 @@ class ReportedCaseExistsAndBelongsToUser implements Rule
      */
     public function passes($attribute, $value)
     {
-        return $this->user->reportedCases()->where("id", $value)->get()->isNotEmpty();
+        return $this->user->combinedCases()->contains('id', $value);
     }
 
     /**
