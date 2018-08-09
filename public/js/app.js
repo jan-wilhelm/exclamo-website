@@ -14302,9 +14302,8 @@ module.exports = __webpack_require__(15);
 
 /***/ }),
 /* 15 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -30760,7 +30759,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -30795,6 +30794,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		sendMessage: function sendMessage(message) {
 			var text = message.text;
 
+			var formattedDate = this.getFormattedDate();
+			var messageObject = {
+				body: text,
+				user: {
+					first_name: "Jan",
+					last_name: "Wilhelm"
+				},
+				sentByUser: true,
+				date: formattedDate,
+				sending: true
+			};
+
+			this.messageObjects.push(messageObject);
+			this.sendMessageToServer(messageObject);
+			this.clearField();
+			Vue.nextTick(this.scrollToBottom);
+		},
+		scrollToBottom: function scrollToBottom() {
+			var cont = this.$refs.container;
+			cont.scrollTop = cont.scrollHeight;
+		},
+		clearField: function clearField() {
+			this.$refs.input.clear();
+		},
+		getFormattedDate: function getFormattedDate() {
 			var today = new Date(Date.now());
 			var day = today.getDate();
 			var month = today.getMonth() + 1; //January is 0!
@@ -30815,30 +30839,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				mins = '0' + mins;
 			}
 
-			var today = day + '.' + month + '.' + year + ' ' + hours + ':' + mins;
-
-			var messageObject = {
-				body: text,
-				user: {
-					first_name: "Jan",
-					last_name: "Wilhelm"
-				},
-				sentByUser: true,
-				date: today,
-				sending: true
-			};
-
-			this.messageObjects.push(messageObject);
-			this.sendMessageToServer(messageObject);
-			this.clearField();
-			Vue.nextTick(this.scrollToBottom);
-		},
-		scrollToBottom: function scrollToBottom() {
-			var cont = this.$refs.container;
-			cont.scrollTop = cont.scrollHeight;
-		},
-		clearField: function clearField() {
-			this.$refs.input.clear();
+			return day + '.' + month + '.' + year + ' ' + hours + ':' + mins;
 		},
 		sendMessageToServer: function sendMessageToServer(messageObject) {
 			var urlSegments = window.location.href.split("/");

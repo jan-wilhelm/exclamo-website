@@ -21,6 +21,31 @@
 			sendMessage(message) {
 				var text = message.text
 
+				var formattedDate = this.getFormattedDate()
+				var messageObject = {
+					body: text,
+					user: {
+						first_name: "Jan",
+						last_name: "Wilhelm"
+					},
+					sentByUser: true,
+					date: formattedDate,
+					sending: true
+				}
+
+				this.messageObjects.push(messageObject)
+				this.sendMessageToServer(messageObject);
+				this.clearField()
+				Vue.nextTick(this.scrollToBottom)
+			},
+			scrollToBottom() {
+				var cont = this.$refs.container
+				cont.scrollTop = cont.scrollHeight
+			},
+			clearField() {
+				this.$refs.input.clear()
+			},
+			getFormattedDate() {
 				var today = new Date(Date.now())
 				var day = today.getDate()
 				var month = today.getMonth() + 1 //January is 0!
@@ -41,30 +66,7 @@
 				    mins = '0' + mins
 				}
 
-				var today = day + '.' + month + '.' + year + ' ' + hours + ':' + mins
-
-				var messageObject = {
-					body: text,
-					user: {
-						first_name: "Jan",
-						last_name: "Wilhelm"
-					},
-					sentByUser: true,
-					date: today,
-					sending: true
-				}
-
-				this.messageObjects.push(messageObject)
-				this.sendMessageToServer(messageObject);
-				this.clearField()
-				Vue.nextTick(this.scrollToBottom)
-			},
-			scrollToBottom() {
-				var cont = this.$refs.container
-				cont.scrollTop = cont.scrollHeight
-			},
-			clearField() {
-				this.$refs.input.clear()
+				return day + '.' + month + '.' + year + ' ' + hours + ':' + mins
 			},
 			sendMessageToServer(messageObject) {
 				var urlSegments = window.location.href.split("/")
