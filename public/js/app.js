@@ -30759,7 +30759,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -30792,7 +30792,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 	methods: {
 		sendMessage: function sendMessage(message) {
-			var text = message.text;
+			var text = message.text.trim();
+
+			// Assert that the message is not empty
+			if (!text) {
+				return;
+			}
 
 			var formattedDate = this.getFormattedDate();
 			var messageObject = {
