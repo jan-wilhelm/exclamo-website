@@ -21,3 +21,4 @@
 
 TODO:
   Create the 'incident_date' field on the reported_cases table and hydrate that field when creating new cases
+  Make sure that all webserver entry points point to /server.php instead of public/index.php since this might introduce bugs in combination with apache rewrite rules.
