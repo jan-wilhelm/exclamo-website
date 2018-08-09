@@ -19,7 +19,12 @@
 		},
 		methods: {
 			sendMessage(message) {
-				var text = message.text
+				var text = message.text.trim()
+
+				// Assert that the message is not empty
+				if (!text) {
+					return;
+				}
 
 				var formattedDate = this.getFormattedDate()
 				var messageObject = {
