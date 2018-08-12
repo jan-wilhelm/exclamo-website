@@ -243,15 +243,26 @@ hr {
 .chat-container {
 	overflow: auto;
 	max-height: 900px;
+	padding-bottom: 10px;
 }
 
 .chat-message {
 	position: relative;
 	margin-bottom: 1rem;
+	border-bottom-right-radius: 15px;
+}
+
+.chat-message:last-child {
+	margin-bottom: 2rem;
+}
+
+.chat-container::after {
+    display: block;
+    height: 50px;
+    width: 100%;
 }
 
 .chat-message.left {
-	border-bottom-right-radius: 15px;
 	border-top-right-radius: 15px;
 	border-bottom-left-radius: 15px;
 	-webkit-box-shadow: 0 13px 30px rgba(50,50,93,.08),0 2px 10px rgba(0,0,0,.05);
@@ -261,7 +272,6 @@ hr {
 .chat-message.right {
 	border-bottom-left-radius: 15px;
 	border-top-left-radius: 15px;
-	border-bottom-right-radius: 15px;
 	background-color: #2f94fc;
 	color: white;
 	-webkit-box-shadow: 0 13px 30px rgba(50,50,93,.15),0 2px 10px rgba(0,0,0,.09);
