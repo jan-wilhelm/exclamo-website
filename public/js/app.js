@@ -30759,7 +30759,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -30848,7 +30848,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		},
 		sendMessageToServer: function sendMessageToServer(messageObject) {
 			var urlSegments = window.location.href.split("/");
-			var caseId = Number(urlSegments[urlSegments.length - 1]);
+			var caseId = Number(this.filterNumericals(urlSegments[urlSegments.length - 1]));
 
 			axios(window.Exclamo.url + "/api/messages", {
 				method: "post",
@@ -30864,6 +30864,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				console.log(error);
 				console.log(error.response);
 			});
+		},
+		filterNumericals: function filterNumericals(fromString) {
+			return fromString.replace(/\D/g, '');
 		}
 	},
 	mounted: function mounted() {
@@ -30886,7 +30889,7 @@ var render = function() {
         "div",
         {
           ref: "container",
-          staticClass: "chat-container p-4 d-flex flex-column",
+          staticClass: "chat-container px-4 d-flex flex-column",
           attrs: { id: "chat-container" }
         },
         _vm._l(_vm.messageObjects, function(message) {
@@ -31007,7 +31010,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.chat-input {\n\tborder-radius: calc(1.125rem + 1px);\n\tborder-bottom-right-radius: 0px;\n\tborder-top-right-radius: 0px;\n}\n.chat-send {\n\tborder-bottom-left-radius: 0px;\n\tborder-top-left-radius: 0px;\n}\n", ""]);
 
 // exports
 
@@ -31070,7 +31073,7 @@ var render = function() {
     [
       _c("input", {
         ref: "message",
-        staticClass: "form-control col-md-10 col-sm-9 col-12",
+        staticClass: "form-control col-md-10 col-sm-9 col-12 chat-input",
         attrs: { type: "text", name: "message", autocomplete: "off" }
       }),
       _vm._v(" "),
@@ -31088,7 +31091,8 @@ var staticRenderFns = [
     return _c(
       "button",
       {
-        staticClass: "btn btn-primary col-md-2 col-sm-3 col-4 mx-auto",
+        staticClass:
+          "btn btn-primary col-md-2 col-sm-3 col-4 mx-auto chat-send",
         attrs: { type: "submit" }
       },
       [_c("i", { staticClass: "fas fa-paper-plane" })]

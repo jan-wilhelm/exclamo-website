@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div ref="container" id="chat-container" class="chat-container p-4 d-flex flex-column">
+		<div ref="container" id="chat-container" class="chat-container px-4 d-flex flex-column">
 			<chat-message v-for="message in messageObjects" :key="message.id" :body="message.body" :date="message.date" :sent-by-user="message.sentByUser" :user="message.user" :sending="message.sending">
 			</chat-message>
 		</div>
@@ -75,7 +75,7 @@
 			},
 			sendMessageToServer(messageObject) {
 				var urlSegments = window.location.href.split("/")
-				var caseId = Number(urlSegments[urlSegments.length - 1])
+				var caseId = Number(this.filterNumericals(urlSegments[urlSegments.length - 1]))
 
 				axios(window.Exclamo.url + "/api/messages", {
 					method: "post",
@@ -91,6 +91,9 @@
 					console.log(error);
     				console.log(error.response)
 				})
+			},
+			filterNumericals(fromString) {
+				return fromString.replace(/\D/g,'');
 			}
 		},
 		mounted() {
