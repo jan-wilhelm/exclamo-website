@@ -12,8 +12,8 @@
 					return $mentor;
 				})->pluck("full_name")->toArray()) }}
 			</span>
-			<div class="form-inline button-div bordered white hover mt-md-0 mt-3 float-md-right ">
-				<a href="#" class="mx-auto" v-b-modal.case-options-modal>
+			<div class="form-inline button-div bordered white hover mt-md-0 mt-3 float-md-right justify-content-center">
+				<a href="#" class="mx-3"  data-toggle="modal" data-target="#case-options-modal">
 					Optionen
 				</a>
 			</div>

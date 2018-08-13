@@ -42,14 +42,12 @@
         @yield('content')
     </div>
 
-    <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+    <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
     
     <script src="{{ asset('js/jquery.dropdown.min.js') }}"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/de.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/en-gb.js"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>

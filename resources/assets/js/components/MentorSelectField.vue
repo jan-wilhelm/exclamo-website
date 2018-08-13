@@ -14,12 +14,12 @@
 				type: String
 			},
 			mentors: {
-				type: String
+				type: Array
 			}
 		},
 		data() {
 			return {
-				mentorObjects: JSON.parse(this.mentors)
+				
 			}
 		},
 		methods: {
@@ -29,7 +29,7 @@
 				$('#' + this.parentId).dropdown({
 					multipleMode: 'label',
 					input: '<input type="text" maxLength="100" placeholder="Search">',
-					data: this.mentorObjects,
+					data: this.mentors,
 					searchable: true,
 				});
 			})
