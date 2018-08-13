@@ -9,8 +9,10 @@ window.Popper = require('popper.js').default;
 
 window.Vue = require('vue');
 window.BootstrapVue = require('bootstrap-vue');
+require('vue-multiselect');
 
 window.Vue.use(window.BootstrapVue);
+
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
