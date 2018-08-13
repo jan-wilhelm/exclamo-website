@@ -1,4 +1,4 @@
-// window._ = require('lodash');
+window._ = require('lodash');
 window.Popper = require('popper.js').default;
 
 /**
@@ -7,12 +7,11 @@ window.Popper = require('popper.js').default;
  * code may be modified to fit the specific needs of your application.
  */
 
-try {
-    window.$ = window.jQuery = require('jquery');
-    require('bootstrap');
-} catch (e) {
-	console.error(e);
-}
+
+import Vue from 'vue'
+import BootstrapVue from 'bootstrap-vue'
+
+Vue.use(BootstrapVue);
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

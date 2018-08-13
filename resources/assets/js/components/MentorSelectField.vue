@@ -19,20 +19,20 @@
 		},
 		data() {
 			return {
-				
+
 			}
 		},
 		methods: {
 		},
 		mounted() {
-			$(document).ready(() => {
+			/*$(document).ready(() => {
 				$('#' + this.parentId).dropdown({
 					multipleMode: 'label',
 					input: '<input type="text" maxLength="100" placeholder="Search">',
 					data: this.mentors,
 					searchable: true,
 				});
-			})
+			})*/
 		}
 	};
 
