@@ -54,22 +54,7 @@
 						@endlangoption
 					</form>
 				</b-nav-item-dropdown>
-				<b-nav-item>
-					@guest
-						<div class="shadow-sm form-inline button-div  bg-color-primary-0 px-3 hover-white">
-							<a href="{{ url('login') }}" class="text-white mx-auto">
-								@lang('messages.login')
-							</a>
-						</div>
-					@else
-						<div class="shadow-sm form-inline button-div white px-3 hover">
-							<a href="{{ url('logout') }}" class="mx-auto">
-								@lang('messages.logout')
-							</a>
-						</div>
-					@endguest
-
-				</b-nav-item>
+				
 				<li class="nav-item">
 				@guest
 					<div class="shadow-sm form-inline button-div  bg-color-primary-0 px-3 hover-white">
