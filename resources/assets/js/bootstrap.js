@@ -8,10 +8,10 @@ window.Popper = require('popper.js').default;
  */
 
 
-import Vue from 'vue'
-import BootstrapVue from 'bootstrap-vue'
+window.Vue = require('vue');
+window.BootstrapVue = require('bootstrap-vue');
 
-Vue.use(BootstrapVue);
+window.Vue.use(window.BootstrapVue);
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
