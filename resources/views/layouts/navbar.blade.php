@@ -1,75 +1,91 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-	<div class="container">
-		  <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('img/logo_small.png') }}" width="50px"><span class="color-secondary-2-4">Exclamo</span></a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-		  </button>
-		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					@navlink(["url"=>"/", "route"=>"home"])
-						@lang('messages.home')
-					@endnavlink
+<b-navbar toggleable="lg">
+	<b-container>
+		<b-navbar-brand href="{{ route('home') }}">
+			<img src="{{ asset('img/logo_small.png') }}" width="50px">
+			<span class="color-secondary-2-4">Exclamo</span>
+		</b-navbar-brand>
+		<b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-					@role('schueler')
-						@include('navlinks.schueler')
-					@endrole
+		<b-collapse is-nav id="nav_collapse">
 
-					@role('lehrer')
-						@include('navlinks.lehrer')
-					@endrole
+			<b-navbar-nav class="mr-auto">
+				@navlink(["url"=>"/", "route"=>"home"])
+					@lang('messages.home')
+				@endnavlink
 
-					@role('schulleiter')
-						@include('navlinks.schulleiter')
-					@endrole
-					
-					@role('admin')
-						@include('navlinks.admin')
-					@endrole
+				@role('schueler')
+					@include('navlinks.schueler')
+				@endrole
 
-				</ul>
+				@role('lehrer')
+					@include('navlinks.lehrer')
+				@endrole
 
-				<ul class="navbar-nav ml-auto nav-md-inline">
-					<li class="nav-item dropdown">
-				        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				        	<img src="
-					        	@if ( app()->getLocale() == 'de')
-					        		{{ asset('img/germany_small.png') }}
-					        	@else
-									{{ asset('img/uk_small.png') }}
-					        	@endif
-				        	" height="24px" width="40px">
-				        </a>
-				        <div class="dropdown-menu" aria-labelledby="languageDropdown">
-				        	<form action="{{ route('language') }}" method="post">
-				        		@csrf
-								@langoption(["locale"=>"de"])
-									Deutsch
-								@endlangoption
-					        	<div class="dropdown-divider"></div>
-								@langoption(["locale"=>"en"])
-									English
-								@endlangoption
-							</form>
-				        </div>
-					</li>
+				@role('schulleiter')
+					@include('navlinks.schulleiter')
+				@endrole
+				
+				@role('admin')
+					@include('navlinks.admin')
+				@endrole
+			</b-navbar-nav>
+
+			<!-- Right aligned nav items -->
+			<b-navbar-nav class="ml-auto">
+				<b-nav-item-dropdown right>
+					<!-- Using button-content slot -->
+					<template slot="button-content">
+			        	<img src="
+				        	@if ( app()->getLocale() == 'de')
+				        		{{ asset('img/germany_small.png') }}
+				        	@else
+								{{ asset('img/uk_small.png') }}
+				        	@endif
+			        	" height="24px" width="40px">
+					</template>
+		        	<form action="{{ route('language') }}" method="post">
+		        		@csrf
+						@langoption(["locale"=>"de"])
+							Deutsch
+						@endlangoption
+			        	<div class="dropdown-divider"></div>
+						@langoption(["locale"=>"en"])
+							English
+						@endlangoption
+					</form>
+				</b-nav-item-dropdown>
+				<b-nav-item>
 					@guest
-						<li class="nav-item">
-							<div class="shadow-sm form-inline button-div  bg-color-primary-0 px-3 hover-white">
-								<a href="{{ url('login') }}" class="text-white mx-auto">
-									@lang('messages.login')
-								</a>
-							</div>
-						</li>
+						<div class="shadow-sm form-inline button-div  bg-color-primary-0 px-3 hover-white">
+							<a href="{{ url('login') }}" class="text-white mx-auto">
+								@lang('messages.login')
+							</a>
+						</div>
 					@else
-						<li class="nav-item">
-							<div class="shadow-sm form-inline button-div white mr-3 px-3 hover">
-								<a href="{{ url('logout') }}" class="mx-auto">
-									@lang('messages.logout')
-								</a>
-							</div>
-						</li>
+						<div class="shadow-sm form-inline button-div white px-3 hover">
+							<a href="{{ url('logout') }}" class="mx-auto">
+								@lang('messages.logout')
+							</a>
+						</div>
 					@endguest
-				</ul>
-		  </div>
-	</div>
-</nav>
+
+				</b-nav-item>
+				<li class="nav-item">
+				@guest
+					<div class="shadow-sm form-inline button-div  bg-color-primary-0 px-3 hover-white">
+						<a href="{{ url('login') }}" class="text-white mx-auto">
+							@lang('messages.login')
+						</a>
+					</div>
+				@else
+					<div class="shadow-sm form-inline button-div white mr-3 px-3 hover">
+						<a href="{{ url('logout') }}" class="mx-auto">
+							@lang('messages.logout')
+						</a>
+					</div>
+				@endguest
+				</li>
+			</b-navbar-nav>
+		</b-collapse>
+	</b-container>
+</b-navbar>

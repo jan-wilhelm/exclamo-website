@@ -37,9 +37,11 @@
 
 <body class="bg-white">
 
-    @include('layouts/navbar')
-    <div id="app" class="mt-5 container">
-        @yield('content')
+    <div id="app" class="h-100 w-100">
+        @include('layouts/navbar')
+        <div class="mt-5 container">
+            @yield('content')
+        </div>
     </div>
 
     <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>

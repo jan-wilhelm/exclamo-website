@@ -7,7 +7,6 @@ window.Popper = require('popper.js').default;
  * code may be modified to fit the specific needs of your application.
  */
 
-
 window.Vue = require('vue');
 window.BootstrapVue = require('bootstrap-vue');
 
