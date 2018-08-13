@@ -10082,8 +10082,12 @@ module.exports = __webpack_require__(75);
 
 /***/ }),
 /* 75 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_multiselect__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_multiselect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_multiselect__);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -10092,6 +10096,10 @@ module.exports = __webpack_require__(75);
  */
 
 __webpack_require__(76);
+
+
+
+Vue.component('multiselect', __WEBPACK_IMPORTED_MODULE_0_vue_multiselect___default.a);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
