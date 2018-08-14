@@ -3,7 +3,73 @@ body, html {
 }
 
 .landing-section {
-	min-height: 100%;
+	position: relative;
+	padding: 0px 20px;
+}
+
+.landing-section .wrapper {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.landing-section:before, .landing-section .wrapper:before {
+	display: block;
+	position: absolute;
+	content: "";
+}
+
+.landing-section:before {
+	width: 6px;
+	height: 100%;
+	margin-left: -15px;
+}
+
+.landing-section .wrapper:before {
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	margin-top: 112px;
+	margin-left: -21.5px;
+}
+
+.landing-section:first-child:before {
+	margin-top: 360px;
+	height: calc(100% - 360px);
+}
+
+.landing-section:nth-of-type(odd):before {
+	background-color: #F7FBFF;
+}
+
+.landing-section:nth-of-type(even) .wrapper:before {
+	background-color: #007DFF;
+}
+
+.landing-section:nth-of-type(even):before {
+	background-color: #007DFF;
+}
+
+.landing-section:nth-child(odd) .wrapper:before {
+	background-color: #F7FBFF;
+}
+
+.landing-section:nth-child(odd) {
+	background: rgb(0,89,182);
+	background: linear-gradient(0deg, rgba(0,89,182,1) 0%, rgba(0,125,255,1) 100%);
+	color: white;
+}
+
+.landing-section:nth-child(even) {
+	background: rgb(247,251,255);
+	background: linear-gradient(0deg, rgba(247,251,255,1) 0%, rgba(255,255,255,1) 100%);
+	color: #007DFF;
+}
+
+.landing-section .container-fluid {
+	padding: 100px 0;
+	max-width: 960px !important;
 }
 
 .brand {
@@ -15,16 +81,30 @@ body, html {
 	height: 60px;
 }
 
-.container {
-	padding-left: 50px;
-}
-
 @media (min-width: 576px) {
 	.brand {
 		padding-top: 120px;
 	}
-	.container {
-		padding-left: 0;
+
+	.landing-section .container-fluid {
+		padding-left: 50px;
+	}
+
+	.landing-section:before {
+		margin-left: -30px;
+	}
+	
+	.landing-section {
+		padding: 0px 60px;
+	}
+
+	.landing-section:first-child:before {
+		margin-top: 400px;
+		height: calc(100% - 400px);
+	}
+
+	.landing-section .wrapper:before {
+		margin-left: -36.5px;
 	}
 }
 
@@ -32,10 +112,34 @@ body, html {
 	.brand {
 		padding-top: 150px;
 	}
+	
+	.landing-section {
+		padding: 0px 100px;
+	}
+
+	.landing-section:first-child:before {
+		margin-top: 430px;
+		height: calc(100% - 430px);
+	}
 }
 
 @media (min-width: 960px) {
 	.brand {
 		padding-top: 180px;
+	}
+
+	.landing-section {
+		padding: 0px 220px;
+	}
+
+	.landing-section:first-child:before {
+		margin-top: 460px;
+		height: calc(100% - 460px);
+	}
+}
+
+@media (min-width: 1400px) {
+	.landing-section {
+		padding: 0px 400px;
 	}
 }
