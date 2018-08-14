@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/all.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/landing.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/fonts.min.css') }}" />
-    <!--<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
     <link href="{{ asset('css/colors_2.css') }}" rel="stylesheet">
 @endsection
 
@@ -39,61 +39,83 @@
 						Wir, das Team, sind Berliner Schüler und haben uns überlegt, wie man Mobbing am besten bekämpfen kann. Da das Handy einer der Alltagsgestände schlechthin ist, schien außer Frage, dass eine App das beste Format ist.
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
-	<section class="landing-section bg-color-secondary-1-2">
-		<div class="wrapper">
-			<div class="container-fluid">
-				<div class="row">
-					<h2 class="col-sm-3 promo-question">
-						Wer?
-					</h2>
-					<div class="col-sm-9 promo-text">
-						Wir, das Team, sind Berliner Schüler und haben uns überlegt, wie man Mobbing am besten bekämpfen kann. Da das Handy einer der Alltagsgestände schlechthin ist, schien außer Frage, dass eine App das beste Format ist.
+				<div class="row align-content-center mt-5">
+					<div class="col-md-3 col-12 text-center avatar">
+						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
+						<div class="avatar-name">Kai Lanz</div>
+						<div class="avatar-title">CEO</div>
+					</div>
+					<div class="col-md-3 col-12 text-center avatar">
+						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
+						<div class="avatar-name">Julius de Gruyter</div>
+						<div class="avatar-title">CFO</div>
+					</div>
+					<div class="col-md-3 col-12 text-center avatar">
+						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
+						<div class="avatar-name">undefined</div>
+						<div class="avatar-title">CMO</div>
+					</div>
+					<div class="col-md-3 col-12 text-center avatar">
+						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
+						<div class="avatar-name">Jan Wilhelm</div>
+						<div class="avatar-title">CTO</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section class="landing-section bg-color-secondary-1-2">
+	<section class="landing-section">
 		<div class="wrapper">
 			<div class="container-fluid">
 				<div class="row">
 					<h2 class="col-sm-3 promo-question">
-						Wer?
+						Für Schulen
 					</h2>
 					<div class="col-sm-9 promo-text">
-						Wir, das Team, sind Berliner Schüler und haben uns überlegt, wie man Mobbing am besten bekämpfen kann. Da das Handy einer der Alltagsgestände schlechthin ist, schien außer Frage, dass eine App das beste Format ist.
+						Sie sind in der Schulleitung einer Schule oder in einem Schulträger tätig und ihnen gefällt das Konzept hinter exclamo? exclamo-Schulen bekommen von uns einen Administrator-Account und einen definiertes Kontingent an Lehrer- und Schüler-Accounts. Die Schüler haben dann direkt die Möglichkeit über die Website oder Android-/iOS-App bestimmten Lehrern oder externen Mobbing-Experten unter psychotherapeutischer Aufsicht von ihren Mobbingfällen zu berichten. Lehrer und Schüler erhalten Zugang zu exklusiven Anti-Mobbing-Materialien, die ihnen im Umgang mit Mobbing im Alltag helfen. Die Materialien für Lehrer beinhalten Anweisung, wie sie mit bekannten Fällen umgehen sollten. Die Schüler können zudem per Knopfdruck bei Sorgentelefonen wie der Nummer gegen Kummer anrufen um seelische Unterstützung und Mut zu bekommen. exclamo basiert auf einem jährlichen Lizenzierungsmodell, die Kosten werden nach Schulgröße berechnet.
+						Haben wir Ihr Interesse geweckt? Füllen Sie doch gerne das unverbindliche Formular unten aus und wir werden uns bei Ihnen melden!
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
-	<section class="landing-section bg-color-secondary-1-2">
-		<div class="wrapper">
-			<div class="container-fluid">
-				<div class="row">
-					<h2 class="col-sm-3 promo-question">
-						Wer?
-					</h2>
-					<div class="col-sm-9 promo-text">
-						Wir, das Team, sind Berliner Schüler und haben uns überlegt, wie man Mobbing am besten bekämpfen kann. Da das Handy einer der Alltagsgestände schlechthin ist, schien außer Frage, dass eine App das beste Format ist.
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="landing-section bg-color-secondary-1-2">
-		<div class="wrapper">
-			<div class="container-fluid">
-				<div class="row">
-					<h2 class="col-sm-3 promo-question">
-						Wer?
-					</h2>
-					<div class="col-sm-9 promo-text">
-						Wir, das Team, sind Berliner Schüler und haben uns überlegt, wie man Mobbing am besten bekämpfen kann. Da das Handy einer der Alltagsgestände schlechthin ist, schien außer Frage, dass eine App das beste Format ist.
-					</div>
+				<hr class="my-5 bg-color-white">
+				<div class="row justify-content-center">
+					<h2 class="mb-4 col-12 text-center">Kontakt aufnehmen</h2>
+					<form class="col-sm-10 col-12">
+						<div class="form-group row">
+							<label for="colFormLabel" class="col-md-4 col-form-label">Name der Schule</label>
+							<div class="input-group col-md-8">
+								<input type="text" class="form-control" id="colFormLabel">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="colFormLabel" class="col-md-4 col-form-label">Email</label>
+							<div class="input-group col-md-8">
+						        <div class="input-group-prepend">
+						        	<div class="input-group-text">@</div>
+						        </div>
+								<input type="email" class="form-control" id="colFormLabel">
+							</div>
+						</div>
+						<fieldset class="form-group">
+							<div class="row">
+						    	<legend class="col-form-label col-md-4 pt-0">Ihre Schule ist</legend>
+						    	<div class="col-md-8">
+						    		<div class="form-check">
+						    			<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+						    			<label class="form-check-label" for="gridRadios1">
+						    				eine staatliche Schule
+						    			</label>
+						    		</div>
+						    		<div class="form-check">
+							    		<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+							    		<label class="form-check-label" for="gridRadios2">
+							    			privat geführt
+							    		</label>
+						    		</div>
+								</div>
+							</div>
+						</fieldset>
+						<button type="submit" class="btn btn-primary btn-lg w-100">Jetzt Ihre Schüler schützen!</button>
+					</form>
 				</div>
 			</div>
 		</div>
