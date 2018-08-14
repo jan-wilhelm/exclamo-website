@@ -1,25 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.html')
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script type="text/javascript">
-        window.Laravel = {
-            csrfToken: '{{ csrf_token() }}'
-        };
-        window.Exclamo = {
-            @if(Auth::check())
-                userId: {{ auth()->user()->id }},
-            @endif
-            url: '{{ url("/") }}'
-        };
-    </script>
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+@section('head')
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 
     <!-- Styles -->
@@ -34,10 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
 
     <link href="{{ asset('css/colors_2.css') }}" rel="stylesheet">
-</head>
+@endsection
 
-<body class="bg-white">
-
+@section('body')
     <div id="app" class="h-100 w-100">
         @include('layouts/navbar')
         <div class="mt-5 container">
@@ -54,7 +34,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/en-gb.js"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    @stack('scripts')
-</body>
-</html>
+@endsection
