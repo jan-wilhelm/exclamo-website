@@ -1,0 +1,41 @@
+body, html {
+	height: 100%;
+}
+
+.landing-section {
+	min-height: 100%;
+}
+
+.brand {
+	padding-top: 80px;
+	margin-bottom: 100px;
+}
+
+.brand img {
+	height: 60px;
+}
+
+.container {
+	padding-left: 50px;
+}
+
+@media (min-width: 576px) {
+	.brand {
+		padding-top: 120px;
+	}
+	.container {
+		padding-left: 0;
+	}
+}
+
+@media (min-width: 768px) {
+	.brand {
+		padding-top: 150px;
+	}
+}
+
+@media (min-width: 960px) {
+	.brand {
+		padding-top: 180px;
+	}
+}
