@@ -411,12 +411,6 @@ hr {
   padding-top: 2px;
 }
 
-.chat-container {
-  overflow: auto;
-  max-height: 900px;
-  padding-bottom: 10px;
-}
-
 .chat-message {
   position: relative;
   margin-bottom: 1rem;
@@ -425,12 +419,6 @@ hr {
 
 .chat-message:last-child {
   margin-bottom: 2rem;
-}
-
-.chat-container::after {
-  display: block;
-  height: 50px;
-  width: 100%;
 }
 
 .chat-message.left {
@@ -462,7 +450,7 @@ hr {
   right: 0;
   border-right: 20px solid transparent;
   border-left: 0;
-  margin-right: -20px;
+  margin-right: -19px;
   border-top-color: #0D2175;
 }
 

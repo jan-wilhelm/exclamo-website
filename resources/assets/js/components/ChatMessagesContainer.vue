@@ -9,7 +9,6 @@
 </template>
 
 <script>
-	
 	export default {
 		props: ["messages"],
 		data() {
@@ -103,6 +102,19 @@
 
 </script>
 
-<style scoped>
+<style>
 
+	@media (min-width: 768px) {
+		.chat-container {
+			overflow: auto;
+			max-height: 900px;
+			padding-bottom: 10px;
+		}
+	}
+
+	.chat-container::after {
+	    display: block;
+	    height: 50px;
+	    width: 100%;
+	}
 </style>
