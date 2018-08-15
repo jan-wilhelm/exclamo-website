@@ -4,6 +4,24 @@ body, html {
 	height: 100%;
 }
 
+.nav-item:after {
+	content: '';
+	display: block;
+	width: 50%;
+	height: 1px;
+	background-color: $color-white;
+	margin: auto;
+	margin-top: 0.3rem;
+	opacity: 0;
+    -webkit-transition: opacity 0.3s, margin-top 0.3s; /* Safari */
+    transition: opacity 0.3s, margin-top 0.3s;
+}
+
+.nav-item:hover:after {
+	opacity: 1;
+	margin-top: 0;
+}
+
 .landing-section {
 	position: relative;
 	padding: 0px 20px;
@@ -64,13 +82,19 @@ body, html {
 .landing-section:nth-child(odd) {
 	background: $color-primary-4;
 	background: linear-gradient(0deg, $color-primary-4 0%, $color-primary-0 100%);
-	color: white;
+}
+
+.landing-section:nth-child(odd) *:not(.text-white) {
+	color: white !important;
 }
 
 .landing-section:nth-child(even) {
 	background: $color-white;
 	background: linear-gradient(0deg, $color-white 0%, #fff 100%);
-	color: $color-primary-0;
+}
+
+.landing-section:nth-child(even) *:not(.text-white) {
+	color: $color-primary-0 !important;
 }
 
 .landing-section .container-fluid {

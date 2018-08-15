@@ -13,7 +13,23 @@
 		<div class="col-12 brand justify-content-center d-flex">
 			<img src="{{ asset('img/logo_with_text.png') }}">
 		</div>
-		<div class="wrapper">
+		<div class="container">
+			<ul class="nav w-100 justify-content-center nav-fill flex-column flex-md-row">
+				<li class="nav-item">
+					<a class="nav-link" href="#what">Was?</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#team">Wer?</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#forschools">Für Schulen</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">FAQ</a>
+				</li>
+			</ul>
+		</div>
+		<div class="wrapper" id="what">
 			<div class="container-fluid">
 				<div class="row">
 					<h2 class="col-sm-3 promo-question">
@@ -105,7 +121,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="landing-section full">
+	<section class="landing-section full" id="forschools">
 		<div class="wrapper">
 			<div class="container-fluid">
 				<div class="row pb-sm-5">
