@@ -19,9 +19,12 @@
 
 @section('body')
     <div id="app" class="h-100 w-100">
-        @include('layouts/navbar')
-        <div class="mt-5 container">
-            @yield('content')
+        <div class="h-100 w-100">
+            <site-loader></site-loader>
+            @include('layouts/navbar')
+            <div class="mt-5 container">
+                @yield('content')
+            </div>
         </div>
     </div>
 
