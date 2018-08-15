@@ -50307,7 +50307,7 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-19fb25a8"
+var __vue_scopeId__ = "data-v-66b97068"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -50318,7 +50318,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/ChatMessage.vue"
+Component.options.__file = "resources\\assets\\js\\components\\ChatMessage.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -50327,9 +50327,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-19fb25a8", Component.options)
+    hotAPI.createRecord("data-v-66b97068", Component.options)
   } else {
-    hotAPI.reload("data-v-19fb25a8", Component.options)
+    hotAPI.reload("data-v-66b97068", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -50350,13 +50350,13 @@ var content = __webpack_require__(218);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(20)("543f3158", content, false, {});
+var update = __webpack_require__(20)("8f6323b8", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-19fb25a8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatMessage.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-19fb25a8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatMessage.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-66b97068\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatMessage.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-66b97068\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatMessage.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -50374,7 +50374,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n.sending[data-v-19fb25a8] {\n\topacity: 0.5;\n}\n", ""]);
+exports.push([module.i, "\n.sending[data-v-66b97068] {\n\topacity: 0.5;\n}\n", ""]);
 
 // exports
 
@@ -50492,7 +50492,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-19fb25a8", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-66b97068", module.exports)
   }
 }
 
@@ -50515,7 +50515,7 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-32e877f6"
+var __vue_scopeId__ = "data-v-1d4f5a94"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -50526,7 +50526,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/ChatMessagesContainer.vue"
+Component.options.__file = "resources\\assets\\js\\components\\ChatMessagesContainer.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -50535,9 +50535,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-32e877f6", Component.options)
+    hotAPI.createRecord("data-v-1d4f5a94", Component.options)
   } else {
-    hotAPI.reload("data-v-32e877f6", Component.options)
+    hotAPI.reload("data-v-1d4f5a94", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -50558,13 +50558,13 @@ var content = __webpack_require__(224);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(20)("2f4c7a18", content, false, {});
+var update = __webpack_require__(20)("3da63e2a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-32e877f6\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatMessagesContainer.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-32e877f6\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatMessagesContainer.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1d4f5a94\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatMessagesContainer.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1d4f5a94\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatMessagesContainer.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -50743,7 +50743,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-32e877f6", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-1d4f5a94", module.exports)
   }
 }
 
@@ -50777,7 +50777,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/ChatInputForm.vue"
+Component.options.__file = "resources\\assets\\js\\components\\ChatInputForm.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -50786,9 +50786,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5e565f8f", Component.options)
+    hotAPI.createRecord("data-v-74acfa4f", Component.options)
   } else {
-    hotAPI.reload("data-v-5e565f8f", Component.options)
+    hotAPI.reload("data-v-74acfa4f", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -50809,13 +50809,13 @@ var content = __webpack_require__(229);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(20)("62d3ae47", content, false, {});
+var update = __webpack_require__(20)("20971fba", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5e565f8f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatInputForm.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5e565f8f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatInputForm.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-74acfa4f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatInputForm.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-74acfa4f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatInputForm.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -50927,7 +50927,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5e565f8f", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-74acfa4f", module.exports)
   }
 }
 
@@ -50961,7 +50961,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/CaseOptionsModal.vue"
+Component.options.__file = "resources\\assets\\js\\components\\CaseOptionsModal.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -50970,9 +50970,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-48e0d0b6", Component.options)
+    hotAPI.createRecord("data-v-5db98414", Component.options)
   } else {
-    hotAPI.reload("data-v-48e0d0b6", Component.options)
+    hotAPI.reload("data-v-5db98414", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -50993,13 +50993,13 @@ var content = __webpack_require__(234);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(20)("5f4e72cc", content, false, {});
+var update = __webpack_require__(20)("06b47e20", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-48e0d0b6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CaseOptionsModal.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-48e0d0b6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CaseOptionsModal.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5db98414\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CaseOptionsModal.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5db98414\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CaseOptionsModal.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -51017,7 +51017,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -51028,9 +51028,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -51082,7 +51079,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 
 	methods: {
-		onSubmit: function onSubmit() {}
+		onSubmit: function onSubmit() {},
+		closeModal: function closeModal() {
+			this.$refs.modal.hide('header-close');
+		}
 	}
 });
 
@@ -51096,168 +51096,158 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass: "modal fade",
-      attrs: {
-        id: "case-options-modal",
-        tabindex: "-1",
-        role: "dialog",
-        "aria-labelledby": "exampleModalLabel",
-        "aria-hidden": "true"
-      }
-    },
     [
-      _c("div", { staticClass: "modal-dialog", attrs: { role: "document" } }, [
-        _c("div", { staticClass: "modal-content" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "modal-body" }, [
-            _c(
-              "form",
-              { staticClass: "px-md-5", attrs: { autocomplete: "off" } },
-              [
-                _c("div", { staticClass: "form-group form-check" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.anonymous,
-                        expression: "anonymous"
-                      }
-                    ],
-                    staticClass: "form-check-input",
-                    attrs: { type: "checkbox", id: "case-modal-anonymous" },
-                    domProps: {
-                      checked: Array.isArray(_vm.anonymous)
-                        ? _vm._i(_vm.anonymous, null) > -1
-                        : _vm.anonymous
-                    },
-                    on: {
-                      change: function($event) {
-                        var $$a = _vm.anonymous,
-                          $$el = $event.target,
-                          $$c = $$el.checked ? true : false
-                        if (Array.isArray($$a)) {
-                          var $$v = null,
-                            $$i = _vm._i($$a, $$v)
-                          if ($$el.checked) {
-                            $$i < 0 && (_vm.anonymous = $$a.concat([$$v]))
-                          } else {
-                            $$i > -1 &&
-                              (_vm.anonymous = $$a
-                                .slice(0, $$i)
-                                .concat($$a.slice($$i + 1)))
-                          }
-                        } else {
-                          _vm.anonymous = $$c
-                        }
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    {
-                      staticClass: "form-check-label",
-                      attrs: { for: "case-modal-anonymous" }
-                    },
-                    [
-                      _vm._v(
-                        "\n\t\t\t\t\t\t\tYour name should be visible to the mentors\n\t\t\t\t\t\t"
-                      )
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c(
-                    "div",
-                    { attrs: { id: "case-modal-mentors-div" } },
-                    [
-                      _c("label", [
-                        _vm._v("\n\t\t\t\t\t\t\t\tMentors\n\t\t\t\t\t\t\t")
-                      ]),
-                      _vm._v(" "),
-                      _c("mentor-select-field", {
-                        attrs: {
-                          mentors: [
-                            { id: 30, name: "Corrine Schumm" },
-                            { id: 33, name: "Hanna Kertzmann" },
-                            { id: 34, name: "Aiden Denesik" },
-                            { id: 36, name: "Summer DuBuque" },
-                            { id: 40, name: "Uriah Kub" }
-                          ],
-                          selectId: "case-modal-mentors",
-                          parentId: "case-modal-mentors-div"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _vm._m(1)
-        ])
-      ])
-    ]
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
       _c(
-        "h5",
-        { staticClass: "modal-title", attrs: { id: "exampleModalLabel" } },
-        [_vm._v("Options")]
+        "b-btn",
+        {
+          directives: [
+            {
+              name: "b-modal",
+              rawName: "v-b-modal.case-options-modal",
+              modifiers: { "case-options-modal": true }
+            }
+          ],
+          staticClass:
+            "form-inline button-div bordered white hover mt-md-0 mt-3 float-md-right justify-content-center",
+          attrs: { variant: "secondary" }
+        },
+        [
+          _c(
+            "a",
+            {
+              staticClass: "mx-3",
+              attrs: {
+                href: "#",
+                "data-toggle": "modal",
+                "data-target": "#case-options-modal"
+              }
+            },
+            [_vm._v("\n\t\t\tOptionen\n\t\t")]
+          )
+        ]
       ),
       _vm._v(" "),
       _c(
-        "button",
+        "b-modal",
         {
-          staticClass: "close",
-          attrs: {
-            type: "button",
-            "data-dismiss": "modal",
-            "aria-label": "Close"
-          }
-        },
-        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-footer" }, [
-      _c(
-        "div",
-        {
-          staticClass:
-            "form-inline button-div bordered white hover justify-content-center"
+          ref: "modal",
+          attrs: { id: "case-options-modal", title: "Optionen" }
         },
         [
-          _c("a", { staticClass: "mx-3", attrs: { href: "#" } }, [
-            _vm._v("Save")
+          _c(
+            "form",
+            { staticClass: "px-md-5", attrs: { autocomplete: "off" } },
+            [
+              _c("div", { staticClass: "form-group form-check" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.anonymous,
+                      expression: "anonymous"
+                    }
+                  ],
+                  staticClass: "form-check-input",
+                  attrs: { type: "checkbox", id: "case-modal-anonymous" },
+                  domProps: {
+                    checked: Array.isArray(_vm.anonymous)
+                      ? _vm._i(_vm.anonymous, null) > -1
+                      : _vm.anonymous
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.anonymous,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = null,
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 && (_vm.anonymous = $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            (_vm.anonymous = $$a
+                              .slice(0, $$i)
+                              .concat($$a.slice($$i + 1)))
+                        }
+                      } else {
+                        _vm.anonymous = $$c
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-check-label",
+                    attrs: { for: "case-modal-anonymous" }
+                  },
+                  [
+                    _vm._v(
+                      "\n\t\t\t\t\tYour name should be visible to the mentors\n\t\t\t\t"
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c(
+                  "div",
+                  { attrs: { id: "case-modal-mentors-div" } },
+                  [
+                    _c("label", [_vm._v("\n\t\t\t\t\t\tMentors\n\t\t\t\t\t")]),
+                    _vm._v(" "),
+                    _c("mentor-select-field", {
+                      attrs: {
+                        mentors: [
+                          { id: 30, name: "Corrine Schumm" },
+                          { id: 33, name: "Hanna Kertzmann" },
+                          { id: 34, name: "Aiden Denesik" },
+                          { id: 36, name: "Summer DuBuque" },
+                          { id: 40, name: "Uriah Kub" }
+                        ],
+                        selectId: "case-modal-mentors",
+                        parentId: "case-modal-mentors-div"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c("template", { slot: "modal-footer" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "form-inline button-div bordered white hover justify-content-center",
+                on: { click: _vm.closeModal }
+              },
+              [
+                _c("a", { staticClass: "mx-3", attrs: { href: "#" } }, [
+                  _vm._v("Save")
+                ])
+              ]
+            )
           ])
-        ]
+        ],
+        2
       )
-    ])
-  }
-]
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-48e0d0b6", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-5db98414", module.exports)
   }
 }
 
@@ -51291,7 +51281,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/MentorSelectField.vue"
+Component.options.__file = "resources\\assets\\js\\components\\MentorSelectField.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -51300,9 +51290,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2290a336", Component.options)
+    hotAPI.createRecord("data-v-bac84414", Component.options)
   } else {
-    hotAPI.reload("data-v-2290a336", Component.options)
+    hotAPI.reload("data-v-bac84414", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -51323,13 +51313,13 @@ var content = __webpack_require__(239);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(20)("a00cc53a", content, false, {});
+var update = __webpack_require__(20)("8dc34ca4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2290a336\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MentorSelectField.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2290a336\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MentorSelectField.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-bac84414\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MentorSelectField.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-bac84414\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MentorSelectField.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -51347,7 +51337,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -51383,6 +51373,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 	methods: {},
 	mounted: function mounted() {
+		console.log(this.mentors);
 		/*$(document).ready(() => {
   	$('#' + this.parentId).dropdown({
   		multipleMode: 'label',
@@ -51413,7 +51404,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-2290a336", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-bac84414", module.exports)
   }
 }
 

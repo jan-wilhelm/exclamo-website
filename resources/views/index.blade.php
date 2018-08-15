@@ -81,18 +81,18 @@
 					<h2 class="mb-4 col-12 text-center">Kontakt aufnehmen</h2>
 					<form class="col-sm-10 col-12">
 						<div class="form-group row">
-							<label for="colFormLabel" class="col-md-4 col-form-label">Name der Schule</label>
+							<label for="school-name" class="col-md-4 col-form-label">Name der Schule</label>
 							<div class="input-group col-md-8">
-								<input type="text" class="form-control" id="colFormLabel">
+								<input type="text" class="form-control" id="school-name" name="school-name">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="colFormLabel" class="col-md-4 col-form-label">Email</label>
+							<label for="contact-email" class="col-md-4 col-form-label">Email</label>
 							<div class="input-group col-md-8">
 						        <div class="input-group-prepend">
 						        	<div class="input-group-text">@</div>
 						        </div>
-								<input type="email" class="form-control" id="colFormLabel">
+								<input type="email" class="form-control" id="contact-email" name="contact-email">
 							</div>
 						</div>
 						<fieldset class="form-group">
@@ -100,14 +100,14 @@
 						    	<legend class="col-form-label col-md-4 pt-0">Ihre Schule ist</legend>
 						    	<div class="col-md-8">
 						    		<div class="form-check">
-						    			<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-						    			<label class="form-check-label" for="gridRadios1">
+						    			<input class="form-check-input" type="radio" name="school-type" id="public-school" value="0" checked>
+						    			<label class="form-check-label" for="public-school">
 						    				eine staatliche Schule
 						    			</label>
 						    		</div>
 						    		<div class="form-check">
-							    		<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-							    		<label class="form-check-label" for="gridRadios2">
+							    		<input class="form-check-input" type="radio" name="school-type" id="private-school" value="1">
+							    		<label class="form-check-label" for="private-school">
 							    			privat geführt
 							    		</label>
 						    		</div>

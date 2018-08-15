@@ -25,6 +25,7 @@
 		methods: {
 		},
 		mounted() {
+			console.log(this.mentors);
 			/*$(document).ready(() => {
 				$('#' + this.parentId).dropdown({
 					multipleMode: 'label',

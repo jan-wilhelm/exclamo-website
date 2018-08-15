@@ -1,39 +1,36 @@
 <template>
-	<div class="modal fade" id="case-options-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Options</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form class="px-md-5" autocomplete="off">
-						<div class="form-group form-check">
-							<input type="checkbox" class="form-check-input" id="case-modal-anonymous" v-model="anonymous">
-							<label class="form-check-label" for="case-modal-anonymous">
-								Your name should be visible to the mentors
-							</label>
-						</div>
-						<div class="form-group">
-							<div id="case-modal-mentors-div">
-								<label>
-									Mentors
-								</label>
+	<div>
+		<b-btn v-b-modal.case-options-modal variant="secondary" class="form-inline button-div bordered white hover mt-md-0 mt-3 float-md-right justify-content-center">
+			<a href="#" class="mx-3"  data-toggle="modal" data-target="#case-options-modal">
+				Optionen
+			</a>
+		</b-btn>
+		<b-modal ref="modal" id="case-options-modal" title="Optionen">
 
-								<mentor-select-field :mentors='[{"id":30,"name":"Corrine Schumm"},{"id":33,"name":"Hanna Kertzmann"},{"id":34,"name":"Aiden Denesik"},{"id":36,"name":"Summer DuBuque"},{"id":40,"name":"Uriah Kub"}]' selectId="case-modal-mentors" parentId="case-modal-mentors-div"> </mentor-select-field>
-							</div>
-						</div>
-					</form>
+			<form class="px-md-5" autocomplete="off">
+				<div class="form-group form-check">
+					<input type="checkbox" class="form-check-input" id="case-modal-anonymous" v-model="anonymous">
+					<label class="form-check-label" for="case-modal-anonymous">
+						Your name should be visible to the mentors
+					</label>
 				</div>
-				<div class="modal-footer">
-					<div class="form-inline button-div bordered white hover justify-content-center">
-						<a href="#" class="mx-3">Save</a>
+				<div class="form-group">
+					<div id="case-modal-mentors-div">
+						<label>
+							Mentors
+						</label>
+
+						<mentor-select-field :mentors='[{"id":30,"name":"Corrine Schumm"},{"id":33,"name":"Hanna Kertzmann"},{"id":34,"name":"Aiden Denesik"},{"id":36,"name":"Summer DuBuque"},{"id":40,"name":"Uriah Kub"}]' selectId="case-modal-mentors" parentId="case-modal-mentors-div"> </mentor-select-field>
 					</div>
 				</div>
-			</div>
-	  </div>
+			</form>
+
+			<template slot="modal-footer">
+				<div class="form-inline button-div bordered white hover justify-content-center" @click="closeModal">
+					<a href="#" class="mx-3">Save</a>
+				</div>
+			</template>
+		</b-modal>
 	</div>
 </template>
 
@@ -52,7 +49,9 @@
 		},
 		methods: {
 			onSubmit() {
-
+			},
+			closeModal() {
+				this.$refs.modal.hide('header-close')
 			}
 		}
 	};
