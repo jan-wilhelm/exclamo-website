@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/fonts.min.css') }}" />
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
     <link href="{{ asset('css/colors_2.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
 @endsection
 
 @section("body")
@@ -164,3 +165,7 @@
 	</section>
 
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/landing.js') }}" type="text/javascript"></script>
+@endpush
