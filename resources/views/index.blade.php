@@ -108,8 +108,8 @@
 	<section class="landing-section full">
 		<div class="wrapper">
 			<div class="container-fluid">
-				<div class="row">
-					<h2 class="col-sm-3 promo-question">
+				<div class="row pb-sm-5">
+					<h2 class="col-md-3 promo-question">
 						Für Schulen
 					</h2>
 					<div class="col-sm-9 promo-text" data-aos="fade-up">
@@ -118,7 +118,7 @@
 					</div>
 				</div>
 				<hr class="my-5 bg-color-white">
-				<div class="row justify-content-center">
+				<div class="row pt-md-5 justify-content-center">
 					<!--<h2 class="mb-4 col-12 text-center">Kontakt aufnehmen</h2>-->
 					<form class="col-sm-10 col-12 signup-form bg-color-white" data-aos="slide-up" data-aos-duration="800">
 						<div class="form-group row">

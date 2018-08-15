@@ -28,7 +28,7 @@
         </style>
     </head>
 
-    <body class="bg-white">
+    <body>
         @yield('body')
         @stack('scripts')
     </body>

@@ -1,8 +1,7 @@
 <b-navbar toggleable="lg">
 	<b-container>
 		<b-navbar-brand href="{{ route('home') }}">
-			<img src="{{ asset('img/logo_small.png') }}" width="50px">
-			<span class="color-primary-4">Exclamo</span>
+			<img src="{{ asset('img/logo_with_text_dark.png') }}" height="45px">
 		</b-navbar-brand>
 		<b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
