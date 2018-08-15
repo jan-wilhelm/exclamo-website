@@ -28,6 +28,48 @@
 		</div>
 	</section>
 
+	<section class="landing-section no-bullet">
+		<div class="wrapper">
+			<div class="container-fluid">
+				<div class="row advantage">
+					<div class="col-sm-9 text-div">
+						<h2>Niedrige Hemmschwelle durch Anonymität</h2>
+						<p>
+							Der Schüler darf entscheiden, ob betreuende Lehrer seinen Namen sehen dürfen. Dadurch wird vollständige Anonymität geleistet, die nicht zurückverfolgt werden kann.</p>
+						<p>
+							Mit unserer AES-256 Verschlüsselung sind alle Daten nur für die betroffenen Personen zugänglich.
+						</p>
+					</div>
+					<div class="col-sm-3 img-div d-flex justify-content-center align-items-center">
+						<img src="{{ asset('img/lock.png') }}" class="advantage-img align-middle">
+					</div>
+				</div>
+				<div class="row advantage text-div">
+					<div class="col-sm-9 text-div order-sm-1">
+						<h2>Einfacher Zugang durch App und Webapp</h2>
+						<p>
+							Mithilfe unserer nativen App für iOS und Android , sowohl dem ausgereiften und übersichtlichem Webportal können Schüler und Lehrer immer kommunizieren - wir setzen keine Grenzen!
+						</p>
+					</div>
+					<div class="col-sm-3 img-div d-flex justify-content-center align-items-center">
+						<img src="{{ asset('img/devices.jpg') }}" class="advantage-img">
+					</div>
+				</div>
+				<div class="row advantage text-div">
+					<div class="col-sm-9 text-div">
+						<h2>Unterstützung von Mobbing-Experten</h2>
+						<p>
+							Schüler können sich nicht nur direkt an ihre Lehrer, sondern auch an professionelle Mobbing-Experten und die Nummer-gegen-Kummer wenden. Alles eingebaut in unserer App!
+						</p>
+					</div>
+					<div class="col-sm-3 img-div d-flex justify-content-center align-items-center">
+						<img src="{{ asset('img/talking.png') }}" class="advantage-img">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<section class="landing-section">
 		<div class="wrapper">
 			<div class="container-fluid">
@@ -78,8 +120,8 @@
 				</div>
 				<hr class="my-5 bg-color-white">
 				<div class="row justify-content-center">
-					<h2 class="mb-4 col-12 text-center">Kontakt aufnehmen</h2>
-					<form class="col-sm-10 col-12">
+					<!--<h2 class="mb-4 col-12 text-center">Kontakt aufnehmen</h2>-->
+					<form class="col-sm-10 col-12 signup-form bg-color-white">
 						<div class="form-group row">
 							<label for="school-name" class="col-md-4 col-form-label">Name der Schule</label>
 							<div class="input-group col-md-8">
