@@ -19,3 +19,7 @@ mix.styles([
     'node_modules/bootstrap-vue/dist/bootstrap-vue.min.css'
 ], 'public/css/all.css');
 
+mix.styles([
+    'node_modules/aos/dist/aos.css'
+], 'public/css/aos.css');
+

@@ -77,7 +77,10 @@ module.exports = __webpack_require__(243);
 /***/ (function(module, exports, __webpack_require__) {
 
 window.AOS = __webpack_require__(244);
-AOS.init();
+AOS.init({
+	duration: 1200,
+	once: true
+});
 
 /***/ }),
 

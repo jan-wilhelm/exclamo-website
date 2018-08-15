@@ -8,6 +8,10 @@ body, html {
 	padding: 0px 20px;
 }
 
+.landing-section.full {
+	min-height: 100%;
+}
+
 .landing-section .wrapper {
 	width: 100%;
 	height: 100%;
