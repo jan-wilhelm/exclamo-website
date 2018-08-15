@@ -13,9 +13,7 @@
 </template>
 
 <script>
-	
 	export default {
-
 		props: {
 			body: String,
 			sentByUser: Boolean,
@@ -28,9 +26,7 @@
 
 			}
 		}
-
 	};
-
 </script>
 
 <style scoped>
