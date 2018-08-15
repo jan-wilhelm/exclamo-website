@@ -19,8 +19,13 @@
             };
         </script>
         <title>{{ config('app.name', 'Laravel') }}</title>
-
         @yield('head')
+        <link href="//fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+        <style type="text/css">
+            body, html {
+                font-family: 'Raleway', sans-serif;
+            }
+        </style>
     </head>
 
     <body class="bg-white">

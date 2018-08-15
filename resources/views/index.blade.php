@@ -5,12 +5,11 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/all.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/landing.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/fonts.min.css') }}" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="css/aos.css" />
 @endsection
 
 @section("body")
-	<section class="landing-section full">
+	<section class="landing-section">
 		<div class="col-12 brand justify-content-center d-flex">
 			<img src="{{ asset('img/logo_with_text.png') }}">
 		</div>

@@ -7,9 +7,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/all.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/fonts.min.css') }}" />
-
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
-
     <link rel="stylesheet" href="{{ asset('css/jquery.dropdown.min.css') }}">
 @endsection
 
