@@ -11,15 +11,14 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js/app.js');
-mix.js('resources/assets/js/landing.js', 'public/js/landing.js');
-
-mix.styles([
-    'node_modules/bootstrap/dist/css/bootstrap.min.css',
-    'node_modules/bootstrap-vue/dist/bootstrap-vue.min.css'
-], 'public/css/all.css');
-
-mix.styles([
-    'node_modules/aos/dist/aos.css'
-], 'public/css/aos.css');
+mix
+	.js('resources/assets/js/app.js', 'public/js/app.js')
+	.js('resources/assets/js/landing.js', 'public/js/landing.js')
+	.styles([
+	    'node_modules/bootstrap/dist/css/bootstrap.min.css',
+	    'node_modules/bootstrap-vue/dist/bootstrap-vue.min.css'
+	], 'public/css/bootstrap.css')
+	.sass('resources/assets/sass/landing.scss', 'public/css/landing.css')
+	.sass('resources/assets/sass/app.scss', 'public/css/style.css')
+	.styles('node_modules/aos/dist/aos.css', 'public/css/aos.css');
 

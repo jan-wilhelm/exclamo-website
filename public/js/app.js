@@ -10083,7 +10083,9 @@ module.exports = Cancel;
 /* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(76);
+__webpack_require__(76);
+__webpack_require__(247);
+module.exports = __webpack_require__(248);
 
 
 /***/ }),
@@ -50919,7 +50921,7 @@ var staticRenderFns = [
       "button",
       {
         staticClass:
-          "btn btn-primary col-md-2 col-sm-3 col-4 mx-auto chat-send",
+          "btn bg-color-primary-3 text-white col-md-2 col-sm-3 col-4 mx-auto chat-send",
         attrs: { type: "submit" }
       },
       [_c("i", { staticClass: "fas fa-paper-plane" })]
@@ -51499,7 +51501,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n.loader {\n\tposition: fixed;\n\theight: 100%;\n\twidth: 100%;\n\tbackground-color: #fff;\n\tz-index: 10000;\n}\n.fade-enter-active {\n\ttransition: opacity 1s;\n}\n.fade-enter-to {\n\topacity: 0;\n}\n.fade-enter {\n\topacity: 1;\n}\n", ""]);
+exports.push([module.i, "\n.loader {\n\tposition: fixed;\n\theight: 100%;\n\twidth: 100%;\n\tbackground-color: #fff;\n\tz-index: 10000;\n}\n.fade-enter-active {\n\t-webkit-transition: opacity 1s;\n\ttransition: opacity 1s;\n}\n.fade-enter-to {\n\topacity: 0;\n}\n.fade-enter {\n\topacity: 1;\n}\n", ""]);
 
 // exports
 
@@ -51559,6 +51561,18 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-8c93b01e", module.exports)
   }
 }
+
+/***/ }),
+/* 247 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 248 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

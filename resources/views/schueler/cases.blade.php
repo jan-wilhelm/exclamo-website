@@ -15,7 +15,7 @@
 		@endbigstatistic
 	@endexclamosection
 
-	@exclamoflexsection (["classes" => "bg-color-primary-1 text-white"])
+	@exclamoflexsection (["classes" => "bg-color-primary-0 text-white"])
 		<h4>
 			@lang('messages.incidents')
 		</h4>

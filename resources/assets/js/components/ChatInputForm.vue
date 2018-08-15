@@ -2,7 +2,7 @@
 	<form @submit.prevent="onSubmit" class="form-inline message-form" autocomplete="off">
 		<input type="text" ref="message" class="form-control col-md-10 col-sm-9 col-12 chat-input" name="message" autocomplete="off">
 		<input type="text" class="d-none">
-		<button type="submit" class="btn btn-primary col-md-2 col-sm-3 col-4 mx-auto chat-send">
+		<button type="submit" class="btn bg-color-primary-3 text-white col-md-2 col-sm-3 col-4 mx-auto chat-send">
 			<i class="fas fa-paper-plane"></i>
 		</button>
 	</form>

@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/landing.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/fonts.min.css') }}" />
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
-    <link href="{{ asset('css/colors_2.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="css/aos.css" />
 @endsection
 
@@ -157,7 +156,7 @@
 								</div>
 							</div>
 						</fieldset>
-						<button type="submit" class="btn btn-primary btn-lg w-100">Jetzt Ihre Schüler schützen!</button>
+						<button type="submit" class="btn bg-color-secondary-2-3 text-white btn-lg w-100">Jetzt Ihre Schüler schützen!</button>
 					</form>
 				</div>
 			</div>

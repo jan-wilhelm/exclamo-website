@@ -2,7 +2,7 @@
 	<b-container>
 		<b-navbar-brand href="{{ route('home') }}">
 			<img src="{{ asset('img/logo_small.png') }}" width="50px">
-			<span class="color-secondary-2-4">Exclamo</span>
+			<span class="color-primary-4">Exclamo</span>
 		</b-navbar-brand>
 		<b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
