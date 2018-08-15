@@ -11,14 +11,11 @@
 @endsection
 
 @section('body')
-    <div id="app" class="h-100 w-100">
-        <div class="h-100 w-100">
-            <site-loader></site-loader>
+    <div id="app" class="h-100 w-100" v-cloak>
             @include('layouts/navbar')
             <div class="mt-5 container">
                 @yield('content')
             </div>
-        </div>
     </div>
 
     <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>

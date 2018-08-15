@@ -51501,7 +51501,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n.loader {\n\tposition: fixed;\n\theight: 100%;\n\twidth: 100%;\n\tbackground-color: #fff;\n\tz-index: 10000;\n}\n.fade-enter-active {\n\t-webkit-transition: opacity 1s;\n\ttransition: opacity 1s;\n}\n.fade-enter-to {\n\topacity: 0;\n}\n.fade-enter {\n\topacity: 1;\n}\n", ""]);
+exports.push([module.i, "\n.fade-enter-active {\n\t-webkit-transition: opacity 1s;\n\ttransition: opacity 1s;\n}\n.fade-enter-to {\n\topacity: 0;\n}\n.fade-enter {\n\topacity: 1;\n}\n", ""]);
 
 // exports
 
@@ -51528,6 +51528,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 	methods: {
 		hasLoaded: function hasLoaded() {
+			console.log("hasLoaded");
 			this.loaded = true;
 		}
 	}
@@ -51544,10 +51545,7 @@ var render = function() {
   return !_vm.loaded
     ? _c(
         "transition",
-        {
-          attrs: { name: "fade", appear: "" },
-          on: { "after-enter": _vm.hasLoaded }
-        },
+        { attrs: { name: "fade" }, on: { "after-enter": _vm.hasLoaded } },
         [_c("div", { ref: "loader", staticClass: "loader" })]
       )
     : _vm._e()

@@ -22,7 +22,6 @@ Vue.component('chat-messages-container', require('./components/ChatMessagesConta
 Vue.component('chat-input-form', require('./components/ChatInputForm.vue'));
 Vue.component('case-options-modal', require('./components/CaseOptionsModal.vue'));
 Vue.component('mentor-select-field', require('./components/MentorSelectField.vue'));
-Vue.component('site-loader', require('./components/SiteLoader.vue'));
 //Vue.component('case-messages-container', require('./components/CaseMessagesContainer.vue'));
 
 const app = new Vue({
