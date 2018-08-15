@@ -247,9 +247,9 @@ html {
 }
 
 .landing-section:nth-child(odd) {
-  background: #152E95;
-  background: -webkit-gradient(linear, left bottom, left top, from(#152E95), to(#2D46AC));
-  background: linear-gradient(0deg, #152E95 0%, #2D46AC 100%);
+  background: #0D2175;
+  background: -webkit-gradient(linear, left bottom, left top, from(#0D2175), to(#2D46AC));
+  background: linear-gradient(0deg, #0D2175 0%, #2D46AC 100%);
   color: white;
 }
 
