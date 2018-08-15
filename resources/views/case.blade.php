@@ -12,9 +12,6 @@
 					return $mentor;
 				})->pluck("full_name")->toArray()) }}
 			</span>
-			<div>
-			</div>
-
 			<case-options-modal case-data='{"anonymous": true}' />
 		</div>
 		<hr>
