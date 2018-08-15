@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="d-inline">
 		<b-btn v-b-modal.case-options-modal variant="secondary" class="form-inline button-div bordered white hover mt-md-0 mt-3 float-md-right justify-content-center">
 			<a href="#" class="mx-3"  data-toggle="modal" data-target="#case-options-modal">
 				Optionen
