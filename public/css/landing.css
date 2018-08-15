@@ -318,23 +318,11 @@ html {
 
 .advantage {
   padding: 3rem 0;
-}
-
-.advantage:last-of-type {
-  padding-bottom: 0;
-}
-
-.advantage:first-of-type {
-  padding-top: 0;
+  margin-bottom: 2rem;
 }
 
 .advantage div {
   text-align: center;
-}
-
-.advantage-img {
-  max-width: 100%;
-  max-height: 130px;
 }
 
 .advantage h2 {
@@ -344,6 +332,11 @@ html {
 .advantage p {
   font-weight: 300;
   color: #555;
+}
+
+.advantage-img {
+  max-width: 100%;
+  max-height: 130px;
 }
 
 .signup-form {
@@ -397,6 +390,13 @@ html {
   .landing-section:last-of-type:nth-child(even):before {
     border-left: 6px solid #2D46AC;
     border-bottom: 6px solid #2D46AC;
+  }
+
+  .advantage {
+    -webkit-box-shadow: 0px 3px 78px -22px rgba(0, 0, 0, 0.17);
+            box-shadow: 0px 3px 78px -22px rgba(0, 0, 0, 0.17);
+    padding: 80px;
+    border-radius: 80px;
   }
 
   .advantage:nth-of-type(even) .img-div {
