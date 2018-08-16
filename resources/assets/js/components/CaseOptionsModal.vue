@@ -6,8 +6,7 @@
 			</a>
 		</b-btn>
 		<b-modal ref="modal" id="case-options-modal" title="Optionen">
-
-			<form class="px-md-5" autocomplete="off">
+			<form autocomplete="off">
 				<div class="form-group form-check">
 					<input type="checkbox" class="form-check-input" id="case-modal-anonymous" v-model="anonymous">
 					<label class="form-check-label" for="case-modal-anonymous">
@@ -20,7 +19,7 @@
 							Mentors
 						</label>
 
-						<mentor-select-field :mentors='[{"id":30,"name":"Corrine Schumm"},{"id":33,"name":"Hanna Kertzmann"},{"id":34,"name":"Aiden Denesik"},{"id":36,"name":"Summer DuBuque"},{"id":40,"name":"Uriah Kub"}]' selectId="case-modal-mentors" parentId="case-modal-mentors-div"> </mentor-select-field>
+						<mentor-select-field :mentors='[{"id":30,"name":"Corrine Schumm"},{"id":33,"name":"Hanna Kertzmann"},{"id":34,"name":"Aiden Denesik"},{"id":36,"name":"Summer DuBuque"},{"id":40,"name":"Uriah Kub"}]' :selected='[{"id":30,"name":"Corrine Schumm"},{"id":33,"name":"Hanna Kertzmann"}]' />
 					</div>
 				</div>
 			</form>

@@ -9,7 +9,7 @@ require('./bootstrap');
 
 import Multiselect from 'vue-multiselect';
 
-Vue.component('multiselect', Multiselect)
+Vue.component('multiselect', Multiselect);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

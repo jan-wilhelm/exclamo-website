@@ -18,6 +18,7 @@ mix
 	    'node_modules/bootstrap/dist/css/bootstrap.min.css',
 	    'node_modules/bootstrap-vue/dist/bootstrap-vue.min.css'
 	], 'public/css/bootstrap.css')
+	.styles('node_modules/vue-multiselect/dist/vue-multiselect.min.css', 'public/css/vue-multiselect.css')
 	.sass('resources/assets/sass/landing.scss', 'public/css/landing.css')
 	.sass('resources/assets/sass/app.scss', 'public/css/style.css')
 	.styles('node_modules/aos/dist/aos.css', 'public/css/aos.css');

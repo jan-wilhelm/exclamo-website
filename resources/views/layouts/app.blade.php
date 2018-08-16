@@ -6,6 +6,7 @@
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/all.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/vue-multiselect.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/fonts.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/jquery.dropdown.min.css') }}">
 @endsection
