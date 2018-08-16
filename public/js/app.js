@@ -53066,15 +53066,29 @@ var ReportedCase = function () {
 	}
 
 	_createClass(ReportedCase, [{
-		key: "setAnonymous",
-		value: function setAnonymous(anonymous) {
-			axios.put(baseUrl + "/api/cases/" + this.caseId, {
-				title: "AAAA UPDATED TITLE"
-			}).then(function (response) {
+		key: "edit",
+		value: function edit(options) {
+			axios.put(baseUrl + "/api/cases/" + this.caseId, options).then(function (response) {
 				console.log(response);
 			}).catch(function (error) {
 				console.log(error.response);
 			});
+			return this;
+		}
+	}, {
+		key: "setAnonymous",
+		value: function setAnonymous(anonymous) {
+			return this.edit({ anonymous: anonymous });
+		}
+	}, {
+		key: "setSolved",
+		value: function setSolved(solved) {
+			return this.edit({ solved: solved });
+		}
+	}, {
+		key: "setMentors",
+		value: function setMentors(mentors) {
+			return this.edit({ mentors: mentors });
 		}
 	}]);
 

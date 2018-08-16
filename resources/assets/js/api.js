@@ -14,17 +14,29 @@ export class ReportedCase {
 		this.caseId = caseId || getCaseIdFromUrl();
 	}
 
-	setAnonymous(anonymous) {
-		axios.put(baseUrl + "/api/cases/" + this.caseId, {
-			title: "AAAA UPDATED TITLE"
-		})
+	edit(options) {
+		axios.put(baseUrl + "/api/cases/" + this.caseId, options)
 		.then(function (response) {
 			console.log(response);
 		})
 		.catch(function (error) {
-    console.log(error.response)
+    		console.log(error.response)
 		});
+		return this;
 	}
+
+	setAnonymous(anonymous) {
+		return this.edit({anonymous: anonymous});
+	}
+
+	setSolved(solved) {
+		return this.edit({solved: solved});
+	}
+
+	setMentors(mentors) {
+		return this.edit({mentors: mentors});
+	}
+
 }
 
 export default {

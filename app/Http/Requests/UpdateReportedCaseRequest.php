@@ -40,7 +40,8 @@ class UpdateReportedCaseRequest extends FormRequest
                 'min:1',
                 new MentorsExistInSchool($this->user())
             ],
-            'case-anonymous' => 'sometimes'
+            'anonymous' => 'sometimes',
+            'solved' => 'sometimes'
         ];
     }
 }
