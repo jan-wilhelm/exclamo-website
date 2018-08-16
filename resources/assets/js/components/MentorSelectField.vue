@@ -26,7 +26,9 @@
 			selected: {
 				type: Array,
 				required: false,
-				default: []
+				default () {
+					return [];
+				}
 			}
 		},
 		data() {

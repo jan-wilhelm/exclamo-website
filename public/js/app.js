@@ -10127,10 +10127,6 @@ Vue.component('mentor-select-field', __webpack_require__(237));
 var app = new Vue({
   el: '#app',
   data: {},
-  mounted: function mounted() {
-    console.log(this.$refs);
-  },
-
   components: {
     Datepicker: __WEBPACK_IMPORTED_MODULE_1_vuejs_datepicker__["a" /* default */]
   }
@@ -51382,7 +51378,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		selected: {
 			type: Array,
 			required: false,
-			default: []
+			default: function _default() {
+				return [];
+			}
 		}
 	},
 	data: function data() {
