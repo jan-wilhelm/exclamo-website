@@ -12,7 +12,7 @@
 					return $mentor;
 				})->pluck("full_name")->toArray()) }}
 			</span>
-			<case-options-modal case-data='{"anonymous": true}' />
+			<case-options-modal case-data='{"anonymous": true}' :categories='@json($categories)' :selected-category='Number({{ $selectedCategory }})' />
 		</div>
 		<hr>
 

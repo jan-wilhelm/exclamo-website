@@ -22,6 +22,15 @@
 						<mentor-select-field :mentors='[{"id":30,"name":"Corrine Schumm"},{"id":33,"name":"Hanna Kertzmann"},{"id":34,"name":"Aiden Denesik"},{"id":36,"name":"Summer DuBuque"},{"id":40,"name":"Uriah Kub"}]' :selected='[{"id":30,"name":"Corrine Schumm"},{"id":33,"name":"Hanna Kertzmann"}]' />
 					</div>
 				</div>
+				<div class="form-group">
+					<label for="category-select">
+						Category
+					</label>
+
+					<select id="category-select" class="form-control" ref="categorySelect">
+						<option v-for="category in categories" :value="category.id">{{ category.name }}</option>
+					</select>
+				</div>
 			</form>
 
 			<template slot="modal-footer">
@@ -38,12 +47,19 @@
 		props: {
 			caseData: {
 				type: String
+			},
+			categories: {
+				type: Array
+			},
+			selectedCategory: {
+				type: Number
 			}
 		},
 		data() {
 			return {
 				anonymous: JSON.parse(this.caseData).anonymous,
-				mentors: JSON.parse(this.caseData).mentors
+				mentors: JSON.parse(this.caseData).mentors,
+
 			}
 		},
 		methods: {
@@ -51,7 +67,20 @@
 			},
 			closeModal() {
 				this.$refs.modal.hide('header-close')
+			},
+			selectItemByValue(element, value) {
+				for(var i=0; i < element.options.length; i++) {
+					if (element.options[i].value == value) {
+						element.selectedIndex = i;
+						element.options[i].setAttribute("selected", true);
+						return element[i]
+					}
+				}
 			}
+		},
+		mounted() {
+			console.log("CaseOptionModal categorySelect", this.$refs);
+			this.selectItemByValue(this.$refs.categorySelect, this.selectedCategory);
 		}
 	};
 </script>

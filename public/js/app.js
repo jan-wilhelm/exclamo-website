@@ -51026,7 +51026,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -51072,17 +51072,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		caseData: {
 			type: String
+		},
+		categories: {
+			type: Array
+		},
+		selectedCategory: {
+			type: Number
 		}
 	},
 	data: function data() {
 		return {
 			anonymous: JSON.parse(this.caseData).anonymous,
 			mentors: JSON.parse(this.caseData).mentors
+
 		};
 	},
 
@@ -51090,7 +51106,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		onSubmit: function onSubmit() {},
 		closeModal: function closeModal() {
 			this.$refs.modal.hide('header-close');
+		},
+		selectItemByValue: function selectItemByValue(element, value) {
+			for (var i = 0; i < element.options.length; i++) {
+				if (element.options[i].value == value) {
+					element.selectedIndex = i;
+					element.options[i].setAttribute("selected", true);
+					return element[i];
+				}
+			}
 		}
+	},
+	mounted: function mounted() {
+		console.log("CaseOptionModal categorySelect", this.$refs);
+		this.selectItemByValue(this.$refs.categorySelect, this.selectedCategory);
 	}
 });
 
@@ -51222,6 +51251,26 @@ var render = function() {
                   })
                 ],
                 1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "category-select" } }, [
+                _vm._v("\n\t\t\t\t\tCategory\n\t\t\t\t")
+              ]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  ref: "categorySelect",
+                  staticClass: "form-control",
+                  attrs: { id: "category-select" }
+                },
+                _vm._l(_vm.categories, function(category) {
+                  return _c("option", { domProps: { value: category.id } }, [
+                    _vm._v(_vm._s(category.name))
+                  ])
+                })
               )
             ])
           ]),

@@ -141,9 +141,22 @@ class ReportedCaseController extends Controller
                 return $messageJson;
         });
 
+        $plainCategories = config('exclamo.categories');
+
+        $categories = collect($plainCategories)->map(function($value, $index) {
+            return [
+                'id'=> $index,
+                'name'=> $value
+            ];
+        });
+
+        $selectedCategory = array_search($case->category, $plainCategories);
+
         return view("case")->with([
             'case' => $case,
-            'messages'=> $messages
+            'messages'=> $messages,
+            'categories'=> $categories,
+            'selectedCategory'=> $selectedCategory
         ]);
     }
 
