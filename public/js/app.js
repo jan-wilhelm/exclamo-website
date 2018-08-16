@@ -10122,7 +10122,6 @@ Vue.component('chat-messages-container', __webpack_require__(222));
 Vue.component('chat-input-form', __webpack_require__(227));
 Vue.component('case-options-modal', __webpack_require__(232));
 Vue.component('mentor-select-field', __webpack_require__(237));
-//Vue.component('case-messages-container', require('./components/CaseMessagesContainer.vue'));
 
 var app = new Vue({
   el: '#app',
