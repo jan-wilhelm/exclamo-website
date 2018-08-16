@@ -8,6 +8,7 @@
 require('./bootstrap');
 
 import Multiselect from 'vue-multiselect';
+import Datepicker from 'vuejs-datepicker';
 
 Vue.component('multiselect', Multiselect);
 
@@ -30,5 +31,8 @@ const app = new Vue({
     },
     mounted() {
     	console.log(this.$refs);
+    },
+    components: {
+    	Datepicker
     }
 });

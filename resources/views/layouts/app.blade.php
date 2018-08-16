@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/vue-multiselect.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/fonts.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/jquery.dropdown.min.css') }}">
 @endsection
 
 @section('body')
@@ -20,8 +19,6 @@
     </div>
 
     <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
-    
-    <script src="{{ asset('js/jquery.dropdown.min.js') }}"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/de.js"></script>

@@ -1,7 +1,7 @@
 @extends('layouts/app')
 
 @section('content')
-	@exclamoflexsection (["classes" => "bg-color-primary-1 text-white"])
+	@exclamoflexsection (["classes" => "bg-color-primary-3 text-white"])
 		<h4>@lang('messages.createcase')</h4>
 		
 		@if ($errors->any())
@@ -29,16 +29,15 @@
 				<textarea class="form-control" id="message" name="message"></textarea>
 			</div>
 			<div class="form-row">
-				<div id="mentor-select-div" class="form-group col-md-6">
+				<div class="form-group col-md-6">
 					<label for="message">
 						@lang('messages.mentorsselect')
 					</label>
-
-					@mentorselect (['id' => 'mentor-select', 'parentId' => 'mentor-select-div'])
-					@foreach (auth()->user()->school->users()->mentor()->mentoring()->get() as $mentor)
-						{!! json_encode(["id" => $mentor->id, "name" => $mentor->fullName()]) !!},
-					@endforeach
-					@endmentorselect
+					<mentor-select-field :mentors='[
+						@foreach (auth()->user()->school->users()->mentor()->mentoring()->get() as $mentor)
+							{!! json_encode(["id" => $mentor->id, "name" => $mentor->fullName()]) !!},
+						@endforeach
+					]'/>
 				</div>
 				<div class="form-group col-md-6">
 					<label for="category">
@@ -107,30 +106,3 @@
 		</form>
 	@endexclamoflexsection
 @endsection
-
-@push('scripts')
-	<script type="text/javascript">
-		$(document).ready(function() {
-
-            $('#case-date-picker').datetimepicker({
-                format: 'L',
-                locale: 'de',
-                maxDate: Date.now()
-            });
-
-			$('#case-form').submit(function(event) {
-				event.preventDefault();
-
-				$('.dropdown-selected').each(function (index, element) {
-					console.log(element);
-					var id = $(element).find("i").data("id");
-					$('#mentor-select [value=' + id + ']').attr("selected", true);
-					console.log(id);
-				});
-
-				this.submit();
-			});
-
-		});
-	</script>
-@endpush
