@@ -174,9 +174,7 @@ class ReportedCaseController extends Controller
         $validated = $request->validated();
 
         // Create a new ReportedCase instance with the given fields
-        
         $case = $this->createReportedCase($validated, auth()->user(), config("exclamo.categories"));
-
         // Tell the view that a new case has been created
         $request->session()->flash('casecreated', true);
 

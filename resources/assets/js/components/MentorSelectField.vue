@@ -35,6 +35,12 @@
 			return {
 				value: this.selected
 			}
+		},
+		mounted() {
+			window.mentorField = this;
+			window.getSelectedMentors = function() {
+				return window.mentorField.value;
+			}
 		}
 	};
 

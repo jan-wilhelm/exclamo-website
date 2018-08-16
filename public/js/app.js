@@ -10126,7 +10126,12 @@ Vue.component('mentor-select-field', __webpack_require__(237));
 
 var app = new Vue({
   el: '#app',
-  data: {},
+  data: function data() {
+    return {
+      selectedMentors: null
+    };
+  },
+
   components: {
     Datepicker: __WEBPACK_IMPORTED_MODULE_1_vuejs_datepicker__["a" /* default */]
   }
@@ -51386,6 +51391,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	data: function data() {
 		return {
 			value: this.selected
+		};
+	},
+	mounted: function mounted() {
+		window.mentorField = this;
+		window.getSelectedMentors = function () {
+			return window.mentorField.value;
 		};
 	}
 });

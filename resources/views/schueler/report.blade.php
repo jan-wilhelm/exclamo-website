@@ -33,6 +33,7 @@
 					<label for="message">
 						@lang('messages.mentorsselect')
 					</label>
+					<select class="d-none" id="mentor-select" name="mentors[]"></select>
 					<mentor-select-field :mentors='[
 						@foreach (auth()->user()->school->users()->mentor()->mentoring()->get() as $mentor)
 							{!! json_encode(["id" => $mentor->id, "name" => $mentor->fullName()]) !!},
@@ -106,3 +107,30 @@
 		</form>
 	@endexclamoflexsection
 @endsection
+
+@push('scripts')
+	<script type="text/javascript">
+		function processForm(e) {
+			let select = document.getElementById('mentor-select');
+
+			var array = getSelectedMentors();
+
+			//Create and append the options
+			for (var i = 0; i < array.length; i++) {
+			    var option = document.createElement("option");
+			    option.value = array[i].id;
+			    option.text = array[i].name;
+			    option.setAttribute('selected', true)
+			    select.appendChild(option);
+			}
+			return true;
+		}
+
+		var form = document.getElementById('case-form');
+		if (form.attachEvent) {
+		    form.attachEvent("submit", processForm);
+		} else {
+		    form.addEventListener("submit", processForm);
+		}
+	</script>
+@endpush

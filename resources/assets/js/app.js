@@ -27,7 +27,10 @@ Vue.component('mentor-select-field', require('./components/MentorSelectField.vue
 
 const app = new Vue({
     el: '#app',
-    data: {
+    data () {
+    	return {
+	    	selectedMentors: null
+	    };
     },
     components: {
     	Datepicker
