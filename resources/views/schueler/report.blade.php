@@ -60,9 +60,9 @@
 							</label>
 
 							<div class="input-group">
-			                    <input type="text" class="form-control datetimepicker-input" data-target="#case-date-picker" name="incident_date" id="date" />
+			                    <datepicker :monday-first="true" :disabled-dates="{'from': new Date()}" class="form-control datetimepicker-input" name="incident_date"></datepicker>
 
-			                    <div class="input-group-append" data-target="#case-date-picker" data-toggle="datetimepicker">
+			                    <div class="input-group-append">
 			                        <div class="input-group-text">
 			                        	<i class="fa fa-calendar"></i>
 			                        </div>
