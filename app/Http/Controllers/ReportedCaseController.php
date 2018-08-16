@@ -184,6 +184,9 @@ class ReportedCaseController extends Controller
      */
     public function store(ReportCaseRequest $request)
     {
+        $this->authorize('create');
+
+        // Retrieve all the valid fields or return an error
         $validated = $request->validated();
 
         // Create a new ReportedCase instance with the given fields
@@ -192,6 +195,10 @@ class ReportedCaseController extends Controller
         $request->session()->flash('casecreated', true);
 
         return \Redirect::route('incidents.show', [$case]);
+    }
+
+    public function update(ReportedCase $case, Request $request) {
+
     }
 
     /**

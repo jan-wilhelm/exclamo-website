@@ -13,8 +13,7 @@ class ReportedCase extends Model
         "anonymous",
         "student_id",
         "location_id",
-        "solved",
-        "id"
+        "solved"
     ];
     
     public function victim() {

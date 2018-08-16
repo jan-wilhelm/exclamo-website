@@ -30,12 +30,17 @@ class MentorsExistInSchool implements Rule
         foreach ($value as $index => $mentorId) {
             $mentor = User::find($mentorId);
 
+            // Check if the mentor exists
+            if (!$mentor) {
+                return false;
+            }
+
             // Check if the selected user even is a mentor
             if (!$mentor->isMentor()) {
                 return false;
             }
 
-            // Check if the mentor 
+            // Check if the mentor is actively mentoring
             if (!$mentor->mentoring) {
                 return false;
             }

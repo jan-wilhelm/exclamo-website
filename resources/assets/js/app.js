@@ -10,14 +10,10 @@ require('./bootstrap');
 import Multiselect from 'vue-multiselect';
 import Datepicker from 'vuejs-datepicker';
 
+import api from './api';
+window.api = api;
+
 Vue.component('multiselect', Multiselect);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
 Vue.component('chat-message', require('./components/ChatMessage.vue'));
 Vue.component('chat-messages-container', require('./components/ChatMessagesContainer.vue'));
 Vue.component('chat-input-form', require('./components/ChatInputForm.vue'));

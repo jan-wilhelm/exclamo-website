@@ -10097,6 +10097,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_multiselect__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_multiselect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_multiselect__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuejs_datepicker__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__api__ = __webpack_require__(250);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -10109,14 +10110,10 @@ __webpack_require__(77);
 
 
 
+
+window.api = __WEBPACK_IMPORTED_MODULE_2__api__["a" /* default */];
+
 Vue.component('multiselect', __WEBPACK_IMPORTED_MODULE_0_vue_multiselect___default.a);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
 Vue.component('chat-message', __webpack_require__(216));
 Vue.component('chat-messages-container', __webpack_require__(222));
 Vue.component('chat-input-form', __webpack_require__(227));
@@ -51036,6 +51033,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(250);
 //
 //
 //
@@ -51080,6 +51078,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
@@ -51097,13 +51097,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		return {
 			anonymous: JSON.parse(this.caseData).anonymous,
 			mentors: JSON.parse(this.caseData).mentors
-
 		};
 	},
 
 	methods: {
-		onSubmit: function onSubmit() {},
-		closeModal: function closeModal() {
+		saveSettings: function saveSettings() {
 			this.$refs.modal.hide('header-close');
 		},
 		selectItemByValue: function selectItemByValue(element, value) {
@@ -51117,6 +51115,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		}
 	},
 	mounted: function mounted() {
+
 		console.log("CaseOptionModal categorySelect", this.$refs);
 		this.selectItemByValue(this.$refs.categorySelect, this.selectedCategory);
 	}
@@ -51280,7 +51279,7 @@ var render = function() {
               {
                 staticClass:
                   "form-inline button-div bordered white hover justify-content-center",
-                on: { click: _vm.closeModal }
+                on: { click: _vm.saveSettings }
               },
               [
                 _c("a", { staticClass: "mx-3", attrs: { href: "#" } }, [
@@ -53037,6 +53036,56 @@ var Datepicker = {render: function(){var _vm=this;var _h=_vm.$createElement;var 
 
 /* harmony default export */ __webpack_exports__["a"] = (Datepicker);
 
+
+/***/ }),
+/* 250 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export ReportedCase */
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var baseUrl = window.Exclamo.url;
+
+function filterNumericals(fromString) {
+	return fromString.replace(/\D/g, '');
+}
+
+function getCaseIdFromUrl() {
+	var urlSegments = window.location.href.split("/");
+	return Number(filterNumericals(urlSegments[urlSegments.length - 1]));
+}
+
+var ReportedCase = function () {
+	function ReportedCase(caseId) {
+		_classCallCheck(this, ReportedCase);
+
+		this.caseId = caseId || getCaseIdFromUrl();
+	}
+
+	_createClass(ReportedCase, [{
+		key: "setAnonymous",
+		value: function setAnonymous(anonymous) {
+			axios.put(baseUrl + "/api/cases/" + this.caseId, {
+				title: "AAAA UPDATED TITLE"
+			}).then(function (response) {
+				console.log(response);
+			}).catch(function (error) {
+				console.log(error.response);
+			});
+		}
+	}]);
+
+	return ReportedCase;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+	baseUrl: baseUrl,
+	getCaseIdFromUrl: getCaseIdFromUrl,
+	ReportedCase: ReportedCase
+});
 
 /***/ })
 /******/ ]);

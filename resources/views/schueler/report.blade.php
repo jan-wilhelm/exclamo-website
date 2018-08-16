@@ -36,7 +36,7 @@
 					<select class="d-none" id="mentor-select" name="mentors[]"></select>
 					<mentor-select-field :mentors='[
 						@foreach (auth()->user()->school->users()->mentor()->mentoring()->get() as $mentor)
-							{!! json_encode(["id" => $mentor->id, "name" => $mentor->fullName()]) !!},
+							{!! json_encode(["id" => $mentor->id, "name" => $mentor->full_name]) !!},
 						@endforeach
 					]'/>
 				</div>

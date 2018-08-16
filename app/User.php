@@ -48,7 +48,7 @@ class User extends Authenticatable
      * Get the full name of the user connected with a space
      * @return String The full name of the user
      */
-    public function fullName() {
+    public function getFullNameAttribute() {
         return $this->first_name . " " . $this->last_name;
     }
 

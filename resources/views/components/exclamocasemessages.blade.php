@@ -2,7 +2,7 @@
 	@foreach($case->messages()->orderBy('updated_at', 'asc')->get() as $message)
 		<div class="chat-message p-3 {{ $message->sender->id == auth()->user()->id ? "align-self-end right" : "left" }}">
 			@if($message->sender->id != auth()->user()->id)
-				<a href="" class="mb-2 d-block">{{ $message->sender->fullName() }}</a>
+				<a href="" class="mb-2 d-block">{{ $message->sender->full_name }}</a>
 			@endif
 			<span class="chat-text">
 				{{ $message->body }}

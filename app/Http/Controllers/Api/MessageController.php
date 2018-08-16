@@ -16,6 +16,12 @@ class MessageController extends Controller
         $this->middleware('auth:token-and-cookie');
     }
 
+    public function index() {
+        return Auth::user()->messages->map(function ($message, $key) {
+            return new MessageResource($message);
+        });
+    }
+
     /**
      * Store a newly created resource in storage.
      *

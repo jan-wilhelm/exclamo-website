@@ -30,7 +30,7 @@ class ReportedCasePolicy
      */
     public function create(User $user)
     {
-
+        return $user->hasRole("schueler");
     }
 
     /**
@@ -42,7 +42,8 @@ class ReportedCasePolicy
      */
     public function update(User $user, ReportedCase $reportedCase)
     {
-        //
+        // Only the creator of the case may update it
+        return $reportedCase->victim->id == $user->id;
     }
 
     /**

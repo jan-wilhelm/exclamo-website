@@ -34,7 +34,7 @@
 			</form>
 
 			<template slot="modal-footer">
-				<div class="form-inline button-div bordered white hover justify-content-center" @click="closeModal">
+				<div class="form-inline button-div bordered white hover justify-content-center" @click="saveSettings">
 					<a href="#" class="mx-3">Save</a>
 				</div>
 			</template>
@@ -43,6 +43,8 @@
 </template>
 
 <script>
+	import '../api';
+
 	export default {
 		props: {
 			caseData: {
@@ -59,14 +61,11 @@
 			return {
 				anonymous: JSON.parse(this.caseData).anonymous,
 				mentors: JSON.parse(this.caseData).mentors,
-
 			}
 		},
 		methods: {
-			onSubmit() {
-			},
-			closeModal() {
-				this.$refs.modal.hide('header-close')
+			saveSettings() {
+				this.$refs.modal.hide('header-close');
 			},
 			selectItemByValue(element, value) {
 				for(var i=0; i < element.options.length; i++) {
@@ -79,6 +78,7 @@
 			}
 		},
 		mounted() {
+
 			console.log("CaseOptionModal categorySelect", this.$refs);
 			this.selectItemByValue(this.$refs.categorySelect, this.selectedCategory);
 		}

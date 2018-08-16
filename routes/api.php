@@ -13,6 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('messages', 'Api\\MessageController')->only([
-	'show', 'store', 'update', 'destroy'
-]);
+Route::apiResource('messages', 'Api\\MessageController');
+Route::apiResource('cases', 'Api\\ReportedCaseController');
