@@ -52989,10 +52989,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		window.mentorField = this;
 		window.getSelectedMentors = function () {
 			return window.mentorField.value.map(function (item) {
-				return {
-					id: item.id,
-					name: item.name
-				};
+				return item.id;
 			});
 		};
 	}

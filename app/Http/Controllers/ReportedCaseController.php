@@ -152,15 +152,20 @@ class ReportedCaseController extends Controller
 
         $selectedCategory = array_search($case->category, $plainCategories);
 
-        $possibleMentors = auth()->user()->school->mentors->map(function($mentor, $index) {
+        $allMentors = auth()->user()->school->mentors()->mentoring()->get();
+
+        $possibleMentors = $allMentors->map(function($mentor, $index) {
             return [
                 'id'=> $mentor->id,
                 'name'=> $mentor->full_name
             ];
         });
 
-        $selectedMentors = $possibleMentors->filter(function ($mentor, $index) use ($case) {
-            return $case->mentors->contains('id', $mentor['id']);
+        $selectedMentors = $case->mentors->map(function($mentor, $index) {
+            return [
+                'id'=> $mentor->id,
+                'name'=> $mentor->full_name
+            ];
         });
 
         return view("case")->with([

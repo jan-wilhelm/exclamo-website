@@ -40,10 +40,7 @@
 			window.mentorField = this;
 			window.getSelectedMentors = function() {
 				return window.mentorField.value.map((item)=> {
-					return {
-						id: item.id,
-						name: item.name
-					}
+					return item.id
 				});
 			}
 		}

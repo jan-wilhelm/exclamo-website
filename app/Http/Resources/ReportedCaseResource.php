@@ -20,7 +20,13 @@ class ReportedCaseResource extends JsonResource
             'user' => [
                 'id' => $this->victim->id,
                 'name' => $this->victim->full_name
-            ]
+            ],
+            'mentors' => $this->mentors->map(function($mentor, $index) {
+                    return [
+                        'id'=> $mentor->id,
+                        'name'=> $mentor->full_name
+                    ];
+                })
         ];
     }
 }
