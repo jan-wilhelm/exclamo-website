@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Crypt;
 
 class SendApiTokenMiddleware
 {
@@ -20,7 +21,7 @@ class SendApiTokenMiddleware
     public function handle($request, Closure $next)
     {
         if (Auth::check()) {
-            $token = Auth::user()->getOriginal('api_token');
+            $token = Crypt::encryptString(Auth::user()->getOriginal('api_token'));
             $cookie = Cookie::make(
                 'api_token',        // name
                 $token,             // value
