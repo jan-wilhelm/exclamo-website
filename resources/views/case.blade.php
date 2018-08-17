@@ -13,6 +13,7 @@
 				:initial-data='@json($clientData)'
 				:categories='@json($categories)'
 				:mentors='@json($possibleMentors)'
+				:locations='@json($locations)'
 			/>
 		</div>
 		<hr>

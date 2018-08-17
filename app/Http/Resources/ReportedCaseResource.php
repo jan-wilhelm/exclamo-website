@@ -29,7 +29,8 @@ class ReportedCaseResource extends JsonResource
                 }),
             'category' => array_search($this->category, config('exclamo.categories')),
             'anonymous' => boolval($this->anonymous),
-            'solved' => boolval($this->solved)
+            'solved' => boolval($this->solved),
+            'location' => $this->location->id
         ];
     }
 }

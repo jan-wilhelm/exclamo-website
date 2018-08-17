@@ -160,6 +160,14 @@ class ReportedCaseController extends Controller
             ];
         });
 
+        // Locations
+        $locations = auth()->user()->school->locations->map(function ($location, $index) {
+            return [
+                'id'=> $location->id,
+                'name'=> $location->title
+            ];
+        });
+
         // Client Data
         $clientData = new ReportedCaseResource($case);
 
@@ -168,7 +176,8 @@ class ReportedCaseController extends Controller
             'messages'=> $messages,
             'categories'=> $categories,
             'possibleMentors'=> $possibleMentors,
-            'clientData'=> $clientData
+            'clientData'=> $clientData,
+            'locations'=> $locations
         ]);
     }
 

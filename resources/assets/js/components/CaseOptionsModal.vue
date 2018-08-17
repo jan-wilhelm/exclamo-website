@@ -16,8 +16,17 @@
 						Category
 					</label>
 
-					<select id="category-select" class="form-control" ref="categorySelect" v-model="caseData.category">
+					<select id="category-select" class="form-control" v-model="caseData.category">
 						<option v-for="category in categories" :value="category.id">{{ category.name }}</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="location-select">
+						Location
+					</label>
+
+					<select id="location-select" class="form-control" v-model="caseData.location">
+						<option v-for="location in locations" :value="location.id">{{ location.name }}</option>
 					</select>
 				</div>
 				<div class="form-group">
@@ -51,15 +60,10 @@
 
 	export default {
 		props: {
-			initialData: {
-				type: Object
-			},
-			categories: {
-				type: Array
-			},
-			mentors: {
-				type: Array
-			}
+			initialData: Object,
+			categories: Array,
+			locations: Array,
+			mentors: Array
 		},
 		data() {
 			return {

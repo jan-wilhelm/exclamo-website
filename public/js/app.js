@@ -52570,7 +52570,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52630,20 +52630,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
-		initialData: {
-			type: Object
-		},
-		categories: {
-			type: Array
-		},
-		mentors: {
-			type: Array
-		}
+		initialData: Object,
+		categories: Array,
+		locations: Array,
+		mentors: Array
 	},
 	data: function data() {
 		return {
@@ -52754,7 +52758,6 @@ var render = function() {
                       expression: "caseData.category"
                     }
                   ],
-                  ref: "categorySelect",
                   staticClass: "form-control",
                   attrs: { id: "category-select" },
                   on: {
@@ -52780,6 +52783,52 @@ var render = function() {
                 _vm._l(_vm.categories, function(category) {
                   return _c("option", { domProps: { value: category.id } }, [
                     _vm._v(_vm._s(category.name))
+                  ])
+                })
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "location-select" } }, [
+                _vm._v("\n\t\t\t\t\tLocation\n\t\t\t\t")
+              ]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.caseData.location,
+                      expression: "caseData.location"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { id: "location-select" },
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.$set(
+                        _vm.caseData,
+                        "location",
+                        $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      )
+                    }
+                  }
+                },
+                _vm._l(_vm.locations, function(location) {
+                  return _c("option", { domProps: { value: location.id } }, [
+                    _vm._v(_vm._s(location.name))
                   ])
                 })
               )
