@@ -9,7 +9,7 @@
 			<form autocomplete="off">
 				<div class="form-group">
 					<label for="case-title">Titel</label>
-					<input type="text" class="form-control" id="case-title" v-model="caseData.title">
+					<input type="text" class="form-control" id="case-title" v-model.trim="caseData.title">
 				</div>
 				<div class="form-group">
 					<label for="category-select">
@@ -26,7 +26,7 @@
 							Mentors
 						</label>
 
-						<mentor-select-field :mentors='mentors' :selected='caseData.mentors' />
+						<mentor-select-field :mentors='mentors' :selected='caseData.mentors' v-model="caseData.mentors" />
 					</div>
 				</div>
 				<div class="form-group form-check">

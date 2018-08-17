@@ -52715,9 +52715,10 @@ var render = function() {
                 directives: [
                   {
                     name: "model",
-                    rawName: "v-model",
+                    rawName: "v-model.trim",
                     value: _vm.caseData.title,
-                    expression: "caseData.title"
+                    expression: "caseData.title",
+                    modifiers: { trim: true }
                   }
                 ],
                 staticClass: "form-control",
@@ -52728,7 +52729,10 @@ var render = function() {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.caseData, "title", $event.target.value)
+                    _vm.$set(_vm.caseData, "title", $event.target.value.trim())
+                  },
+                  blur: function($event) {
+                    _vm.$forceUpdate()
                   }
                 }
               })
@@ -52792,6 +52796,13 @@ var render = function() {
                     attrs: {
                       mentors: _vm.mentors,
                       selected: _vm.caseData.mentors
+                    },
+                    model: {
+                      value: _vm.caseData.mentors,
+                      callback: function($$v) {
+                        _vm.$set(_vm.caseData, "mentors", $$v)
+                      },
+                      expression: "caseData.mentors"
                     }
                   })
                 ],
@@ -53019,17 +53030,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}
 		}
 	},
+	model: {
+		prop: 'value',
+		event: 'input'
+	},
 	data: function data() {
 		return {
 			value: this.selected
-		};
-	},
-	mounted: function mounted() {
-		window.mentorField = this;
-		window.getSelectedMentors = function () {
-			return window.mentorField.value.map(function (item) {
-				return item.id;
-			});
 		};
 	}
 });
@@ -53060,6 +53067,11 @@ var render = function() {
             label: "name",
             "track-by": "id",
             "block-keys": ["Tab", "Enter"]
+          },
+          on: {
+            input: function($event) {
+              _vm.$emit("input", _vm.value)
+            }
           },
           scopedSlots: _vm._u([
             {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <multiselect v-model="value" :options="mentors" select-label="" :multiple="true" :close-on-select="false" :clear-on-select="false" :hide-selected="true" :preserve-search="true" placeholder="" label="name" track-by="id" :block-keys="['Tab', 'Enter']">
+    <multiselect v-model.sync="value" @input="$emit('input', value)" :options="mentors" select-label="" :multiple="true" :close-on-select="false" :clear-on-select="false" :hide-selected="true" :preserve-search="true" placeholder="" label="name" track-by="id" :block-keys="['Tab', 'Enter']">
     	<template slot="tag" slot-scope="props">
 			<span class="mentor-tag bg-color-primary-1 text-white">
 	    		{{ props.option.name }}
@@ -31,17 +31,13 @@
 				}
 			}
 		},
+		model: {
+			prop: 'value',
+			event: 'input'
+		},
 		data() {
 			return {
 				value: this.selected
-			}
-		},
-		mounted() {
-			window.mentorField = this;
-			window.getSelectedMentors = function() {
-				return window.mentorField.value.map((item)=> {
-					return item.id
-				});
 			}
 		}
 	};
