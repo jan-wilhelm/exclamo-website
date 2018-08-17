@@ -4,7 +4,6 @@
 			<a href="{{ route('incidents.show', ["case" => $case]) }}">
 				<h6 class="font-weight-bold text-white">{{ $case->title }}</h6>
 			</a>
-			{{ $case->updated_at }}
 			<span class="small">
 				@if($case->messages->count() > 0)
 					{{ $case->messages->first()->updated_at->diffForHumans() }}
