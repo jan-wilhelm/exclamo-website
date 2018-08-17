@@ -9,7 +9,13 @@
 			<span class="d-md-inline-block font-italic ml-md-4">
 				Mentored by {{ implode(", ", $case->mentors->pluck("full_name")->toArray()) }}
 			</span>
-			<case-options-modal case-data='{"anonymous": true}' :categories='@json($categories)' :selected-category='Number({{ $selectedCategory }})' />
+			<case-options-modal
+				:initial-data='{"anonymous": true}'
+				:categories='@json($categories)'
+				:selected-category='Number({{ $selectedCategory }})'
+				:mentors='@json($possibleMentors)'
+				:selected-mentors='@json($selectedMentors)'
+			/>
 		</div>
 		<hr>
 

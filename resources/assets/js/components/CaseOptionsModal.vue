@@ -8,7 +8,7 @@
 		<b-modal ref="modal" id="case-options-modal" title="Optionen">
 			<form autocomplete="off">
 				<div class="form-group form-check">
-					<input type="checkbox" class="form-check-input" id="case-modal-anonymous" v-model="anonymous">
+					<input type="checkbox" class="form-check-input" id="case-modal-anonymous" v-model="caseData.anonymous">
 					<label class="form-check-label" for="case-modal-anonymous">
 						Your name should be visible to the mentors
 					</label>
@@ -19,7 +19,7 @@
 							Mentors
 						</label>
 
-						<mentor-select-field :mentors='[{"id":30,"name":"Corrine Schumm"},{"id":33,"name":"Hanna Kertzmann"},{"id":34,"name":"Aiden Denesik"},{"id":36,"name":"Summer DuBuque"},{"id":40,"name":"Uriah Kub"}]' :selected='[{"id":30,"name":"Corrine Schumm"},{"id":33,"name":"Hanna Kertzmann"}]' />
+						<mentor-select-field :mentors='mentors' :selected='selectedMentors' />
 					</div>
 				</div>
 				<div class="form-group">
@@ -47,20 +47,25 @@
 
 	export default {
 		props: {
-			caseData: {
-				type: String
+			initialData: {
+				type: Object
 			},
 			categories: {
 				type: Array
 			},
 			selectedCategory: {
 				type: Number
+			},
+			mentors: {
+				type: Array
+			},
+			selectedMentors: {
+				type: Array
 			}
 		},
 		data() {
 			return {
-				anonymous: JSON.parse(this.caseData).anonymous,
-				mentors: JSON.parse(this.caseData).mentors,
+				caseData: this.initialData
 			}
 		},
 		methods: {
@@ -78,8 +83,6 @@
 			}
 		},
 		mounted() {
-
-			console.log("CaseOptionModal categorySelect", this.$refs);
 			this.selectItemByValue(this.$refs.categorySelect, this.selectedCategory);
 		}
 	};

@@ -52570,7 +52570,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52631,20 +52631,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
-		caseData: {
-			type: String
+		initialData: {
+			type: Object
 		},
 		categories: {
 			type: Array
 		},
 		selectedCategory: {
 			type: Number
+		},
+		mentors: {
+			type: Array
+		},
+		selectedMentors: {
+			type: Array
 		}
 	},
 	data: function data() {
 		return {
-			anonymous: JSON.parse(this.caseData).anonymous,
-			mentors: JSON.parse(this.caseData).mentors
+			caseData: this.initialData
 		};
 	},
 
@@ -52663,8 +52668,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		}
 	},
 	mounted: function mounted() {
-
-		console.log("CaseOptionModal categorySelect", this.$refs);
 		this.selectItemByValue(this.$refs.categorySelect, this.selectedCategory);
 	}
 });
@@ -52725,35 +52728,38 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.anonymous,
-                    expression: "anonymous"
+                    value: _vm.caseData.anonymous,
+                    expression: "caseData.anonymous"
                   }
                 ],
                 staticClass: "form-check-input",
                 attrs: { type: "checkbox", id: "case-modal-anonymous" },
                 domProps: {
-                  checked: Array.isArray(_vm.anonymous)
-                    ? _vm._i(_vm.anonymous, null) > -1
-                    : _vm.anonymous
+                  checked: Array.isArray(_vm.caseData.anonymous)
+                    ? _vm._i(_vm.caseData.anonymous, null) > -1
+                    : _vm.caseData.anonymous
                 },
                 on: {
                   change: function($event) {
-                    var $$a = _vm.anonymous,
+                    var $$a = _vm.caseData.anonymous,
                       $$el = $event.target,
                       $$c = $$el.checked ? true : false
                     if (Array.isArray($$a)) {
                       var $$v = null,
                         $$i = _vm._i($$a, $$v)
                       if ($$el.checked) {
-                        $$i < 0 && (_vm.anonymous = $$a.concat([$$v]))
+                        $$i < 0 &&
+                          _vm.$set(_vm.caseData, "anonymous", $$a.concat([$$v]))
                       } else {
                         $$i > -1 &&
-                          (_vm.anonymous = $$a
-                            .slice(0, $$i)
-                            .concat($$a.slice($$i + 1)))
+                          _vm.$set(
+                            _vm.caseData,
+                            "anonymous",
+                            $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                          )
                       }
                     } else {
-                      _vm.anonymous = $$c
+                      _vm.$set(_vm.caseData, "anonymous", $$c)
                     }
                   }
                 }
@@ -52782,17 +52788,8 @@ var render = function() {
                   _vm._v(" "),
                   _c("mentor-select-field", {
                     attrs: {
-                      mentors: [
-                        { id: 30, name: "Corrine Schumm" },
-                        { id: 33, name: "Hanna Kertzmann" },
-                        { id: 34, name: "Aiden Denesik" },
-                        { id: 36, name: "Summer DuBuque" },
-                        { id: 40, name: "Uriah Kub" }
-                      ],
-                      selected: [
-                        { id: 30, name: "Corrine Schumm" },
-                        { id: 33, name: "Hanna Kertzmann" }
-                      ]
+                      mentors: _vm.mentors,
+                      selected: _vm.selectedMentors
                     }
                   })
                 ],
