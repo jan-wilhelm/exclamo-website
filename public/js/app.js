@@ -52988,7 +52988,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	mounted: function mounted() {
 		window.mentorField = this;
 		window.getSelectedMentors = function () {
-			return window.mentorField.value;
+			return window.mentorField.value.map(function (item) {
+				return {
+					id: item.id,
+					name: item.name
+				};
+			});
 		};
 	}
 });
