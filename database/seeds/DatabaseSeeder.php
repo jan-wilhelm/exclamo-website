@@ -23,8 +23,6 @@ class DatabaseSeeder extends Seeder
         echo "Creating schools... \n";
         $schools = factory(App\School::class, 3)->create();
 
-        $locations = array();
-
         foreach (App\School::all() as $school) {
             echo "Creating users... \n";
             $users = factory(App\User::class, 40)->create([
@@ -46,13 +44,11 @@ class DatabaseSeeder extends Seeder
             }
 
             echo "Creating locations... \n";
-            $location = factory(App\Location::class)->create([
+            $locations = factory(App\Location::class, 5)->create([
                 'school_id'=> $school->id
             ]);
 
-            $locations[] = $location;
-
-            $school->locations()->save($location);
+            $school->locations()->saveMany($locations);
         }
 
 
@@ -66,8 +62,10 @@ class DatabaseSeeder extends Seeder
                 'student_id'=> $student->id
             ]);
 
+            $locations = $student->school->locations;
+
             foreach ($cases as $case) {
-                $case->location()->associate($locations[array_rand($locations)]);
+                $case->location()->associate($locations->random());
                 $case->mentors()->save($mentors->random(1)[0]);
                 $student->reportedCases()->save($case);
 
