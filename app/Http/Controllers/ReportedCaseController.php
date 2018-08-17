@@ -9,6 +9,7 @@ use App\User;
 use App\Location;
 use App\Message;
 use App\Repositories\ReportedCaseRepository;
+use App\Http\Resources\ReportedCaseResource;
 
 class ReportedCaseController extends Controller
 {
@@ -141,8 +142,8 @@ class ReportedCaseController extends Controller
                 return $messageJson;
         });
 
+        // Categories
         $plainCategories = config('exclamo.categories');
-
         $categories = collect($plainCategories)->map(function($value, $index) {
             return [
                 'id'=> $index,
@@ -150,10 +151,8 @@ class ReportedCaseController extends Controller
             ];
         });
 
-        $selectedCategory = array_search($case->category, $plainCategories);
-
+        // Mentors
         $allMentors = auth()->user()->school->mentors()->mentoring()->get();
-
         $possibleMentors = $allMentors->map(function($mentor, $index) {
             return [
                 'id'=> $mentor->id,
@@ -161,20 +160,15 @@ class ReportedCaseController extends Controller
             ];
         });
 
-        $selectedMentors = $case->mentors->map(function($mentor, $index) {
-            return [
-                'id'=> $mentor->id,
-                'name'=> $mentor->full_name
-            ];
-        });
+        // Client Data
+        $clientData = new ReportedCaseResource($case);
 
         return view("case")->with([
             'case' => $case,
             'messages'=> $messages,
             'categories'=> $categories,
-            'selectedCategory'=> $selectedCategory,
             'possibleMentors'=> $possibleMentors,
-            'selectedMentors'=> $selectedMentors
+            'clientData'=> $clientData
         ]);
     }
 

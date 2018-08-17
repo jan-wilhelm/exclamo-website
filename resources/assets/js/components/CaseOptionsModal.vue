@@ -7,11 +7,18 @@
 		</b-btn>
 		<b-modal ref="modal" id="case-options-modal" title="Optionen">
 			<form autocomplete="off">
-				<div class="form-group form-check">
-					<input type="checkbox" class="form-check-input" id="case-modal-anonymous" v-model="caseData.anonymous">
-					<label class="form-check-label" for="case-modal-anonymous">
-						Your name should be visible to the mentors
+				<div class="form-group">
+					<label for="case-title">Titel</label>
+					<input type="text" class="form-control" id="case-title" v-model="caseData.title">
+				</div>
+				<div class="form-group">
+					<label for="category-select">
+						Category
 					</label>
+
+					<select id="category-select" class="form-control" ref="categorySelect" v-model="caseData.category">
+						<option v-for="category in categories" :value="category.id">{{ category.name }}</option>
+					</select>
 				</div>
 				<div class="form-group">
 					<div id="case-modal-mentors-div">
@@ -19,17 +26,14 @@
 							Mentors
 						</label>
 
-						<mentor-select-field :mentors='mentors' :selected='selectedMentors' />
+						<mentor-select-field :mentors='mentors' :selected='caseData.mentors' />
 					</div>
 				</div>
-				<div class="form-group">
-					<label for="category-select">
-						Category
+				<div class="form-group form-check">
+					<input type="checkbox" class="form-check-input" id="case-modal-anonymous" v-model="caseData.anonymous">
+					<label class="form-check-label" for="case-modal-anonymous">
+						Your name should be visible to the mentors
 					</label>
-
-					<select id="category-select" class="form-control" ref="categorySelect">
-						<option v-for="category in categories" :value="category.id">{{ category.name }}</option>
-					</select>
 				</div>
 			</form>
 
@@ -53,13 +57,7 @@
 			categories: {
 				type: Array
 			},
-			selectedCategory: {
-				type: Number
-			},
 			mentors: {
-				type: Array
-			},
-			selectedMentors: {
 				type: Array
 			}
 		},
@@ -72,19 +70,7 @@
 			saveSettings() {
 				this.$refs.modal.hide('header-close');
 			},
-			selectItemByValue(element, value) {
-				for(var i=0; i < element.options.length; i++) {
-					if (element.options[i].value == value) {
-						element.selectedIndex = i;
-						element.options[i].setAttribute("selected", true);
-						return element[i]
-					}
-				}
-			}
 		},
-		mounted() {
-			this.selectItemByValue(this.$refs.categorySelect, this.selectedCategory);
-		}
 	};
 </script>
 

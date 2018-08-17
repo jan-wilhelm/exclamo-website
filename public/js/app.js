@@ -52570,7 +52570,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52626,6 +52626,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -52637,13 +52641,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		categories: {
 			type: Array
 		},
-		selectedCategory: {
-			type: Number
-		},
 		mentors: {
-			type: Array
-		},
-		selectedMentors: {
 			type: Array
 		}
 	},
@@ -52656,19 +52654,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	methods: {
 		saveSettings: function saveSettings() {
 			this.$refs.modal.hide('header-close');
-		},
-		selectItemByValue: function selectItemByValue(element, value) {
-			for (var i = 0; i < element.options.length; i++) {
-				if (element.options[i].value == value) {
-					element.selectedIndex = i;
-					element.options[i].setAttribute("selected", true);
-					return element[i];
-				}
-			}
 		}
-	},
-	mounted: function mounted() {
-		this.selectItemByValue(this.$refs.categorySelect, this.selectedCategory);
 	}
 });
 
@@ -52722,6 +52708,97 @@ var render = function() {
         },
         [
           _c("form", { attrs: { autocomplete: "off" } }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "case-title" } }, [_vm._v("Titel")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.caseData.title,
+                    expression: "caseData.title"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text", id: "case-title" },
+                domProps: { value: _vm.caseData.title },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.caseData, "title", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "category-select" } }, [
+                _vm._v("\n\t\t\t\t\tCategory\n\t\t\t\t")
+              ]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.caseData.category,
+                      expression: "caseData.category"
+                    }
+                  ],
+                  ref: "categorySelect",
+                  staticClass: "form-control",
+                  attrs: { id: "category-select" },
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.$set(
+                        _vm.caseData,
+                        "category",
+                        $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      )
+                    }
+                  }
+                },
+                _vm._l(_vm.categories, function(category) {
+                  return _c("option", { domProps: { value: category.id } }, [
+                    _vm._v(_vm._s(category.name))
+                  ])
+                })
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c(
+                "div",
+                { attrs: { id: "case-modal-mentors-div" } },
+                [
+                  _c("label", [_vm._v("\n\t\t\t\t\t\tMentors\n\t\t\t\t\t")]),
+                  _vm._v(" "),
+                  _c("mentor-select-field", {
+                    attrs: {
+                      mentors: _vm.mentors,
+                      selected: _vm.caseData.mentors
+                    }
+                  })
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
             _c("div", { staticClass: "form-group form-check" }, [
               _c("input", {
                 directives: [
@@ -52776,44 +52853,6 @@ var render = function() {
                     "\n\t\t\t\t\tYour name should be visible to the mentors\n\t\t\t\t"
                   )
                 ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _c(
-                "div",
-                { attrs: { id: "case-modal-mentors-div" } },
-                [
-                  _c("label", [_vm._v("\n\t\t\t\t\t\tMentors\n\t\t\t\t\t")]),
-                  _vm._v(" "),
-                  _c("mentor-select-field", {
-                    attrs: {
-                      mentors: _vm.mentors,
-                      selected: _vm.selectedMentors
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _c("label", { attrs: { for: "category-select" } }, [
-                _vm._v("\n\t\t\t\t\tCategory\n\t\t\t\t")
-              ]),
-              _vm._v(" "),
-              _c(
-                "select",
-                {
-                  ref: "categorySelect",
-                  staticClass: "form-control",
-                  attrs: { id: "category-select" }
-                },
-                _vm._l(_vm.categories, function(category) {
-                  return _c("option", { domProps: { value: category.id } }, [
-                    _vm._v(_vm._s(category.name))
-                  ])
-                })
               )
             ])
           ]),

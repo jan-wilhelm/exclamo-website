@@ -7,13 +7,17 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateReportedCaseRequest;
 use App\Http\Resources\ReportedCaseResource;
+use App\Repositories\ReportedCaseRepository;
 
 class ReportedCaseController extends Controller
 {
 
-    public function __construct()
+    protected $reportedCases;
+
+    public function __construct(ReportedCaseRepository $reportedCases)
     {
         $this->middleware('auth:token-and-cookie');
+        $this->reportedCases = $reportedCases;
     }
 
     /**

@@ -10,11 +10,9 @@
 				Mentored by {{ implode(", ", $case->mentors->pluck("full_name")->toArray()) }}
 			</span>
 			<case-options-modal
-				:initial-data='{"anonymous": true}'
+				:initial-data='@json($clientData)'
 				:categories='@json($categories)'
-				:selected-category='Number({{ $selectedCategory }})'
 				:mentors='@json($possibleMentors)'
-				:selected-mentors='@json($selectedMentors)'
 			/>
 		</div>
 		<hr>
