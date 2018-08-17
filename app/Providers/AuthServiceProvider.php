@@ -29,7 +29,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
         Auth::viaRequest('token-and-cookie', function ($request) {
-            $token = $request->query('api_token', decrypt(Cookie::get('api_token')));
+            $token = $request->query('api_token', Cookie::get('api_token'));
             $user = User::where('api_token', $token)->first();
             return $user;
         });

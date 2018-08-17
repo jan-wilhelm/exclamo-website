@@ -39,16 +39,10 @@ class User extends Authenticatable
         'api_token'
     ];
 
-    /**
-     * The attributes that should be encrypted on save.
-     *
-     * @var array
-     */
     protected $encrypted = [
-        'api_token'
+        "api_token"
     ];
-
-
+    
     /**
      * //////////////////////////////////////////////////
      * /////////////////    METHODS    //////////////////
