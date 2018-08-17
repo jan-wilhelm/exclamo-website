@@ -33,7 +33,7 @@ class CreateUsersTable extends Migration
 
             $table->string('language')->default("en");
 
-            $table->string('api_token', 60)->unique();
+            $table->text('api_token');
 
             $table->rememberToken();
             $table->timestamps();

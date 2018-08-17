@@ -5,11 +5,13 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+use AustinHeap\Database\Encryption\Traits\HasEncryptedAttributes;
 
 class User extends Authenticatable
 {
     use Notifiable;
     use HasRoles;
+    use HasEncryptedAttributes;
 
     /**
      * The attributes that are mass assignable.
@@ -34,6 +36,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'api_token'
+    ];
+
+    /**
+     * The attributes that should be encrypted on save.
+     *
+     * @var array
+     */
+    protected $encrypted = [
         'api_token'
     ];
 

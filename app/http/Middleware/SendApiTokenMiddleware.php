@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\DB;
 
 class SendApiTokenMiddleware
 {
@@ -19,7 +20,7 @@ class SendApiTokenMiddleware
     public function handle($request, Closure $next)
     {
         if (Auth::check()) {
-            $token = Auth::user()->api_token;
+            $token = Auth::user()->getOriginal('api_token');
             $cookie = Cookie::make(
                 'api_token',        // name
                 $token,             // value
