@@ -79,7 +79,11 @@
 		methods: {
 			saveSettings() {
 				let reportedCase = new api.ReportedCase();
-				reportedCase.edit(this.caseData);
+				reportedCase.edit(this.caseData, () => {
+					console.log("RELOAD");
+					this.closeModal();
+					location.reload();
+				});
 			},
 			closeModal() {
 				this.$refs.modal.hide('header-close');

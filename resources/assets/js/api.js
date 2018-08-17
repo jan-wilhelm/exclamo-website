@@ -14,13 +14,15 @@ export class ReportedCase {
 		this.caseId = caseId || getCaseIdFromUrl();
 	}
 
-	edit(options) {
+	edit(options, successFunction, errorFunction) {
 		axios.put(baseUrl + "/api/cases/" + this.caseId, options)
 		.then(function (response) {
 			console.log(response);
+			successFunction(response);
 		})
 		.catch(function (error) {
-    		console.log(error.response)
+    		console.log(error)
+    		errorFunction(error);
 		});
 		return this;
 	}

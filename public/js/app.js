@@ -10109,11 +10109,13 @@ var ReportedCase = function () {
 
 	_createClass(ReportedCase, [{
 		key: "edit",
-		value: function edit(options) {
+		value: function edit(options, successFunction, errorFunction) {
 			axios.put(baseUrl + "/api/cases/" + this.caseId, options).then(function (response) {
 				console.log(response);
+				successFunction(response);
 			}).catch(function (error) {
-				console.log(error.response);
+				console.log(error);
+				errorFunction(error);
 			});
 			return this;
 		}
@@ -52625,8 +52627,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 	methods: {
 		saveSettings: function saveSettings() {
+			var _this = this;
+
 			var reportedCase = new api.ReportedCase();
-			reportedCase.edit(this.caseData);
+			reportedCase.edit(this.caseData, function () {
+				console.log("RELOAD");
+				_this.closeModal();
+				location.reload();
+			});
 		},
 		closeModal: function closeModal() {
 			this.$refs.modal.hide('header-close');
