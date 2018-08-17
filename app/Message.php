@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use AustinHeap\Database\Encryption\Traits\HasEncryptedAttributes;
 
 class Message extends Model
 {
+
+    use HasEncryptedAttributes;
 
 	protected $fillable = [
 		"body",
@@ -15,6 +18,10 @@ class Message extends Model
 
 	protected $touches = [
 		"reportedCase"
+	];
+
+	protected $encrypted = [
+		"body"
 	];
     
 	public function reportedCase() {

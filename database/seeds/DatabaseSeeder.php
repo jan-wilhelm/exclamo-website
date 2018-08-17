@@ -13,22 +13,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        echo "Creating roles... \n";
         $roles = ['schueler', 'lehrer', 'schulleiter', 'admin'];
 
         foreach ($roles as $role) {
             Role::create(['name' => $role]);
         }
 
+        echo "Creating schools... \n";
         $schools = factory(App\School::class, 3)->create();
+
         $locations = array();
 
         foreach (App\School::all() as $school) {
+            echo "Creating users... \n";
             $users = factory(App\User::class, 40)->create([
                 'school_id'=> $school->id
             ]);
 
+            echo "Assigning roles to users... \n";
             $index = 0;
-
             foreach ($users as $user) {
                 $school->students()->save($user);
                 $index += 1;
@@ -41,6 +45,7 @@ class DatabaseSeeder extends Seeder
                 }
             }
 
+            echo "Creating locations... \n";
             $location = factory(App\Location::class)->create([
                 'school_id'=> $school->id
             ]);
@@ -56,6 +61,7 @@ class DatabaseSeeder extends Seeder
 
         foreach ($students as $student) {
 
+            echo "Creating cases... \n";
             $cases = factory(App\ReportedCase::class, 3)->create([
                 'student_id'=> $student->id
             ]);
@@ -65,6 +71,7 @@ class DatabaseSeeder extends Seeder
                 $case->mentors()->save($mentors->random(1)[0]);
                 $student->reportedCases()->save($case);
 
+                echo "Creating messages... \n";
                 $messages = factory(App\Message::class, 15)->make()->each(function($m) use ($case, $student) {
                     $sender = array( $case->mentors[0], $student )[random_int(0, 1)];
                     $m->sender()->associate($sender);

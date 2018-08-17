@@ -151,6 +151,8 @@ return [
          * Package Service Providers...
          */
         RenatoMarinho\LaravelPageSpeed\ServiceProvider::class,
+        AustinHeap\Database\Encryption\EncryptionServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -208,7 +210,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-
+        'DatabaseEncryption' => AustinHeap\Database\EncryptionFacade::class,
     ],
 
 ];
