@@ -28,8 +28,8 @@ class UpdateReportedCaseRequest extends FormRequest
         return [
             'title' => 'sometimes|string|min:3|nullable',
             'incident_date' => 'sometimes|date|before:now|nullable',
-            'category' => 'sometimes|in:' . implode(",", array_keys(config('exclamo.categories', ''))),
-            'location' => [
+            'category' => 'sometimes|in:' . implode(",", config('exclamo.categories', '')),
+            'location_id' => [
                 'sometimes',
                 'nullable',
                 new LocationExistsInSchool($this->user())

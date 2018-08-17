@@ -52491,19 +52491,19 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(235)
+  __webpack_require__(251)
 }
 var normalizeComponent = __webpack_require__(21)
 /* script */
 var __vue_script__ = __webpack_require__(237)
 /* template */
-var __vue_template__ = __webpack_require__(238)
+var __vue_template__ = __webpack_require__(253)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-5db98414"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -52536,52 +52536,20 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 235 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(236);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(20)("06b47e20", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5db98414\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CaseOptionsModal.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5db98414\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CaseOptionsModal.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 236 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(9)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 235 */,
+/* 236 */,
 /* 237 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(75);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -52657,299 +52625,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 	methods: {
 		saveSettings: function saveSettings() {
+			var reportedCase = new api.ReportedCase();
+			reportedCase.edit(this.caseData);
+		},
+		closeModal: function closeModal() {
 			this.$refs.modal.hide('header-close');
 		}
 	}
 });
 
 /***/ }),
-/* 238 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "d-inline" },
-    [
-      _c(
-        "b-btn",
-        {
-          directives: [
-            {
-              name: "b-modal",
-              rawName: "v-b-modal.case-options-modal",
-              modifiers: { "case-options-modal": true }
-            }
-          ],
-          staticClass:
-            "form-inline button-div bordered white hover mt-md-0 mt-3 float-md-right justify-content-center",
-          attrs: { variant: "secondary" }
-        },
-        [
-          _c(
-            "a",
-            {
-              staticClass: "mx-3",
-              attrs: {
-                href: "#",
-                "data-toggle": "modal",
-                "data-target": "#case-options-modal"
-              }
-            },
-            [_vm._v("\n\t\t\tOptionen\n\t\t")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "b-modal",
-        {
-          ref: "modal",
-          attrs: { id: "case-options-modal", title: "Optionen" }
-        },
-        [
-          _c("form", { attrs: { autocomplete: "off" } }, [
-            _c("div", { staticClass: "form-group" }, [
-              _c("label", { attrs: { for: "case-title" } }, [_vm._v("Titel")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model.trim",
-                    value: _vm.caseData.title,
-                    expression: "caseData.title",
-                    modifiers: { trim: true }
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { type: "text", id: "case-title" },
-                domProps: { value: _vm.caseData.title },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.caseData, "title", $event.target.value.trim())
-                  },
-                  blur: function($event) {
-                    _vm.$forceUpdate()
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _c("label", { attrs: { for: "category-select" } }, [
-                _vm._v("\n\t\t\t\t\tCategory\n\t\t\t\t")
-              ]),
-              _vm._v(" "),
-              _c(
-                "select",
-                {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.caseData.category,
-                      expression: "caseData.category"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { id: "category-select" },
-                  on: {
-                    change: function($event) {
-                      var $$selectedVal = Array.prototype.filter
-                        .call($event.target.options, function(o) {
-                          return o.selected
-                        })
-                        .map(function(o) {
-                          var val = "_value" in o ? o._value : o.value
-                          return val
-                        })
-                      _vm.$set(
-                        _vm.caseData,
-                        "category",
-                        $event.target.multiple
-                          ? $$selectedVal
-                          : $$selectedVal[0]
-                      )
-                    }
-                  }
-                },
-                _vm._l(_vm.categories, function(category) {
-                  return _c("option", { domProps: { value: category.id } }, [
-                    _vm._v(_vm._s(category.name))
-                  ])
-                })
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _c("label", { attrs: { for: "location-select" } }, [
-                _vm._v("\n\t\t\t\t\tLocation\n\t\t\t\t")
-              ]),
-              _vm._v(" "),
-              _c(
-                "select",
-                {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.caseData.location,
-                      expression: "caseData.location"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { id: "location-select" },
-                  on: {
-                    change: function($event) {
-                      var $$selectedVal = Array.prototype.filter
-                        .call($event.target.options, function(o) {
-                          return o.selected
-                        })
-                        .map(function(o) {
-                          var val = "_value" in o ? o._value : o.value
-                          return val
-                        })
-                      _vm.$set(
-                        _vm.caseData,
-                        "location",
-                        $event.target.multiple
-                          ? $$selectedVal
-                          : $$selectedVal[0]
-                      )
-                    }
-                  }
-                },
-                _vm._l(_vm.locations, function(location) {
-                  return _c("option", { domProps: { value: location.id } }, [
-                    _vm._v(_vm._s(location.name))
-                  ])
-                })
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _c(
-                "div",
-                { attrs: { id: "case-modal-mentors-div" } },
-                [
-                  _c("label", [_vm._v("\n\t\t\t\t\t\tMentors\n\t\t\t\t\t")]),
-                  _vm._v(" "),
-                  _c("mentor-select-field", {
-                    attrs: {
-                      mentors: _vm.mentors,
-                      selected: _vm.caseData.mentors
-                    },
-                    model: {
-                      value: _vm.caseData.mentors,
-                      callback: function($$v) {
-                        _vm.$set(_vm.caseData, "mentors", $$v)
-                      },
-                      expression: "caseData.mentors"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group form-check" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.caseData.anonymous,
-                    expression: "caseData.anonymous"
-                  }
-                ],
-                staticClass: "form-check-input",
-                attrs: { type: "checkbox", id: "case-modal-anonymous" },
-                domProps: {
-                  checked: Array.isArray(_vm.caseData.anonymous)
-                    ? _vm._i(_vm.caseData.anonymous, null) > -1
-                    : _vm.caseData.anonymous
-                },
-                on: {
-                  change: function($event) {
-                    var $$a = _vm.caseData.anonymous,
-                      $$el = $event.target,
-                      $$c = $$el.checked ? true : false
-                    if (Array.isArray($$a)) {
-                      var $$v = null,
-                        $$i = _vm._i($$a, $$v)
-                      if ($$el.checked) {
-                        $$i < 0 &&
-                          _vm.$set(_vm.caseData, "anonymous", $$a.concat([$$v]))
-                      } else {
-                        $$i > -1 &&
-                          _vm.$set(
-                            _vm.caseData,
-                            "anonymous",
-                            $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                          )
-                      }
-                    } else {
-                      _vm.$set(_vm.caseData, "anonymous", $$c)
-                    }
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "label",
-                {
-                  staticClass: "form-check-label",
-                  attrs: { for: "case-modal-anonymous" }
-                },
-                [
-                  _vm._v(
-                    "\n\t\t\t\t\tYour name should be visible to the mentors\n\t\t\t\t"
-                  )
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("template", { slot: "modal-footer" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "form-inline button-div bordered white hover justify-content-center",
-                on: { click: _vm.saveSettings }
-              },
-              [
-                _c("a", { staticClass: "mx-3", attrs: { href: "#" } }, [
-                  _vm._v("Save")
-                ])
-              ]
-            )
-          ])
-        ],
-        2
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5db98414", module.exports)
-  }
-}
-
-/***/ }),
+/* 238 */,
 /* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -53194,6 +52880,391 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(252);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(20)("a3e761f6", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5db98414\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CaseOptionsModal.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5db98414\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CaseOptionsModal.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 252 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(9)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\nform .form-group[data-v-5db98414] {\n\tmargin-bottom: 2rem;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 253 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "d-inline" },
+    [
+      _c(
+        "b-btn",
+        {
+          directives: [
+            {
+              name: "b-modal",
+              rawName: "v-b-modal.case-options-modal",
+              modifiers: { "case-options-modal": true }
+            }
+          ],
+          staticClass:
+            "form-inline button-div bordered white hover mt-md-0 mt-3 float-md-right justify-content-center",
+          attrs: { variant: "secondary" }
+        },
+        [
+          _c(
+            "a",
+            {
+              staticClass: "mx-3",
+              attrs: {
+                href: "#",
+                "data-toggle": "modal",
+                "data-target": "#case-options-modal"
+              }
+            },
+            [_vm._v("\n\t\t\tOptionen\n\t\t")]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "b-modal",
+        {
+          ref: "modal",
+          attrs: { id: "case-options-modal", title: "Optionen" }
+        },
+        [
+          _c("form", { attrs: { autocomplete: "off" } }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "case-title" } }, [_vm._v("Titel")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model.trim",
+                    value: _vm.caseData.title,
+                    expression: "caseData.title",
+                    modifiers: { trim: true }
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text", id: "case-title" },
+                domProps: { value: _vm.caseData.title },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.caseData, "title", $event.target.value.trim())
+                  },
+                  blur: function($event) {
+                    _vm.$forceUpdate()
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "category-select" } }, [
+                _vm._v("\n\t\t\t\t\tCategory\n\t\t\t\t")
+              ]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.caseData.category,
+                      expression: "caseData.category"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { id: "category-select" },
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.$set(
+                        _vm.caseData,
+                        "category",
+                        $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      )
+                    }
+                  }
+                },
+                _vm._l(_vm.categories, function(category) {
+                  return _c("option", { domProps: { value: category } }, [
+                    _vm._v(_vm._s(category))
+                  ])
+                })
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "location-select" } }, [
+                _vm._v("\n\t\t\t\t\tLocation\n\t\t\t\t")
+              ]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.caseData.location_id,
+                      expression: "caseData.location_id"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { id: "location-select" },
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.$set(
+                        _vm.caseData,
+                        "location_id",
+                        $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      )
+                    }
+                  }
+                },
+                _vm._l(_vm.locations, function(location) {
+                  return _c("option", { domProps: { value: location.id } }, [
+                    _vm._v(_vm._s(location.name))
+                  ])
+                })
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c(
+                "div",
+                { attrs: { id: "case-modal-mentors-div" } },
+                [
+                  _c("label", [_vm._v("\n\t\t\t\t\t\tMentors\n\t\t\t\t\t")]),
+                  _vm._v(" "),
+                  _c("mentor-select-field", {
+                    attrs: {
+                      mentors: _vm.mentors,
+                      selected: _vm.caseData.mentors
+                    },
+                    model: {
+                      value: _vm.caseData.mentors,
+                      callback: function($$v) {
+                        _vm.$set(_vm.caseData, "mentors", $$v)
+                      },
+                      expression: "caseData.mentors"
+                    }
+                  })
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group form-check" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.caseData.anonymous,
+                    expression: "caseData.anonymous"
+                  }
+                ],
+                staticClass: "form-check-input",
+                attrs: { type: "checkbox", id: "case-modal-anonymous" },
+                domProps: {
+                  checked: Array.isArray(_vm.caseData.anonymous)
+                    ? _vm._i(_vm.caseData.anonymous, null) > -1
+                    : _vm.caseData.anonymous
+                },
+                on: {
+                  change: function($event) {
+                    var $$a = _vm.caseData.anonymous,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = null,
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 &&
+                          _vm.$set(_vm.caseData, "anonymous", $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          _vm.$set(
+                            _vm.caseData,
+                            "anonymous",
+                            $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                          )
+                      }
+                    } else {
+                      _vm.$set(_vm.caseData, "anonymous", $$c)
+                    }
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass: "form-check-label",
+                  attrs: { for: "case-modal-anonymous" }
+                },
+                [
+                  _vm._v(
+                    "\n\t\t\t\t\tYour name should be visible to the mentors\n\t\t\t\t"
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group form-check" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.caseData.solved,
+                    expression: "caseData.solved"
+                  }
+                ],
+                staticClass: "form-check-input",
+                attrs: { type: "checkbox", id: "case-modal-solved" },
+                domProps: {
+                  checked: Array.isArray(_vm.caseData.solved)
+                    ? _vm._i(_vm.caseData.solved, null) > -1
+                    : _vm.caseData.solved
+                },
+                on: {
+                  change: function($event) {
+                    var $$a = _vm.caseData.solved,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = null,
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 &&
+                          _vm.$set(_vm.caseData, "solved", $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          _vm.$set(
+                            _vm.caseData,
+                            "solved",
+                            $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                          )
+                      }
+                    } else {
+                      _vm.$set(_vm.caseData, "solved", $$c)
+                    }
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass: "form-check-label",
+                  attrs: { for: "case-modal-solved" }
+                },
+                [_vm._v("\n\t\t\t\t\tThis case is solved\n\t\t\t\t")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("template", { slot: "modal-footer" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "form-inline button-div bordered white hover justify-content-center",
+                on: { click: _vm.saveSettings }
+              },
+              [
+                _c("a", { staticClass: "mx-3", attrs: { href: "#" } }, [
+                  _vm._v("Save")
+                ])
+              ]
+            )
+          ])
+        ],
+        2
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5db98414", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

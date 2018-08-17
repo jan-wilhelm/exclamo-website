@@ -38,6 +38,6 @@ class LocationExistsInSchool implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'The selected location must be associated with your school!';
     }
 }

@@ -143,14 +143,8 @@ class ReportedCaseController extends Controller
         });
 
         // Categories
-        $plainCategories = config('exclamo.categories');
-        $categories = collect($plainCategories)->map(function($value, $index) {
-            return [
-                'id'=> $index,
-                'name'=> $value
-            ];
-        });
-
+        $categories = config('exclamo.categories');
+        
         // Mentors
         $allMentors = auth()->user()->school->mentors()->mentoring()->get();
         $possibleMentors = $allMentors->map(function($mentor, $index) {

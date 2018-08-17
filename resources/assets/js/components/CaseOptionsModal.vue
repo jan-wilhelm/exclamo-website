@@ -17,7 +17,7 @@
 					</label>
 
 					<select id="category-select" class="form-control" v-model="caseData.category">
-						<option v-for="category in categories" :value="category.id">{{ category.name }}</option>
+						<option v-for="category in categories" :value="category">{{ category }}</option>
 					</select>
 				</div>
 				<div class="form-group">
@@ -25,7 +25,7 @@
 						Location
 					</label>
 
-					<select id="location-select" class="form-control" v-model="caseData.location">
+					<select id="location-select" class="form-control" v-model="caseData.location_id">
 						<option v-for="location in locations" :value="location.id">{{ location.name }}</option>
 					</select>
 				</div>
@@ -42,6 +42,12 @@
 					<input type="checkbox" class="form-check-input" id="case-modal-anonymous" v-model="caseData.anonymous">
 					<label class="form-check-label" for="case-modal-anonymous">
 						Your name should be visible to the mentors
+					</label>
+				</div>
+				<div class="form-group form-check">
+					<input type="checkbox" class="form-check-input" id="case-modal-solved" v-model="caseData.solved">
+					<label class="form-check-label" for="case-modal-solved">
+						This case is solved
 					</label>
 				</div>
 			</form>
@@ -72,12 +78,18 @@
 		},
 		methods: {
 			saveSettings() {
-				this.$refs.modal.hide('header-close');
+				let reportedCase = new api.ReportedCase();
+				reportedCase.edit(this.caseData);
 			},
+			closeModal() {
+				this.$refs.modal.hide('header-close');
+			}
 		},
 	};
 </script>
 
-<style>
-
+<style scoped>
+	form .form-group {
+		margin-bottom: 2rem;
+	}
 </style>

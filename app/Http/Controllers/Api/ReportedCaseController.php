@@ -65,7 +65,7 @@ class ReportedCaseController extends Controller
         $case = ReportedCase::findOrFail($id);
         $case->update($request->validated());
 
-        $case->mentors()->sync($request['mentors'] ?: $case->mentors);
+        $case->mentors()->sync(collect($request['mentors'])->pluck("id") ?: $case->mentors);
         return $this->show($case);
     }
 
