@@ -6,7 +6,7 @@
 			</a>
 		</b-btn>
 		<b-modal ref="modal" id="case-options-modal" title="Optionen">
-			<form autocomplete="off">
+			<form autocomplete="off" class="px-sm-5 px-1">
 				<div class="form-group">
 					<label for="case-title">Titel</label>
 					<input type="text" class="form-control" id="case-title" v-model.trim="caseData.title">
