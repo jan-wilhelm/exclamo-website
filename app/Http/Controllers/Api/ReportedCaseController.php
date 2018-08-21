@@ -16,7 +16,7 @@ class ReportedCaseController extends Controller
 
     public function __construct(ReportedCaseRepository $reportedCases)
     {
-        $this->middleware('auth:token-and-cookie');
+        $this->middleware('auth:api');
         $this->reportedCases = $reportedCases;
     }
 

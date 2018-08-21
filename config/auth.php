@@ -45,10 +45,6 @@ return [
             'driver' => 'token-and-cookie',
             'provider' => 'users',
         ],
-        'token-and-cookie' => [
-            'driver' => 'token-and-cookie',
-            'provider' => 'users',
-        ],
     ],
 
     /*

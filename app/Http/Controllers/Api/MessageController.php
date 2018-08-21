@@ -13,7 +13,7 @@ class MessageController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:token-and-cookie');
+        $this->middleware('auth:api');
     }
 
     public function index() {
