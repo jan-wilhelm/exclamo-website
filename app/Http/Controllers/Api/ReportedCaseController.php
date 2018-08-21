@@ -63,6 +63,7 @@ class ReportedCaseController extends Controller
     public function update(UpdateReportedCaseRequest $request, $id)
     {
         $case = ReportedCase::findOrFail($id);
+        $this->authorize('update', $case);
         $case->update($request->validated());
 
         $case->mentors()->sync(collect($request['mentors'])->pluck("id") ?: $case->mentors);
