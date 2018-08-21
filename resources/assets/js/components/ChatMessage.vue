@@ -1,7 +1,7 @@
 <template>
 	<div class="chat-message p-3" :class="[(sentByUser ? 'align-self-end right' : 'left'), (sending ? 'sending' : '')]">
 		<a v-if="!sentByUser" class="mb-2 d-block">
-			{{ user.first_name + " " + user.last_name}}
+			{{ anonymous ? "Anonymous user" : user.first_name + " " + user.last_name}}
 		</a>
 		<span class="chat-text">
 			{{ body }}
@@ -15,15 +15,16 @@
 <script>
 	export default {
 		props: {
-			body: String,
-			sentByUser: Boolean,
-			date: String,
-			user: Object,
-			sending: Boolean
+			messageObject: Object
 		},
 		data() {
 			return {
-
+				body: this.messageObject.body,
+				sentByUser: this.messageObject.sentByUser,
+				date: this.messageObject.date,
+				user: this.messageObject.user,
+				sending: this.messageObject.sending,
+				anonymous: this.messageObject.anonymous,
 			}
 		}
 	};

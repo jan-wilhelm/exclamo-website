@@ -119,12 +119,20 @@ class ReportedCaseController extends Controller
 
     public function getMessagesForView(ReportedCase $case)
     {
-        return $case->messages()->with("sender")->orderBy('updated_at', 'asc')->get()->map(function($message) {
+        $anonymous = $case->anonymous;
+        return $case->messages()->with("sender")->orderBy('updated_at', 'asc')->get()->map(function($message) use($anonymous) {
             $messageJson = array();
+
+            $messageJson["anonymous"] = $anonymous;
+
             $messageJson["body"] = $message->body;
             $messageJson["date"] = $message->updated_at->format("d.m.Y G:i");
             $messageJson["sentByUser"] = ($message->sender->id == auth()->id());
-            $messageJson["user"] = $message->sender->only(['id', 'first_name', 'last_name']);
+
+            if (!$anonymous) {
+                $messageJson["user"] = $message->sender->only(['id', 'first_name', 'last_name']);
+            }
+
             return $messageJson;
         });
     }

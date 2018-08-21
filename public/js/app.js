@@ -51993,14 +51993,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
-		body: String,
-		sentByUser: Boolean,
-		date: String,
-		user: Object,
-		sending: Boolean
+		messageObject: Object
 	},
 	data: function data() {
-		return {};
+		return {
+			body: this.messageObject.body,
+			sentByUser: this.messageObject.sentByUser,
+			date: this.messageObject.date,
+			user: this.messageObject.user,
+			sending: this.messageObject.sending,
+			anonymous: this.messageObject.anonymous
+		};
 	}
 });
 
@@ -52026,7 +52029,11 @@ var render = function() {
         ? _c("a", { staticClass: "mb-2 d-block" }, [
             _vm._v(
               "\n\t\t" +
-                _vm._s(_vm.user.first_name + " " + _vm.user.last_name) +
+                _vm._s(
+                  _vm.anonymous
+                    ? "Anonymous user"
+                    : _vm.user.first_name + " " + _vm.user.last_name
+                ) +
                 "\n\t"
             )
           ])
@@ -52273,13 +52280,7 @@ var render = function() {
         _vm._l(_vm.messageObjects, function(message) {
           return _c("chat-message", {
             key: message.id,
-            attrs: {
-              body: message.body,
-              date: message.date,
-              "sent-by-user": message.sentByUser,
-              user: message.user,
-              sending: message.sending
-            }
+            attrs: { messageObject: message }
           })
         })
       ),

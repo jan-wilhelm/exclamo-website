@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div ref="container" id="chat-container" class="chat-container px-4 d-flex flex-column">
-			<chat-message v-for="message in messageObjects" :key="message.id" :body="message.body" :date="message.date" :sent-by-user="message.sentByUser" :user="message.user" :sending="message.sending">
+			<chat-message v-for="message in messageObjects" :key="message.id" :messageObject="message">
 			</chat-message>
 		</div>
 		<chat-input-form ref="input" @sendMessage="sendMessage"></chat-input-form>
