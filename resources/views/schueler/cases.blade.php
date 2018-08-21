@@ -15,10 +15,10 @@
 		@endbigstatistic
 	@endexclamosection
 
-	@exclamoflexsection (["classes" => "bg-color-primary-3 text-white"])
-		<h4>
+	@exclamoflexsection
+		<h3>
 			@lang('messages.incidents')
-		</h4>
+		</h3>
 		
 		@casesview (["cases" => $cases])
 		@endcasesview
