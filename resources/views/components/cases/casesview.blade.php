@@ -1,4 +1,4 @@
-<div class="row mb-4 p-3">
+<div class="row mb-4 p-3 d-flex justify-content-center">
 	@foreach($cases as $case)
 	<div class="d-flex flex-column case-card shadow col-lg-3 col-md-5 mr-lg-5 mr-md-3 mb-5 {{ $case->solved ? "case-solved" : "" }}">
 		<div class="mb-auto pb-2">
