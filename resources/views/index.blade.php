@@ -100,22 +100,18 @@
 					<div class="col-md-3 col-12 text-center avatar">
 						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
 						<div class="avatar-name">Kai Lanz</div>
-						<div class="avatar-title">CEO</div>
+					</div>
+					<div class="col-md-3 col-12 text-center avatar">
+						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
+						<div class="avatar-name">Margareta Raffauf</div>
 					</div>
 					<div class="col-md-3 col-12 text-center avatar">
 						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
 						<div class="avatar-name">Julius de Gruyter</div>
-						<div class="avatar-title">CFO</div>
-					</div>
-					<div class="col-md-3 col-12 text-center avatar">
-						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
-						<div class="avatar-name">undefined</div>
-						<div class="avatar-title">CMO</div>
 					</div>
 					<div class="col-md-3 col-12 text-center avatar">
 						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
 						<div class="avatar-name">Jan Wilhelm</div>
-						<div class="avatar-title">CTO</div>
 					</div>
 				</div>
 			</div>
