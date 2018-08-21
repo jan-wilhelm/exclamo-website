@@ -52025,15 +52025,11 @@ var render = function() {
       ]
     },
     [
-      !_vm.sentByUser
+      !_vm.anonymous && !_vm.sentByUser
         ? _c("a", { staticClass: "mb-2 d-block" }, [
             _vm._v(
               "\n\t\t" +
-                _vm._s(
-                  _vm.anonymous
-                    ? "Anonymous user"
-                    : _vm.user.first_name + " " + _vm.user.last_name
-                ) +
+                _vm._s(_vm.user.first_name + " " + _vm.user.last_name) +
                 "\n\t"
             )
           ])

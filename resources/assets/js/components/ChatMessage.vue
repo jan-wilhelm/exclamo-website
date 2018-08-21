@@ -1,7 +1,7 @@
 <template>
 	<div class="chat-message p-3" :class="[(sentByUser ? 'align-self-end right' : 'left'), (sending ? 'sending' : '')]">
-		<a v-if="!sentByUser" class="mb-2 d-block">
-			{{ anonymous ? "Anonymous user" : user.first_name + " " + user.last_name}}
+		<a v-if="!anonymous && !sentByUser" class="mb-2 d-block">
+			{{ user.first_name + " " + user.last_name}}
 		</a>
 		<span class="chat-text">
 			{{ body }}
