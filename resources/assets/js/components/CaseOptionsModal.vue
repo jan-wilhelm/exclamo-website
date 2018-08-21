@@ -97,3 +97,16 @@
 		margin-bottom: 2rem;
 	}
 </style>
+<style>
+	
+
+	#case-options-modal form, #case-options-modal .modal-title {
+	    padding-left: .25rem !important;
+	}
+
+	@media (min-width: 576px) {
+		#case-options-modal form, #case-options-modal .modal-title {
+			padding-left: 3rem !important;
+		}
+	}
+</style>
