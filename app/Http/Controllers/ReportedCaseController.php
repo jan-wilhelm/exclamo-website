@@ -117,6 +117,18 @@ class ReportedCaseController extends Controller
         ];
     }
 
+    public function getMessagesForView(ReportedCase $case)
+    {
+        return $case->messages()->with("sender")->orderBy('updated_at', 'asc')->get()->map(function($message) {
+            $messageJson = array();
+            $messageJson["body"] = $message->body;
+            $messageJson["date"] = $message->updated_at->format("d.m.Y G:i");
+            $messageJson["sentByUser"] = ($message->sender->id == auth()->id());
+            $messageJson["user"] = $message->sender->only(['id', 'first_name', 'last_name']);
+            return $messageJson;
+        });
+    }
+
     /**
      * Show a specific case to the user
      *
@@ -133,15 +145,17 @@ class ReportedCaseController extends Controller
 
         // Transform the collection of messages into a dictionary that
         // can be read by the vue components
-        $messages = $case->messages()->with("sender")->orderBy('updated_at', 'asc')->get()->map(function($message) {
-                $messageJson = array();
-                $messageJson["body"] = $message->body;
-                $messageJson["date"] = $message->updated_at->format("d.m.Y G:i");
-                $messageJson["sentByUser"] = ($message->sender->id == auth()->id());
-                $messageJson["user"] = $message->sender->only(['id', 'first_name', 'last_name']);
-                return $messageJson;
-        });
+        $messages = $this->getMessagesForView($case);
 
+        if (auth()->user()->hasRole("schueler")) {
+            return $this->studentDetailView($request, $case, $messages);
+        } else {
+            return $this->mentorDetailView($request, $case, $messages);
+        }
+    }
+
+    public function studentDetailView(Request $request, ReportedCase $case, $messages)
+    {
         // Categories
         $categories = config('exclamo.categories');
         
@@ -165,13 +179,21 @@ class ReportedCaseController extends Controller
         // Client Data
         $clientData = new ReportedCaseResource($case);
 
-        return view("case")->with([
+        return view("schueler.case")->with([
             'case' => $case,
             'messages'=> $messages,
             'categories'=> $categories,
             'possibleMentors'=> $possibleMentors,
             'clientData'=> $clientData,
             'locations'=> $locations
+        ]);
+    }
+
+    public function mentorDetailView(Request $request, ReportedCase $case, $messages)
+    {
+        return view("mentors.case")->with([
+            'case'=> $case,
+            'messages'=> $messages
         ]);
     }
 
