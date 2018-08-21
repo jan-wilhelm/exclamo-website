@@ -14,13 +14,13 @@
 		</div>
 		<hr>
 		<div class="d-flex flex-column">
-			<div class="w-100 d-flex mb-3">
+			<div class="mb-3">
 				<span class="tag">
 					<i class="fas fa-user-friends mr-1"></i>
 					{{ $case->mentors->count() }} Mentors
 				</span>
 			</div>
-			<div class="w-100 d-flex align-items-end justify-content-between">
+			<div class="d-flex align-items-end justify-content-between">
 				<a class="small" href="{{ route('incidents.show', ["case" => $case]) }}">
 					Zum Fall
 				</a>
