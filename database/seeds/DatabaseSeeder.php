@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
 
 
         $students = App\User::role('schueler')->get();
-        $mentors = App\User::role('lehrer')->get();
+        $mentors = App\User::role(['lehrer', 'schulleiter'])->get();
 
         foreach ($students as $student) {
 
