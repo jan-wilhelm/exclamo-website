@@ -1,13 +1,13 @@
 <template>
-	<div class="chat-message p-3" :class="[(sentByUser ? 'align-self-end right' : 'left'), (sending ? 'sending' : '')]">
-		<a v-if="!anonymous && !sentByUser" class="mb-2 d-block">
-			{{ user.first_name + " " + user.last_name}}
+	<div class="chat-message p-3" :class="[(messageObject.sentByUser ? 'align-self-end right' : 'left'), (messageObject.sending ? 'sending' : '')]">
+		<a v-if="!messageObject.anonymous && !messageObject.sentByUser" class="mb-2 d-block">
+			{{ messageObject.user.first_name + " " + messageObject.user.last_name}}
 		</a>
 		<span class="chat-text">
-			{{ body }}
+			{{ messageObject.body }}
 		</span>
 		<span class="chat-time">
-			{{ date }}
+			{{ messageObject.date }}
 		</span>
 	</div>
 </template>
@@ -19,12 +19,6 @@
 		},
 		data() {
 			return {
-				body: this.messageObject.body,
-				sentByUser: this.messageObject.sentByUser,
-				date: this.messageObject.date,
-				user: this.messageObject.user,
-				sending: this.messageObject.sending,
-				anonymous: this.messageObject.anonymous,
 			}
 		}
 	};
