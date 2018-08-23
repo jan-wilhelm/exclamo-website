@@ -103,7 +103,7 @@
 					</div>
 					<div class="col-md-3 col-12 text-center avatar">
 						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
-						<div class="avatar-name">Margareta Raffauf</div>
+						<div class="avatar-name">Margaretha Raffauf</div>
 					</div>
 					<div class="col-md-3 col-12 text-center avatar">
 						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
