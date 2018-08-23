@@ -9,4 +9,7 @@
 			@endslot
 		@endcomponent
 	@endforeach
+	@isset($otherComponents)
+		{{ $otherComponents }}
+	@endisset
 </div>
