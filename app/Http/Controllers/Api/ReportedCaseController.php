@@ -65,9 +65,7 @@ class ReportedCaseController extends Controller
     public function show(ReportedCase $reportedCase)
     {
         $this->authorize('view', $reportedCase);
-
         $resource = new ReportedCaseResource($reportedCase);
-
         $caseDetails = $resource->toArray(request());
 
         if (!$reportedCase->anonymous)
