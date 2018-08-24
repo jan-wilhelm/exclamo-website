@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\ReportedCase;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateReportedCaseRequest;
@@ -32,7 +33,7 @@ class ReportedCaseController extends Controller
      */
     public function index()
     {
-        
+        return ReportedCaseResource::collection(Auth::user()->combined_cases);
     }
 
     /**
@@ -59,18 +60,18 @@ class ReportedCaseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\ReportedCase  $reportedCase
+     * @param  \App\ReportedCase  $case
      * @return \Illuminate\Http\Response
      */
-    public function show(ReportedCase $reportedCase)
+    public function show(ReportedCase $case)
     {
-        $this->authorize('view', $reportedCase);
-        $resource = new ReportedCaseResource($reportedCase);
+        $this->authorize('view', $case);
+        $resource = new ReportedCaseResource($case);
         $caseDetails = $resource->toArray(request());
 
-        if (!$reportedCase->anonymous)
+        if (!$case->anonymous)
         {
-            $caseDetails['user'] = (new ConfidentialUserResource($reportedCase->victim))->toArray(request());
+            $caseDetails['user'] = (new ConfidentialUserResource($case->victim))->toArray(request());
         }
 
         return $caseDetails;

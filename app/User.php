@@ -57,6 +57,10 @@ class User extends Authenticatable
         return $this->first_name . " " . $this->last_name;
     }
 
+    public function getCombinedCasesAttribute() {
+        return $this->reportedCases()->get()->concat($this->mentorCases()->get());
+    }
+
     /**
      * Check if the user is a mentor (i.e. either a principle or teacher)
      */
@@ -89,10 +93,6 @@ class User extends Authenticatable
      */
     public function mentorCases() {
         return $this->belongsToMany('App\ReportedCase', 'case_mentor', 'user_id', 'case_id');
-    }
-
-    public function combinedCases() {
-        return $this->reportedCases()->get()->concat($this->mentorCases()->get());
     }
 
     /**

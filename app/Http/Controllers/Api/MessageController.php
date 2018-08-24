@@ -7,19 +7,18 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\MessageResource;
 use Illuminate\Support\Facades\Auth;
 use App\Message;
+use App\ReportedCase;
 use App\Rules\ReportedCaseExistsAndBelongsToUser;
 
 class MessageController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:api');
     }
 
     public function index() {
-        return Auth::user()->messages->map(function ($message, $key) {
-            return new MessageResource($message);
-        });
+        return MessageResource::collection(Auth::user()->messages);
     }
 
     /**
@@ -84,5 +83,10 @@ class MessageController extends Controller
     public function destroy(Message $message)
     {
         //
+    }
+
+    public function messagesForCase(ReportedCase $case) {
+        $this->authorize('view', $case);
+        return MessageResource::collection($case->messages);
     }
 }

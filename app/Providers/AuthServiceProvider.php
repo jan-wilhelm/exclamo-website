@@ -32,17 +32,16 @@ class AuthServiceProvider extends ServiceProvider
         
         Auth::viaRequest('token-and-cookie', function ($request) {
             $token = $request->input('api_token');
-
             if (!$request->has('api_token')) {
-                $cookieValue = Cookie::get('api_token');
+                $token = Cookie::get('api_token');
 
-                if (is_null($cookieValue)) {
+                if (is_null($token)) {
                     return null;
                 }
-                $token = Crypt::decryptString($cookieValue); 
             }
-
+            $token = Crypt::decryptString($token);
             $user = User::where('api_token', $token)->first();
+            
             return $user;
         });
     }

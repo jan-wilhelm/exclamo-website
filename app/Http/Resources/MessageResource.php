@@ -17,7 +17,7 @@ class MessageResource extends JsonResource
         return [
             'id' => $this->id,
             'case' => $this->reported_case_id,
-            'user' => new ConfidentialUserResource($this->sender)
+            'user' => new ConfidentialUserResource($this->sender),
             'body' => $this->body,
             'date' => $this->updated_at->timestamp
         ];

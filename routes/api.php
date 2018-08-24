@@ -15,3 +15,4 @@ use Illuminate\Http\Request;
 
 Route::apiResource('messages', 'Api\\MessageController');
 Route::apiResource('cases', 'Api\\ReportedCaseController');
+Route::get('cases/{case}/messages', 'Api\\MessageController@messagesForCase');
