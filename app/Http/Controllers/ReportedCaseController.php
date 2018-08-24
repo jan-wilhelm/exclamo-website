@@ -5,20 +5,27 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ReportedCase;
 use App\Http\Requests\ReportCaseRequest;
+use App\Http\Resources\ReportedCaseResource;
+
 use App\User;
 use App\Location;
 use App\Message;
+
 use App\Services\ReportedCaseService;
-use App\Repositories\UserRepository;
+use App\Services\LocationService;
+use App\Services\UserService;
+use App\Services\MessageService;
+
 use App\Repositories\ReportedCaseRepository;
-use App\Http\Resources\ReportedCaseResource;
 
 class ReportedCaseController extends Controller
 {
 
     protected $reportedCases;
     protected $caseService;
-    protected $users;
+    protected $locationService;
+    protected $userService;
+    protected $messageService;
 
     /**
      * Create a new controller instance.
@@ -26,12 +33,15 @@ class ReportedCaseController extends Controller
      * Only authenticated students may create new cases
      * @return void
      */
-    public function __construct(ReportedCaseRepository $reportedCases, ReportedCaseService $caseService, UserRepository $users)
-    {
+    public function __construct(ReportedCaseService $caseService, LocationService $locationService, UserService $userService, MessageService $messageService) {
         $this->middleware('auth');
-        $this->reportedCases = $reportedCases;
+
+        $this->reportedCases = $caseService->cases;
+
         $this->caseService = $caseService;
-        $this->users = $users;
+        $this->locationService = $locationService;
+        $this->userService = $userService;
+        $this->messageService = $messageService;
     }
 
     /**
@@ -80,27 +90,13 @@ class ReportedCaseController extends Controller
         $statistics = $this->caseService->getStatistics($user, $cases);
 
         $cases = $cases[0]->concat($cases[1]);
-        return view("mentors/cases", compact('cases', 'statistics'));
+        return view("mentors.cases", compact('cases', 'statistics'));
     }
 
     public function getMessagesForView(ReportedCase $case)
     {
-        $anonymous = $case->anonymous;
-        return $case->messages()->with("sender")->orderBy('updated_at', 'asc')->get()->map(function($message) use($anonymous) {
-            $messageJson = array();
-
-            $messageJson["anonymous"] = $anonymous;
-
-            $messageJson["body"] = $message->body;
-            $messageJson["date"] = $message->updated_at->format("d.m.Y G:i");
-            $messageJson["sentByUser"] = ($message->sender->id == auth()->id());
-
-            if (!$anonymous) {
-                $messageJson["user"] = $message->sender->only(['id', 'first_name', 'last_name']);
-            }
-
-            return $messageJson;
-        });
+        $messages = $case->messages()->with("sender")->orderBy('updated_at', 'asc')->get();
+        return $this->messageService->getInJSONFormat($messages, $case->anonymous);
     }
 
     /**
@@ -135,40 +131,17 @@ class ReportedCaseController extends Controller
         
         // Mentors
         $allMentors = auth()->user()->school->mentors()->mentoring()->get();
-        $possibleMentors = $allMentors->map(function($mentor, $index) {
-            return [
-                'id'=> $mentor->id,
-                'name'=> $mentor->full_name
-            ];
-        });
+        $possibleMentors = $this->userService->getInJSONFormat($allMentors);
 
-        // Locations
-        $locations = auth()->user()->school->locations->map(function ($location, $index) {
-            return [
-                'id'=> $location->id,
-                'name'=> $location->title
-            ];
-        });
-
-        // Client Data
+        $locations = $this->locationService->getLocationDataForUser(auth()->user());
         $clientData = new ReportedCaseResource($case);
 
-        return view("schueler.case")->with([
-            'case' => $case,
-            'messages'=> $messages,
-            'categories'=> $categories,
-            'possibleMentors'=> $possibleMentors,
-            'clientData'=> $clientData,
-            'locations'=> $locations
-        ]);
+        return view("schueler.case", compact('case', 'messages', 'categories', 'possibleMentors', 'clientData', 'locations'));
     }
 
     public function mentorDetailView(Request $request, ReportedCase $case, $messages)
     {
-        return view("mentors.case")->with([
-            'case'=> $case,
-            'messages'=> $messages
-        ]);
+        return view("mentors.case", compact('case', 'messages'));
     }
 
     /**
@@ -181,6 +154,7 @@ class ReportedCaseController extends Controller
      */
     public function report()
     {
+        $this->authorize('create');
         return view("schueler.report");
     }
 

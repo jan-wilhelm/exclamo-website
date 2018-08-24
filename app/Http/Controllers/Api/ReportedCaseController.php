@@ -8,17 +8,17 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateReportedCaseRequest;
 use App\Http\Requests\ReportCaseRequest;
 use App\Http\Resources\ReportedCaseResource;
-use App\Repositories\ReportedCaseRepository;
+use App\Services\ReportedCaseService;
 
 class ReportedCaseController extends Controller
 {
 
-    protected $reportedCases;
+    protected $caseService;
 
-    public function __construct(ReportedCaseRepository $reportedCases)
+    public function __construct(ReportedCaseService $caseService)
     {
         $this->middleware('auth:api');
-        $this->reportedCases = $reportedCases;
+        $this->caseService = $caseService;
     }
 
     /**
@@ -48,7 +48,7 @@ class ReportedCaseController extends Controller
         $validated = $request->validated();
 
         // Create a new ReportedCase instance with the given fields
-        $case = $this->reportedCases->createReportedCase($validated, auth()->user(), config("exclamo.categories"));
+        $case = $this->caseService->createReportedCase($validated, auth()->user(), config("exclamo.categories"));
         return $this->show($case);
     }
 
