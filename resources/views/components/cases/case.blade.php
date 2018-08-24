@@ -10,7 +10,7 @@
 		</div>
 		<hr>
 		<div class="d-flex flex-column">
-			<div class="mb-3">
+			<div>
 				@isset ($tags)
 					{{ $tags }}
 				@endisset
