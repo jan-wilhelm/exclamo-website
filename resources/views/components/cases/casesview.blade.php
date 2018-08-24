@@ -1,8 +1,10 @@
-@component('components.cases.cases_section', ["cases"=> $cases, "shouldBeSolved"=> false])
+@component('components.cases.cases_section', ["cases"=> $cases, "userTag"=> $userTag, "shouldBeSolved"=> false])
 	@slot('otherComponents')
-		{{ $otherComponents }}
+		@isset($otherComponents)
+			{{ $otherComponents }}
+		@endisset
 	@endslot
 @endcomponent
 
-@component('components.cases.cases_section', ["cases"=> $cases, "shouldBeSolved"=> true])
+@component('components.cases.cases_section', ["cases"=> $cases, "userTag"=> $userTag, "shouldBeSolved"=> true])
 @endcomponent

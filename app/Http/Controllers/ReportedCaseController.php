@@ -8,6 +8,8 @@ use App\Http\Requests\ReportCaseRequest;
 use App\User;
 use App\Location;
 use App\Message;
+use App\Services\ReportedCaseService;
+use App\Repositories\UserRepository;
 use App\Repositories\ReportedCaseRepository;
 use App\Http\Resources\ReportedCaseResource;
 
@@ -15,6 +17,8 @@ class ReportedCaseController extends Controller
 {
 
     protected $reportedCases;
+    protected $caseService;
+    protected $users;
 
     /**
      * Create a new controller instance.
@@ -22,10 +26,12 @@ class ReportedCaseController extends Controller
      * Only authenticated students may create new cases
      * @return void
      */
-    public function __construct(ReportedCaseRepository $reportedCases)
+    public function __construct(ReportedCaseRepository $reportedCases, ReportedCaseService $caseService, UserRepository $users)
     {
         $this->middleware('auth');
         $this->reportedCases = $reportedCases;
+        $this->caseService = $caseService;
+        $this->users = $users;
     }
 
     /**
@@ -55,23 +61,11 @@ class ReportedCaseController extends Controller
      */
     public function studentView(Request $request, User $user)
     {
-        $cases = $this
-            ->reportedCases->getOrderedForView($user);
-        $unresolvedCases = $cases[0];
-        $resolvedCases = $cases[1];
+        $cases = $this->caseService->getOrderedForView($user);
+        $statistics = $this->caseService->getStatistics($user, $cases);
 
-        $cases = $unresolvedCases->concat($resolvedCases);
-
-        $statistics = $this->getStatisticsForView($user, $cases, $resolvedCases);
-
-        return view("schueler/cases")->with(
-            array_merge(
-                $statistics,
-                [
-                    'cases' => $cases
-                ]
-            )
-        );
+        $cases = $cases[0]->concat($cases[1]);
+        return view("schueler.cases", compact('cases', 'statistics'));
     }
 
     /**
@@ -82,39 +76,11 @@ class ReportedCaseController extends Controller
      */
     public function mentorView(Request $request, User $user)
     {
-        $cases = $this->reportedCases
-            ->getOrderedForView($user, $this->reportedCases->whereMentoring($user));
-        $unresolvedCases = $cases[0];
-        $resolvedCases = $cases[1];
+        $cases = $this->caseService->getOrderedForView($user, $this->reportedCases->whereMentoring($user));
+        $statistics = $this->caseService->getStatistics($user, $cases);
 
-        $cases = $unresolvedCases->concat($resolvedCases);
-
-        $statistics = $this->getStatisticsForView($user, $cases, $resolvedCases);
-
-        return view("mentors/cases")->with(
-            array_merge(
-                $statistics,
-                [
-                    'cases' => $cases
-                ]
-            )
-        );
-    }
-
-    /**
-     * Get the case statistics for a specified user
-     * @param  User   $user          The user
-     * @param  array $cases         The subset of cases of which the data should be included in the stats
-     * @param  array $resolvedCases The subset of the $cases argument which are already resolved
-     * @return array                An array with the statistics
-     */
-    public function getStatisticsForView(User $user, $cases, $resolvedCases)
-    {
-        return [
-            'numberOfCases' => $cases->count(),
-            'numberOfResolvedCases' => $resolvedCases->count(),
-            'numberOfMessages' => $user->messages()->count()
-        ];
+        $cases = $cases[0]->concat($cases[1]);
+        return view("mentors/cases", compact('cases', 'statistics'));
     }
 
     public function getMessagesForView(ReportedCase $case)

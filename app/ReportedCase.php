@@ -13,6 +13,14 @@ class ReportedCase extends Model
         "anonymous",
         "solved"
     ];
+
+    public function getDisplayNameAttribute() {
+        if ($this->anonymous && $this->victim->hasRole("schueler"))
+        {
+            return "Anonymous student";
+        }
+        return $this->victim->full_name;
+    }
     
     public function victim() {
         return $this->belongsTo('App\User', 'student_id');

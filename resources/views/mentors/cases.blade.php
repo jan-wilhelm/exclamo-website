@@ -2,15 +2,15 @@
 
 @section('content')
 	@exclamosection ([ "classes" => "vdivide mt-sm-5" ])
-		@bigstatistic (["value" => $numberOfCases])
+		@bigstatistic (["value" => $statistics["numberOfCases"]])
 			@lang('messages.incidents')
 		@endbigstatistic
 
-		@bigstatistic (["value" => $numberOfResolvedCases])
+		@bigstatistic (["value" => $statistics["numberOfResolvedCases"]])
 			@lang('messages.resolved_incidents')
 		@endbigstatistic
 
-		@bigstatistic (["value" => $numberOfMessages])
+		@bigstatistic (["value" => $statistics["numberOfMessages"]])
 			@lang('messages.messages')
 		@endbigstatistic
 	@endexclamosection
@@ -20,7 +20,7 @@
 			@lang('messages.incidents')
 		</h4>
 		
-		@casesview (["cases" => $cases])
+		@casesview (["cases" => $cases, "userTag" => true])
 		@endcasesview
 
 	@endexclamoflexsection

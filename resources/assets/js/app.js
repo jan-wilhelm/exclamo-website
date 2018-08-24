@@ -10,9 +10,6 @@ require('./bootstrap');
 import Multiselect from 'vue-multiselect';
 import Datepicker from 'vuejs-datepicker';
 
-import api from './api';
-window.api = api;
-
 Vue.component('multiselect', Multiselect);
 Vue.component('chat-message', require('./components/ChatMessage.vue'));
 Vue.component('chat-messages-container', require('./components/ChatMessagesContainer.vue'));

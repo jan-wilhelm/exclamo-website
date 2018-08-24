@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\RepositoryInterface;
+use App\Repositories\RepositoryInterface;
 use App\User;
 
 class UserRepository implements RepositoryInterface {
@@ -32,7 +32,7 @@ class UserRepository implements RepositoryInterface {
         return User::make($data);
     }
  
-    public function update($id, array $data);
+    public function update($id, array $data)
     {
     	return User::find($id)->update($data);
     }
