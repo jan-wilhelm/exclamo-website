@@ -28,7 +28,14 @@ class MentorsExistInSchool implements Rule
     public function passes($attribute, $value)
     {
         foreach ($value as $index => $mentorId) {
-            $mentor = User::find($mentorId)->first();
+
+            if (!is_numeric($mentorId)) {
+                return false;
+            }
+
+            $mentorId = intval($mentorId);
+            $mentor = User::find($mentorId);
+
             // Check if the user exists
             if (!$mentor) {
                 return false;

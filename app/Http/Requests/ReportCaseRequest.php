@@ -36,7 +36,7 @@ class ReportCaseRequest extends FormRequest
             'title' => 'sometimes|string|min:3|nullable',
             'message' => 'required|string|min:10',
             'incident_date' => 'required|date|before:now|nullable',
-            'category' => 'required|in:' . implode(",", array_keys(config('exclamo.categories', ''))),
+            'category' => 'required|in:' . implode(",", config('exclamo.categories', '')),
             'location' => [
                 'sometimes',
                 'nullable',
@@ -48,7 +48,7 @@ class ReportCaseRequest extends FormRequest
                 'min:1',
                 new MentorsExistInSchool($this->user())
             ],
-            'case-anonymous' => 'sometimes'
+            'anonymous' => 'sometimes'
         ];
     }
 }

@@ -4,6 +4,8 @@ namespace App\Repositories;
 
 use App\ReportedCase;
 use App\User;
+use App\Location;
+use App\Message;
 use App\Repositories\RepositoryInterface;
 
 class ReportedCaseRepository implements RepositoryInterface
@@ -27,6 +29,11 @@ class ReportedCaseRepository implements RepositoryInterface
     public function create(array $data)
     {
     	return ReportedCase::create($data);
+    }
+ 
+    public function make(array $data)
+    {
+        return ReportedCase::make($data);
     }
  
     public function update($id, array $data)
@@ -94,6 +101,41 @@ class ReportedCaseRepository implements RepositoryInterface
         $unresolvedCases = $cases->diff($resolvedCases) ?: array();
 
         return [$unresolvedCases, $resolvedCases];
+    }
+
+    /**
+     * Creates and stores a new ReportedCase with the given parameters
+     *
+     * Note that the $user should be authorized to perform this action
+     * as this method does not check for that.
+     * @param  array    $params     An array of fields for the case
+     * @param  User|null $user       The creator of the new case
+     * @param  array    $categories An array containing the possible categories of a case
+     * @return ReportedCase                The created case
+     */
+    public function createReportedCase($params, User $user = null, $categories)
+    {
+        $mentorIDs = $params['mentors'];
+        $params['anonymous'] = isset($params["anonymous"]) && (is_bool($params["anonymous"]) ? boolval($params["anonymous"]) : true);
+
+        $case = $this->make($params);
+        $case->victim()->associate($user);
+        $case->location()->associate(Location::find($params['location']));
+        $case->save();
+
+        // Add the selected mentors to the case
+        $case->mentors()->saveMany(User::find($mentorIDs));
+
+        // Create the initial message from the description text
+        // and add it to the case
+        $initialMessage = Message::make([
+            "body"=> $params["message"]
+        ]);
+        $initialMessage->user_id = $user->id;
+        $initialMessage->reportedCase()->associate($case);
+        $initialMessage->save();
+
+        return $case;
     }
 
 }

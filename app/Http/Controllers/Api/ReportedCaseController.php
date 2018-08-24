@@ -6,6 +6,7 @@ use App\ReportedCase;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateReportedCaseRequest;
+use App\Http\Requests\ReportCaseRequest;
 use App\Http\Resources\ReportedCaseResource;
 use App\Repositories\ReportedCaseRepository;
 
@@ -31,14 +32,24 @@ class ReportedCaseController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Generate the ReportedCase object matching the data given
+     * in the $request and store it in the database.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * This function also handles all authorization and request
+     * validation and is therefore safe to use as the web endpoint.
+     * @param  ReportCaseRequest $request The request
+     * @return Response                     A redirect to the last page of the user
      */
-    public function store(Request $request)
+    public function store(ReportCaseRequest $request)
     {
-        //
+        //$this->authorize('create');
+
+        // Retrieve all the valid fields or return an error
+        $validated = $request->validated();
+
+        // Create a new ReportedCase instance with the given fields
+        $case = $this->reportedCases->createReportedCase($validated, auth()->user(), config("exclamo.categories"));
+        return $this->show($case);
     }
 
     /**
@@ -66,7 +77,7 @@ class ReportedCaseController extends Controller
         $this->authorize('update', $case);
         $case->update($request->validated());
 
-        $case->mentors()->sync(collect($request['mentors'])->pluck("id") ?: $case->mentors);
+        $case->mentors()->sync($request['mentors'] ?: $case->mentors);
         return $this->show($case);
     }
 

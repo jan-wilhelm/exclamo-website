@@ -11,8 +11,6 @@ class ReportedCase extends Model
         "title",
         "category",
         "anonymous",
-        "student_id",
-        "location_id",
         "solved"
     ];
     

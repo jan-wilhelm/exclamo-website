@@ -30,7 +30,8 @@ class ReportedCasePolicy
      */
     public function create(User $user)
     {
-        return $user->hasRole("schueler");
+        return true;
+        //return $user->hasRole("schueler");
     }
 
     /**

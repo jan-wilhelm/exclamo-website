@@ -1,4 +1,4 @@
-const baseUrl = window.Exclamo.url
+const baseUrl = window.Exclamo.url + "/api"
 
 function filterNumericals(fromString) {
 	return fromString.replace(/\D/g,'');
@@ -9,13 +9,13 @@ function getCaseIdFromUrl() {
 	return Number(filterNumericals(urlSegments[urlSegments.length - 1])) 
 }
 
-export class ReportedCase {
+class ReportedCase {
 	constructor(caseId) {
 		this.caseId = caseId || getCaseIdFromUrl();
 	}
 
 	edit(options, successFunction, errorFunction) {
-		axios.put(baseUrl + "/api/cases/" + this.caseId, options)
+		axios.put(baseUrl + "/cases/" + this.caseId, options)
 		.then(function (response) {
 			console.log(response);
 			successFunction(response);
@@ -39,10 +39,19 @@ export class ReportedCase {
 		return this.edit({mentors: mentors});
 	}
 
+	static create(options, successFunction, errorFunction) {
+		axios.post(baseUrl + "/cases" , options)
+		.then(function (response) {
+			console.log(response);
+			successFunction(response);
+		})
+		.catch(function (error) {
+    		console.log(error)
+    		errorFunction(error);
+		});
+		return this;
+	}
+
 }
 
-export default {
-	baseUrl,
-	getCaseIdFromUrl,
-	ReportedCase
-}
+export default ReportedCase;

@@ -62,7 +62,7 @@
 </template>
 
 <script>
-	import '../api';
+	import ReportedCase from '../api';
 
 	export default {
 		props: {
@@ -78,11 +78,19 @@
 		},
 		methods: {
 			saveSettings() {
-				let reportedCase = new api.ReportedCase();
-				reportedCase.edit(this.caseData, () => {
+				let data = _.cloneDeep(this.caseData)
+				data.mentors = data.mentors.map((mentor) => {
+					return mentor.id
+				})
+
+				let reportedCase = new ReportedCase();
+				reportedCase.edit(data, () => {
 					console.log("RELOAD");
 					this.closeModal();
 					location.reload();
+				},
+				(error) => {
+					console.log(error.response);
 				});
 			},
 			closeModal() {
