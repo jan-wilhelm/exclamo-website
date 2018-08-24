@@ -1,4 +1,4 @@
-@component('components.cases.cases_section', ["cases"=> $cases, "userTag"=> $userTag, "shouldBeSolved"=> false])
+@component('components.cases.cases_section', ["cases"=> $cases, "userTag"=> isset($userTag) && $userTag, "shouldBeSolved"=> false])
 	@slot('otherComponents')
 		@isset($otherComponents)
 			{{ $otherComponents }}
@@ -6,5 +6,5 @@
 	@endslot
 @endcomponent
 
-@component('components.cases.cases_section', ["cases"=> $cases, "userTag"=> $userTag, "shouldBeSolved"=> true])
+@component('components.cases.cases_section', ["cases"=> $cases, "userTag"=> isset($userTag) && $userTag, "shouldBeSolved"=> true])
 @endcomponent
