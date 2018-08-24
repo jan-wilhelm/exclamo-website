@@ -3,6 +3,8 @@
 namespace App\Services;
 
 use App\User;
+use App\Location;
+use App\Message;
 use App\Repositories\ReportedCaseRepository;
 
 class ReportedCaseService
@@ -62,7 +64,7 @@ class ReportedCaseService
         $mentorIDs = $params['mentors'];
         $params['anonymous'] = isset($params["anonymous"]) && (is_bool($params["anonymous"]) ? boolval($params["anonymous"]) : true);
 
-        $case = $this->make($params);
+        $case = $this->cases->make($params);
         $case->victim()->associate($user);
         $case->location()->associate(Location::find($params['location']));
         $case->save();

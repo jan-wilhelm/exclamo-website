@@ -17,16 +17,7 @@ class ReportedCaseResource extends JsonResource
         return [
             'id'=> $this->id,
             'title'=> $this->title,
-            'user' => [
-                'id' => $this->victim->id,
-                'name' => $this->victim->full_name
-            ],
-            'mentors' => $this->mentors->map(function($mentor, $index) {
-                    return [
-                        'id'=> $mentor->id,
-                        'name'=> $mentor->full_name
-                    ];
-                }),
+            'mentors' => ConfidentialUserResource::collection($this->mentors),
             'category' => $this->category,
             'anonymous' => boolval($this->anonymous),
             'solved' => boolval($this->solved),

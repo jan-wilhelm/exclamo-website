@@ -29,9 +29,19 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
+        
         Auth::viaRequest('token-and-cookie', function ($request) {
-            $apiToken = Crypt::decryptString(Cookie::get('api_token'));
-            $token = $request->query('api_token', $apiToken);
+            $token = $request->input('api_token');
+
+            if (!$request->has('api_token')) {
+                $cookieValue = Cookie::get('api_token');
+
+                if (is_null($cookieValue)) {
+                    return null;
+                }
+                $token = Crypt::decryptString($cookieValue); 
+            }
+
             $user = User::where('api_token', $token)->first();
             return $user;
         });

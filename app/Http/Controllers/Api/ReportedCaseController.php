@@ -3,11 +3,15 @@
 namespace App\Http\Controllers\Api;
 
 use App\ReportedCase;
+
 use Illuminate\Http\Request;
+
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateReportedCaseRequest;
 use App\Http\Requests\ReportCaseRequest;
 use App\Http\Resources\ReportedCaseResource;
+use App\Http\Resources\ConfidentialUserResource;
+
 use App\Services\ReportedCaseService;
 
 class ReportedCaseController extends Controller
@@ -28,7 +32,7 @@ class ReportedCaseController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -61,7 +65,17 @@ class ReportedCaseController extends Controller
     public function show(ReportedCase $reportedCase)
     {
         $this->authorize('view', $reportedCase);
-        return new ReportedCaseResource($reportedCase);
+
+        $resource = new ReportedCaseResource($reportedCase);
+
+        $caseDetails = $resource->toArray(request());
+
+        if (!$reportedCase->anonymous)
+        {
+            $caseDetails['user'] = (new ConfidentialUserResource($reportedCase->victim))->toArray(request());
+        }
+
+        return $caseDetails;
     }
 
     /**

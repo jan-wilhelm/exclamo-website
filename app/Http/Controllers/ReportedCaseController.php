@@ -154,7 +154,7 @@ class ReportedCaseController extends Controller
      */
     public function report()
     {
-        $this->authorize('create');
+        $this->authorize('create', ReportedCase::class);
         return view("schueler.report");
     }
 
