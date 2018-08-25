@@ -43,7 +43,15 @@
 						Was?
 					</h2>
 					<div class="col-sm-9 promo-text" data-aos="fade-up">
-						exclamo hilft Schülern, die Opfer von Mobbing sind, über ihre Probleme zu sprechen und sie zu lösen. Schüler einer exclamo-Schule bekommen einen Account für die App exclamo, über die sie sich auch anonym an ihre Lehrer und externe Mobbing-Experten wenden können. Zudem gibt es hilfreiche Tipps, die im Umgang mit Mobbing helfen und den Schüler unterstützen, mit Vorfällen fertig zu werden. Damit verbindet exclamo eine niedrige Hemmschwelle mit einer einfachen Lösung von Vorfällen, durch Lehrer, die direkt in der Schule Maßnahmen ergreifen können. Mit dem Format einer App und Web-App ist exclamo in dem Medium, das Schüler am meisten Nutzen – dem Smartphone - und bieten so für den Betroffenen eine native Nutzung.
+						<p>
+							exclamo hilft Schülern, die Opfer von Mobbing sind, über ihre Probleme zu sprechen und sie zu lösen.
+						</p>
+						<p>
+							Schüler einer exclamo-Schule bekommen einen Account für die App exclamo, über die sie sich auch anonym an ihre Lehrer und externe Mobbing-Experten wenden können. Zudem gibt es hilfreiche Tipps, die im Umgang mit Mobbing helfen und den Schüler unterstützen, mit Vorfällen fertig zu werden. Damit verbindet exclamo eine niedrige Hemmschwelle mit einer einfachen Lösung von Vorfällen, durch Lehrer, die direkt in der Schule Maßnahmen ergreifen können.
+						</p>
+						<p>
+							Mit dem Format einer App und Web-App ist exclamo in dem Medium, das Schüler am meisten Nutzen – dem Smartphone - und bieten so für den Betroffenen eine native Nutzung.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -128,8 +136,13 @@
 						Für Schulen
 					</h2>
 					<div class="col-sm-9 promo-text" data-aos="fade-up">
-						Sie sind in der Schulleitung einer Schule oder in einem Schulträger tätig und ihnen gefällt das Konzept hinter exclamo? exclamo-Schulen bekommen von uns einen Administrator-Account und einen definiertes Kontingent an Lehrer- und Schüler-Accounts. Die Schüler haben dann direkt die Möglichkeit über die Website oder Android-/iOS-App bestimmten Lehrern oder externen Mobbing-Experten unter psychotherapeutischer Aufsicht von ihren Mobbingfällen zu berichten. Lehrer und Schüler erhalten Zugang zu exklusiven Anti-Mobbing-Materialien, die ihnen im Umgang mit Mobbing im Alltag helfen. Die Materialien für Lehrer beinhalten Anweisung, wie sie mit bekannten Fällen umgehen sollten. Die Schüler können zudem per Knopfdruck bei Sorgentelefonen wie der Nummer gegen Kummer anrufen um seelische Unterstützung und Mut zu bekommen. exclamo basiert auf einem jährlichen Lizenzierungsmodell, die Kosten werden nach Schulgröße berechnet.
-						Haben wir Ihr Interesse geweckt? Füllen Sie doch gerne das unverbindliche Formular unten aus und wir werden uns bei Ihnen melden!
+						<p>Sie sind in der Schulleitung einer Schule oder in einem Schulträger tätig und ihnen gefällt das Konzept hinter exclamo?</p>
+						<p>
+							exclamo-Schulen bekommen von uns einen Administrator-Account und einen definiertes Kontingent an Lehrer- und Schüler-Accounts. Die Schüler haben dann direkt die Möglichkeit über die Website oder Android-/iOS-App bestimmten Lehrern oder externen Mobbing-Experten unter psychotherapeutischer Aufsicht von ihren Mobbingfällen zu berichten. Lehrer und Schüler erhalten Zugang zu exklusiven Anti-Mobbing-Materialien, die ihnen im Umgang mit Mobbing im Alltag helfen. Die Materialien für Lehrer beinhalten Anweisung, wie sie mit bekannten Fällen umgehen sollten. Die Schüler können zudem per Knopfdruck bei Sorgentelefonen wie der Nummer gegen Kummer anrufen um seelische Unterstützung und Mut zu bekommen. exclamo basiert auf einem jährlichen Lizenzierungsmodell, die Kosten werden nach Schulgröße berechnet.
+						</p>
+						<p>
+							Haben wir Ihr Interesse geweckt? Füllen Sie doch gerne das unverbindliche Formular unten aus und wir werden uns bei Ihnen melden!
+						</p>
 					</div>
 				</div>
 				<hr class="my-5 bg-color-white">
