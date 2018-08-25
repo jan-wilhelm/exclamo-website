@@ -25,6 +25,10 @@ h1,h2,h3,h4,h5,h6, .navbar-brand {
   display: none;
 }
 
+.multiselect__option.multiselect__option--highlight {
+	background-color: $color-primary-1;
+}
+
 body {
 
 	/*
