@@ -619,6 +619,10 @@ html {
   margin-bottom: 1.5rem !important;
 }
 
+.promo-question {
+  font-weight: 700;
+}
+
 @media (min-width: 576px) {
   .brand {
     padding-top: 120px;
