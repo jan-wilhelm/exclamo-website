@@ -9,11 +9,14 @@
 @endsection
 
 @section("body")
-	<section class="landing-section">
-		<div class="col-12 brand justify-content-center d-flex">
-			<img src="{{ asset('img/logo_with_text.png') }}">
+	<section class="landing-section full d-flex flex-column">
+		<div class="brand my-auto">
+			<div class="d-flex justify-content-center mb-5">
+				<img src="{{ asset('img/logo_with_text.png') }}" class="">
+			</div>
+			<h1 class="text-center">DEIN SLOGAN</h1>
 		</div>
-		<div class="container">
+		<div class="container mt-auto mb-5">
 			<ul class="nav w-100 justify-content-center nav-fill flex-column flex-md-row">
 				<li class="nav-item">
 					<a class="nav-link" href="#what">Was?</a>
@@ -29,7 +32,10 @@
 				</li>
 			</ul>
 		</div>
-		<div class="wrapper" id="what">
+	</section>
+
+	<section class="landing-section" id="team">
+		<div class="wrapper">
 			<div class="container-fluid">
 				<div class="row">
 					<h2 class="col-sm-3 promo-question">
@@ -37,6 +43,39 @@
 					</h2>
 					<div class="col-sm-9 promo-text" data-aos="fade-up">
 						exclamo hilft Schülern, die Opfer von Mobbing sind, über ihre Probleme zu sprechen und sie zu lösen. Schüler einer exclamo-Schule bekommen einen Account für die App exclamo, über die sie sich auch anonym an ihre Lehrer und externe Mobbing-Experten wenden können. Zudem gibt es hilfreiche Tipps, die im Umgang mit Mobbing helfen und den Schüler unterstützen, mit Vorfällen fertig zu werden. Damit verbindet exclamo eine niedrige Hemmschwelle mit einer einfachen Lösung von Vorfällen, durch Lehrer, die direkt in der Schule Maßnahmen ergreifen können. Mit dem Format einer App und Web-App ist exclamo in dem Medium, das Schüler am meisten Nutzen – dem Smartphone - und bieten so für den Betroffenen eine native Nutzung.
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="landing-section" id="team">
+		<div class="wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<h2 class="col-sm-3 promo-question">
+						Wer?
+					</h2>
+					<div class="col-sm-9 promo-text" data-aos="fade-up">
+						Wir, das Team, sind Berliner Schüler und haben uns überlegt, wie man Mobbing am besten bekämpfen kann. Da das Handy einer der Alltagsgestände schlechthin ist, schien außer Frage, dass eine App das beste Format ist.
+					</div>
+				</div>
+				<div class="row align-content-center mt-5" data-aos="fade-up">
+					<div class="col-md-3 col-12 text-center avatar">
+						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
+						<div class="avatar-name">Kai Lanz</div>
+					</div>
+					<div class="col-md-3 col-12 text-center avatar">
+						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
+						<div class="avatar-name">Margaretha Raffauf</div>
+					</div>
+					<div class="col-md-3 col-12 text-center avatar">
+						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
+						<div class="avatar-name">Julius de Gruyter</div>
+					</div>
+					<div class="col-md-3 col-12 text-center avatar">
+						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
+						<div class="avatar-name">Jan Wilhelm</div>
 					</div>
 				</div>
 			</div>
@@ -117,7 +156,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="landing-section full" id="forschools">
+	<section class="landing-section" id="forschools">
 		<div class="wrapper">
 			<div class="container-fluid">
 				<div class="row pb-sm-5">
@@ -167,47 +206,49 @@
 								</div>
 							</div>
 						</fieldset>
-						<button type="submit" class="btn bg-color-secondary-2-3 text-white btn-lg w-100">Jetzt Ihre Schüler schützen!</button>
+						<button type="submit" class="btn bg-color-secondary-1-2 text-white btn-lg w-100">Jetzt Ihre Schüler schützen!</button>
 					</form>
 				</div>
 			</div>
 		</div>
 	</section>
-<div class="container">
-	<footer class="pt-4 my-md-5 pt-md-5 border-top">
-		<div class="row">
-			<div class="col-12 col-md">
-				<img class="mb-2" src="{{ asset('img/logo_with_text_dark.png') }}" alt="" width="150px">
-				<small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
-			</div>
-			<div class="col-6 col-md">
-				<h5>Features</h5>
-				<ul class="list-unstyled text-small">
-					<li><a class="text-muted" href="{{ route('login') }}">Login</a></li>
-					<li><a class="text-muted" href="{{ route('incidents') }}">Cases</a></li>
-					<li><a class="text-muted" href="{{ route('incidents.report') }}">Report Incident</a></li>
-				</ul>
-			</div>
-			<div class="col-6 col-md">
-				<h5>Resources</h5>
-				<ul class="list-unstyled text-small">
-					<li><a class="text-muted" href="#">Resource</a></li>
-					<li><a class="text-muted" href="#">Resource name</a></li>
-					<li><a class="text-muted" href="#">Another resource</a></li>
-					<li><a class="text-muted" href="#">Final resource</a></li>
-				</ul>
-			</div>
-			<div class="col-6 col-md">
-				<h5>About</h5>
-				<ul class="list-unstyled text-small">
-					<li><a class="text-muted" href="#team">Team</a></li>
-					<li><a class="text-muted" href="#">Privacy</a></li>
-					<li><a class="text-muted" href="#">Terms</a></li>
-				</ul>
-			</div>
+	<div class="bg-color-black text-white">
+		<div class="container bg-color-black py-5">
+			<footer class="py-5">
+				<div class="row">
+					<div class="col-12 col-md">
+						<img class="mb-2" src="{{ asset('img/logo_with_text_dark.png') }}" alt="" width="150px">
+						<small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+					</div>
+					<div class="col-6 col-md">
+						<h5>Features</h5>
+						<ul class="list-unstyled text-small">
+							<li><a class="text-muted" href="{{ route('login') }}">Login</a></li>
+							<li><a class="text-muted" href="{{ route('incidents') }}">Cases</a></li>
+							<li><a class="text-muted" href="{{ route('incidents.report') }}">Report Incident</a></li>
+						</ul>
+					</div>
+					<div class="col-6 col-md">
+						<h5>Resources</h5>
+						<ul class="list-unstyled text-small">
+							<li><a class="text-muted" href="#">Resource</a></li>
+							<li><a class="text-muted" href="#">Resource name</a></li>
+							<li><a class="text-muted" href="#">Another resource</a></li>
+							<li><a class="text-muted" href="#">Final resource</a></li>
+						</ul>
+					</div>
+					<div class="col-6 col-md">
+						<h5>About</h5>
+						<ul class="list-unstyled text-small">
+							<li><a class="text-muted" href="#team">Team</a></li>
+							<li><a class="text-muted" href="#">Privacy</a></li>
+							<li><a class="text-muted" href="#">Terms</a></li>
+						</ul>
+					</div>
+				</div>
+			</footer>
 		</div>
-	</footer>
-</div>
+	</div>
 
 
 @endsection
