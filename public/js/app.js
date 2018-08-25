@@ -52384,7 +52384,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, "\n.chat-input {\n\tborder-radius: calc(1.125rem + 1px);\n\tborder-bottom-right-radius: 0px;\n\tborder-top-right-radius: 0px;\n}\n.chat-send {\n\tborder-bottom-left-radius: 0px;\n\tborder-top-left-radius: 0px;\n}\n", ""]);
+exports.push([module.i, "\n.chat-input {\n\tborder-radius: calc(1.125rem + 1px);\n}\n.chat-send {\n\tdisplay: inline-block;\n\tfont-size: 20px;\n\ttext-align: right;\n}\n.chat-send-button {\n\tmargin-left: auto;\n\n\ttext-align: center;\n\twidth: 50px;\n\theight: 50px;\n\tborder-radius: 25px;\n}\n", ""]);
 
 // exports
 
@@ -52395,6 +52395,9 @@ exports.push([module.i, "\n.chat-input {\n\tborder-radius: calc(1.125rem + 1px);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -52445,9 +52448,9 @@ var render = function() {
       }
     },
     [
-      _c("input", {
+      _c("textarea", {
         ref: "message",
-        staticClass: "form-control col-md-10 col-sm-9 col-12 chat-input",
+        staticClass: "form-control col-sm chat-input",
         attrs: { type: "text", name: "message", autocomplete: "off" }
       }),
       _vm._v(" "),
@@ -52462,15 +52465,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass:
-          "btn bg-color-primary-3 text-white col-md-2 col-sm-3 col-4 mx-auto chat-send",
-        attrs: { type: "submit" }
-      },
-      [_c("i", { staticClass: "fas fa-paper-plane" })]
-    )
+    return _c("div", { staticClass: "col-sm-auto chat-send" }, [
+      _c(
+        "button",
+        {
+          staticClass: "chat-send-button cta cta-primary text-white m-0 p-0",
+          attrs: { type: "submit" }
+        },
+        [_c("i", { staticClass: "fas fa-paper-plane" })]
+      )
+    ])
   }
 ]
 render._withStripped = true

@@ -1,10 +1,13 @@
 <template>
 	<form @submit.prevent="onSubmit" class="form-inline message-form" autocomplete="off">
-		<input type="text" ref="message" class="form-control col-md-10 col-sm-9 col-12 chat-input" name="message" autocomplete="off">
+		<textarea type="text" ref="message" class="form-control col-sm chat-input" name="message" autocomplete="off">
+		</textarea>
 		<input type="text" class="d-none">
-		<button type="submit" class="btn bg-color-primary-3 text-white col-md-2 col-sm-3 col-4 mx-auto chat-send">
-			<i class="fas fa-paper-plane"></i>
-		</button>
+		<div class="col-sm-auto chat-send">
+			<button type="submit" class="chat-send-button cta cta-primary text-white m-0 p-0">
+				<i class="fas fa-paper-plane"></i>
+			</button>
+		</div>
 	</form>
 </template>
 
@@ -33,11 +36,18 @@
 <style>
 	.chat-input {
 		border-radius: calc(1.125rem + 1px);
-		border-bottom-right-radius: 0px;
-		border-top-right-radius: 0px;
 	}
 	.chat-send {
-		border-bottom-left-radius: 0px;
-		border-top-left-radius: 0px;
+		display: inline-block;
+		font-size: 20px;
+		text-align: right;
+	}
+	.chat-send-button {
+		margin-left: auto;
+
+		text-align: center;
+		width: 50px;
+		height: 50px;
+		border-radius: 25px;
 	}
 </style>
