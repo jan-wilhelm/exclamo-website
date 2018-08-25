@@ -16,6 +16,8 @@
 			</div>
 			<h2 class="my-5 py-3 font-weight-bold">Die App für Schulen gegen Mobbing</h2>
 			<a class="cta cta-primary cta-large" href="#forschools">Jetzt Ihre Schüler schützen!</a>
+			<br>
+			<a class="cta cta-tertiary" href="{{ route('login') }}">Anmelden</a>
 		</div>
 		<div class="container mt-auto mb-5">
 			<ul class="nav w-100 justify-content-center nav-fill flex-column flex-md-row">
