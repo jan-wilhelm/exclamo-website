@@ -53221,6 +53221,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -53333,11 +53336,15 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("template", { slot: "maxElements" }, [
-            _vm._v(
-              "\n\t\t\tDu darfst nur " +
-                _vm._s(_vm.maxSelected) +
-                " Mentoren auswählen!\n\t\t"
-            )
+            _vm.maxSelected > 0
+              ? _c("span", [
+                  _vm._v(
+                    "\n\t\t\t\tDu darfst nur " +
+                      _vm._s(_vm.maxSelected) +
+                      " Mentoren auswählen!\n\t\t\t"
+                  )
+                ])
+              : _c("span")
           ])
         ],
         2

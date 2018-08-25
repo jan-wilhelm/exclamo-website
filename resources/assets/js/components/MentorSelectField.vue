@@ -30,7 +30,10 @@
 		</template>
 
 		<template slot="maxElements">
-			Du darfst nur {{ maxSelected }} Mentoren auswählen!
+			<span v-if="maxSelected > 0">
+				Du darfst nur {{ maxSelected }} Mentoren auswählen!
+			</span>
+			<span v-else></span>
 		</template>
 
 	</multiselect>
