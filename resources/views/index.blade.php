@@ -10,11 +10,12 @@
 
 @section("body")
 	<section class="landing-section full d-flex flex-column">
-		<div class="brand my-auto">
-			<div class="d-flex justify-content-center mb-5">
+		<div class="brand my-auto text-center">
+			<div class="d-flex justify-content-center">
 				<img src="{{ asset('img/logo_with_text.png') }}" class="">
 			</div>
-			<h1 class="text-center">DEIN SLOGAN</h1>
+			<h2 class="my-5 py-3 font-weight-bold">Die App für Schulen gegen Mobbing</h2>
+			<a class="cta cta-primary cta-large" href="#forschools">Jetzt Ihre Schüler schützen!</a>
 		</div>
 		<div class="container mt-auto mb-5">
 			<ul class="nav w-100 justify-content-center nav-fill flex-column flex-md-row">
@@ -34,7 +35,7 @@
 		</div>
 	</section>
 
-	<section class="landing-section" id="team">
+	<section class="landing-section" id="what">
 		<div class="wrapper">
 			<div class="container-fluid">
 				<div class="row">
@@ -46,45 +47,8 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
 
-	<section class="landing-section" id="team">
-		<div class="wrapper">
-			<div class="container-fluid">
-				<div class="row">
-					<h2 class="col-sm-3 promo-question">
-						Wer?
-					</h2>
-					<div class="col-sm-9 promo-text" data-aos="fade-up">
-						Wir, das Team, sind Berliner Schüler und haben uns überlegt, wie man Mobbing am besten bekämpfen kann. Da das Handy einer der Alltagsgestände schlechthin ist, schien außer Frage, dass eine App das beste Format ist.
-					</div>
-				</div>
-				<div class="row align-content-center mt-5" data-aos="fade-up">
-					<div class="col-md-3 col-12 text-center avatar">
-						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
-						<div class="avatar-name">Kai Lanz</div>
-					</div>
-					<div class="col-md-3 col-12 text-center avatar">
-						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
-						<div class="avatar-name">Margaretha Raffauf</div>
-					</div>
-					<div class="col-md-3 col-12 text-center avatar">
-						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
-						<div class="avatar-name">Julius de Gruyter</div>
-					</div>
-					<div class="col-md-3 col-12 text-center avatar">
-						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
-						<div class="avatar-name">Jan Wilhelm</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="landing-section no-bullet">
-		<div class="wrapper">
-			<div class="container-fluid">
+			<div class="container-fluid pt-0">
 				<div class="row advantage">
 					<div class="col-sm-9 text-div" data-aos="fade-up">
 						<h2>Niedrige Hemmschwelle durch Anonymität</h2>

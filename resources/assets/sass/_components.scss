@@ -1,0 +1,47 @@
+@import "colors_1";
+
+.cta {
+	padding: 0.85rem 1.7rem;
+	line-height: 0.85rem;
+	font-size: 0.85rem;
+	height: 2.55rem;
+	border-radius: 1.7rem;
+	display: inline-block;
+	width: auto;
+	font-weight: 700;
+}
+
+.cta-large {
+	padding: 1rem 2rem;
+	line-height: 1rem;
+	font-size: 1rem;
+	height: 3rem;
+	border-radius: 2rem;
+}
+
+.cta-small {
+	padding: 0.75rem 1.5rem;
+	line-height: 0.75rem;
+	font-size: 0.8rem;
+	height: 2.25rem;
+	border-radius: 1.5rem;
+	font-weight: 400;
+}
+
+.cta:hover {
+	text-decoration: none;
+}
+
+.cta-primary {
+	background-color: $color-secondary-1-0;
+	color: $color-white !important;
+}
+
+.cta-secondary {
+	background-color: $color-white;
+	color: $color-secondary-1-0 !important;
+}
+
+.cta-tertiary {
+	text-decoration: underline;
+}

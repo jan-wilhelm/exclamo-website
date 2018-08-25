@@ -192,6 +192,246 @@
   color: #111111 !important;
 }
 
+.color-primary-0 {
+  color: #009489;
+}
+
+/* Main Primary color */
+
+.color-primary-1 {
+  color: #3EB2AA;
+}
+
+.color-primary-2 {
+  color: #1CA59B;
+}
+
+.color-primary-3 {
+  color: #00766D;
+}
+
+.color-primary-4 {
+  color: #005C55;
+}
+
+.color-secondary-1-0 {
+  color: #DC0037;
+}
+
+/* Main Secondary color (1) */
+
+.color-secondary-1-1 {
+  color: #EE5279;
+}
+
+.color-secondary-1-2 {
+  color: #EA2758;
+}
+
+.color-secondary-1-3 {
+  color: #AF002C;
+}
+
+.color-secondary-1-4 {
+  color: #890022;
+}
+
+.color-secondary-2-0 {
+  color: #54D400;
+}
+
+/* Main Secondary color (2) */
+
+.color-secondary-2-1 {
+  color: #8BE750;
+}
+
+.color-secondary-2-2 {
+  color: #70E326;
+}
+
+.color-secondary-2-3 {
+  color: #42A900;
+}
+
+.color-secondary-2-4 {
+  color: #348400;
+}
+
+.color-complement-0 {
+  color: #F16900;
+}
+
+/* Main Complement color */
+
+.color-complement-1 {
+  color: #FFA158;
+}
+
+.color-complement-2 {
+  color: #FF872B;
+}
+
+.color-complement-3 {
+  color: #C05300;
+}
+
+.color-complement-4 {
+  color: #964100;
+}
+
+.bg-color-primary-0 {
+  background-color: #009489;
+}
+
+/* Main Primary color */
+
+.bg-color-primary-1 {
+  background-color: #3EB2AA;
+}
+
+.bg-color-primary-2 {
+  background-color: #1CA59B;
+}
+
+.bg-color-primary-3 {
+  background-color: #00766D;
+}
+
+.bg-color-primary-4 {
+  background-color: #005C55;
+}
+
+.bg-color-secondary-1-0 {
+  background-color: #DC0037;
+}
+
+/* Main Secondary color (1) */
+
+.bg-color-secondary-1-1 {
+  background-color: #EE5279;
+}
+
+.bg-color-secondary-1-2 {
+  background-color: #EA2758;
+}
+
+.bg-color-secondary-1-3 {
+  background-color: #AF002C;
+}
+
+.bg-color-secondary-1-4 {
+  background-color: #890022;
+}
+
+.bg-color-secondary-2-0 {
+  background-color: #54D400;
+}
+
+/* Main Secondary color (2) */
+
+.bg-color-secondary-2-1 {
+  background-color: #8BE750;
+}
+
+.bg-color-secondary-2-2 {
+  background-color: #70E326;
+}
+
+.bg-color-secondary-2-3 {
+  background-color: #42A900;
+}
+
+.bg-color-secondary-2-4 {
+  background-color: #348400;
+}
+
+.bg-color-complement-0 {
+  background-color: #F16900;
+}
+
+/* Main Complement color */
+
+.bg-color-complement-1 {
+  background-color: #FFA158;
+}
+
+.bg-color-complement-2 {
+  background-color: #FF872B;
+}
+
+.bg-color-complement-3 {
+  background-color: #C05300;
+}
+
+.bg-color-complement-4 {
+  background-color: #964100;
+}
+
+.bg-color-white {
+  background-color: #F7FBFF !important;
+}
+
+.text-white,
+.white {
+  color: #F7FBFF !important;
+}
+
+.bg-color-black {
+  background-color: #111111 !important;
+}
+
+.text-black,
+.black {
+  color: #111111 !important;
+}
+
+.cta {
+  padding: 0.85rem 1.7rem;
+  line-height: 0.85rem;
+  font-size: 0.85rem;
+  height: 2.55rem;
+  border-radius: 1.7rem;
+  display: inline-block;
+  width: auto;
+  font-weight: 700;
+}
+
+.cta-large {
+  padding: 1rem 2rem;
+  line-height: 1rem;
+  font-size: 1rem;
+  height: 3rem;
+  border-radius: 2rem;
+}
+
+.cta-small {
+  padding: 0.75rem 1.5rem;
+  line-height: 0.75rem;
+  font-size: 0.8rem;
+  height: 2.25rem;
+  border-radius: 1.5rem;
+  font-weight: 400;
+}
+
+.cta:hover {
+  text-decoration: none;
+}
+
+.cta-primary {
+  background-color: #DC0037;
+  color: #F7FBFF !important;
+}
+
+.cta-secondary {
+  background-color: #F7FBFF;
+  color: #DC0037 !important;
+}
+
+.cta-tertiary {
+  text-decoration: underline;
+}
+
 body,
 html {
   height: 100%;
@@ -285,7 +525,7 @@ html {
 }
 
 .landing-section:nth-child(odd) *:not(.text-white) {
-  color: white !important;
+  color: white;
 }
 
 .landing-section:nth-child(even) {
@@ -309,7 +549,7 @@ html {
 }
 
 .brand img {
-  height: 90px;
+  height: 60px;
 }
 
 .avatar {
@@ -368,6 +608,10 @@ html {
     padding-top: 120px;
   }
 
+  .brand img {
+    height: 80px;
+  }
+
   .landing-section .container-fluid {
     padding-left: 50px;
   }
@@ -397,8 +641,8 @@ html {
   }
 
   .landing-section:last-of-type:nth-child(odd):before {
-    border-left: 6px solid #F16900;
-    border-bottom: 6px solid #F16900;
+    border-left: 6px solid #F7FBFF;
+    border-bottom: 6px solid #F7FBFF;
   }
 
   .landing-section:last-of-type:nth-child(even):before {
@@ -433,6 +677,10 @@ html {
 @media (min-width: 768px) {
   .brand {
     padding-top: 150px;
+  }
+
+  .brand img {
+    height: 90px;
   }
 
   .landing-section {
