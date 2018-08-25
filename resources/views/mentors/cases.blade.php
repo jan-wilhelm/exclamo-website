@@ -16,9 +16,9 @@
 	@endexclamosection
 
 	@exclamoflexsection
-		<h4>
+		<h3>
 			@lang('messages.incidents')
-		</h4>
+		</h3>
 		
 		@casesview (["cases" => $cases, "userTag" => true])
 		@endcasesview
