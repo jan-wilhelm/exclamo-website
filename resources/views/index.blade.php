@@ -170,7 +170,7 @@
 								</div>
 							</div>
 						</fieldset>
-						<button type="submit" class="btn bg-color-secondary-1-2 text-white btn-lg w-100">Jetzt Ihre Schüler schützen!</button>
+						<button type="submit" class="w-100 cta cta-large cta-primary">Jetzt Ihre Schüler schützen!</button>
 					</form>
 				</div>
 			</div>

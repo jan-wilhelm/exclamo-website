@@ -9,6 +9,16 @@
 	display: inline-block;
 	width: auto;
 	font-weight: 700;
+	cursor: pointer;
+	white-space: nowrap;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+    -webkit-transition: background-color 0.3s, color 0.3s; /* Safari */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .cta-large {
@@ -35,6 +45,11 @@
 .cta-primary {
 	background-color: $color-secondary-1-0;
 	color: $color-white !important;
+}
+
+.cta-primary:hover {
+	background-color: $color-secondary-1-2;
+	color: $color-white-darker;
 }
 
 .cta-secondary {

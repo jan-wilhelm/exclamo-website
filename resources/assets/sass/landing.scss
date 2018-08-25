@@ -104,7 +104,7 @@ body, html {
 }
 
 .landing-section:nth-child(even) *:not(.text-white) {
-	color: $color-primary-0 !important;
+	color: $color-primary-0;
 }
 
 .landing-section .container-fluid {
