@@ -5,7 +5,7 @@
     	@input="$emit('input', value)"
     	:options="mentors"
     	:multiple="true"
-    	:close-on-select="false"
+    	:close-on-select="maxSelected == 1"
     	:clear-on-select="false"
     	:hide-selected="true"
     	:preserve-search="true"

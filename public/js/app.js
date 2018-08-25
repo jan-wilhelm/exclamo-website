@@ -53274,7 +53274,7 @@ var render = function() {
           attrs: {
             options: _vm.mentors,
             multiple: true,
-            "close-on-select": false,
+            "close-on-select": _vm.maxSelected == 1,
             "clear-on-select": false,
             "hide-selected": true,
             "preserve-search": true,
@@ -53449,7 +53449,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -53546,6 +53546,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -53554,7 +53558,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	components: {
 		Datepicker: __WEBPACK_IMPORTED_MODULE_0_vuejs_datepicker__["a" /* default */]
 	},
-	props: ['formEndpoint', 'possibleMentors', 'possibleLocations', 'possibleCategories'],
+	props: ['formEndpoint', 'possibleMentors', 'possibleLocations', 'possibleCategories', 'maximumMentors'],
 	data: function data() {
 		return {
 			selectedMentors: []
@@ -53622,7 +53626,10 @@ var render = function() {
             }),
             _vm._v(" "),
             _c("mentor-select-field", {
-              attrs: { mentors: _vm.possibleMentors },
+              attrs: {
+                mentors: _vm.possibleMentors,
+                "max-selected": _vm.maximumMentors
+              },
               model: {
                 value: _vm.selectedMentors,
                 callback: function($$v) {

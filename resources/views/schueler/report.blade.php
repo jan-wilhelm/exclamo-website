@@ -21,6 +21,7 @@
 									"name" => $mentor->full_name
 								];
 							}))'
+			:maximum-mentors='{{ config('exclamo.number_of_mentors') }}'
 		/>
 	@endexclamoflexsection
 @endsection

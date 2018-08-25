@@ -19,7 +19,11 @@
 					@lang('messages.mentorsselect')
 				</label>
 				<select class="d-none" id="mentor-select" name="mentors[]"></select>
-				<mentor-select-field :mentors="possibleMentors" v-model="selectedMentors"/>
+				<mentor-select-field
+					:mentors="possibleMentors"
+					v-model="selectedMentors"
+					:max-selected="maximumMentors"
+				/>
 			</div>
 			<div class="form-group col-md-6">
 				<label for="category">
@@ -94,7 +98,8 @@
 			'formEndpoint',
 			'possibleMentors',
 			'possibleLocations',
-			'possibleCategories'
+			'possibleCategories',
+			'maximumMentors'
 		],
 		data() {
 	        return {
