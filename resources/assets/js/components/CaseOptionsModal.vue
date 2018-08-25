@@ -35,7 +35,12 @@
 							Mentors
 						</label>
 
-						<mentor-select-field :mentors='mentors' :selected='caseData.mentors' v-model="caseData.mentors" />
+						<mentor-select-field
+							:mentors='mentors'
+							:selected='caseData.mentors'
+							v-model="caseData.mentors"
+							:max-selected="maximumMentors"
+						/>
 					</div>
 				</div>
 				<div class="form-group form-check">
@@ -69,7 +74,8 @@
 			initialData: Object,
 			categories: Array,
 			locations: Array,
-			mentors: Array
+			mentors: Array,
+			maximumMentors: Number
 		},
 		data() {
 			return {

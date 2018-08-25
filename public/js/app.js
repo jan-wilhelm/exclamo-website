@@ -52684,6 +52684,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -52692,7 +52697,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		initialData: Object,
 		categories: Array,
 		locations: Array,
-		mentors: Array
+		mentors: Array,
+		maximumMentors: Number
 	},
 	data: function data() {
 		return {
@@ -52915,7 +52921,8 @@ var render = function() {
                     _c("mentor-select-field", {
                       attrs: {
                         mentors: _vm.mentors,
-                        selected: _vm.caseData.mentors
+                        selected: _vm.caseData.mentors,
+                        "max-selected": _vm.maximumMentors
                       },
                       model: {
                         value: _vm.caseData.mentors,
@@ -53193,6 +53200,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -53205,6 +53233,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			required: false,
 			default: function _default() {
 				return [];
+			}
+		},
+		maxSelected: {
+			type: Number,
+			required: false,
+			default: function _default() {
+				return 0;
 			}
 		}
 	},
@@ -53235,13 +53270,14 @@ var render = function() {
         {
           attrs: {
             options: _vm.mentors,
-            "select-label": "",
             multiple: true,
             "close-on-select": false,
             "clear-on-select": false,
             "hide-selected": true,
             "preserve-search": true,
+            max: _vm.maxSelected,
             placeholder: "",
+            "select-label": "",
             label: "name",
             "track-by": "id",
             "block-keys": ["Tab", "Enter"]
@@ -53294,6 +53330,14 @@ var render = function() {
         [
           _c("template", { slot: "noResult" }, [
             _vm._v("\n\t\t\tKein Ergebnis. Ändere den Suchbegriff!\n\t\t")
+          ]),
+          _vm._v(" "),
+          _c("template", { slot: "maxElements" }, [
+            _vm._v(
+              "\n\t\t\tDu darfst nur " +
+                _vm._s(_vm.maxSelected) +
+                " Mentoren auswählen!\n\t\t"
+            )
           ])
         ],
         2

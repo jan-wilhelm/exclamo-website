@@ -20,4 +20,6 @@ return [
         'discrimination',
         'other',
     ],
+
+    'number_of_mentors' => 1
 ];

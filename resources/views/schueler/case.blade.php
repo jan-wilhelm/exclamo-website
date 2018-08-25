@@ -17,6 +17,7 @@
 					:categories='@json($categories)'
 					:mentors='@json($possibleMentors)'
 					:locations='@json($locations)'
+					:maximum-mentors='{{ config('exclamo.number_of_mentors') }}'
 				/>
 			@endslot
 
