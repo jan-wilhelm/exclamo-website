@@ -53164,7 +53164,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, "\n.mentor-tag {\n\t-ms-flex-line-pack: center;\n\t    align-content: center;\n\t-webkit-box-pack: center;\n\t    -ms-flex-pack: center;\n\t        justify-content: center;\n\tdisplay: inline-block;\n\tborder-radius: 16px;\n\theight: 32px;\n\tline-height: 32px;\n\tpadding: 0 15px;\n\tmargin-bottom: 8px;\n\tmargin-right: 8px;\n\tcursor: pointer;\n}\n\n", ""]);
+exports.push([module.i, "\n.mentor-tag {\n\t-ms-flex-line-pack: center;\n\t    align-content: center;\n\t-webkit-box-pack: center;\n\t    -ms-flex-pack: center;\n\t        justify-content: center;\n\tdisplay: inline-block;\n\tborder-radius: 16px;\n\theight: 32px;\n\tline-height: 32px;\n\tpadding: 0 15px;\n\tmargin-bottom: 8px;\n\tmargin-right: 8px;\n\tcursor: pointer;\n}\n", ""]);
 
 // exports
 

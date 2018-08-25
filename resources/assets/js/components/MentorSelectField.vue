@@ -57,5 +57,4 @@
 		margin-right: 8px;
 		cursor: pointer;
 	}
-	
 </style>
