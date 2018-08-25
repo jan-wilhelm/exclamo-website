@@ -2,7 +2,7 @@
 
 @section('content')
 	@exclamoflexsection (["classes" => "bg-color-primary-3 text-white"])
-		<h4>@lang('messages.createcase')</h4>
+		<h3>@lang('messages.createcase')</h3>
 		
 		@if ($errors->any())
             @foreach ($errors->all() as $error)
