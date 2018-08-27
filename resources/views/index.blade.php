@@ -12,7 +12,7 @@
 	<section class="landing-section full d-flex flex-column">
 		<div class="brand my-auto text-center">
 			<div class="d-flex justify-content-center">
-				<img src="{{ asset('img/logo/logo_big_with_text_rounded-dark.png') }}" class="">
+				<img src="{{ asset('img/logo/logo_big_with_text_rounded_dark.png') }}" class="">
 			</div>
 			<h2 class="my-5 py-3 font-weight-bold">Die App für Schulen gegen Mobbing</h2>
 			<a class="cta cta-primary cta-large" href="#forschools">Jetzt Ihre Schüler schützen!</a>
