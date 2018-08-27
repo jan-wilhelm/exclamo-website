@@ -27,5 +27,17 @@ return [
 	'name'=> "Name",
 	'incidents'=> "Vorfälle",
 	'show'=> "Zeige",
-	'records'=> "Einträge"
+	'records'=> "Einträge",
+	'resolved_incidents'=> 'Gelöste Fälle',
+	'messages'=> 'Nachrichten',
+	'options'=> 'Optionen',
+	'casetitle' => 'Titel',
+	'category' => 'Kategorie',
+	'location' => 'Ort',
+	'mentors' => 'Mentoren',
+	'case_is_anonymous'=> 'Dieser Fall ist anonym',
+	'case_is_solved'=> 'Der Fall ist gelöst',
+	'save'=> 'Speichern',
+	'no_search_result'=> 'Kein Ergebnis. Ändere den Suchbegriff!',
+	'max_mentors_selected'=> 'Du darfst nur :mentors Mentoren auswählen!'
 ];

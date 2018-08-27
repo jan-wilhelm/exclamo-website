@@ -32,11 +32,19 @@ return [
 	'records'=> "records",
 	'messages' => "Messages",
 	'createcase' => 'Create a new case',
-	'casetitle' => 'Case Title',
+	'casetitle' => 'Title',
 	'casedescription' => 'Description',
 	'createbutton' => 'Create',
-	'mentorsselect' => 'Mentors',
+	'mentors' => 'Mentors',
 	'categoryselect' => 'Category',
 	'dateselect' => 'Date of of the incident',
-	'case_should_be_anonymous' => 'This case should be created anonymously'
+	'case_should_be_anonymous' => 'This case should be created anonymously',
+	'options'=> 'Options',
+	'category' => 'Category',
+	'location' => 'Location',
+	'case_is_anonymous' => 'This case is anonymous',
+	'case_is_solved'=> 'The case is solved',
+	'save'=> 'Save',
+	'no_search_result'=> 'No result. Try changing the input!',
+	'max_mentors_selected'=> 'You may only select :mentors mentors!'
 ];

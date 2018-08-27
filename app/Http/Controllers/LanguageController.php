@@ -40,7 +40,7 @@ class LanguageController extends Controller
 	    }
 
 	    // Add locale to the cache key
-	    $json = \Cache::rememberForever("lang-{$locale}.js", function () use ($locale) {
+	    $json = \Cache::remember("lang-{$locale}.js", 0, function () use ($locale) {
 	        $files   = glob(resource_path('lang/' . $locale . '/*.php'));
 	        $strings = [];
 

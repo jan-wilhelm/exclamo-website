@@ -1,43 +1,47 @@
 <template>
-  <div>
-    <multiselect
-    	v-model.sync="value"
-    	@input="$emit('input', value)"
-    	:options="mentors"
-    	:multiple="true"
-    	:close-on-select="maxSelected == 1"
-    	:clear-on-select="false"
-    	:hide-selected="true"
-    	:preserve-search="true"
-    	:max="maxSelected"
-    	placeholder=""
-    	select-label=""
-    	label="name"
-    	track-by="id"
-    	:block-keys="['Tab', 'Enter']">
+	<div>
+		<multiselect
+	    	v-model.sync="value"
+	    	@input="$emit('input', value)"
+	    	:options="mentors"
+	    	:multiple="true"
+	    	:close-on-select="maxSelected == 1"
+	    	:clear-on-select="false"
+	    	:hide-selected="true"
+	    	:preserve-search="true"
+	    	:max="maxSelected"
+	    	placeholder=""
+	    	select-label=""
+	    	label="name"
+	    	track-by="id"
+	    	:block-keys="['Tab', 'Enter']">
 
-    	<template slot="tag" slot-scope="props">
-			<span class="mentor-tag bg-color-primary-1 text-white">
-	    		{{ props.option.name }}
-	    		<span class="tag-remove" @click="props.remove(props.option)">
-	    			<i class="fas fa-times-circle"></i>
-	    		</span>
-	    	</span>
-		</template>
+	    	<template slot="tag" slot-scope="props">
+				<span class="mentor-tag bg-color-primary-1 text-white">
+		    		{{ props.option.name }}
+		    		<span class="tag-remove" @click="props.remove(props.option)">
+		    			<i class="fas fa-times-circle"></i>
+		    		</span>
+		    	</span>
+			</template>
 
-		<template slot="noResult">
-			Kein Ergebnis. Ändere den Suchbegriff!
-		</template>
+			<template slot="noResult">
+				{{ lang('messages.no_search_result') }}
+			</template>
 
-		<template slot="maxElements">
-			<span v-if="maxSelected > 0">
-				Du darfst nur {{ maxSelected }} Mentoren auswählen!
-			</span>
-			<span v-else></span>
-		</template>
+			<template slot="maxElements">
+				<span v-if="maxSelected > 0">
+					{{
+						lang('messages.max_mentors_selected', {
+							"mentors": maxSelected
+						})
+					}}					
+				</span>
+				<span v-else></span>
+			</template>
 
-	</multiselect>
-  </div>
+		</multiselect>
+	</div>
 </template>
 
 <script>

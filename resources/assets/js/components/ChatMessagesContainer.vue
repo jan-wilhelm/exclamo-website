@@ -28,10 +28,6 @@
 				var formattedDate = this.getFormattedDate()
 				var messageObject = {
 					body: text,
-					user: {
-						first_name: "Jan",
-						last_name: "Wilhelm"
-					},
 					sentByUser: true,
 					date: formattedDate,
 					sending: true

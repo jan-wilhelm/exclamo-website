@@ -1,17 +1,19 @@
 <template>
 	<div class="d-inline">
 		<a href="#" v-b-modal.case-options-modal class="float-md-right ml-3 cta cta-secondary"  data-toggle="modal" data-target="#case-options-modal">
-			Optionen
+			{{ lang('messages.options') }}
 		</a>
 		<b-modal ref="modal" id="case-options-modal" title="Optionen">
 			<form autocomplete="off" class="px-sm-5 px-1">
 				<div class="form-group">
-					<label for="case-title">Titel</label>
+					<label for="case-title">
+						{{ lang('messages.casetitle') }}
+					</label>
 					<input type="text" class="form-control" id="case-title" v-model.trim="caseData.title">
 				</div>
 				<div class="form-group">
 					<label for="category-select">
-						Category
+						{{ lang('messages.category') }}
 					</label>
 
 					<select id="category-select" class="form-control" v-model="caseData.category">
@@ -20,7 +22,7 @@
 				</div>
 				<div class="form-group">
 					<label for="location-select">
-						Location
+						{{ lang('messages.location') }}
 					</label>
 
 					<select id="location-select" class="form-control" v-model="caseData.location_id">
@@ -30,7 +32,7 @@
 				<div class="form-group">
 					<div id="case-modal-mentors-div">
 						<label>
-							Mentors
+							{{ lang('messages.mentors') }}
 						</label>
 
 						<mentor-select-field
@@ -44,20 +46,22 @@
 				<div class="form-group form-check">
 					<input type="checkbox" class="form-check-input" id="case-modal-anonymous" v-model="caseData.anonymous">
 					<label class="form-check-label" for="case-modal-anonymous">
-						Your name should be visible to the mentors
+							{{ lang('messages.case_is_anonymous') }}
 					</label>
 				</div>
 				<div class="form-group form-check">
 					<input type="checkbox" class="form-check-input" id="case-modal-solved" v-model="caseData.solved">
 					<label class="form-check-label" for="case-modal-solved">
-						This case is solved
+						{{ lang('messages.case_is_solved') }}
 					</label>
 				</div>
 			</form>
 
 			<template slot="modal-footer">
 				<div class="form-inline button-div bordered white hover justify-content-center" @click="saveSettings">
-					<a href="#" class="mx-3">Save</a>
+					<a href="#" class="mx-3">
+						{{ lang('messages.save') }}
+					</a>
 				</div>
 			</template>
 		</b-modal>

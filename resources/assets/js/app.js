@@ -10,7 +10,40 @@ require('./bootstrap');
 import Multiselect from 'vue-multiselect';
 import Datepicker from 'vuejs-datepicker';
 
-window.lang = (string) => _.get(window.translations, string);
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
+let functions = [
+	input => {
+		return input.toUpperCase()
+	},
+	input => {
+		return input.capitalize()
+	},
+	input => {
+		return input
+	}
+]
+
+Vue.prototype.lang = (string, props = {}) => {
+	let translation = _.get(window.translations, string);
+
+	for (const key of Object.keys(props)) {
+	    console.log("Prop", key, props[key]);
+
+	    for (let functionName of functions) {
+	    	let includedString = ':' + functionName(key)
+	    	let formattedPlaceholder = functionName(String(props[key]))
+			
+			if (translation.includes(includedString)) {
+	    		translation = translation.replace(includedString, formattedPlaceholder)
+	    	}
+	    }
+	}
+
+	return translation
+}
 
 Vue.component('multiselect', Multiselect);
 Vue.component('chat-message', require('./components/ChatMessage.vue'));

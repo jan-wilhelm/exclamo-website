@@ -11666,8 +11666,79 @@ __webpack_require__(79);
 
 
 
-window.lang = function (string) {
-  return _.get(window.translations, string);
+String.prototype.capitalize = function () {
+	return this.charAt(0).toUpperCase() + this.slice(1);
+};
+
+var functions = [function (input) {
+	return input.toUpperCase();
+}, function (input) {
+	return input.capitalize();
+}, function (input) {
+	return input;
+}];
+
+Vue.prototype.lang = function (string) {
+	var props = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+	var translation = _.get(window.translations, string);
+
+	var _iteratorNormalCompletion = true;
+	var _didIteratorError = false;
+	var _iteratorError = undefined;
+
+	try {
+		for (var _iterator = Object.keys(props)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+			var key = _step.value;
+
+			console.log("Prop", key, props[key]);
+
+			var _iteratorNormalCompletion2 = true;
+			var _didIteratorError2 = false;
+			var _iteratorError2 = undefined;
+
+			try {
+				for (var _iterator2 = functions[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+					var functionName = _step2.value;
+
+					var includedString = ':' + functionName(key);
+					var formattedPlaceholder = functionName(String(props[key]));
+
+					if (translation.includes(includedString)) {
+						translation = translation.replace(includedString, formattedPlaceholder);
+					}
+				}
+			} catch (err) {
+				_didIteratorError2 = true;
+				_iteratorError2 = err;
+			} finally {
+				try {
+					if (!_iteratorNormalCompletion2 && _iterator2.return) {
+						_iterator2.return();
+					}
+				} finally {
+					if (_didIteratorError2) {
+						throw _iteratorError2;
+					}
+				}
+			}
+		}
+	} catch (err) {
+		_didIteratorError = true;
+		_iteratorError = err;
+	} finally {
+		try {
+			if (!_iteratorNormalCompletion && _iterator.return) {
+				_iterator.return();
+			}
+		} finally {
+			if (_didIteratorError) {
+				throw _iteratorError;
+			}
+		}
+	}
+
+	return translation;
 };
 
 Vue.component('multiselect', __WEBPACK_IMPORTED_MODULE_0_vue_multiselect___default.a);
@@ -11679,14 +11750,14 @@ Vue.component('mentor-select-field', __webpack_require__(241));
 Vue.component('report-case-form', __webpack_require__(246));
 
 var app = new Vue({
-  el: '#app',
-  data: function data() {
-    return {};
-  },
+	el: '#app',
+	data: function data() {
+		return {};
+	},
 
-  components: {
-    Datepicker: __WEBPACK_IMPORTED_MODULE_1_vuejs_datepicker__["a" /* default */]
-  }
+	components: {
+		Datepicker: __WEBPACK_IMPORTED_MODULE_1_vuejs_datepicker__["a" /* default */]
+	}
 });
 
 /***/ }),
@@ -51996,6 +52067,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
@@ -52186,10 +52261,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			var formattedDate = this.getFormattedDate();
 			var messageObject = {
 				body: text,
-				user: {
-					first_name: "Jan",
-					last_name: "Wilhelm"
-				},
 				sentByUser: true,
 				date: formattedDate,
 				sending: true
@@ -52694,6 +52765,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -52764,7 +52839,7 @@ var render = function() {
             "data-target": "#case-options-modal"
           }
         },
-        [_vm._v("\n\t\tOptionen\n\t")]
+        [_vm._v("\n\t\t" + _vm._s(_vm.lang("messages.options")) + "\n\t")]
       ),
       _vm._v(" "),
       _c(
@@ -52780,7 +52855,11 @@ var render = function() {
             [
               _c("div", { staticClass: "form-group" }, [
                 _c("label", { attrs: { for: "case-title" } }, [
-                  _vm._v("Titel")
+                  _vm._v(
+                    "\n\t\t\t\t\t" +
+                      _vm._s(_vm.lang("messages.casetitle")) +
+                      "\n\t\t\t\t"
+                  )
                 ]),
                 _vm._v(" "),
                 _c("input", {
@@ -52816,7 +52895,11 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
                 _c("label", { attrs: { for: "category-select" } }, [
-                  _vm._v("\n\t\t\t\t\tCategory\n\t\t\t\t")
+                  _vm._v(
+                    "\n\t\t\t\t\t" +
+                      _vm._s(_vm.lang("messages.category")) +
+                      "\n\t\t\t\t"
+                  )
                 ]),
                 _vm._v(" "),
                 _c(
@@ -52862,7 +52945,11 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
                 _c("label", { attrs: { for: "location-select" } }, [
-                  _vm._v("\n\t\t\t\t\tLocation\n\t\t\t\t")
+                  _vm._v(
+                    "\n\t\t\t\t\t" +
+                      _vm._s(_vm.lang("messages.location")) +
+                      "\n\t\t\t\t"
+                  )
                 ]),
                 _vm._v(" "),
                 _c(
@@ -52911,7 +52998,13 @@ var render = function() {
                   "div",
                   { attrs: { id: "case-modal-mentors-div" } },
                   [
-                    _c("label", [_vm._v("\n\t\t\t\t\t\tMentors\n\t\t\t\t\t")]),
+                    _c("label", [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t" +
+                          _vm._s(_vm.lang("messages.mentors")) +
+                          "\n\t\t\t\t\t"
+                      )
+                    ]),
                     _vm._v(" "),
                     _c("mentor-select-field", {
                       attrs: {
@@ -52987,7 +53080,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\n\t\t\t\t\tYour name should be visible to the mentors\n\t\t\t\t"
+                      "\n\t\t\t\t\t\t" +
+                        _vm._s(_vm.lang("messages.case_is_anonymous")) +
+                        "\n\t\t\t\t"
                     )
                   ]
                 )
@@ -53042,7 +53137,13 @@ var render = function() {
                     staticClass: "form-check-label",
                     attrs: { for: "case-modal-solved" }
                   },
-                  [_vm._v("\n\t\t\t\t\tThis case is solved\n\t\t\t\t")]
+                  [
+                    _vm._v(
+                      "\n\t\t\t\t\t" +
+                        _vm._s(_vm.lang("messages.case_is_solved")) +
+                        "\n\t\t\t\t"
+                    )
+                  ]
                 )
               ])
             ]
@@ -53058,7 +53159,11 @@ var render = function() {
               },
               [
                 _c("a", { staticClass: "mx-3", attrs: { href: "#" } }, [
-                  _vm._v("Save")
+                  _vm._v(
+                    "\n\t\t\t\t\t" +
+                      _vm._s(_vm.lang("messages.save")) +
+                      "\n\t\t\t\t"
+                  )
                 ])
               ]
             )
@@ -53219,6 +53324,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -53327,16 +53436,24 @@ var render = function() {
         },
         [
           _c("template", { slot: "noResult" }, [
-            _vm._v("\n\t\t\tKein Ergebnis. Ändere den Suchbegriff!\n\t\t")
+            _vm._v(
+              "\n\t\t\t" +
+                _vm._s(_vm.lang("messages.no_search_result")) +
+                "\n\t\t"
+            )
           ]),
           _vm._v(" "),
           _c("template", { slot: "maxElements" }, [
             _vm.maxSelected > 0
               ? _c("span", [
                   _vm._v(
-                    "\n\t\t\t\tDu darfst nur " +
-                      _vm._s(_vm.maxSelected) +
-                      " Mentoren auswählen!\n\t\t\t"
+                    "\n\t\t\t\t" +
+                      _vm._s(
+                        _vm.lang("messages.max_mentors_selected", {
+                          mentors: _vm.maxSelected
+                        })
+                      ) +
+                      "\t\t\t\t\t\n\t\t\t"
                   )
                 ])
               : _c("span")
