@@ -9,9 +9,11 @@
 
 			@slot ('description')
 				@if ($case->anonymous)
-					The creator of this case wants to stay anonymous
+					@lang('messages.creator_is_anonymous')
 				@else
-					Created by {{ $case->victim->full_name }}
+					@lang('messages.case_created_by',[
+						'name'=> $case->victim->full_name	
+					])
 				@endif
 			@endslot
 

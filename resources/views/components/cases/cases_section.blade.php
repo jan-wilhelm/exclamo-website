@@ -10,7 +10,14 @@
 				@else
 					<span class="tag">
 						<i class="fas fa-user-friends mr-1"></i>
-						{{ $case->mentors->count() }} Mentors
+						@php
+							$numberOfMentors = $case->mentors->count();
+							echo trans_choice(
+								'messages.number_of_mentors',
+								$numberOfMentors,
+								['value' => $numberOfMentors]
+							);
+						@endphp
 					</span>
 				@endif
 			@endslot

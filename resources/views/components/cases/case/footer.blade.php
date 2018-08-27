@@ -1,5 +1,5 @@
 <a class="small" href="{{ route('incidents.show', ["case" => $case]) }}">
-	Zum Fall
+	@lang('messages.go_to_case')
 </a>
 <span class="small">
 	@if($case->messages->count() > 0)

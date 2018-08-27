@@ -63,7 +63,9 @@
 					</div>
 				@else
 
-					<a class="form-inline cta cta-tertiary" href="{{ route('logout') }}">Abmelden</a>
+					<a class="form-inline cta cta-tertiary" href="{{ route('logout') }}">
+						@lang('messages.logout')
+					</a>
 				@endguest
 				</li>
 			</b-navbar-nav>

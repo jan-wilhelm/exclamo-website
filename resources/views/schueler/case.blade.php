@@ -8,7 +8,9 @@
 			@endslot
 
 			@slot ('description')
-				Mentored by {{ implode(", ", $case->mentors->pluck("full_name")->toArray()) }}
+				@lang('messages.mentored_by',[
+					'mentors'=> implode(", ", $case->mentors->pluck("full_name")->toArray())
+				])
 			@endslot
 
 			@slot ('header')

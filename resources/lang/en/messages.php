@@ -27,6 +27,7 @@ return [
 	'name'=> "Name",
 	'incidents'=> "Incidents",
 	'resolved_incidents' => "Resolved Incidents",
+	'open_cases'=> 'Open cases',
 	'incident'=> "Incident",
 	'show'=> "Show",
 	'records'=> "records",
@@ -45,5 +46,10 @@ return [
 	'case_is_solved'=> 'The case is solved',
 	'save'=> 'Save',
 	'no_search_result'=> 'No result. Try changing the input!',
-	'max_mentors_selected'=> 'You may only select :mentors mentors!'
+	'max_mentors_selected'=> 'You may only select :mentors mentors!',
+	'go_to_case'=> 'Details',
+	'number_of_mentors'=> '{1} :value mentor|[2,*] :value mentors',
+	'creator_is_anonymous'=> 'The creator of this case wants to stay anonymous',
+	'case_created_by'=> "Created by :name",
+	'mentored_by'=> 'Mentored by :mentors'
 ];

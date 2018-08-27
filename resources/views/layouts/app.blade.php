@@ -12,10 +12,10 @@
 
 @section('body')
     <div id="app" class="h-100 w-100" v-cloak>
-            @include('layouts/navbar')
-            <div class="mt-5 container">
-                @yield('content')
-            </div>
+        @include('layouts/navbar')
+        <div class="mt-5 container">
+            @yield('content')
+        </div>
     </div>
 
     <script src="{{ asset('js/lang-' . app()->getLocale() . '.js') }}" type="text/javascript"></script>
