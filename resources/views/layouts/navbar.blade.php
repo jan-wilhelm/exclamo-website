@@ -1,7 +1,7 @@
 <b-navbar toggleable="lg">
 	<b-container>
 		<b-navbar-brand href="{{ route('home') }}">
-			<img src="{{ asset('img/logo/logo_big_with_text_rounded.png') }}" height="45px">
+			<img src="{{ asset('img/logo/logo_text_rounded.png') }}" height="45px">
 		</b-navbar-brand>
 		<b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
@@ -62,11 +62,8 @@
 						</a>
 					</div>
 				@else
-					<div class="shadow-sm form-inline button-div white mr-3 px-3 hover">
-						<a href="{{ url('logout') }}" class="mx-auto">
-							@lang('messages.logout')
-						</a>
-					</div>
+
+					<a class="form-inline cta cta-tertiary" href="{{ route('logout') }}">Abmelden</a>
 				@endguest
 				</li>
 			</b-navbar-nav>

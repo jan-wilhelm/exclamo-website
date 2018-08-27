@@ -89,21 +89,21 @@ body, html {
 	background-color: $color-white;
 }
 
-.landing-section:nth-child(odd) {
+.landing-section:nth-of-type(odd) {
 	background: $color-primary-4;
 	background: linear-gradient(0deg, $color-primary-3 0%, $color-primary-0 100%);
 }
 
-.landing-section:nth-child(odd) *:not(.text-white) {
+.landing-section:nth-of-type(odd) *:not(.text-white) {
 	color: white;
 }
 
-.landing-section:nth-child(even) {
+.landing-section:nth-of-type(even) {
 	background: $color-white;
 	background: linear-gradient(0deg, $color-white 0%, #fff 100%);
 }
 
-.landing-section:nth-child(even) *:not(.text-white) {
+.landing-section:nth-of-type(even) *:not(.text-white) {
 	color: $color-primary-0;
 }
 
@@ -198,7 +198,7 @@ body, html {
 		padding: 0px 60px;
 	}
 
-	.landing-section:first-child:before {
+	.landing-section:first-of-type:before {
 		margin-top: 400px;
 		height: calc(100% - 400px);
 	}
@@ -214,12 +214,12 @@ body, html {
 		border-bottom-left-radius: 40px;
 	}
 
-	.landing-section:last-of-type:nth-child(odd):before {
+	.landing-section:last-of-type:nth-of-type(odd):before {
 		border-left: 6px solid $color-white;
 		border-bottom: 6px solid $color-white;
 	}
 
-	.landing-section:last-of-type:nth-child(even):before {
+	.landing-section:last-of-type:nth-of-type(even):before {
 		border-left: 6px solid $color-primary-0;
 		border-bottom: 6px solid $color-primary-0;
 	}
@@ -260,7 +260,7 @@ body, html {
 		padding: 0px 100px;
 	}
 
-	.landing-section:first-child:before {
+	.landing-section:first-of-type:before {
 		margin-top: 430px;
 		height: calc(100% - 430px);
 	}
@@ -275,7 +275,7 @@ body, html {
 		padding: 0px 220px;
 	}
 
-	.landing-section:first-child:before {
+	.landing-section:first-of-type:before {
 		margin-top: 460px;
 		height: calc(100% - 460px);
 	}

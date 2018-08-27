@@ -1,10 +1,8 @@
 <template>
 	<div class="d-inline">
-		<b-btn v-b-modal.case-options-modal variant="secondary" class="form-inline button-div bordered white hover mt-md-0 mt-3 float-md-right justify-content-center">
-			<a href="#" class="mx-3"  data-toggle="modal" data-target="#case-options-modal">
-				Optionen
-			</a>
-		</b-btn>
+		<a href="#" v-b-modal.case-options-modal class="float-md-right ml-3 cta cta-secondary"  data-toggle="modal" data-target="#case-options-modal">
+			Optionen
+		</a>
 		<b-modal ref="modal" id="case-options-modal" title="Optionen">
 			<form autocomplete="off" class="px-sm-5 px-1">
 				<div class="form-group">

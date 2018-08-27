@@ -9,16 +9,20 @@
 @endsection
 
 @section("body")
+
+
 	<section class="landing-section full d-flex flex-column">
 		<div class="brand my-auto text-center">
 			<div class="d-flex justify-content-center">
-				<img src="{{ asset('img/logo/logo_big_with_text_rounded_dark.png') }}" class="">
+				<img src="{{ asset('img/logo/logo_text_rounded_dark.png') }}" class="">
 			</div>
 			<h2 class="my-5 py-3 font-weight-bold">Die App für Schulen gegen Mobbing</h2>
-			<a class="cta cta-primary cta-large" href="#forschools">Jetzt Ihre Schüler schützen!</a>
+			<a class="cta cta-primary cta-large mb-3" href="#forschools">Jetzt Ihre Schüler schützen!</a>
 			<br>
-			<a class="cta cta-tertiary" href="{{ route('login') }}">Anmelden</a>
+			<span>oder <a href="{{ route('login') }}">hier anmelden</a></span>
+			
 		</div>
+		<div class="py-5 my-5 p-lg-0 m-lg-0"></div>
 		<div class="container mt-auto mb-5">
 			<ul class="nav w-100 justify-content-center nav-fill flex-column flex-md-row">
 				<li class="nav-item">
@@ -192,11 +196,11 @@
 		</div>
 	</section>
 	<div class="bg-color-black text-white">
-		<div class="container bg-color-black py-5">
+		<div class="container bg-color-black py-md-5">
 			<footer class="py-5">
 				<div class="row">
 					<div class="col-12 col-md">
-						<img class="mb-2" src="{{ asset('img/logo_with_text_dark.png') }}" alt="" width="150px">
+						<img class="mb-2" src="{{ asset('img/logo/logo_text_rounded.png') }}" alt="" width="150px">
 						<small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
 					</div>
 					<div class="col-6 col-md">

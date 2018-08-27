@@ -52690,8 +52690,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -52746,7 +52744,7 @@ var render = function() {
     { staticClass: "d-inline" },
     [
       _c(
-        "b-btn",
+        "a",
         {
           directives: [
             {
@@ -52755,24 +52753,14 @@ var render = function() {
               modifiers: { "case-options-modal": true }
             }
           ],
-          staticClass:
-            "form-inline button-div bordered white hover mt-md-0 mt-3 float-md-right justify-content-center",
-          attrs: { variant: "secondary" }
+          staticClass: "float-md-right ml-3 cta cta-secondary",
+          attrs: {
+            href: "#",
+            "data-toggle": "modal",
+            "data-target": "#case-options-modal"
+          }
         },
-        [
-          _c(
-            "a",
-            {
-              staticClass: "mx-3",
-              attrs: {
-                href: "#",
-                "data-toggle": "modal",
-                "data-target": "#case-options-modal"
-              }
-            },
-            [_vm._v("\n\t\t\tOptionen\n\t\t")]
-          )
-        ]
+        [_vm._v("\n\t\tOptionen\n\t")]
       ),
       _vm._v(" "),
       _c(

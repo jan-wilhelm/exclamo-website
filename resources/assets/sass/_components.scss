@@ -38,23 +38,34 @@
 	font-weight: 400;
 }
 
+.cta-tertiary {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .cta:hover {
 	text-decoration: none;
 }
 
 .cta-primary {
-	background-color: $color-secondary-1-0;
+	background-color: $color-secondary-1-0 !important;
 	color: $color-white !important;
 }
 
 .cta-primary:hover {
-	background-color: $color-secondary-1-2;
-	color: $color-white-darker;
+	background-color: $color-secondary-1-2 !important;
+	color: $color-white-darker !important;
 }
 
 .cta-secondary {
-	background-color: $color-white;
+	background-color: $color-white !important;
 	color: $color-secondary-1-0 !important;
+	border: 1px solid $color-secondary-1-0 !important;
+}
+
+.cta-secondary:hover {
+	background-color: $color-secondary-1-2 !important;
+	color: $color-white !important;
 }
 
 .cta-tertiary {
