@@ -2,21 +2,27 @@
 	<form @submit.prevent="submit" id="case-form" method="post" class="form" role="form" :action="formEndpoint">
 		<div class="form-group">
 			<label for="title">
-				@lang('messages.casetitle')
+				{{ lang('messages.casetitle') }}
 			</label>
-			<input type="text" class="form-control" id="title" name="title" placeholder="@lang('placeholders.casetitle')">
+			<input
+				type="text"
+				class="form-control"
+				id="title"
+				name="title"
+				:placeholder="lang('placeholders.casetitle')"
+			/>
 		</div>
 
 		<div class="form-group">
 			<label for="message">
-				@lang('messages.casedescription')
+				{{ lang('messages.casedescription') }}
 			</label>
 			<textarea class="form-control" id="message" name="message"></textarea>
 		</div>
 		<div class="form-row">
 			<div class="form-group col-md-6">
 				<label for="message">
-					@lang('messages.mentorsselect')
+					{{ lang('messages.mentors') }}
 				</label>
 				<select class="d-none" id="mentor-select" name="mentors[]"></select>
 				<mentor-select-field
@@ -27,7 +33,7 @@
 			</div>
 			<div class="form-group col-md-6">
 				<label for="category">
-					@lang('messages.categoryselect')
+					{{ lang('messages.category') }}
 				</label>
 
 				<select id="category-select" class="form-control" name="category">
@@ -40,7 +46,7 @@
 	        	<div class="form-group">
 	                <div class="input-group date" id="case-date-picker" data-target-input="nearest">
 						<label for="date">
-							@lang('messages.dateselect')
+							{{ lang('messages.dateselect') }}
 						</label>
 
 						<div class="input-group">
@@ -58,7 +64,7 @@
 	        <div class="col-md-6">
 				<div class="form-group">
 					<label for="location">
-						@lang('messages.locationselect')
+						{{ lang('messages.location') }}
 					</label>
 
 					<select id="location-select" class="form-control" name="location">
@@ -72,7 +78,7 @@
 			<div class="form-check justify-content-center align-self-center mx-auto">
 				<input type="checkbox" class="form-check-input" id="anonymous" name="anonymous">
 				<label class="form-check-label" for="anonymous">
-					@lang('messages.case_should_be_anonymous')
+					{{ lang('messages.case_should_be_anonymous') }}
 				</label>
 			</div>
 		</div>
@@ -80,7 +86,7 @@
 		<div class="form-group text-center justify-content-center mt-3">
 			<button type="submit" class="btn btn-primary">
 				<i class="far fa-check-circle"></i>
-				@lang('messages.createbutton')
+				{{ lang('messages.create_case_button') }}
 			</button>
 		</div>
 	</form>

@@ -36,8 +36,12 @@ return [
 	'location' => 'Ort',
 	'mentors' => 'Mentoren',
 	'case_is_anonymous'=> 'Dieser Fall ist anonym',
+	'case_should_be_anonymous'=> 'Dieser Fall soll anonym erstellt werden',
 	'case_is_solved'=> 'Der Fall ist gelöst',
 	'save'=> 'Speichern',
 	'no_search_result'=> 'Kein Ergebnis. Ändere den Suchbegriff!',
-	'max_mentors_selected'=> 'Du darfst nur :mentors Mentoren auswählen!'
+	'max_mentors_selected'=> 'Du darfst nur :mentors Mentoren auswählen!',
+	'dateselect'=> 'Datum des Vorfalls',
+	'casedescription' => 'Beschreibung',
+	'create_case_button'=> 'Fall erstellen'
 ];

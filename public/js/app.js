@@ -53561,7 +53561,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -53574,6 +53574,12 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuejs_datepicker__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__(76);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -53719,9 +53725,38 @@ var render = function() {
       }
     },
     [
-      _vm._m(0),
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "title" } }, [
+          _vm._v(
+            "\n\t\t\t\t" + _vm._s(_vm.lang("messages.casetitle")) + "\n\t\t\t"
+          )
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "form-control",
+          attrs: {
+            type: "text",
+            id: "title",
+            name: "title",
+            placeholder: _vm.lang("placeholders.casetitle")
+          }
+        })
+      ]),
       _vm._v(" "),
-      _vm._m(1),
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "message" } }, [
+          _vm._v(
+            "\n\t\t\t\t" +
+              _vm._s(_vm.lang("messages.casedescription")) +
+              "\n\t\t\t"
+          )
+        ]),
+        _vm._v(" "),
+        _c("textarea", {
+          staticClass: "form-control",
+          attrs: { id: "message", name: "message" }
+        })
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "form-row" }, [
         _c(
@@ -53729,7 +53764,11 @@ var render = function() {
           { staticClass: "form-group col-md-6" },
           [
             _c("label", { attrs: { for: "message" } }, [
-              _vm._v("\n\t\t\t\t\t@lang('messages.mentorsselect')\n\t\t\t\t")
+              _vm._v(
+                "\n\t\t\t\t\t" +
+                  _vm._s(_vm.lang("messages.mentors")) +
+                  "\n\t\t\t\t"
+              )
             ]),
             _vm._v(" "),
             _c("select", {
@@ -53756,7 +53795,11 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "form-group col-md-6" }, [
           _c("label", { attrs: { for: "category" } }, [
-            _vm._v("\n\t\t\t\t\t@lang('messages.categoryselect')\n\t\t\t\t")
+            _vm._v(
+              "\n\t\t\t\t\t" +
+                _vm._s(_vm.lang("messages.category")) +
+                "\n\t\t\t\t"
+            )
           ]),
           _vm._v(" "),
           _c(
@@ -53789,7 +53832,9 @@ var render = function() {
               [
                 _c("label", { attrs: { for: "date" } }, [
                   _vm._v(
-                    "\n\t\t\t\t\t\t\t@lang('messages.dateselect')\n\t\t\t\t\t\t"
+                    "\n\t\t\t\t\t\t\t" +
+                      _vm._s(_vm.lang("messages.dateselect")) +
+                      "\n\t\t\t\t\t\t"
                   )
                 ]),
                 _vm._v(" "),
@@ -53806,7 +53851,7 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _vm._m(2)
+                    _vm._m(0)
                   ],
                   1
                 )
@@ -53819,7 +53864,9 @@ var render = function() {
           _c("div", { staticClass: "form-group" }, [
             _c("label", { attrs: { for: "location" } }, [
               _vm._v(
-                "\n\t\t\t\t\t\t@lang('messages.locationselect')\n\t\t\t\t\t"
+                "\n\t\t\t\t\t\t" +
+                  _vm._s(_vm.lang("messages.location")) +
+                  "\n\t\t\t\t\t"
               )
             ]),
             _vm._v(" "),
@@ -53839,48 +53886,56 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(3),
+      _c("div", { staticClass: "form-row" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "form-check justify-content-center align-self-center mx-auto"
+          },
+          [
+            _c("input", {
+              staticClass: "form-check-input",
+              attrs: { type: "checkbox", id: "anonymous", name: "anonymous" }
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              { staticClass: "form-check-label", attrs: { for: "anonymous" } },
+              [
+                _vm._v(
+                  "\n\t\t\t\t\t" +
+                    _vm._s(_vm.lang("messages.case_should_be_anonymous")) +
+                    "\n\t\t\t\t"
+                )
+              ]
+            )
+          ]
+        )
+      ]),
       _vm._v(" "),
-      _vm._m(4)
+      _c(
+        "div",
+        { staticClass: "form-group text-center justify-content-center mt-3" },
+        [
+          _c(
+            "button",
+            { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+            [
+              _c("i", { staticClass: "far fa-check-circle" }),
+              _vm._v(
+                "\n\t\t\t\t" +
+                  _vm._s(_vm.lang("messages.create_case_button")) +
+                  "\n\t\t\t"
+              )
+            ]
+          )
+        ]
+      )
     ]
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", { attrs: { for: "title" } }, [
-        _vm._v("\n\t\t\t\t@lang('messages.casetitle')\n\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: {
-          type: "text",
-          id: "title",
-          name: "title",
-          placeholder: "@lang('placeholders.casetitle')"
-        }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", { attrs: { for: "message" } }, [
-        _vm._v("\n\t\t\t\t@lang('messages.casedescription')\n\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("textarea", {
-        staticClass: "form-control",
-        attrs: { id: "message", name: "message" }
-      })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -53890,55 +53945,6 @@ var staticRenderFns = [
         _c("i", { staticClass: "fa fa-calendar" })
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-row" }, [
-      _c(
-        "div",
-        {
-          staticClass:
-            "form-check justify-content-center align-self-center mx-auto"
-        },
-        [
-          _c("input", {
-            staticClass: "form-check-input",
-            attrs: { type: "checkbox", id: "anonymous", name: "anonymous" }
-          }),
-          _vm._v(" "),
-          _c(
-            "label",
-            { staticClass: "form-check-label", attrs: { for: "anonymous" } },
-            [
-              _vm._v(
-                "\n\t\t\t\t\t@lang('messages.case_should_be_anonymous')\n\t\t\t\t"
-              )
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "form-group text-center justify-content-center mt-3" },
-      [
-        _c(
-          "button",
-          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-          [
-            _c("i", { staticClass: "far fa-check-circle" }),
-            _vm._v("\n\t\t\t\t@lang('messages.createbutton')\n\t\t\t")
-          ]
-        )
-      ]
-    )
   }
 ]
 render._withStripped = true
