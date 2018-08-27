@@ -1,5 +1,9 @@
 <template>
-	<div class="chat-message p-3" :class="[(messageObject.sentByUser ? 'align-self-end right' : 'left'), (messageObject.sending ? 'sending' : '')]">
+	<div class="chat-message p-3"
+		:class="[
+			(messageObject.sentByUser ? 'align-self-end right' : 'left'),
+			(messageObject.sending ? 'sending' : '')
+		]">
 		<a v-if="!messageObject.anonymous && !messageObject.sentByUser" class="mb-2 d-block">
 			{{ messageObject.user.first_name + " " + messageObject.user.last_name}}
 		</a>
