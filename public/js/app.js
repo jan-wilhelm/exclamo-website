@@ -11666,6 +11666,10 @@ __webpack_require__(79);
 
 
 
+window.lang = function (string) {
+  return _.get(window.translations, string);
+};
+
 Vue.component('multiselect', __WEBPACK_IMPORTED_MODULE_0_vue_multiselect___default.a);
 Vue.component('chat-message', __webpack_require__(218));
 Vue.component('chat-messages-container', __webpack_require__(224));

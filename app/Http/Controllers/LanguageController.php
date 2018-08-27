@@ -7,13 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 class LanguageController extends Controller
 {
-
-	protected $languages = [
-		"de",
-		"en"
-	];
-
-	protected $defaultLanguage = "en";
     
     /**
      * Change the language of the user and save his settings
@@ -22,11 +15,11 @@ class LanguageController extends Controller
      */
 	public function changeLanguage(Request $request)
 	{
-		$language = $request->input('language', $this->defaultLanguage);
+		$language = $request->input('language', config('app.fallback_locale'));
 
 		// Default to the $defaultLanguage locale
-		if(!in_array($language, $this->languages)) {
-			$language = $this->$defaultLanguage;
+		if(!in_array($language, config('app.locales'))) {
+			$language = config('app.fallback_locale');
 		}
 
 		// Persist the language to the database
@@ -39,6 +32,31 @@ class LanguageController extends Controller
 		app()->setLocale($language);
 
 		return redirect()->back()->withInput();
+	}
+
+	public function getJavascriptLocale(Request $request, $locale) {
+	    if (!in_array($locale, config('app.locales'))) {
+	        $locale = config('app.fallback_locale');
+	    }
+
+	    // Add locale to the cache key
+	    $json = \Cache::rememberForever("lang-{$locale}.js", function () use ($locale) {
+	        $files   = glob(resource_path('lang/' . $locale . '/*.php'));
+	        $strings = [];
+
+	        foreach ($files as $file) {
+	            $name = basename($file, '.php');
+	            $strings[$name] = require $file;
+	        }
+
+	        return $strings;
+	    });
+
+	    $contents = 'window.translations = ' . json_encode($json, config('app.debug', false) ? JSON_PRETTY_PRINT : 0) . ';';
+	    $response = \Response::make($contents, 200);
+	    $response->header('Content-Type', 'application/javascript');
+
+	    return $response;
 	}
 
 }

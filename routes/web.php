@@ -39,3 +39,5 @@ Route::post('create', 'ReportedCaseController@store')->name('incidents.store');
 
 // OTHER
 Route::post('language', 'LanguageController@changeLanguage')->name('language');
+
+Route::get('js/lang-{locale}.js', 'LanguageController@getJavascriptLocale')->name('language.js');
