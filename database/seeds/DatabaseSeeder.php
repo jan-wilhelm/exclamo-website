@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
             $index = 0;
             foreach ($users as $user) {
                 $index += 1;
-                if ($index < 6) {
+                if ($index < 5) {
                     $role = "schueler";
                 } elseif ($index < 8) {
                     $role = "lehrer";
@@ -70,7 +70,7 @@ class DatabaseSeeder extends Seeder
         foreach ($students as $student) {
 
             echo "Creating cases... \n";
-            $cases = factory(App\ReportedCase::class, 3)->create([
+            $cases = factory(App\ReportedCase::class, rand(0,6))->create([
                 'student_id'=> $student->id
             ]);
 
