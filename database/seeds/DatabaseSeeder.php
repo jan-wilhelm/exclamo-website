@@ -14,33 +14,45 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         echo "Creating roles... \n";
-        $roles = ['schueler', 'lehrer', 'schulleiter', 'admin'];
+        $roles = ['schueler', 'lehrer', 'schulleiter'];
 
         foreach ($roles as $role) {
             Role::create(['name' => $role]);
         }
 
         echo "Creating schools... \n";
+        $roleCounts = [
+            'schueler'=> 0,
+            'lehrer'=> 0,
+            'schulleiter'=> 0
+        ];
         $schools = factory(App\School::class, 3)->create();
 
         foreach (App\School::all() as $school) {
             echo "Creating users... \n";
-            $users = factory(App\User::class, 40)->create([
+            $users = factory(App\User::class, 40)->make([
                 'school_id'=> $school->id
             ]);
 
             echo "Assigning roles to users... \n";
             $index = 0;
             foreach ($users as $user) {
-                $school->students()->save($user);
                 $index += 1;
                 if ($index < 30) {
-                    $user->assignRole("schueler");
+                    $role = "schueler";
                 } elseif ($index < 39) {
-                    $user->assignRole("lehrer");
+                    $role = "lehrer";
                 } else {
-                    $user->assignRole("schulleiter");
+                    $role = "schulleiter";
                 }
+
+                $user->email = $role . $roleCounts[$role] . "@example.com";
+                $user->save();
+                $user->assignRole($role);
+
+                $school->students()->save($user);
+
+                $roleCounts[$role]++;
             }
 
             echo "Creating locations... \n";
