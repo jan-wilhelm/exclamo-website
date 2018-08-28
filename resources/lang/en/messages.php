@@ -52,5 +52,7 @@ return [
 	'creator_is_anonymous'=> 'The creator of this case wants to stay anonymous',
 	'case_created_by'=> "Created by :name",
 	'mentored_by'=> 'Mentored by :mentors',
-	'anonymous_student'=> 'Anonymous student'
+	'anonymous_student'=> 'Anonymous student',
+	'you_have_no_case'=> "You haven't reported any incidents yet. Do you want to report one now?",
+	'mentor_no_cases'=> 'You are not associated with any cases yet. Wait for your students to ask you for your counsel!'
 ];

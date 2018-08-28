@@ -51,5 +51,7 @@ return [
 	'creator_is_anonymous'=> 'Der Ersteller des Falls möchte anonym bleiben',
 	'case_created_by'=> "Der Fall wurde von :name erstellt",
 	'mentored_by'=> 'Betreut von :mentors',
-	'anonymous_student'=> 'Anonymer Schüler'
+	'anonymous_student'=> 'Anonymer Schüler',
+	'you_have_no_case'=> 'Du hast noch keinen Fall erstellt. Möchtest du jetzt einen melden?',
+	'mentor_no_cases'=> 'Du bist noch keinem Fall zugeordnet. Warte, bis Schüler dich hier um Rat bitten!'
 ];

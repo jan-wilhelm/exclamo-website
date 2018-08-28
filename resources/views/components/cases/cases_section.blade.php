@@ -1,5 +1,5 @@
 <div class="row mb-4">
-	@foreach($cases->where('solved', isset($shouldBeSolved) ? $shouldBeSolved : false) as $case)
+	@foreach($cases as $case)
 		@component('components.cases.case', ["case"=> $case])
 			@slot('tags')
 				@if(isset($userTag) && $userTag)
