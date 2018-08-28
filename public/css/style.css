@@ -745,10 +745,6 @@ hr {
     display: block;
   }
 
-  .students-table {
-    width: 90%;
-  }
-
   .chat-message {
     max-width: 80%;
   }
@@ -765,10 +761,6 @@ hr {
 }
 
 @media (min-width: 991px) {
-  .students-table {
-    width: auto;
-  }
-
   .chat-message {
     max-width: 60%;
   }
@@ -786,14 +778,6 @@ hr {
 
 .statistic-name {
   font-weight: 500;
-}
-
-.students-table td {
-  padding: 3px 30px;
-}
-
-.students-table th {
-  padding: 0px 30px;
 }
 
 .pagination {

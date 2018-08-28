@@ -71,6 +71,6 @@
 				</tr>
 			@endforeach
 		</table>
-		{{ $users->appends($oldInput)->links() }}
+		{{-- $users->appends($oldInput)->links() --}}
 	@endexclamosection
 @endsection
