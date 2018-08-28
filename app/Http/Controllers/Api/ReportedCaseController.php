@@ -47,7 +47,7 @@ class ReportedCaseController extends Controller
      */
     public function store(ReportCaseRequest $request)
     {
-        //$this->authorize('create');
+        $this->authorize('create', ReportedCase::class);
 
         // Retrieve all the valid fields or return an error
         $validated = $request->validated();
