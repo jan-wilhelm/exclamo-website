@@ -50,5 +50,6 @@ return [
 	'number_of_mentors'=> '{1} :value Mentor|[2,*] :value Mentoren',
 	'creator_is_anonymous'=> 'Der Ersteller des Falls möchte anonym bleiben',
 	'case_created_by'=> "Der Fall wurde von :name erstellt",
-	'mentored_by'=> 'Betreut von :mentors'
+	'mentored_by'=> 'Betreut von :mentors',
+	'anonymous_student'=> 'Anonymer Schüler'
 ];

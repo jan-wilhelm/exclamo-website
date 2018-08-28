@@ -51,5 +51,6 @@ return [
 	'number_of_mentors'=> '{1} :value mentor|[2,*] :value mentors',
 	'creator_is_anonymous'=> 'The creator of this case wants to stay anonymous',
 	'case_created_by'=> "Created by :name",
-	'mentored_by'=> 'Mentored by :mentors'
+	'mentored_by'=> 'Mentored by :mentors',
+	'anonymous_student'=> 'Anonymous student'
 ];

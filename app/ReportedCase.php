@@ -18,7 +18,7 @@ class ReportedCase extends Model
     public function getDisplayNameAttribute() {
         if ($this->anonymous && $this->victim->hasRole("schueler"))
         {
-            return "Anonymous student";
+            return __('messages.anonymous_student');
         }
         return $this->victim->full_name;
     }
