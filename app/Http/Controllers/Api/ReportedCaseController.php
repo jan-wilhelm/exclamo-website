@@ -88,8 +88,11 @@ class ReportedCaseController extends Controller
     {
         $case = ReportedCase::findOrFail($id);
         $this->authorize('update', $case);
-        $case->update($request->validated());
 
+        $params = $request->validated();
+        $case->update($params);
+
+        // Update the relationships
         $case->mentors()->sync($request['mentors'] ?: $case->mentors);
         return $this->show($case);
     }

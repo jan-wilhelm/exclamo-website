@@ -11,7 +11,8 @@ class ReportedCase extends Model
         "title",
         "category",
         "anonymous",
-        "solved"
+        "solved",
+        "location_id"
     ];
 
     public function getDisplayNameAttribute() {

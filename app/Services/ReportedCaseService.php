@@ -66,7 +66,11 @@ class ReportedCaseService
 
         $case = $this->cases->make($params);
         $case->victim()->associate($user);
-        $case->location()->associate(Location::find($params['location']));
+
+        if(isset($params['location'])) {
+            $case->location()->associate(Location::find($params['location']));
+        }
+
         $case->save();
 
         // Add the selected mentors to the case

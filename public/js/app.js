@@ -52778,7 +52778,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		categories: Array,
 		locations: Array,
 		mentors: Array,
-		maximumMentors: Number
+		maximumMentors: Number,
+		useLocations: {
+			type: Boolean,
+			required: false,
+			default: function _default() {
+				return false;
+			}
+		}
 	},
 	data: function data() {
 		return {
@@ -52943,55 +52950,59 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "location-select" } }, [
-                  _vm._v(
-                    "\n\t\t\t\t\t" +
-                      _vm._s(_vm.lang("messages.location")) +
-                      "\n\t\t\t\t"
-                  )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    directives: [
+              _vm.useLocations
+                ? _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "location-select" } }, [
+                      _vm._v(
+                        "\n\t\t\t\t\t" +
+                          _vm._s(_vm.lang("messages.location")) +
+                          "\n\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
                       {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.caseData.location_id,
-                        expression: "caseData.location_id"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { id: "location-select" },
-                    on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.$set(
-                          _vm.caseData,
-                          "location_id",
-                          $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.caseData.location_id,
+                            expression: "caseData.location_id"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { id: "location-select" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.caseData,
+                              "location_id",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          }
+                        }
+                      },
+                      _vm._l(_vm.locations, function(location) {
+                        return _c(
+                          "option",
+                          { domProps: { value: location.id } },
+                          [_vm._v(_vm._s(location.name))]
                         )
-                      }
-                    }
-                  },
-                  _vm._l(_vm.locations, function(location) {
-                    return _c("option", { domProps: { value: location.id } }, [
-                      _vm._v(_vm._s(location.name))
-                    ])
-                  })
-                )
-              ]),
+                      })
+                    )
+                  ])
+                : _vm._e(),
               _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
                 _c(
@@ -53561,7 +53572,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -53668,6 +53679,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -53676,10 +53693,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	components: {
 		Datepicker: __WEBPACK_IMPORTED_MODULE_0_vuejs_datepicker__["a" /* default */]
 	},
-	props: ['formEndpoint', 'possibleMentors', 'possibleLocations', 'possibleCategories', 'maximumMentors'],
+	props: {
+		formEndpoint: String,
+		possibleMentors: Array,
+		possibleLocations: Array,
+		possibleCategories: Array,
+		maximumMentors: Number,
+		useLocations: {
+			type: Boolean,
+			required: false,
+			default: function _default() {
+				return false;
+			}
+		},
+		useDates: {
+			type: Boolean,
+			required: false,
+			default: function _default() {
+				return false;
+			}
+		}
+	},
 	data: function data() {
 		return {
-			selectedMentors: []
+			selectedMentors: [],
+			incidentDate: null
 		};
 	},
 
@@ -53691,6 +53729,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			for (var i = 0; i < this.selectedMentors.length; i++) {
 				formData.append('mentors[]', this.selectedMentors[i].id);
 			}
+
+			formData.append('incident_date', this.incidentDate);
 
 			__WEBPACK_IMPORTED_MODULE_1__api__["a" /* default */].create(formData, function () {}, function (error) {
 				console.log(error.response);
@@ -53818,72 +53858,83 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "form-row" }, [
-        _c("div", { staticClass: "col-md-6" }, [
-          _c("div", { staticClass: "form-group" }, [
-            _c(
-              "div",
-              {
-                staticClass: "input-group date",
-                attrs: {
-                  id: "case-date-picker",
-                  "data-target-input": "nearest"
-                }
-              },
-              [
-                _c("label", { attrs: { for: "date" } }, [
+        _vm.useDates
+          ? _c("div", { staticClass: "col-md-6" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "input-group date",
+                    attrs: {
+                      id: "case-date-picker",
+                      "data-target-input": "nearest"
+                    }
+                  },
+                  [
+                    _c("label", { attrs: { for: "date" } }, [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t" +
+                          _vm._s(_vm.lang("messages.dateselect")) +
+                          "\n\t\t\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "input-group" },
+                      [
+                        _c("datepicker", {
+                          staticClass: "form-control datetimepicker-input",
+                          attrs: {
+                            "monday-first": true,
+                            "disabled-dates": { from: new Date() },
+                            name: "incident_date"
+                          },
+                          model: {
+                            value: _vm.incidentDate,
+                            callback: function($$v) {
+                              _vm.incidentDate = $$v
+                            },
+                            expression: "incidentDate"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _vm._m(0)
+                      ],
+                      1
+                    )
+                  ]
+                )
+              ])
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.useLocations
+          ? _c("div", { staticClass: "col-md-6" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "location" } }, [
                   _vm._v(
-                    "\n\t\t\t\t\t\t\t" +
-                      _vm._s(_vm.lang("messages.dateselect")) +
-                      "\n\t\t\t\t\t\t"
+                    "\n\t\t\t\t\t\t" +
+                      _vm._s(_vm.lang("messages.location")) +
+                      "\n\t\t\t\t\t"
                   )
                 ]),
                 _vm._v(" "),
                 _c(
-                  "div",
-                  { staticClass: "input-group" },
-                  [
-                    _c("datepicker", {
-                      staticClass: "form-control datetimepicker-input",
-                      attrs: {
-                        "monday-first": true,
-                        "disabled-dates": { from: new Date() },
-                        name: "incident_date"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm._m(0)
-                  ],
-                  1
+                  "select",
+                  {
+                    staticClass: "form-control",
+                    attrs: { id: "location-select", name: "location" }
+                  },
+                  _vm._l(_vm.possibleLocations, function(location) {
+                    return _c("option", { domProps: { value: location.id } }, [
+                      _vm._v(_vm._s(location.title))
+                    ])
+                  })
                 )
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-6" }, [
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "location" } }, [
-              _vm._v(
-                "\n\t\t\t\t\t\t" +
-                  _vm._s(_vm.lang("messages.location")) +
-                  "\n\t\t\t\t\t"
-              )
-            ]),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                staticClass: "form-control",
-                attrs: { id: "location-select", name: "location" }
-              },
-              _vm._l(_vm.possibleLocations, function(location) {
-                return _c("option", { domProps: { value: location.id } }, [
-                  _vm._v(_vm._s(location.title))
-                ])
-              })
-            )
-          ])
-        ])
+              ])
+            ])
+          : _vm._e()
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "form-row" }, [

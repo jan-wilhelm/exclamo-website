@@ -5,6 +5,8 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\LocationExistsInSchool;
 use App\Rules\MentorsExistInSchool;
+use App\Rules\SchoolSupportsLocations;
+use App\Rules\SchoolSupportsDates;
 
 class UpdateReportedCaseRequest extends FormRequest
 {
@@ -27,12 +29,14 @@ class UpdateReportedCaseRequest extends FormRequest
     {
         return [
             'title' => 'sometimes|string|min:3|nullable',
-            'incident_date' => 'sometimes|date|before:now|nullable',
             'category' => 'sometimes|in:' . implode(",", config('exclamo.categories', '')),
+            'anonymous' => 'sometimes|bool',
+            'solved' => 'sometimes|bool',
             'location_id' => [
                 'sometimes',
                 'nullable',
-                new LocationExistsInSchool($this->user())
+                new LocationExistsInSchool($this->user()),
+                new SchoolSupportsLocations($this->user()->school)
             ],
             'mentors' => [
                 'sometimes',
@@ -40,8 +44,13 @@ class UpdateReportedCaseRequest extends FormRequest
                 'min:1',
                 new MentorsExistInSchool($this->user())
             ],
-            'anonymous' => 'sometimes|bool',
-            'solved' => 'sometimes|bool'
+            'incident_date' => [
+                'sometimes',
+                'date',
+                'before:now',
+                'nullable',
+                new SchoolSupportsDates($this->user()->school)
+            ],
         ];
     }
 }

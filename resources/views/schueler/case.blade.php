@@ -20,6 +20,7 @@
 					:mentors='@json($possibleMentors)'
 					:locations='@json($locations)'
 					:maximum-mentors='{{ config('exclamo.number_of_mentors') }}'
+					:use-locations='Boolean({{ $case->victim->school->uses_locations }})'
 				/>
 			@endslot
 

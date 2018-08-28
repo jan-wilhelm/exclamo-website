@@ -42,7 +42,7 @@
 			</div>
 		</div>
 		<div class="form-row">
-	        <div class="col-md-6">
+	        <div class="col-md-6" v-if="useDates">
 	        	<div class="form-group">
 	                <div class="input-group date" id="case-date-picker" data-target-input="nearest">
 						<label for="date">
@@ -50,7 +50,13 @@
 						</label>
 
 						<div class="input-group">
-		                    <datepicker :monday-first="true" :disabled-dates="{'from': new Date()}" class="form-control datetimepicker-input" name="incident_date"></datepicker>
+		                    <datepicker
+		                    	:monday-first="true"
+		                    	:disabled-dates="{'from': new Date()}"
+		                    	v-model="incidentDate"
+		                    	class="form-control datetimepicker-input"
+		                    	name="incident_date">
+	                    	</datepicker>
 
 		                    <div class="input-group-append">
 		                        <div class="input-group-text">
@@ -61,7 +67,7 @@
 		            </div>
 	        	</div>
             </div>
-	        <div class="col-md-6">
+	        <div class="col-md-6" v-if="useLocations">
 				<div class="form-group">
 					<label for="location">
 						{{ lang('messages.location') }}
@@ -100,16 +106,31 @@
 		components: {
 			Datepicker
 		},
-		props: [
-			'formEndpoint',
-			'possibleMentors',
-			'possibleLocations',
-			'possibleCategories',
-			'maximumMentors'
-		],
+		props: {
+			formEndpoint: String,
+			possibleMentors: Array,
+			possibleLocations: Array,
+			possibleCategories: Array,
+			maximumMentors: Number,
+        	useLocations: {
+        		type: Boolean,
+        		required: false,
+        		default() {
+        			return false
+        		}
+        	},
+        	useDates: {
+        		type: Boolean,
+        		required: false,
+        		default() {
+        			return false
+        		}
+        	}
+		},
 		data() {
 	        return {
-	        	selectedMentors: []
+	        	selectedMentors: [],
+	        	incidentDate: null
 	        }
 		},
 		methods: {
@@ -120,6 +141,8 @@
 				for (var i = 0; i < this.selectedMentors.length; i++) {
 				    formData.append('mentors[]', this.selectedMentors[i].id);
 				}
+				
+				formData.append('incident_date', this.incidentDate);
 
 				ReportedCase.create(formData,
 				()=> {

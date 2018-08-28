@@ -22,6 +22,8 @@
 								];
 							}))'
 			:maximum-mentors='{{ config('exclamo.number_of_mentors') }}'
+			:use-locations='Boolean({{ auth()->user()->school->uses_locations }})'
+			:use-dates='Boolean({{ auth()->user()->school->uses_dates }})'
 		/>
 	@endexclamoflexsection
 @endsection

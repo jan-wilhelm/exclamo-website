@@ -5,6 +5,8 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\LocationExistsInSchool;
 use App\Rules\MentorsExistInSchool;
+use App\Rules\SchoolSupportsDates;
+use App\Rules\SchoolSupportsLocations;
 
 /**
  * Represents a HTTP POST request indicating that the user wants
@@ -32,23 +34,38 @@ class ReportCaseRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $rules = [
             'title' => 'sometimes|string|min:3|nullable',
             'message' => 'required|string|min:10',
-            'incident_date' => 'required|date|before:now|nullable',
             'category' => 'required|in:' . implode(",", config('exclamo.categories', '')),
-            'location' => [
-                'sometimes',
-                'nullable',
-                new LocationExistsInSchool($this->user())
-            ],
             'mentors' => [
                 'required',
                 'array',
                 'min:1',
                 new MentorsExistInSchool($this->user())
             ],
-            'anonymous' => 'sometimes'
+            'anonymous' => 'sometimes',
         ];
+
+        if ($this->user()->school->uses_dates) {
+            $rules['incident_date'] = [
+                'required',
+                'date',
+                'before:now',
+                'nullable',
+                new SchoolSupportsDates($this->user()->school)
+            ];
+        }
+
+        if ($this->user()->school->uses_locations) {
+            $rules['location'] = [
+                'sometimes',
+                'nullable',
+                new LocationExistsInSchool($this->user()),
+                new SchoolSupportsLocations($this->user()->school)
+            ];
+        }
+
+        return $rules;
     }
 }

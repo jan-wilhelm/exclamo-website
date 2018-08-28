@@ -20,7 +20,7 @@
 						<option v-for="category in categories" :value="category">{{ category }}</option>
 					</select>
 				</div>
-				<div class="form-group">
+				<div class="form-group" v-if="useLocations">
 					<label for="location-select">
 						{{ lang('messages.location') }}
 					</label>
@@ -77,7 +77,14 @@
 			categories: Array,
 			locations: Array,
 			mentors: Array,
-			maximumMentors: Number
+			maximumMentors: Number,
+			useLocations: {
+				type: Boolean,
+				required: false,
+				default () {
+					return false
+				}
+			}
 		},
 		data() {
 			return {
