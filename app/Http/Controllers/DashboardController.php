@@ -44,7 +44,7 @@ class DashboardController extends Controller
 
     public function teacherDashboardView(Request $request)
     {
-    	return "teacherDashboardView not yet implemented";
+    	return view("mentors.dashboard");
     }
 
     public function principleDashboardView(Request $request)
