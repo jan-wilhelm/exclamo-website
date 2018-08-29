@@ -145,8 +145,8 @@
 				formData.append('incident_date', this.incidentDate);
 
 				ReportedCase.create(formData,
-				()=> {
-
+				(response)=> {
+					window.location.href = window.Exclamo.url + '/cases/' + response.data.id
 				},
 				(error)=> {
 					console.log(error.response);

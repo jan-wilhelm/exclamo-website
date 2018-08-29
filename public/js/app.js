@@ -53732,7 +53732,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 			formData.append('incident_date', this.incidentDate);
 
-			__WEBPACK_IMPORTED_MODULE_1__api__["a" /* default */].create(formData, function () {}, function (error) {
+			__WEBPACK_IMPORTED_MODULE_1__api__["a" /* default */].create(formData, function (response) {
+				window.location.href = window.Exclamo.url + '/cases/' + response.data.id;
+			}, function (error) {
 				console.log(error.response);
 			});
 		}
