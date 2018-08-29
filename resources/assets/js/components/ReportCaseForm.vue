@@ -9,7 +9,6 @@
 				class="form-control"
 				id="title"
 				name="title"
-				:placeholder="lang('placeholders.casetitle')"
 			/>
 		</div>
 
