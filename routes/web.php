@@ -18,6 +18,7 @@ Auth::routes();
 
 // HOME
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
 
 
 // SCHOOLS
@@ -39,5 +40,4 @@ Route::post('create', 'ReportedCaseController@store')->name('incidents.store');
 
 // OTHER
 Route::post('language', 'LanguageController@changeLanguage')->name('language');
-
 Route::get('js/lang-{locale}.js', 'LanguageController@getJavascriptLocale')->name('language.js');

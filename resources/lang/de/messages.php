@@ -53,5 +53,7 @@ return [
 	'mentored_by'=> 'Betreut von :mentors',
 	'anonymous_student'=> 'Anonymer Schüler',
 	'you_have_no_case'=> 'Du hast noch keinen Fall erstellt. Möchtest du jetzt einen melden?',
-	'mentor_no_cases'=> 'Du bist noch keinem Fall zugeordnet. Warte, bis Schüler dich hier um Rat bitten!'
+	'mentor_no_cases'=> 'Du bist noch keinem Fall zugeordnet. Warte, bis Schüler dich hier um Rat bitten!',
+	'welcome_messages'=>'Herzlich Willkommen bei Exclamo, :name!',
+	'nummer_gegen_kummer'=> 'Nummer-gegen-Kummer Tel: 116 111'
 ];
