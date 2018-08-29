@@ -15,7 +15,7 @@ class LanguageMiddleware
      */
     public function handle($request, Closure $next)
     {
-        \App::setLocale(session('locale', \Auth::check() ? \Auth::user()->language : 'en'));
+        \App::setLocale(session('locale', \Auth::check() ? \Auth::user()->language : config('app.locale')));
         return $next($request);
     }
 }
