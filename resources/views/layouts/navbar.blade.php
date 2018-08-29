@@ -8,8 +8,12 @@
 		<b-collapse is-nav id="nav_collapse">
 
 			<b-navbar-nav class="mr-auto">
-				@navlink(["url"=>"/", "route"=>"home"])
+				@navlink(["route"=>"home"])
 					@lang('messages.home')
+				@endnavlink
+
+				@navlink(["route"=>"dashboard"])
+					@lang('messages.dashboard')
 				@endnavlink
 
 				@role('schueler')
