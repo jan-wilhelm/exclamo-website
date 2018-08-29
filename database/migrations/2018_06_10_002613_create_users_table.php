@@ -31,7 +31,7 @@ class CreateUsersTable extends Migration
 
             $table->boolean('mentoring')->default(false);
 
-            $table->string('language')->default("en");
+            $table->string('language')->default(config('app.locale'));
 
             $table->text('api_token');
 
