@@ -5,15 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\Services\UserService;
+
+use App\Http\Resources\FullDataUserResource;
+
 class DashboardController extends Controller
 {
+
+    protected $userService;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct(UserService $userService) {
         $this->middleware('auth');
+        $this->userService = $userService;
     }
 
     public function dashboard(Request $request)
@@ -41,6 +49,9 @@ class DashboardController extends Controller
 
     public function principleDashboardView(Request $request)
     {
-    	return "principleDashboardView not yet implemented";
+    	$students = $this->userService->getUsersForTable(auth()->user()->school);
+    	$studentsCollection = FullDataUserResource::collection($students);
+
+    	return view("schulleiter.dashboard", compact('studentsCollection'));
     }
 }

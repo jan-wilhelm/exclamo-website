@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\User;
+use App\School;
 use App\Repositories\UserRepository;
 
 class UserService
@@ -23,6 +24,11 @@ class UserService
                 'name'=> $mentor->full_name
             ];
         });
+	}
+
+	public function getUsersForTable(School $school)
+	{
+		return $school->users()->studentOrTeacher()->get();
 	}
 
 }

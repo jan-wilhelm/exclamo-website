@@ -151,6 +151,15 @@ class User extends Authenticatable
     }
 
     /**
+     * Check if the user is either a student or a teacher
+     */
+    public function scopeStudentOrTeacher($query) {
+        return $query->whereHas('roles', function($q){
+            $q->whereIn('roles.id', [1,2]);
+        });
+    }
+
+    /**
      * Check if the user is a teacher
      */
     public function scopeTeacher($query) {
