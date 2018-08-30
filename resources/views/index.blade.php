@@ -115,19 +115,19 @@
 				</div>
 				<div class="row align-content-center mt-5" data-aos="fade-up">
 					<div class="col-md-3 col-12 text-center avatar">
-						<img src="{{ asset('img/kai.png') }}" class="rounded-circle">
+						<img src="{{ asset('img/kai.jpg') }}" class="rounded-circle">
 						<div class="avatar-name">Kai Lanz</div>
 					</div>
 					<div class="col-md-3 col-12 text-center avatar">
-						<img src="{{ asset('img/margaretha.png') }}" class="rounded-circle">
+						<img src="{{ asset('img/margaretha.jpg') }}" class="rounded-circle">
 						<div class="avatar-name">Margaretha Raffauf</div>
 					</div>
 					<div class="col-md-3 col-12 text-center avatar">
-						<img src="{{ asset('img/julius.png') }}" class="rounded-circle">
+						<img src="{{ asset('img/julius.jpg') }}" class="rounded-circle">
 						<div class="avatar-name">Julius de Gruyter</div>
 					</div>
 					<div class="col-md-3 col-12 text-center avatar">
-						<img src="{{ asset('img/jan.png') }}" class="rounded-circle">
+						<img src="{{ asset('img/jan.jpg') }}" class="rounded-circle">
 						<div class="avatar-name">Jan Wilhelm</div>
 					</div>
 				</div>
