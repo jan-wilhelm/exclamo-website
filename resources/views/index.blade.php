@@ -84,7 +84,7 @@
 						</p>
 					</div>
 					<div class="col-sm-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
-						<img src="{{ asset('img/devices.jpg') }}" class="advantage-img">
+						<img src="{{ asset('img/devices.png') }}" class="advantage-img-big">
 					</div>
 				</div>
 				<div class="row advantage text-div">
@@ -115,19 +115,19 @@
 				</div>
 				<div class="row align-content-center mt-5" data-aos="fade-up">
 					<div class="col-md-3 col-12 text-center avatar">
-						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
+						<img src="{{ asset('img/kai.png') }}" class="rounded-circle">
 						<div class="avatar-name">Kai Lanz</div>
 					</div>
 					<div class="col-md-3 col-12 text-center avatar">
-						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
+						<img src="{{ asset('img/margaretha.png') }}" class="rounded-circle">
 						<div class="avatar-name">Margaretha Raffauf</div>
 					</div>
 					<div class="col-md-3 col-12 text-center avatar">
-						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
+						<img src="{{ asset('img/julius.png') }}" class="rounded-circle">
 						<div class="avatar-name">Julius de Gruyter</div>
 					</div>
 					<div class="col-md-3 col-12 text-center avatar">
-						<img src="{{ asset('img/avatar.png') }}" class="rounded-circle">
+						<img src="{{ asset('img/jan.png') }}" class="rounded-circle">
 						<div class="avatar-name">Jan Wilhelm</div>
 					</div>
 				</div>

@@ -616,8 +616,13 @@ html {
 }
 
 .advantage-img {
-  max-width: 100%;
-  max-height: 130px;
+  max-height: 100%;
+  max-width: 130px;
+}
+
+.advantage-img-big {
+  max-height: 100%;
+  max-width: 220px;
 }
 
 .signup-form {
