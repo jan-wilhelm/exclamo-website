@@ -11,13 +11,16 @@
 @endsection
 
 @section('body')
-    <div id="app" class="h-100 w-100" v-cloak>
-        @include('layouts/navbar')
-        <div class="mt-5 container">
-            @yield('content')
+    <div class="h-100 w-100 d-flex flex-column" id="page-wrapper">
+        <div id="app" class="h-100 w-100" v-cloak>
+            @include('layouts.navbar')
+            <div class="mt-5 container">
+                @yield('content')
+            </div>
         </div>
-    </div>
 
+        @include('layouts.footer')
+    </div>
     <script src="{{ asset('js/lang-' . app()->getLocale() . '.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
     
