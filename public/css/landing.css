@@ -464,12 +464,12 @@ html {
   height: 100%;
 }
 
-.nav-item {
+#page-links .nav-item {
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.nav-item:after {
+#page-links .nav-item:after {
   content: '';
   display: block;
   width: 50%;
@@ -483,7 +483,7 @@ html {
   transition: opacity 0.3s, margin-top 0.3s;
 }
 
-.nav-item:hover:after {
+#page-links .nav-item:hover:after {
   opacity: 1;
   margin-top: 0;
 }
