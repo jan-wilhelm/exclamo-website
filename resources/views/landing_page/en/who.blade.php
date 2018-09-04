@@ -1,0 +1,1 @@
+We, the team, are students from Berlin and have thought about how best to fight bullying. Since the mobile phone is one of everyday life's realities, there seemed to be no question that an app is the best format.

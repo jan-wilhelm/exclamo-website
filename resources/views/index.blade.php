@@ -11,7 +11,7 @@
 @section("body")
 	<div id="app" class="h-100">
 
-		
+
 		<b-navbar toggleable="lg" style="position: fixed; z-index: 10000000; top:0; width: 100%;">
 			<b-container fluid>
 				<b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
@@ -86,15 +86,11 @@
 							Was?
 						</h2>
 						<div class="col-sm-9 promo-text" data-aos="fade-up">
-							<p>
-								exclamo hilft Schülern, die Opfer von Mobbing sind, über ihre Probleme zu sprechen und sie zu lösen.
-							</p>
-							<p>
-								Schüler einer exclamo-Schule bekommen einen Account für die App exclamo, über die sie sich auch anonym an ihre Lehrer und externe Mobbing-Experten wenden können. Zudem gibt es hilfreiche Tipps, die im Umgang mit Mobbing helfen und den Schüler unterstützen, mit Vorfällen fertig zu werden. Damit verbindet exclamo eine niedrige Hemmschwelle mit einer einfachen Lösung von Vorfällen, durch Lehrer, die direkt in der Schule Maßnahmen ergreifen können.
-							</p>
-							<p>
-								Mit dem Format einer App und Web-App ist exclamo in dem Medium, das Schüler am meisten Nutzen – dem Smartphone - und bieten so für den Betroffenen eine native Nutzung.
-							</p>
+							@if (app()->getLocale() == "de")
+								@include('landing_page.de.what')
+							@else
+								@include('landing_page.en.what')
+							@endif
 						</div>
 					</div>
 				</div>
@@ -103,11 +99,11 @@
 					<div class="row advantage">
 						<div class="col-sm-9 text-div" data-aos="fade-up">
 							<h2>Niedrige Hemmschwelle durch Anonymität</h2>
-							<p>
-								Der Schüler darf entscheiden, ob betreuende Lehrer seinen Namen sehen dürfen. Dadurch wird vollständige Anonymität geleistet, die nicht zurückverfolgt werden kann.</p>
-							<p>
-								Mit unserer AES-256 Verschlüsselung sind alle Daten nur für die betroffenen Personen zugänglich.
-							</p>
+							@if (app()->getLocale() == "de")
+								@include('landing_page.de.advantages.anonymous')
+							@else
+								@include('landing_page.en.advantages.anonymous')
+							@endif
 						</div>
 						<div class="col-sm-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
 							<img src="{{ asset('img/lock.png') }}" class="advantage-img align-middle">
@@ -116,9 +112,11 @@
 					<div class="row advantage text-div">
 						<div class="col-sm-9 text-div order-sm-1" data-aos="fade-up">
 							<h2>Einfacher Zugang durch App und Webapp</h2>
-							<p>
-								Mithilfe unserer nativen App für iOS und Android , sowohl dem ausgereiften und übersichtlichem Webportal können Schüler und Lehrer immer kommunizieren - wir setzen keine Grenzen!
-							</p>
+							@if (app()->getLocale() == "de")
+								@include('landing_page.de.advantages.app')
+							@else
+								@include('landing_page.en.advantages.app')
+							@endif
 						</div>
 						<div class="col-sm-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
 							<img src="{{ asset('img/devices.png') }}" class="advantage-img-big">
@@ -127,9 +125,11 @@
 					<div class="row advantage text-div">
 						<div class="col-sm-9 text-div" data-aos="fade-up">
 							<h2>Unterstützung von Mobbing-Experten</h2>
-							<p>
-								Schüler können sich nicht nur direkt an ihre Lehrer, sondern auch an professionelle Mobbing-Experten und die Nummer-gegen-Kummer wenden. Alles eingebaut in unserer App!
-							</p>
+							@if (app()->getLocale() == "de")
+								@include('landing_page.de.advantages.experts')
+							@else
+								@include('landing_page.en.advantages.experts')
+							@endif
 						</div>
 						<div class="col-sm-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
 							<img src="{{ asset('img/talking.png') }}" class="advantage-img">
@@ -147,7 +147,11 @@
 							Wer?
 						</h2>
 						<div class="col-sm-9 promo-text" data-aos="fade-up">
-							Wir, das Team, sind Berliner Schüler und haben uns überlegt, wie man Mobbing am besten bekämpfen kann. Da das Handy einer der Alltagsgestände schlechthin ist, schien außer Frage, dass eine App das beste Format ist.
+							@if (app()->getLocale() == "de")
+								@include('landing_page.de.who')
+							@else
+								@include('landing_page.en.who')
+							@endif
 						</div>
 					</div>
 					<div class="row align-content-center mt-5" data-aos="fade-up">
@@ -179,13 +183,11 @@
 							Für Schulen
 						</h2>
 						<div class="col-sm-9 promo-text" data-aos="fade-up">
-							<p>Sie sind in der Schulleitung einer Schule oder in einem Schulträger tätig und ihnen gefällt das Konzept hinter exclamo?</p>
-							<p>
-								exclamo-Schulen bekommen von uns einen Administrator-Account und einen definiertes Kontingent an Lehrer- und Schüler-Accounts. Die Schüler haben dann direkt die Möglichkeit über die Website oder Android-/iOS-App bestimmten Lehrern oder externen Mobbing-Experten unter psychotherapeutischer Aufsicht von ihren Mobbingfällen zu berichten. Lehrer und Schüler erhalten Zugang zu exklusiven Anti-Mobbing-Materialien, die ihnen im Umgang mit Mobbing im Alltag helfen. Die Materialien für Lehrer beinhalten Anweisung, wie sie mit bekannten Fällen umgehen sollten. Die Schüler können zudem per Knopfdruck bei Sorgentelefonen wie der Nummer gegen Kummer anrufen um seelische Unterstützung und Mut zu bekommen. exclamo basiert auf einem jährlichen Lizenzierungsmodell, die Kosten werden nach Schulgröße berechnet.
-							</p>
-							<p>
-								Haben wir Ihr Interesse geweckt? Füllen Sie doch gerne das unverbindliche Formular unten aus und wir werden uns bei Ihnen melden!
-							</p>
+							@if (app()->getLocale() == "de")
+								@include('landing_page.de.schools')
+							@else
+								@include('landing_page.en.schools')
+							@endif
 						</div>
 					</div>
 					<hr class="my-5 bg-color-white">
