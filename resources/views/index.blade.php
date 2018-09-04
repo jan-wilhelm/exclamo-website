@@ -11,8 +11,7 @@
 @section("body")
 	<div id="app" class="h-100">
 
-
-		<b-navbar toggleable="lg" style="position: fixed; z-index: 10000000; top:0; width: 100%;">
+		<b-navbar toggleable="lg" style="position: fixed; z-index: 1; top:0; width: 100%;">
 			<b-container fluid>
 				<b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 				<b-collapse is-nav id="nav_collapse">
@@ -53,26 +52,40 @@
 				<div class="d-flex justify-content-center">
 					<img src="{{ asset('img/logo/logo_text_rounded_dark.png') }}" class="">
 				</div>
-				<h2 class="my-5 py-3 font-weight-bold">Die App für Schulen gegen Mobbing</h2>
-				<a class="cta cta-primary cta-large mb-3" href="#forschools">Jetzt Ihre Schüler schützen!</a>
+				<h2 class="my-5 py-3 font-weight-bold">
+					@lang('landing_page.slogan')
+				</h2>
+				<a class="cta cta-primary cta-large mb-3" href="#forschools">
+					@lang('landing_page.protect_your_students')
+				</a>
 				<br>
-				<span>oder <a href="{{ route('login') }}">hier anmelden</a></span>
+				<span>
+					@lang('landing_page.or') <a href="{{ route('login') }}"> @lang('landing_page.login_here') </a>
+				</span>
 				
 			</div>
 			<div class="py-5 my-5 p-lg-0 m-lg-0"></div>
-			<div class="container mt-auto mb-5" id="#page-links">
+			<div class="container mt-auto mb-5" id="page-links">
 				<ul class="nav w-100 justify-content-center nav-fill flex-column flex-md-row">
 					<li class="nav-item">
-						<a class="nav-link" href="#what">Was?</a>
+						<a class="nav-link" href="#what">
+							@lang('landing_page.what')
+						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#team">Wer?</a>
+						<a class="nav-link" href="#team">
+							@lang('landing_page.who')
+						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#forschools">Für Schulen</a>
+						<a class="nav-link" href="#forschools">
+							@lang('landing_page.for_schools')
+						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">FAQ</a>
+						<a class="nav-link" href="#">
+							@lang('landing_page.faq')
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -83,7 +96,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<h2 class="col-sm-3 promo-question">
-							Was?
+							@lang('landing_page.what')
 						</h2>
 						<div class="col-sm-9 promo-text" data-aos="fade-up">
 							@if (app()->getLocale() == "de")
@@ -98,7 +111,9 @@
 				<div class="container-fluid pt-0">
 					<div class="row advantage">
 						<div class="col-sm-9 text-div" data-aos="fade-up">
-							<h2>Niedrige Hemmschwelle durch Anonymität</h2>
+							<h2>
+								@lang('landing_page.anonymous_heading')
+							</h2>
 							@if (app()->getLocale() == "de")
 								@include('landing_page.de.advantages.anonymous')
 							@else
@@ -111,7 +126,9 @@
 					</div>
 					<div class="row advantage text-div">
 						<div class="col-sm-9 text-div order-sm-1" data-aos="fade-up">
-							<h2>Einfacher Zugang durch App und Webapp</h2>
+							<h2>
+								@lang('landing_page.easy_access')
+							</h2>
 							@if (app()->getLocale() == "de")
 								@include('landing_page.de.advantages.app')
 							@else
@@ -124,7 +141,9 @@
 					</div>
 					<div class="row advantage text-div">
 						<div class="col-sm-9 text-div" data-aos="fade-up">
-							<h2>Unterstützung von Mobbing-Experten</h2>
+							<h2>
+								@lang('landing_page.experts_heading')
+							</h2>
 							@if (app()->getLocale() == "de")
 								@include('landing_page.de.advantages.experts')
 							@else
@@ -144,7 +163,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<h2 class="col-sm-3 promo-question">
-							Wer?
+							@lang('landing_page.who')
 						</h2>
 						<div class="col-sm-9 promo-text" data-aos="fade-up">
 							@if (app()->getLocale() == "de")
@@ -179,10 +198,10 @@
 			<div class="wrapper">
 				<div class="container-fluid">
 					<div class="row pb-sm-5">
-						<h2 class="col-md-3 promo-question">
-							Für Schulen
+						<h2 class="col-md-auto promo-question">
+							@lang('landing_page.for_schools')
 						</h2>
-						<div class="col-sm-9 promo-text" data-aos="fade-up">
+						<div class="col-md promo-text" data-aos="fade-up">
 							@if (app()->getLocale() == "de")
 								@include('landing_page.de.schools')
 							@else
