@@ -56,6 +56,20 @@ return [
      *
      * @var null|array
      */
-    'control_characters' => null,
+    'control_characters' => [
+        'header' => [
+            'start'      => 1, // or: chr(1)
+            'stop'       => 4, // or: chr(4)
+        ],
+        'prefix' => [
+            'start'      => 2, // or: chr(2)
+            'stop'       => 3, // or: chr(3)
+        ],
+        'field'   => [
+            'start'      => 30, // or: chr(30)
+            'delimiter'  => 25, // or: chr(25)
+            'stop'       => 23, // or: chr(23)
+        ],
+    ],
 
 ];
