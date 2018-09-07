@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7b5d06d329cb576fe1c2b9b030bf6649",
+    "content-hash": "7101cf017804920383c2c1f5ab59981d",
     "packages": [
         {
             "name": "appstract/laravel-opcache",
@@ -879,16 +879,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.6.38",
+            "version": "v5.6.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "38d838bab9434af79e8ab274ae63f52f7ed45d6e"
+                "reference": "02abbe2091404ebe032a6d5a83075031b7072ebe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/38d838bab9434af79e8ab274ae63f52f7ed45d6e",
-                "reference": "38d838bab9434af79e8ab274ae63f52f7ed45d6e",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/02abbe2091404ebe032a6d5a83075031b7072ebe",
+                "reference": "02abbe2091404ebe032a6d5a83075031b7072ebe",
                 "shasum": ""
             },
             "require": {
@@ -1014,7 +1014,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-09-04T13:15:09+00:00"
+            "time": "2018-08-27T13:18:24+00:00"
         },
         {
             "name": "laravel/tinker",
