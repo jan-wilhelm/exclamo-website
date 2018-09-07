@@ -1,4 +1,4 @@
-<div class="mt-auto bg-color-black text-white">
+<div class="mt-auto bg-color-black text-white" v-cloak>
 	<div class="container bg-color-black py-md-5">
 		<footer class="py-5">
 			<div class="row">

@@ -12,7 +12,7 @@
 
 @section('body')
     <div class="h-100 w-100 d-flex flex-column" id="app" v-cloak>
-        <div class="h-100 w-100 mb-5" id="app-content">
+        <div class="h-100 w-100 mb-5" id="app-content" v-cloak>
             @include('layouts.navbar')
             <div class="mt-5 container">
                 @yield('content')
