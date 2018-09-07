@@ -69,7 +69,7 @@
 </template>
 
 <script>
-	import ReportedCase from '../api';
+	import ExclamoApi from '../api';
 
 	export default {
 		props: {
@@ -98,7 +98,7 @@
 					return mentor.id
 				})
 
-				let reportedCase = new ReportedCase();
+				let reportedCase = new ExclamoApi.ReportedCase();
 				reportedCase.edit(data, () => {
 					console.log("RELOAD");
 					this.closeModal();

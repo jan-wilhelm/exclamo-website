@@ -100,6 +100,7 @@
 			window.Echo.private('cases.' + caseId)
 			    .listen('MessageSent', (e) => {
 			    	this.messages.push(e)
+					this.scrollToBottom()
 			    });
 		}
 	};

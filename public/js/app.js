@@ -61768,6 +61768,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 		window.Echo.private('cases.' + caseId).listen('MessageSent', function (e) {
 			_this.messages.push(e);
+			_this.scrollToBottom();
 		});
 	}
 });
@@ -62245,7 +62246,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				return mentor.id;
 			});
 
-			var reportedCase = new __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */]();
+			var reportedCase = new __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].ReportedCase();
 			reportedCase.edit(data, function () {
 				console.log("RELOAD");
 				_this.closeModal();
