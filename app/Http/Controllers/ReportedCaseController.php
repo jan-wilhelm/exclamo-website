@@ -93,10 +93,10 @@ class ReportedCaseController extends Controller
         return view("mentors.cases", compact('cases', 'statistics'));
     }
 
-    public function getMessagesForView(ReportedCase $case)
+    public function getMessagesForView(ReportedCase $case, $anonymous)
     {
         $messages = $case->messages()->with("sender")->orderBy('updated_at', 'asc')->get();
-        return $this->messageService->getInJSONFormat($messages, $case->anonymous);
+        return $this->messageService->getInJSONFormat($messages, $anonymous);
     }
 
     /**
@@ -115,11 +115,12 @@ class ReportedCaseController extends Controller
 
         // Transform the collection of messages into a dictionary that
         // can be read by the vue components
-        $messages = $this->getMessagesForView($case);
 
         if (auth()->user()->hasRole("schueler")) {
+            $messages = $this->getMessagesForView($case, false);
             return $this->studentDetailView($request, $case, $messages);
         } else {
+            $messages = $this->getMessagesForView($case, $case->anonymous);
             return $this->mentorDetailView($request, $case, $messages);
         }
     }

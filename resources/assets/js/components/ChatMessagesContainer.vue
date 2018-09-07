@@ -9,6 +9,8 @@
 </template>
 
 <script>
+	import ExclamoAPI from '../api';
+
 	export default {
 		props: ["messages"],
 		data() {
@@ -33,7 +35,6 @@
 					sending: true
 				}
 
-				this.messageObjects.push(messageObject)
 				this.sendMessageToServer(messageObject);
 				this.clearField()
 				Vue.nextTick(this.scrollToBottom)
@@ -93,6 +94,13 @@
 		},
 		mounted() {
 			this.scrollToBottom()
+
+			let caseId = ExclamoAPI.getCaseIdFromUrl()
+
+			window.Echo.private('cases.' + caseId)
+			    .listen('MessageSent', (e) => {
+			    	this.messages.push(e)
+			    });
 		}
 	};
 

@@ -14,12 +14,19 @@ class MessageResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [
+        $array = [
             'id' => $this->id,
             'case' => $this->reported_case_id,
-            'user' => new ConfidentialUserResource($this->sender),
             'body' => $this->body,
-            'date' => $this->updated_at->timestamp
+            'date' => $this->updated_at->timestamp,
+            'anonymous' => $this->anonymous
         ];
+
+        if (!$this->anonymous)
+        {
+            $array['user'] = new ConfidentialUserResource($this->sender);
+        }
+
+        return $array;
     }
 }

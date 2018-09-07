@@ -61502,6 +61502,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 	data: function data() {
 		return {};
+	},
+
+	computed: {
+		userId: function userId() {
+			return window.Exclamo.userId;
+		},
+		sentByUser: function sentByUser() {
+			return this.messageObject.sentByUser || this.messageObject.user && this.messageObject.user.id && this.messageObject.user.id == this.userId;
+		}
 	}
 });
 
@@ -61518,12 +61527,12 @@ var render = function() {
     {
       staticClass: "chat-message p-3",
       class: [
-        _vm.messageObject.sentByUser ? "align-self-end right" : "left",
+        _vm.sentByUser ? "align-self-end right" : "left",
         _vm.messageObject.sending ? "sending" : ""
       ]
     },
     [
-      !_vm.messageObject.anonymous && !_vm.messageObject.sentByUser
+      !_vm.messageObject.anonymous && !_vm.sentByUser
         ? _c("a", { staticClass: "mb-2 d-block" }, [
             _vm._v(
               "\n\t\t" +
@@ -61654,6 +61663,7 @@ exports.push([module.i, "\n@media (min-width: 768px) {\n.chat-container {\n\t\to
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(214);
 //
 //
 //
@@ -61664,6 +61674,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: ["messages"],
@@ -61690,7 +61702,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				sending: true
 			};
 
-			this.messageObjects.push(messageObject);
 			this.sendMessageToServer(messageObject);
 			this.clearField();
 			Vue.nextTick(this.scrollToBottom);
@@ -61749,7 +61760,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		}
 	},
 	mounted: function mounted() {
+		var _this = this;
+
 		this.scrollToBottom();
+
+		var caseId = __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].getCaseIdFromUrl();
+
+		window.Echo.private('cases.' + caseId).listen('MessageSent', function (e) {
+			_this.messages.push(e);
+		});
 	}
 });
 
