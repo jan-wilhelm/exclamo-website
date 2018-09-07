@@ -56,5 +56,7 @@ return [
 	'mentor_no_cases'=> 'Du bist noch keinem Fall zugeordnet. Warte, bis Schüler dich hier um Rat bitten!',
 	'welcome_messages'=>'Herzlich Willkommen bei Exclamo, :name!',
 	'nummer_gegen_kummer'=> 'Nummer-gegen-Kummer Tel: 116 111',
-	'termin_service_stelle'=> 'Zur Terminservicestelle'
+	'termin_service_stelle'=> 'Zur Terminservicestelle',
+	'impressum'=> "Impressum",
+	'privacy_policy'=> "Datenschutzerklärung"
 ];

@@ -56,4 +56,6 @@ return [
 	'you_have_no_case'=> "You haven't reported any incidents yet. Do you want to report one now?",
 	'mentor_no_cases'=> 'You are not associated with any cases yet. Wait for your students to ask you for your counsel!',
 	'welcome_messages'=>'Welcome to Exclamo, :name!',
+	'impressum'=> "Impressum",
+	'privacy_policy'=> "Privacy Policy"
 ];
