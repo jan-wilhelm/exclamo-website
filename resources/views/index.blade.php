@@ -252,11 +252,11 @@
 						</form>
 					</div> --}}
 					<div class="row pt-md-5 justify-content-center text-center">
-						<a href="https://twitter.com/exclamo_org" class="col-md-4">
+						<a href="mailto:info@exclamo.org" class="col-md-4">
 							<i class="fas fa-envelope fa-5x"></i>
 							<p>Mail</p>
 						</a>
-						<a href="https://www.instagram.com/exclamo_org/" class="col-md-4">
+						<a href="https://twitter.com/exclamo_org" class="col-md-4">
 							<i class="fab fa-twitter-square fa-5x"></i>
 							<p>Twitter</p>
 						</a>
