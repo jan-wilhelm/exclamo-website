@@ -1,6 +1,7 @@
 @extends("layouts/html")
 
 @section('head')
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/all.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/landing.css') }}" />
@@ -210,7 +211,7 @@
 						</div>
 					</div>
 					<hr class="my-5 bg-color-white">
-					<div class="row pt-md-5 justify-content-center">
+					{{-- <div class="row pt-md-5 justify-content-center">
 						<!--<h2 class="mb-4 col-12 text-center">Kontakt aufnehmen</h2>-->
 						<form class="col-sm-10 col-12 signup-form bg-color-white" data-aos="slide-up" data-aos-duration="800">
 							<div class="form-group row">
@@ -249,6 +250,20 @@
 							</fieldset>
 							<button type="submit" class="w-100 cta cta-large cta-primary">Jetzt Ihre Schüler schützen!</button>
 						</form>
+					</div> --}}
+					<div class="row pt-md-5 justify-content-center text-center">
+						<a href="https://twitter.com/exclamo_org" class="col-md-4">
+							<i class="fas fa-envelope fa-5x"></i>
+							<p>Mail</p>
+						</a>
+						<a href="https://www.instagram.com/exclamo_org/" class="col-md-4">
+							<i class="fab fa-twitter-square fa-5x"></i>
+							<p>Twitter</p>
+						</a>
+						<a href="https://www.instagram.com/exclamo_org/" class="col-md-4">
+							<i class="fab fa-instagram fa-5x"></i>
+							<p>Instagram</p>
+						</a>
 					</div>
 				</div>
 			</div>
