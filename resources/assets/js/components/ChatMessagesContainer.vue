@@ -40,6 +40,7 @@
 				Vue.nextTick(this.scrollToBottom)
 			},
 			scrollToBottom() {
+				console.log("SCROLL")
 				var cont = this.$refs.container
 				cont.scrollTop = cont.scrollHeight
 			},
@@ -100,7 +101,9 @@
 			window.Echo.private('cases.' + caseId)
 			    .listen('MessageSent', (e) => {
 			    	this.messages.push(e)
-					this.scrollToBottom()
+			    	Vue.nextTick(() => {
+						this.scrollToBottom()
+			    	})
 			    });
 		}
 	};

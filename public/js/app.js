@@ -61707,6 +61707,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			Vue.nextTick(this.scrollToBottom);
 		},
 		scrollToBottom: function scrollToBottom() {
+			console.log("SCROLL");
 			var cont = this.$refs.container;
 			cont.scrollTop = cont.scrollHeight;
 		},
@@ -61768,7 +61769,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 		window.Echo.private('cases.' + caseId).listen('MessageSent', function (e) {
 			_this.messages.push(e);
-			_this.scrollToBottom();
+			Vue.nextTick(function () {
+				_this.scrollToBottom();
+			});
 		});
 	}
 });
