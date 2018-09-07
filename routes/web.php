@@ -48,5 +48,5 @@ Route::view('/privacy', 'layouts.privacy')->name('privacy_policy');
 
 
 Route::get('test-broadcast', function(){
-    broadcast(new \App\Events\ExampleEvent);
+    broadcast(new \App\Events\MessageSent(\App\Message::find(1)));
 });

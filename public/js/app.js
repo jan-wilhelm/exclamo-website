@@ -37233,7 +37233,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
     host: window.location.hostname + ':6001'
 });
 
-window.Echo.private('test-event').listen('ExampleEvent', function (e) {
+window.Echo.private('test-event.1').listen('MessageSent', function (e) {
     console.log(e);
 });
 
