@@ -16,5 +16,5 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 });
 
 Broadcast::channel('test-event.{id}', function ($user, $id) {
-    return true;
+    return $user->combined_cases->contains('id', $id);
 });

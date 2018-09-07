@@ -51,7 +51,7 @@ window.Echo = new Echo({
     host: window.location.hostname + ':6001'
 }); 
 
-window.Echo.private('test-event.1')
+window.Echo.private('test-event.92')
     .listen('MessageSent', (e) => {
         console.log(e);
     });
