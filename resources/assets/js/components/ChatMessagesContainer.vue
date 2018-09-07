@@ -40,7 +40,6 @@
 				Vue.nextTick(this.scrollToBottom)
 			},
 			scrollToBottom() {
-				console.log("SCROLL")
 				var cont = this.$refs.container
 				cont.scrollTop = cont.scrollHeight
 			},
@@ -83,7 +82,6 @@
 					withCredentials: true
 				}).then(function(response) {
 					console.log(response)
-					messageObject.sending = false
 				}).catch(function(error) {
 					console.log(error);
     				console.log(error.response)
@@ -98,13 +96,11 @@
 
 			let caseId = ExclamoAPI.getCaseIdFromUrl()
 
-			window.Echo.private('cases.' + caseId)
-			    .listen('MessageSent', (e) => {
-			    	this.messages.push(e)
-			    	Vue.nextTick(() => {
-						this.scrollToBottom()
-			    	})
-			    });
+			window.Echo.private('cases.' + caseId).listen('MessageSent', (e) => {
+		    	console.log(e);
+				this.messageObjects.push(e);
+		    	Vue.nextTick(this.scrollToBottom)
+		    });
 		}
 	};
 

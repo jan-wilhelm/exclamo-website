@@ -61707,7 +61707,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			Vue.nextTick(this.scrollToBottom);
 		},
 		scrollToBottom: function scrollToBottom() {
-			console.log("SCROLL");
 			var cont = this.$refs.container;
 			cont.scrollTop = cont.scrollHeight;
 		},
@@ -61750,7 +61749,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				withCredentials: true
 			}).then(function (response) {
 				console.log(response);
-				messageObject.sending = false;
 			}).catch(function (error) {
 				console.log(error);
 				console.log(error.response);
@@ -61768,10 +61766,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		var caseId = __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].getCaseIdFromUrl();
 
 		window.Echo.private('cases.' + caseId).listen('MessageSent', function (e) {
-			_this.messages.push(e);
-			Vue.nextTick(function () {
-				_this.scrollToBottom();
-			});
+			console.log(e);
+			_this.messageObjects.push(e);
+			Vue.nextTick(_this.scrollToBottom);
 		});
 	}
 });

@@ -14,6 +14,7 @@ class MessageService
             $messageJson = array();
 
             $messageJson["anonymous"] = $anonymous;
+            $messageJson["id"] = $message->id;
 
             $messageJson["body"] = $message->body;
             $messageJson["date"] = $message->updated_at->format("d.m.Y G:i");
