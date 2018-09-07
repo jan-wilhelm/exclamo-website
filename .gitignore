@@ -14,3 +14,4 @@ yarn-error.log
 .env.example
 deploy.php
 .DS_Store
+laravel-echo-server.json
