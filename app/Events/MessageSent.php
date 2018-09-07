@@ -3,6 +3,7 @@
 namespace App\Events;
 
 use App\Message;
+use App\Http\Resources\MessageResource;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -29,9 +30,7 @@ class MessageSent implements ShouldBroadcast
 
     public function broadcastWith()
     {
-        return [
-            'body' => $this->message->body
-        ];
+        return (new MessageResource($this->message))->toArray(null);
     }
 
     /**
@@ -41,6 +40,6 @@ class MessageSent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('test-event.' . $this->message->reportedCase->id);
+        return new PrivateChannel('cases.' . $this->message->reportedCase->id);
     }
 }

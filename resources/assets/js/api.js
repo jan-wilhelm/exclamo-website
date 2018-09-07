@@ -54,4 +54,7 @@ class ReportedCase {
 
 }
 
-export default ReportedCase;
+export default {
+	getCaseIdFromUrl,
+	ReportedCase
+};

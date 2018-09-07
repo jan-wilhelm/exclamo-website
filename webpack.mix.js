@@ -13,6 +13,7 @@ let mix = require('laravel-mix');
 
 mix
 	.js('resources/assets/js/app.js', 'public/js/app.js')
+	.js('resources/assets/js/cases.js', 'public/js/cases.js')
 	.js('resources/assets/js/landing.js', 'public/js/landing.js')
 	.styles([
 	    'node_modules/bootstrap/dist/css/bootstrap.min.css',

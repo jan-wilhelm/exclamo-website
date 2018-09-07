@@ -31,3 +31,7 @@
 
 	@endexclamoflexsection
 @endsection
+
+@push('scripts')
+	<script type="text/javascript" src="{{ asset('js/cases.js') }}"></script>
+@endpush

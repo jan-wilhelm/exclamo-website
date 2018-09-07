@@ -50,8 +50,3 @@ window.Echo = new Echo({
     broadcaster: 'socket.io',
     host: window.location.hostname + ':6001'
 }); 
-
-window.Echo.private('test-event.92')
-    .listen('MessageSent', (e) => {
-        console.log(e);
-    });

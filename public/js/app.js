@@ -37042,7 +37042,10 @@ var ReportedCase = function () {
 	return ReportedCase;
 }();
 
-/* harmony default export */ __webpack_exports__["a"] = (ReportedCase);
+/* harmony default export */ __webpack_exports__["a"] = ({
+	getCaseIdFromUrl: getCaseIdFromUrl,
+	ReportedCase: ReportedCase
+});
 
 /***/ }),
 /* 215 */
@@ -37231,10 +37234,6 @@ window.io = __webpack_require__(239);
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
     broadcaster: 'socket.io',
     host: window.location.hostname + ':6001'
-});
-
-window.Echo.private('test-event.92').listen('MessageSent', function (e) {
-    console.log(e);
 });
 
 /***/ }),
