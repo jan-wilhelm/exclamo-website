@@ -61702,6 +61702,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				sending: true
 			};
 
+			this.messageObjects.push(messageObject);
 			this.sendMessageToServer(messageObject);
 			this.clearField();
 			Vue.nextTick(this.scrollToBottom);
@@ -61749,6 +61750,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				withCredentials: true
 			}).then(function (response) {
 				console.log(response);
+				messageObject.sending = false;
 			}).catch(function (error) {
 				console.log(error);
 				console.log(error.response);
@@ -61766,6 +61768,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		var caseId = __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].getCaseIdFromUrl();
 
 		window.Echo.private('cases.' + caseId).listen('MessageSent', function (e) {
+			console.log(e);
 			_this.messageObjects.push(e);
 			Vue.nextTick(_this.scrollToBottom);
 		});
