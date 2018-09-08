@@ -19,12 +19,12 @@ class MessageResource extends JsonResource
             'case' => $this->reported_case_id,
             'body' => $this->body,
             'date' => $this->updated_at->timestamp,
-            'anonymous' => $this->anonymous
+            'anonymous' => $this->reportedCase->anonymous
         ];
 
-        if (!$this->anonymous)
+        if (!$this->reportedCase->anonymous)
         {
-            $array['user'] = new ConfidentialUserResource($this->sender);
+            $array['user'] = (new ConfidentialUserResource($this->sender))->toArray($request);
         }
 
         return $array;
