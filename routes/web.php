@@ -43,10 +43,3 @@ Route::post('language', 'LanguageController@changeLanguage')->name('language');
 Route::get('js/lang-{locale}.js', 'LanguageController@getJavascriptLocale')->name('language.js');
 Route::view('/impressum', 'layouts.impressum')->name('impressum');
 Route::view('/privacy', 'layouts.privacy')->name('privacy_policy');
-
-
-
-
-Route::get('test-broadcast', function(){
-    broadcast(new \App\Events\MessageSent(\App\Message::find(1)));
-});
