@@ -61766,7 +61766,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		var caseId = __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].getCaseIdFromUrl();
 
 		window.Echo.private('cases.' + caseId).listen('MessageSent', function (e) {
-			console.log(e);
 			_this.messageObjects.push(e);
 			Vue.nextTick(_this.scrollToBottom);
 		});
