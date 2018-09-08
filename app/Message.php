@@ -10,16 +10,7 @@ use Illuminate\Notifications\Notifiable;
 class Message extends Model
 {
 
-    use HasEncryptedAttributes, Notifiable;
-
-    /**
-     * The event map for the model.
-     *
-     * @var array
-     */
-    protected $dispatchesEvents = [
-        'saved' => MessageSent::class,
-    ];
+    use HasEncryptedAttributes;
 
 	protected $fillable = [
 		"body",

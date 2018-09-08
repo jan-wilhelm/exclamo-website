@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Message;
 use App\ReportedCase;
 use App\Rules\ReportedCaseExistsAndBelongsToUser;
+use App\Events\MessageSent;
 
 class MessageController extends Controller
 {
@@ -44,6 +45,8 @@ class MessageController extends Controller
             'reported_case_id' => $validated['case'],
             'user_id' => Auth::id()
         ]);
+
+        broadcast(new MessageSent($message))->toOthers();
 
         // Return the freshly created Message. This can be useful for the client
         // to know the message id etc.
