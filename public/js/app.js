@@ -61763,7 +61763,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		},
 		sendMessageToServer: function sendMessageToServer(messageObject) {
 			var urlSegments = window.location.href.split("/");
-			var caseId = Number(this.filterNumericals(urlSegments[urlSegments.length - 1]));
+			var caseId = __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].getCaseIdFromUrl();
 
 			__WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].Message.create(messageObject.body, caseId).then(function (response) {
 				console.log(response);

@@ -72,7 +72,7 @@
 			},
 			sendMessageToServer(messageObject) {
 				var urlSegments = window.location.href.split("/")
-				var caseId = Number(this.filterNumericals(urlSegments[urlSegments.length - 1]))
+				var caseId = ExclamoApi.getCaseIdFromUrl()
 
 				ExclamoApi.Message.create(messageObject.body, caseId)
 					.then(function(response) {
