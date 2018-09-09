@@ -99,7 +99,7 @@
 
 <script>
 	import Datepicker from 'vuejs-datepicker';
-	import ReportedCase from '../api';
+	import ExclamoApi from '../api';
 
 	export default {
 		components: {
@@ -143,7 +143,7 @@
 				
 				formData.append('incident_date', this.incidentDate);
 
-				ReportedCase.create(formData,
+				ExclamoApi.ReportedCase.create(formData,
 				(response)=> {
 					window.location.href = window.Exclamo.url + '/cases/' + response.data.id
 				},

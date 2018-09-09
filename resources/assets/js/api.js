@@ -54,7 +54,23 @@ class ReportedCase {
 
 }
 
+class Message {
+
+	static create(body, caseId) {
+		return axios({
+			method: 'post',
+			url: baseUrl + "/messages",
+			data: {
+				'message': body,
+				'case': caseId
+			},
+			withCredentials: true
+		})
+	}
+}
+
 export default {
 	getCaseIdFromUrl,
-	ReportedCase
+	ReportedCase,
+	Message
 };

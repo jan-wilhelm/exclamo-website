@@ -9,7 +9,7 @@
 </template>
 
 <script>
-	import ExclamoAPI from '../api';
+	import ExclamoApi from '../api';
 
 	export default {
 		props: ["messages"],
@@ -74,20 +74,14 @@
 				var urlSegments = window.location.href.split("/")
 				var caseId = Number(this.filterNumericals(urlSegments[urlSegments.length - 1]))
 
-				axios(window.Exclamo.url + "/api/messages", {
-					method: "post",
-					data: {
-						'message': messageObject.body,
-						'case': caseId
-					},
-					withCredentials: true
-				}).then(function(response) {
-					console.log(response)
-					messageObject.sending = false
-				}).catch(function(error) {
-					console.log(error);
-    				console.log(error.response)
-				})
+				ExclamoApi.Message.create(messageObject.body, caseId)
+					.then(function(response) {
+						console.log(response)
+						messageObject.sending = false
+					}).catch(function(error) {
+						console.log(error);
+	    				console.log(error.response)
+					})
 			},
 			filterNumericals(fromString) {
 				return fromString.replace(/\D/g,'');
@@ -96,7 +90,7 @@
 		mounted() {
 			this.scrollToBottom()
 
-			let caseId = ExclamoAPI.getCaseIdFromUrl()
+			let caseId = ExclamoApi.getCaseIdFromUrl()
 
 			window.Echo.private('cases.' + caseId).listen('MessageSent', (e) => {
 				console.log(e);

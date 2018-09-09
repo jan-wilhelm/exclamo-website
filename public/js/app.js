@@ -33621,9 +33621,33 @@ var ReportedCase = function () {
 	return ReportedCase;
 }();
 
+var Message = function () {
+	function Message() {
+		_classCallCheck(this, Message);
+	}
+
+	_createClass(Message, null, [{
+		key: "create",
+		value: function create(body, caseId) {
+			return axios({
+				method: 'post',
+				url: baseUrl + "/messages",
+				data: {
+					'message': body,
+					'case': caseId
+				},
+				withCredentials: true
+			});
+		}
+	}]);
+
+	return Message;
+}();
+
 /* harmony default export */ __webpack_exports__["a"] = ({
 	getCaseIdFromUrl: getCaseIdFromUrl,
-	ReportedCase: ReportedCase
+	ReportedCase: ReportedCase,
+	Message: Message
 });
 
 /***/ }),
@@ -61741,14 +61765,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			var urlSegments = window.location.href.split("/");
 			var caseId = Number(this.filterNumericals(urlSegments[urlSegments.length - 1]));
 
-			axios(window.Exclamo.url + "/api/messages", {
-				method: "post",
-				data: {
-					'message': messageObject.body,
-					'case': caseId
-				},
-				withCredentials: true
-			}).then(function (response) {
+			__WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].Message.create(messageObject.body, caseId).then(function (response) {
 				console.log(response);
 				messageObject.sending = false;
 			}).catch(function (error) {
@@ -63177,7 +63194,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 			formData.append('incident_date', this.incidentDate);
 
-			__WEBPACK_IMPORTED_MODULE_1__api__["a" /* default */].create(formData, function (response) {
+			__WEBPACK_IMPORTED_MODULE_1__api__["a" /* default */].ReportedCase.create(formData, function (response) {
 				window.location.href = window.Exclamo.url + '/cases/' + response.data.id;
 			}, function (error) {
 				console.log(error.response);
