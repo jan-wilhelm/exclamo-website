@@ -17,8 +17,19 @@
 				@endisset
 			@endslot
 		@endcomponent
+	@else
+		@isset($otherComponents)
+			@component(
+				'components.cases.cases_section', [
+					"cases"=> [],
+					"userTag"=> isset($userTag) && $userTag
+				])
+				@slot('otherComponents')
+					{{ $otherComponents }}
+				@endslot
+			@endcomponent
+		@endisset
 	@endif
-
 	@if($resolvedCases->count() > 0)
 		<h5>
 			@lang('messages.resolved_incidents')
