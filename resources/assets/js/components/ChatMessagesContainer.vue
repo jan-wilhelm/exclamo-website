@@ -107,7 +107,8 @@
 	@media (min-width: 768px) {
 		.chat-container {
 			overflow: auto;
-			max-height: 900px;
+			max-height: calc(100vh - 345px);
+			min-height: 500px !important;
 			padding-bottom: 10px;
 		}
 	}

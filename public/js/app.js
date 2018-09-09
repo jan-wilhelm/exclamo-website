@@ -61676,7 +61676,7 @@ exports = module.exports = __webpack_require__(10)(false);
 
 
 // module
-exports.push([module.i, "\n@media (min-width: 768px) {\n.chat-container {\n\t\toverflow: auto;\n\t\tmax-height: 900px;\n\t\tpadding-bottom: 10px;\n}\n}\n.chat-container::after {\n    display: block;\n    height: 50px;\n    width: 100%;\n}\n", ""]);
+exports.push([module.i, "\n@media (min-width: 768px) {\n.chat-container {\n\t\toverflow: auto;\n\t\tmax-height: calc(100vh - 345px);\n\t\tmin-height: 500px !important;\n\t\tpadding-bottom: 10px;\n}\n}\n.chat-container::after {\n    display: block;\n    height: 50px;\n    width: 100%;\n}\n", ""]);
 
 // exports
 
