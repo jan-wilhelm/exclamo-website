@@ -57,5 +57,10 @@ return [
 	'mentor_no_cases'=> 'You are not associated with any cases yet. Wait for your students to ask you for your counsel!',
 	'welcome_messages'=>'Welcome to Exclamo, :name!',
 	'impressum'=> "Impressum",
-	'privacy_policy'=> "Privacy Policy"
+	'privacy_policy'=> "Privacy Policy",
+	'id' => 'ID',
+	'first_name' => 'First Name',
+	'last_name' => 'Last Name',
+	'email' => 'E-Mail',
+	'mentoring' => 'Available as a mentor',
 ];

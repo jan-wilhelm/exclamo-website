@@ -63471,10 +63471,6 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(298)
-}
 var normalizeComponent = __webpack_require__(37)
 /* script */
 var __vue_script__ = __webpack_require__(300)
@@ -63483,7 +63479,7 @@ var __vue_template__ = __webpack_require__(301)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -63518,51 +63514,31 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 298 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(299);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(25)("5f386fbd", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2c909c2f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./StudentsTable.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2c909c2f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./StudentsTable.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 299 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(10)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 298 */,
+/* 299 */,
 /* 300 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -63595,7 +63571,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		students: Array
 	},
 	data: function data() {
-		return {};
+		return {
+			currentPage: 1,
+			perPage: 15,
+			totalRows: this.students.length,
+			pageOptions: [15, 50, 200],
+			filter: null,
+			fields: [{
+				key: 'id',
+				label: Vue.prototype.lang('messages.id'),
+				sortable: true
+			}, {
+				key: 'first_name',
+				label: Vue.prototype.lang('messages.first_name'),
+				sortable: true
+			}, {
+				key: 'last_name',
+				label: Vue.prototype.lang('messages.last_name'),
+				sortable: true
+			}, {
+				key: 'email',
+				label: Vue.prototype.lang('messages.email'),
+				sortable: true
+			}, {
+				key: 'mentoring',
+				label: Vue.prototype.lang('messages.mentoring'),
+				sortable: true,
+				formatter: function formatter(value) {
+					return value ? "Ja" : "Nein";
+				}
+			}]
+		};
+	},
+
+	computed: {},
+	methods: {
+		onFiltered: function onFiltered(filteredItems) {
+			// Trigger pagination to update the number of buttons/pages due to filtering
+			this.totalRows = filteredItems.length;
+			this.currentPage = 1;
+		}
 	}
 });
 
@@ -63607,42 +63622,129 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("table", { staticClass: "table text-left" }, [
-    _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v(_vm._s(_vm.lang("messages.id")))]),
+  return _c(
+    "b-container",
+    { staticClass: "text-left", attrs: { fluid: "" } },
+    [
+      _c("b-row", [
+        _c(
+          "div",
+          { staticClass: "my-1 d-flex mr-auto" },
+          [
+            _c(
+              "b-form-group",
+              {
+                staticClass: "mb-0",
+                attrs: { horizontal: "", label: "Filter" }
+              },
+              [
+                _c(
+                  "b-input-group",
+                  [
+                    _c("b-form-input", {
+                      attrs: { placeholder: "Type to Search" },
+                      model: {
+                        value: _vm.filter,
+                        callback: function($$v) {
+                          _vm.filter = $$v
+                        },
+                        expression: "filter"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "b-input-group-append",
+                      [
+                        _c(
+                          "b-btn",
+                          {
+                            attrs: { disabled: !_vm.filter },
+                            on: {
+                              click: function($event) {
+                                _vm.filter = ""
+                              }
+                            }
+                          },
+                          [_vm._v("Clear")]
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ],
+          1
+        ),
         _vm._v(" "),
-        _c("th", [_vm._v(_vm._s(_vm.lang("messages.first_name")))]),
-        _vm._v(" "),
-        _c("th", [_vm._v(_vm._s(_vm.lang("messages.last_name")))]),
-        _vm._v(" "),
-        _c("th", [_vm._v(_vm._s(_vm.lang("messages.email")))]),
-        _vm._v(" "),
-        _c("th", [_vm._v(_vm._s(_vm.lang("messages.mentoring")))])
-      ])
-    ]),
-    _vm._v(" "),
-    _c(
-      "tbody",
-      _vm._l(_vm.students, function(student) {
-        return _c("tr", [
-          _c("td", [_vm._v(_vm._s(student.id))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(student.first_name))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(student.last_name))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(student.email))]),
-          _vm._v(" "),
-          _c("td", [
-            student.mentoring
-              ? _c("i", { staticClass: "fas fa-check" })
-              : _c("i", { staticClass: "fas fa-times" })
-          ])
+        _c("div", { staticClass: "my-1 d-flex flex-row" }, [
+          _c(
+            "div",
+            { staticClass: "form-inline form-group horizontal" },
+            [
+              _c("label", { staticClass: "form-control-label mr-5" }, [
+                _vm._v("\n\t\t\t\t\tPer Page\n\t\t\t\t")
+              ]),
+              _vm._v(" "),
+              _c("b-form-select", {
+                attrs: { options: _vm.pageOptions },
+                model: {
+                  value: _vm.perPage,
+                  callback: function($$v) {
+                    _vm.perPage = $$v
+                  },
+                  expression: "perPage"
+                }
+              })
+            ],
+            1
+          )
         ])
-      })
-    )
-  ])
+      ]),
+      _vm._v(" "),
+      _c("b-table", {
+        attrs: {
+          "show-empty": "",
+          stacked: "md",
+          items: _vm.students,
+          "current-page": _vm.currentPage,
+          "per-page": _vm.perPage,
+          filter: _vm.filter,
+          fields: _vm.fields
+        },
+        on: { filtered: _vm.onFiltered }
+      }),
+      _vm._v(" "),
+      _c(
+        "b-row",
+        [
+          _c(
+            "b-col",
+            { staticClass: "my-1", attrs: { md: "6" } },
+            [
+              _c("b-pagination", {
+                staticClass: "my-0",
+                attrs: { "total-rows": _vm.totalRows, "per-page": _vm.perPage },
+                model: {
+                  value: _vm.currentPage,
+                  callback: function($$v) {
+                    _vm.currentPage = $$v
+                  },
+                  expression: "currentPage"
+                }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

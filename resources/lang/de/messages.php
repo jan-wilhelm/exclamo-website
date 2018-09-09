@@ -58,5 +58,10 @@ return [
 	'nummer_gegen_kummer'=> 'Nummer-gegen-Kummer Tel: 116 111',
 	'termin_service_stelle'=> 'Zur Terminservicestelle',
 	'impressum'=> "Impressum",
-	'privacy_policy'=> "Datenschutzerklärung"
+	'privacy_policy'=> "Datenschutzerklärung",
+	'id' => 'ID',
+	'first_name' => 'Vorname',
+	'last_name' => 'Nachname',
+	'email' => 'E-Mail',
+	'mentoring' => 'Als Mentor verfügbar',
 ];
