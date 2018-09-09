@@ -1,5 +1,16 @@
 <div class="col-xl-4 col-md-6 px-2 py-3 {{ $case->solved ? "case-solved" : "" }}">
 	<div class="d-flex flex-column case-card shadow w-100 h-100">
+		@php
+			$messagesSinceLastLogin = $case->messages()
+				->where('created_at', '>',
+					auth()->user()->logins()->orderBy('created_at', 'desc')->first()->created_at)
+				->count();
+		@endphp
+		@if ($messagesSinceLastLogin > 0)
+			<span class="case-notification tag">
+				{{ $messagesSinceLastLogin }}
+			</span>
+		@endif
 		<div class="mb-auto pb-2">
 			@if(isset($body))
 				{{ $body }}

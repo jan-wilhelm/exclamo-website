@@ -180,6 +180,16 @@ hr {
 	border-radius: 10px;
 	border-bottom: 1px solid #ddd;
 	background-color: #fff;
+	position: relative;
+}
+
+.case-card .case-notification {
+	text-align: right;
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	color: $color-white;
+	background-color: $color-secondary-1-2;
 }
 
 .case-solved {
