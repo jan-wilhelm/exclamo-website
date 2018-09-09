@@ -4,6 +4,7 @@
 			$messagesSinceLastLogin = $case->messages()
 				->where('created_at', '>',
 					auth()->user()->logins()->orderBy('created_at', 'desc')->first()->created_at)
+				->where('user_id', '!=', auth()->id())
 				->count();
 		@endphp
 		@if ($messagesSinceLastLogin > 0)
