@@ -63,8 +63,9 @@ return [
 	'first_name' => 'Vorname',
 	'last_name' => 'Nachname',
 	'email' => 'E-Mail',
-	'mentoring' => 'Als Mentor verfügbar',
+	'mentoring' => 'verfügbar',
 	'clear' => 'Leeren',
 	'type_to_search' => 'Suchen',
 	'per_page' => 'Einträge pro Seite',
+	'actions'=> 'Aktionen'
 ];

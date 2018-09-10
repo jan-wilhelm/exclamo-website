@@ -63471,6 +63471,10 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(312)
+}
 var normalizeComponent = __webpack_require__(37)
 /* script */
 var __vue_script__ = __webpack_require__(298)
@@ -63479,7 +63483,7 @@ var __vue_template__ = __webpack_require__(299)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -63565,6 +63569,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
@@ -63596,11 +63618,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}, {
 				key: 'mentoring',
 				label: Vue.prototype.lang('messages.mentoring'),
-				sortable: true,
-				formatter: function formatter(value) {
-					return value ? "Ja" : "Nein";
-				}
-			}]
+				sortable: true
+			}, {
+				key: 'actions',
+				label: Vue.prototype.lang('messages.actions')
+			}],
+			formatted: ['mentoring']
 		};
 	},
 
@@ -63610,6 +63633,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			// Trigger pagination to update the number of buttons/pages due to filtering
 			this.totalRows = filteredItems.length;
 			this.currentPage = 1;
+		},
+
+		formatter: function formatter(data) {
+			return '<i class="text-right fas ' + (data ? 'fa-check' : 'fa-times') + '"></i>';
 		}
 	}
 });
@@ -63725,9 +63752,56 @@ var render = function() {
           "current-page": _vm.currentPage,
           "per-page": _vm.perPage,
           filter: _vm.filter,
-          fields: _vm.fields
+          fields: _vm.fields,
+          striped: "",
+          bordered: ""
         },
-        on: { filtered: _vm.onFiltered }
+        on: { filtered: _vm.onFiltered },
+        scopedSlots: _vm._u([
+          _vm._l(_vm.formatted, function(field) {
+            return {
+              key: field,
+              fn: function(row) {
+                return [
+                  _c("span", {
+                    staticClass: "text-left w-100 d-inline-block",
+                    domProps: { innerHTML: _vm._s(_vm.formatter(row.value)) }
+                  })
+                ]
+              }
+            }
+          }),
+          {
+            key: "actions",
+            fn: function(row) {
+              return [
+                _c(
+                  "b-dropdown",
+                  {
+                    staticClass: "actions-button",
+                    attrs: { id: "ddown1", variant: "link", "no-caret": "" }
+                  },
+                  [
+                    _c("template", { slot: "button-content" }, [
+                      _c("i", { staticClass: "fas fa-ellipsis-v" })
+                    ]),
+                    _vm._v(" "),
+                    _c("b-dropdown-item", [_vm._v("First Action")]),
+                    _vm._v(" "),
+                    _c("b-dropdown-item", [_vm._v("Second Action")]),
+                    _vm._v(" "),
+                    _c("b-dropdown-item", [_vm._v("Third Action")]),
+                    _vm._v(" "),
+                    _c("b-dropdown-divider"),
+                    _vm._v(" "),
+                    _c("b-dropdown-item", [_vm._v("Something else here...")])
+                  ],
+                  2
+                )
+              ]
+            }
+          }
+        ])
       }),
       _vm._v(" "),
       _c(
@@ -63779,6 +63853,56 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(313);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(36)("5f386fbd", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2c909c2f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./StudentsTable.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2c909c2f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./StudentsTable.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 313 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(11)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.actions-button button {\n\tpadding-top: 0;\n\tpadding-bottom: 0;\n}\n", ""]);
+
+// exports
+
 
 /***/ })
 /******/ ]);

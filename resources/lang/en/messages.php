@@ -65,5 +65,6 @@ return [
 	'mentoring' => 'Available as a mentor',
 	'clear' => 'Clear',
 	'type_to_search' => 'Type to Search',
-	'per_page' => 'Per Page',
+	'per_page' => 'Per Page',,
+	'actions'=> 'Actions'
 ];

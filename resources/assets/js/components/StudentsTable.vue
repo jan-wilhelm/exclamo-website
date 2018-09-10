@@ -32,8 +32,26 @@
 			:per-page="perPage"
 			:filter="filter"
 			:fields="fields"
+			striped
+			bordered
 			@filtered="onFiltered"
-		/>
+		>
+		    <template v-for='field in formatted' :slot='field' slot-scope='row'>
+		      <span class="text-left w-100 d-inline-block" v-html='formatter(row.value)'></span>
+		    </template>
+			<template slot="actions" slot-scope="row">
+				<b-dropdown id="ddown1" variant="link" no-caret class="actions-button">
+					<template slot="button-content">
+						<i class="fas fa-ellipsis-v"></i>
+					</template>
+				    <b-dropdown-item>First Action</b-dropdown-item>
+				    <b-dropdown-item>Second Action</b-dropdown-item>
+				    <b-dropdown-item>Third Action</b-dropdown-item>
+				    <b-dropdown-divider></b-dropdown-divider>
+				    <b-dropdown-item>Something else here...</b-dropdown-item>
+				  </b-dropdown>
+			</template>
+		</b-table>
 
 		<b-row>
 			<b-col md="6" class="my-1">
@@ -80,12 +98,14 @@
 					{
 						key: 'mentoring',
 						label: Vue.prototype.lang('messages.mentoring'),
-						sortable: true,
-						formatter: (value) => {
-							return value ? "Ja" : "Nein"
-						}
+						sortable: true
 					},
+					{
+						key: 'actions',
+						label: Vue.prototype.lang('messages.actions'),
+					}
 				],
+				formatted: ['mentoring']
 			}
 		},
 		computed: {
@@ -95,7 +115,17 @@
 				// Trigger pagination to update the number of buttons/pages due to filtering
 				this.totalRows = filteredItems.length
 				this.currentPage = 1
-			}
+			},
+		    formatter: function(data) {
+		    	return '<i class="text-right fas ' + (data ? 'fa-check' : 'fa-times') + '"></i>'
+		    }
 		}
 	}
 </script>
+
+<style>
+	.actions-button button {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+</style>
