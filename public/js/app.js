@@ -63563,6 +63563,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
@@ -63640,7 +63642,9 @@ var render = function() {
                   "b-input-group",
                   [
                     _c("b-form-input", {
-                      attrs: { placeholder: "Type to Search" },
+                      attrs: {
+                        placeholder: _vm.lang("messages.type_to_search")
+                      },
                       model: {
                         value: _vm.filter,
                         callback: function($$v) {
@@ -63663,7 +63667,13 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v("Clear")]
+                          [
+                            _vm._v(
+                              "\n\t\t\t\t\t\t\t" +
+                                _vm._s(_vm.lang("messages.clear")) +
+                                "\n\t\t\t\t\t\t"
+                            )
+                          ]
                         )
                       ],
                       1
@@ -63684,7 +63694,11 @@ var render = function() {
             { staticClass: "form-inline form-group horizontal" },
             [
               _c("label", { staticClass: "form-control-label mr-5" }, [
-                _vm._v("\n\t\t\t\t\tPer Page\n\t\t\t\t")
+                _vm._v(
+                  "\n\t\t\t\t\t" +
+                    _vm._s(_vm.lang("messages.per_page")) +
+                    "\n\t\t\t\t"
+                )
               ]),
               _vm._v(" "),
               _c("b-form-select", {

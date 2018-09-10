@@ -63,4 +63,7 @@ return [
 	'last_name' => 'Last Name',
 	'email' => 'E-Mail',
 	'mentoring' => 'Available as a mentor',
+	'clear' => 'Clear',
+	'type_to_search' => 'Type to Search',
+	'per_page' => 'Per Page',
 ];

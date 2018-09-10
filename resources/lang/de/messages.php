@@ -64,4 +64,7 @@ return [
 	'last_name' => 'Nachname',
 	'email' => 'E-Mail',
 	'mentoring' => 'Als Mentor verfügbar',
+	'clear' => 'Leeren',
+	'type_to_search' => 'Suchen',
+	'per_page' => 'Einträge pro Seite',
 ];

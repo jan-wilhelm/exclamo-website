@@ -5,9 +5,11 @@
 			<div class="my-1 d-flex mr-auto">
 				<b-form-group horizontal label="Filter" class="mb-0">
 					<b-input-group>
-						<b-form-input v-model="filter" placeholder="Type to Search" />
+						<b-form-input v-model="filter" :placeholder="lang('messages.type_to_search')" />
 							<b-input-group-append>
-							<b-btn :disabled="!filter" @click="filter = ''">Clear</b-btn>
+							<b-btn :disabled="!filter" @click="filter = ''">
+								{{ lang('messages.clear') }}
+							</b-btn>
 						</b-input-group-append>
 					</b-input-group>
 				</b-form-group>
@@ -15,7 +17,7 @@
 			<div class="my-1 d-flex flex-row">
 				<div class="form-inline form-group horizontal">
 					<label class="form-control-label mr-5">
-						Per Page
+						{{ lang('messages.per_page') }}
 					</label>
 					<b-form-select :options="pageOptions" v-model="perPage" />
 				</div>
