@@ -16,3 +16,4 @@ deploy.php
 .DS_Store
 laravel-echo-server.json
 /recipes
+*.log
