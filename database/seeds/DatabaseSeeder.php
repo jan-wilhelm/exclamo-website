@@ -26,11 +26,11 @@ class DatabaseSeeder extends Seeder
             'lehrer'=> 0,
             'schulleiter'=> 0
         ];
-        $schools = factory(App\School::class, 10)->create();
+        $schools = factory(App\School::class, 2)->create();
 
         foreach (App\School::all() as $school) {
             echo "Creating users... \n";
-            $users = factory(App\User::class, 10)->make([
+            $users = factory(App\User::class, 100)->make([
                 'school_id'=> $school->id
             ]);
 
@@ -38,9 +38,9 @@ class DatabaseSeeder extends Seeder
             $index = 0;
             foreach ($users as $user) {
                 $index += 1;
-                if ($index < 5) {
+                if ($index < 90) {
                     $role = "schueler";
-                } elseif ($index < 8) {
+                } elseif ($index < 98) {
                     $role = "lehrer";
                 } else {
                     $role = "schulleiter";
@@ -70,7 +70,7 @@ class DatabaseSeeder extends Seeder
         foreach ($students as $student) {
 
             echo "Creating cases... \n";
-            $cases = factory(App\ReportedCase::class, rand(0,6))->create([
+            $cases = factory(App\ReportedCase::class, rand(1,10))->create([
                 'student_id'=> $student->id
             ]);
 
@@ -82,7 +82,7 @@ class DatabaseSeeder extends Seeder
                 $student->reportedCases()->save($case);
 
                 echo "Creating messages... \n";
-                $messages = factory(App\Message::class, 10)->make()->each(function($m) use ($case, $student) {
+                $messages = factory(App\Message::class, rand(1,4))->make()->each(function($m) use ($case, $student) {
                     $sender = array( $case->mentors[0], $student )[random_int(0, 1)];
                     $m->sender()->associate($sender);
                     $case->messages()->save($m);
