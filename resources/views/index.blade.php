@@ -10,8 +10,8 @@
 @endsection
 
 @section("body")
-	<div class="w-100 h-100" v-cloak>
-	<div id="app" class="h-100">
+	<div class="w-100 h-100" id="app" >
+	<div id="app-content" class="h-100" v-cloak>
 		<b-navbar toggleable="lg" style="position: fixed; z-index: 1; top:0; width: 100%;">
 			<b-container fluid>
 				<b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
