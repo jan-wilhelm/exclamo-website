@@ -63629,6 +63629,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
@@ -63636,11 +63657,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 	data: function data() {
 		return {
+			editing: [],
+			items: this.students,
 			currentPage: 1,
 			perPage: 15,
 			totalRows: this.students.length,
 			pageOptions: [15, 50, 200],
 			filter: null,
+			editableFields: ['first_name', 'last_name', 'id'],
 			fields: [{
 				key: 'id',
 				label: Vue.prototype.lang('messages.id'),
@@ -63674,11 +63698,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 
 	computed: {},
+	created: function created() {
+		var _this = this;
+
+		this.fields.forEach(function (field) {
+			_this.editing[field.key] = [];
+		});
+	},
+
 	methods: {
 		onFiltered: function onFiltered(filteredItems) {
 			// Trigger pagination to update the number of buttons/pages due to filtering
 			this.totalRows = filteredItems.length;
 			this.currentPage = 1;
+		},
+
+
+		// This is a hacky way to rerender the data. TODO: Find a better, documented way
+		// instead of firing the property watchers by changing the value and then changing it back
+		refreshFilter: function refreshFilter() {
+			var tempFilter = this.filter;
+			this.filter = "";
+
+			if (tempFilter == null) {
+				this.filter = null;
+			} else {
+				this.filter = tempFilter;
+			}
+		},
+		edit: function edit(data) {
+			var index = this.items.indexOf(data.item);
+			this.editing[data.field.key].push(index);
+			this.refreshFilter();
+		},
+		saveEdit: function saveEdit(data) {
+			this.editing[data.field.key].pop(data.item);
+			this.refreshFilter();
 		}
 	}
 });
@@ -63696,70 +63751,64 @@ var render = function() {
     { staticClass: "text-left", attrs: { fluid: "" } },
     [
       _c("div", { staticClass: "d-flex" }, [
-        _c(
-          "div",
-          { staticClass: "my-1 d-flex mr-auto" },
-          [
-            _c(
-              "b-form-group",
-              {
-                staticClass: "mb-0",
-                attrs: { horizontal: "", label: "Filter" }
-              },
-              [
-                _c(
-                  "b-input-group",
-                  [
-                    _c("b-form-input", {
-                      attrs: {
-                        placeholder: _vm.lang("messages.type_to_search")
+        _c("div", { staticClass: "my-1 d-flex mr-auto" }, [
+          _c(
+            "div",
+            { staticClass: "form-inline form-group horizontal" },
+            [
+              _c("label", { staticClass: "form-control-label mr-2" }, [
+                _vm._v("\n\t\t\t\t\tFilter\n\t\t\t\t")
+              ]),
+              _vm._v(" "),
+              _c(
+                "b-input-group",
+                [
+                  _c("b-form-input", {
+                    attrs: { placeholder: _vm.lang("messages.type_to_search") },
+                    model: {
+                      value: _vm.filter,
+                      callback: function($$v) {
+                        _vm.filter = $$v
                       },
-                      model: {
-                        value: _vm.filter,
-                        callback: function($$v) {
-                          _vm.filter = $$v
-                        },
-                        expression: "filter"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("b-input-group-append", [
-                      _c(
-                        "button",
-                        {
-                          staticClass: "cta cta-secondary cta-form-group nr-l",
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              _vm.filter = ""
-                            }
+                      expression: "filter"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("b-input-group-append", [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "cta cta-secondary cta-form-group nr-l",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            _vm.filter = ""
                           }
-                        },
-                        [
-                          _vm._v(
-                            "\n\t\t\t\t\t\t\t" +
-                              _vm._s(_vm.lang("messages.clear")) +
-                              "\n\t\t\t\t\t\t"
-                          )
-                        ]
-                      )
-                    ])
-                  ],
-                  1
-                )
-              ],
-              1
-            )
-          ],
-          1
-        ),
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t\t" +
+                            _vm._s(_vm.lang("messages.clear")) +
+                            "\n\t\t\t\t\t\t"
+                        )
+                      ]
+                    )
+                  ])
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "my-1 d-flex flex-row" }, [
           _c(
             "div",
             { staticClass: "form-inline form-group horizontal" },
             [
-              _c("label", { staticClass: "form-control-label mr-5" }, [
+              _c("label", { staticClass: "form-control-label mr-2" }, [
                 _vm._v(
                   "\n\t\t\t\t\t" +
                     _vm._s(_vm.lang("messages.per_page")) +
@@ -63784,10 +63833,11 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("b-table", {
+        ref: "students-table",
         attrs: {
           "show-empty": "",
           stacked: "md",
-          items: _vm.students,
+          items: _vm.items,
           "current-page": _vm.currentPage,
           "per-page": _vm.perPage,
           filter: _vm.filter,
@@ -63797,6 +63847,104 @@ var render = function() {
         },
         on: { filtered: _vm.onFiltered },
         scopedSlots: _vm._u([
+          _vm._l(_vm.editableFields, function(editable) {
+            return {
+              key: editable,
+              fn: function(data) {
+                return [
+                  _c("div", [
+                    _vm.editing[data.field.key].indexOf(
+                      _vm.items.indexOf(data.item)
+                    ) == -1
+                      ? _c(
+                          "div",
+                          {
+                            staticClass:
+                              "d-flex w-100 flex-row justify-content-between"
+                          },
+                          [
+                            _c("span", [_vm._v(_vm._s(data.value))]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    _vm.edit(data)
+                                  }
+                                }
+                              },
+                              [
+                                _c("i", {
+                                  staticClass:
+                                    "opacity-hover pointer fas fa-pencil-alt"
+                                })
+                              ]
+                            )
+                          ]
+                        )
+                      : _c(
+                          "div",
+                          {
+                            staticClass:
+                              "d-flex w-100 flex-row justify-content-between"
+                          },
+                          [
+                            _c("input", {
+                              staticClass: "form-control",
+                              attrs: { type: "text" },
+                              domProps: { value: data.value }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "d-flex flex-row vdivide align-items-center"
+                              },
+                              [
+                                _c(
+                                  "span",
+                                  {
+                                    on: {
+                                      click: function($event) {
+                                        _vm.saveEdit(data)
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass:
+                                        "pointer color-primary-0 mx-2 fas fa-lg fa-check-circle"
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  {
+                                    on: {
+                                      click: function($event) {
+                                        _vm.saveEdit(data)
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass:
+                                        "pointer color-secondary-1-0 fas fa-lg fa-times"
+                                    })
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                  ])
+                ]
+              }
+            }
+          }),
           {
             key: "mentoring",
             fn: function(row) {

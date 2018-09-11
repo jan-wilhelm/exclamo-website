@@ -279,7 +279,7 @@ hr {
 }
 
 @media (min-width: 576px) {
-	.row.vdivide [class*='col-']:not(:last-child):after {
+	.vdivide > *:not(:last-child):after {
 	  background: rgba(0,0,0,0.2);
 	  width: 1px;
 	  content: "";

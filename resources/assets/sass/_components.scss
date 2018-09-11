@@ -83,6 +83,18 @@
 	text-decoration: underline;
 }
 
+.opacity-hover {
+	opacity: 0.2;
+}
+
+.opacity-hover:hover {
+	opacity: 1;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
 .nr-l, .nr-t {
 	border-top-left-radius: 0 !important;
 }

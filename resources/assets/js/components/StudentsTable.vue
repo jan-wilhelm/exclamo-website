@@ -3,20 +3,23 @@
 	<!-- User Interface controls -->
 		<div class="d-flex">
 			<div class="my-1 d-flex mr-auto">
-				<b-form-group horizontal label="Filter" class="mb-0">
+				<div class="form-inline form-group horizontal">
+					<label class="form-control-label mr-2">
+						Filter
+					</label>
 					<b-input-group>
 						<b-form-input v-model="filter" :placeholder="lang('messages.type_to_search')" />
-							<b-input-group-append>
+						<b-input-group-append>
 							<button @click="filter = ''" type="button" class="cta cta-secondary cta-form-group nr-l">
 								{{ lang('messages.clear') }}
 							</button>
 						</b-input-group-append>
 					</b-input-group>
-				</b-form-group>
+				</div>
 			</div>
 			<div class="my-1 d-flex flex-row">
 				<div class="form-inline form-group horizontal">
-					<label class="form-control-label mr-5">
+					<label class="form-control-label mr-2">
 						{{ lang('messages.per_page') }}
 					</label>
 					<b-form-select :options="pageOptions" v-model="perPage" />
@@ -27,7 +30,7 @@
 		<!-- Main table element -->
 		<b-table show-empty
 			stacked="md"
-			:items="students"
+			:items="items"
 			:current-page="currentPage"
 			:per-page="perPage"
 			:filter="filter"
@@ -35,7 +38,25 @@
 			striped
 			bordered
 			@filtered="onFiltered"
+			ref="students-table"
 		>
+			<template v-for="editable in editableFields" :slot="editable" slot-scope="data">
+				<div>
+					<div v-if="editing[data.field.key].indexOf(items.indexOf(data.item)) == -1" class="d-flex w-100 flex-row justify-content-between">
+						<span>{{ data.value }}</span>
+						<div @click="edit(data)">
+							<i class="opacity-hover pointer fas fa-pencil-alt"></i>
+						</div>
+					</div>
+					<div v-else class="d-flex w-100 flex-row justify-content-between">
+						<input type="text" class="form-control" :value="data.value" />
+						<span class="d-flex flex-row vdivide align-items-center">
+							<span @click="saveEdit(data)"><i class="pointer color-primary-0 mx-2 fas fa-lg fa-check-circle"></i></span>
+							<span @click="saveEdit(data)"><i class="pointer color-secondary-1-0 fas fa-lg fa-times"></i></span>
+						</span>
+					</div>
+				</div>
+			</template>
 		    <template slot='mentoring' slot-scope='row'>
 				<span class="text-center w-100 d-inline-block" v-html='formatters["mentoring"](row.value)'></span>
 		    </template>
@@ -71,11 +92,14 @@
 		},
 		data () {
 			return {
+				editing: [],
+				items: this.students,
 				currentPage: 1,
 				perPage: 15,
 				totalRows: this.students.length,
 				pageOptions: [ 15, 50, 200 ],
 				filter: null,
+				editableFields: ['first_name', 'last_name', 'id'],
 				fields: [
 					{
 						key: 'id',
@@ -116,11 +140,38 @@
 		},
 		computed: {
 		},
+		created() {
+			this.fields.forEach((field) => {
+				this.editing[field.key] = []
+			});
+		},
 		methods: {
 			onFiltered (filteredItems) {
 				// Trigger pagination to update the number of buttons/pages due to filtering
 				this.totalRows = filteredItems.length
 				this.currentPage = 1
+			},
+
+			// This is a hacky way to rerender the data. TODO: Find a better, documented way
+			// instead of firing the property watchers by changing the value and then changing it back
+			refreshFilter() {
+				let tempFilter = this.filter
+				this.filter = ""
+
+				if (tempFilter == null) {
+					this.filter = null
+				} else {
+					this.filter = tempFilter
+				}
+			},
+			edit (data) {
+				let index = this.items.indexOf(data.item)
+				this.editing[data.field.key].push(index)
+				this.refreshFilter()
+			},
+			saveEdit(data) {
+				this.editing[data.field.key].pop(data.item)
+				this.refreshFilter()
 			}
 		}
 	}
