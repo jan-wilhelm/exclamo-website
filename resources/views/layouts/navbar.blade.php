@@ -38,13 +38,13 @@
 				<b-nav-item-dropdown right>
 					<!-- Using button-content slot -->
 					<template slot="button-content">
-			        	<img src="
+			        	<img 
 				        	@if ( app()->getLocale() == 'de')
-				        		{{ asset('img/germany_small.png') }}
+				        		src="{{ asset('img/germany_small.png') }}"
 				        	@else
-								{{ asset('img/uk_small.png') }}
+								src="{{ asset('img/uk_small.png') }}"
 				        	@endif
-			        	" height="24px" width="40px">
+			        	height="24px" width="40px">
 					</template>
 		        	<form action="{{ route('language') }}" method="post">
 		        		@csrf
