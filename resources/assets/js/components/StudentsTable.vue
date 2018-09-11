@@ -42,7 +42,7 @@
 			<template slot="actions" slot-scope="row">
 				<b-dropdown id="ddown1" variant="link" no-caret class="actions-button">
 					<template slot="button-content">
-						<i class="fas fa-ellipsis-v"></i>
+						<i class="fas fa-ellipsis-v secondary-color"></i>
 					</template>
 				    <b-dropdown-item>First Action</b-dropdown-item>
 				    <b-dropdown-item>Second Action</b-dropdown-item>

@@ -451,13 +451,18 @@
   color: #e9e8e8 !important;
 }
 
-.cta-secondary {
+.cta-secondary,
+.secondary-color {
   background-color: #fff !important;
   color: #DC0037 !important;
+}
+
+.cta-secondary {
   border: 1px solid #DC0037 !important;
 }
 
-.cta-secondary:hover {
+.cta-secondary:hover,
+.secondary-color:hover {
   background-color: #EA2758 !important;
   color: #fff !important;
 }

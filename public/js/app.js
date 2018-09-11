@@ -63820,7 +63820,9 @@ var render = function() {
                   },
                   [
                     _c("template", { slot: "button-content" }, [
-                      _c("i", { staticClass: "fas fa-ellipsis-v" })
+                      _c("i", {
+                        staticClass: "fas fa-ellipsis-v secondary-color"
+                      })
                     ]),
                     _vm._v(" "),
                     _c("b-dropdown-item", [_vm._v("First Action")]),

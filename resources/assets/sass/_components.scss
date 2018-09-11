@@ -65,13 +65,16 @@
 	color: $color-white-darker !important;
 }
 
-.cta-secondary {
+.cta-secondary, .secondary-color {
 	background-color: $color-white !important;
 	color: $color-secondary-1-0 !important;
+}
+
+.cta-secondary {
 	border: 1px solid $color-secondary-1-0 !important;
 }
 
-.cta-secondary:hover {
+.cta-secondary:hover, .secondary-color:hover {
 	background-color: $color-secondary-1-2 !important;
 	color: $color-white !important;
 }
