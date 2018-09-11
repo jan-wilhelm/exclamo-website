@@ -19,6 +19,7 @@
 	border: 1px solid transparent;
     -webkit-transition: background-color 0.3s, color 0.3s; /* Safari */
     transition: background-color 0.3s, color 0.3s;
+	border-radius: 2rem;
 }
 
 .cta-large {
@@ -26,7 +27,6 @@
 	line-height: 1rem;
 	font-size: 1rem;
 	height: 3rem;
-	border-radius: 2rem;
 }
 
 .cta-small {
@@ -34,7 +34,15 @@
 	line-height: 0.75rem;
 	font-size: 0.8rem;
 	height: 2.25rem;
-	border-radius: 1.5rem;
+	font-weight: 400;
+}
+
+.cta-form-group {
+	padding: 0.75rem 1.5rem;
+	line-height: 0.75rem;
+	font-size: 0.8rem;
+
+	height: calc(2.25rem + 2px);
 	font-weight: 400;
 }
 
@@ -70,4 +78,20 @@
 
 .cta-tertiary {
 	text-decoration: underline;
+}
+
+.nr-l, .nr-t {
+	border-top-left-radius: 0 !important;
+}
+
+.nr-r, .nr-t {
+	border-top-right-radius: 0 !important;
+}
+
+.nr-l, .nr-b {
+	border-bottom-left-radius: 0 !important;
+}
+
+.nr-r, .nr-b {
+	border-bottom-right-radius: 0 !important;
 }

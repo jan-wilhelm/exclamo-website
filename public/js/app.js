@@ -63721,30 +63721,27 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _c(
-                      "b-input-group-append",
-                      [
-                        _c(
-                          "b-btn",
-                          {
-                            attrs: { disabled: !_vm.filter },
-                            on: {
-                              click: function($event) {
-                                _vm.filter = ""
-                              }
+                    _c("b-input-group-append", [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "cta cta-secondary cta-form-group nr-l",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              _vm.filter = ""
                             }
-                          },
-                          [
-                            _vm._v(
-                              "\n\t\t\t\t\t\t\t" +
-                                _vm._s(_vm.lang("messages.clear")) +
-                                "\n\t\t\t\t\t\t"
-                            )
-                          ]
-                        )
-                      ],
-                      1
-                    )
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t" +
+                              _vm._s(_vm.lang("messages.clear")) +
+                              "\n\t\t\t\t\t\t"
+                          )
+                        ]
+                      )
+                    ])
                   ],
                   1
                 )

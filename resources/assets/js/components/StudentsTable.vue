@@ -7,9 +7,9 @@
 					<b-input-group>
 						<b-form-input v-model="filter" :placeholder="lang('messages.type_to_search')" />
 							<b-input-group-append>
-							<b-btn :disabled="!filter" @click="filter = ''">
+							<button @click="filter = ''" type="button" class="cta cta-secondary cta-form-group nr-l">
 								{{ lang('messages.clear') }}
-							</b-btn>
+							</button>
 						</b-input-group-append>
 					</b-input-group>
 				</b-form-group>
@@ -37,7 +37,7 @@
 			@filtered="onFiltered"
 		>
 		    <template v-for='field in formatted' :slot='field' slot-scope='row'>
-		      <span class="text-left w-100 d-inline-block" v-html='formatter(row.value)'></span>
+				<span class="text-left w-100 d-inline-block" v-html='formatter(row.value)'></span>
 		    </template>
 			<template slot="actions" slot-scope="row">
 				<b-dropdown id="ddown1" variant="link" no-caret class="actions-button">
