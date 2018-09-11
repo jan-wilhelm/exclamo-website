@@ -1,7 +1,7 @@
 <template>
 	<b-container fluid class="text-left">
 	<!-- User Interface controls -->
-		<b-row>
+		<div class="d-flex">
 			<div class="my-1 d-flex mr-auto">
 				<b-form-group horizontal label="Filter" class="mb-0">
 					<b-input-group>
@@ -22,7 +22,7 @@
 					<b-form-select :options="pageOptions" v-model="perPage" />
 				</div>
 			</div>
-		</b-row>
+		</div>
 
 		<!-- Main table element -->
 		<b-table show-empty

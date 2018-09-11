@@ -63695,7 +63695,7 @@ var render = function() {
     "b-container",
     { staticClass: "text-left", attrs: { fluid: "" } },
     [
-      _c("b-row", [
+      _c("div", { staticClass: "d-flex" }, [
         _c(
           "div",
           { staticClass: "my-1 d-flex mr-auto" },
