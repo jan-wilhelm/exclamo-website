@@ -63627,6 +63627,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
@@ -63663,7 +63665,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				key: 'actions',
 				label: Vue.prototype.lang('messages.actions')
 			}],
-			formatted: ['mentoring']
+			formatters: {
+				'mentoring': function mentoring(data) {
+					return '<i class="text-right fas ' + (data ? 'fa-check' : 'fa-times') + '"></i>';
+				}
+			}
 		};
 	},
 
@@ -63673,10 +63679,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			// Trigger pagination to update the number of buttons/pages due to filtering
 			this.totalRows = filteredItems.length;
 			this.currentPage = 1;
-		},
-
-		formatter: function formatter(data) {
-			return '<i class="text-right fas ' + (data ? 'fa-check' : 'fa-times') + '"></i>';
 		}
 	}
 });
@@ -63795,47 +63797,63 @@ var render = function() {
         },
         on: { filtered: _vm.onFiltered },
         scopedSlots: _vm._u([
-          _vm._l(_vm.formatted, function(field) {
-            return {
-              key: field,
-              fn: function(row) {
-                return [
-                  _c("span", {
-                    staticClass: "text-left w-100 d-inline-block",
-                    domProps: { innerHTML: _vm._s(_vm.formatter(row.value)) }
-                  })
-                ]
-              }
+          {
+            key: "mentoring",
+            fn: function(row) {
+              return [
+                _c("span", {
+                  staticClass: "text-center w-100 d-inline-block",
+                  domProps: {
+                    innerHTML: _vm._s(_vm.formatters["mentoring"](row.value))
+                  }
+                })
+              ]
             }
-          }),
+          },
           {
             key: "actions",
             fn: function(row) {
               return [
                 _c(
-                  "b-dropdown",
-                  {
-                    staticClass: "actions-button",
-                    attrs: { id: "ddown1", variant: "link", "no-caret": "" }
-                  },
+                  "div",
+                  { staticClass: "text-center" },
                   [
-                    _c("template", { slot: "button-content" }, [
-                      _c("i", {
-                        staticClass: "fas fa-ellipsis-v secondary-color"
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("b-dropdown-item", [_vm._v("First Action")]),
-                    _vm._v(" "),
-                    _c("b-dropdown-item", [_vm._v("Second Action")]),
-                    _vm._v(" "),
-                    _c("b-dropdown-item", [_vm._v("Third Action")]),
-                    _vm._v(" "),
-                    _c("b-dropdown-divider"),
-                    _vm._v(" "),
-                    _c("b-dropdown-item", [_vm._v("Something else here...")])
+                    _c(
+                      "b-dropdown",
+                      {
+                        staticClass: "actions-button",
+                        attrs: { id: "ddown1", variant: "link", "no-caret": "" }
+                      },
+                      [
+                        _c(
+                          "template",
+                          {
+                            staticClass: "text-center",
+                            slot: "button-content"
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "fas fa-ellipsis-v secondary-color"
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("b-dropdown-item", [_vm._v("First Action")]),
+                        _vm._v(" "),
+                        _c("b-dropdown-item", [_vm._v("Second Action")]),
+                        _vm._v(" "),
+                        _c("b-dropdown-item", [_vm._v("Third Action")]),
+                        _vm._v(" "),
+                        _c("b-dropdown-divider"),
+                        _vm._v(" "),
+                        _c("b-dropdown-item", [
+                          _vm._v("Something else here...")
+                        ])
+                      ],
+                      2
+                    )
                   ],
-                  2
+                  1
                 )
               ]
             }

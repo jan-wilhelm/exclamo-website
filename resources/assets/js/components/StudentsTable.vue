@@ -36,20 +36,22 @@
 			bordered
 			@filtered="onFiltered"
 		>
-		    <template v-for='field in formatted' :slot='field' slot-scope='row'>
-				<span class="text-left w-100 d-inline-block" v-html='formatter(row.value)'></span>
+		    <template slot='mentoring' slot-scope='row'>
+				<span class="text-center w-100 d-inline-block" v-html='formatters["mentoring"](row.value)'></span>
 		    </template>
 			<template slot="actions" slot-scope="row">
-				<b-dropdown id="ddown1" variant="link" no-caret class="actions-button">
-					<template slot="button-content">
-						<i class="fas fa-ellipsis-v secondary-color"></i>
-					</template>
-				    <b-dropdown-item>First Action</b-dropdown-item>
-				    <b-dropdown-item>Second Action</b-dropdown-item>
-				    <b-dropdown-item>Third Action</b-dropdown-item>
-				    <b-dropdown-divider></b-dropdown-divider>
-				    <b-dropdown-item>Something else here...</b-dropdown-item>
-				  </b-dropdown>
+				<div class="text-center">
+					<b-dropdown id="ddown1" variant="link" no-caret class="actions-button">
+						<template slot="button-content" class="text-center">
+							<i class="fas fa-ellipsis-v secondary-color"></i>
+						</template>
+					    <b-dropdown-item>First Action</b-dropdown-item>
+					    <b-dropdown-item>Second Action</b-dropdown-item>
+					    <b-dropdown-item>Third Action</b-dropdown-item>
+					    <b-dropdown-divider></b-dropdown-divider>
+					    <b-dropdown-item>Something else here...</b-dropdown-item>
+					</b-dropdown>
+				</div>
 			</template>
 		</b-table>
 
@@ -102,10 +104,14 @@
 					},
 					{
 						key: 'actions',
-						label: Vue.prototype.lang('messages.actions'),
+						label: Vue.prototype.lang('messages.actions')
 					}
 				],
-				formatted: ['mentoring']
+				formatters: {
+					'mentoring': function(data) {
+				    	return '<i class="text-right fas ' + (data ? 'fa-check' : 'fa-times') + '"></i>'
+					}
+				}
 			}
 		},
 		computed: {
@@ -115,10 +121,7 @@
 				// Trigger pagination to update the number of buttons/pages due to filtering
 				this.totalRows = filteredItems.length
 				this.currentPage = 1
-			},
-		    formatter: function(data) {
-		    	return '<i class="text-right fas ' + (data ? 'fa-check' : 'fa-times') + '"></i>'
-		    }
+			}
 		}
 	}
 </script>
