@@ -52,10 +52,11 @@
 							<i class="fas fa-ellipsis-v secondary-color"></i>
 						</template>
 					    <b-dropdown-item @click="openEditModal(data)">Edit</b-dropdown-item>
-					    <b-dropdown-item>Second Action</b-dropdown-item>
-					    <b-dropdown-item>Third Action</b-dropdown-item>
 					    <b-dropdown-divider></b-dropdown-divider>
-					    <b-dropdown-item>Something else here...</b-dropdown-item>
+					    <b-dropdown-item @click="deleteStudent(data)">
+				    		<i class="color-secondary-1-0 mr-3 fas fa-trash-alt"></i>
+				    		<span>Delete</span>
+				    	</b-dropdown-item>
 					</b-dropdown>
 				</div>
 			</template>
@@ -71,6 +72,8 @@
 </template>
 
 <script>
+	import ExclamoApi from '../api';
+
 	export default {
 		props: {
 			students: Array
@@ -133,6 +136,20 @@
 				let student = data.item
 				this.$refs.editModal.student = student
 				this.$refs.editModal.showModal()
+			},
+			deleteStudent(data) {
+				let studentId = data.item.id
+				let studentsTable = this
+				ExclamoApi.User.delete(studentId)
+					.then(function(response) {
+						studentsTable.items = studentsTable.items.filter(function( student ) {
+						    return student.id !== studentId
+						});
+						console.log(response)
+					}).catch(function(error) {
+						console.log(error);
+	    				console.log(error.response)
+					})
 			}
 		}
 	}

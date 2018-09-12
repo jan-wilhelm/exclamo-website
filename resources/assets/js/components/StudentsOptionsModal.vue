@@ -35,6 +35,14 @@
 				</label>
 			</div>
 		</form>
+
+		<template slot="modal-footer">
+			<div class="form-inline button-div bordered white hover justify-content-center" @click="saveSettings">
+				<a href="#" class="mx-3">
+					{{ lang('messages.save') }}
+				</a>
+			</div>
+		</template>
 	</b-modal>
 </template>
 
@@ -47,7 +55,7 @@
 		data() {
 			return {
 				student: {
-					first_name: ''
+
 				}
 			}
 		},
@@ -57,6 +65,17 @@
 			},
 			showModal() {
 				this.$refs.modal.show()
+			},
+			saveSettings() {
+				let studentsModal = this
+				ExclamoApi.User.edit(this.student.id, this.student)
+					.then(function(response) {
+						console.log(response)
+						studentsModal.closeModal()
+					}).catch(function(error) {
+						console.log(error);
+	    				console.log(error.response)
+					})
 			}
 		},
 	};

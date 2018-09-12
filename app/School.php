@@ -19,6 +19,10 @@ class School extends Model
 		return $this->hasMany('App\User')->teacher();
 	}
 
+	public function studentsOrTeachers() {		
+		return $this->hasMany('App\User')->studentOrTeacher();
+	}
+
 	public function admins() {		
 		return $this->hasMany('App\User')->principle();
 	}
@@ -30,5 +34,4 @@ class School extends Model
 	public function locations() {
 		return $this->hasMany('App\Location');
 	}
-
 }

@@ -55,7 +55,6 @@ class ReportedCase {
 }
 
 class Message {
-
 	static create(body, caseId) {
 		return axios({
 			method: 'post',
@@ -69,8 +68,28 @@ class Message {
 	}
 }
 
+class User {
+	static edit(userId, options) {
+		return axios({
+			method: 'put',
+			url: baseUrl + "/users/" + userId,
+			data: options,
+			withCredentials: true
+		})
+	}
+
+	static delete(userId) {
+		return axios({
+			method: 'delete',
+			url: baseUrl + "/users/" + userId,
+			withCredentials: true
+		})
+	}
+}
+
 export default {
 	getCaseIdFromUrl,
 	ReportedCase,
-	Message
+	Message,
+	User
 };
