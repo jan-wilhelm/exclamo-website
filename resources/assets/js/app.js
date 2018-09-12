@@ -57,6 +57,7 @@ Vue.component('case-options-modal', require('./components/CaseOptionsModal.vue')
 Vue.component('mentor-select-field', require('./components/MentorSelectField.vue'));
 Vue.component('report-case-form', require('./components/ReportCaseForm.vue'));
 Vue.component('students-table', require('./components/StudentsTable.vue'));
+Vue.component('students-options-modal', require('./components/StudentsOptionsModal.vue'));
 
 const app = new Vue({
     el: '#app',

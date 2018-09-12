@@ -37188,6 +37188,7 @@ Vue.component('case-options-modal', __webpack_require__(280));
 Vue.component('mentor-select-field', __webpack_require__(287));
 Vue.component('report-case-form', __webpack_require__(292));
 Vue.component('students-table', __webpack_require__(297));
+Vue.component('students-options-modal', __webpack_require__(311));
 
 var app = new Vue({
 	el: '#app',
@@ -63633,23 +63634,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
@@ -63657,14 +63641,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 	data: function data() {
 		return {
-			editing: [],
 			items: this.students,
 			currentPage: 1,
 			perPage: 15,
 			totalRows: this.students.length,
 			pageOptions: [15, 50, 200],
 			filter: null,
-			editableFields: ['first_name', 'last_name', 'id'],
 			fields: [{
 				key: 'id',
 				label: Vue.prototype.lang('messages.id'),
@@ -63698,42 +63680,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 
 	computed: {},
-	created: function created() {
-		var _this = this;
-
-		this.fields.forEach(function (field) {
-			_this.editing[field.key] = [];
-		});
-	},
-
 	methods: {
 		onFiltered: function onFiltered(filteredItems) {
 			// Trigger pagination to update the number of buttons/pages due to filtering
 			this.totalRows = filteredItems.length;
 			this.currentPage = 1;
-		},
-
-
-		// This is a hacky way to rerender the data. TODO: Find a better, documented way
-		// instead of firing the property watchers by changing the value and then changing it back
-		refreshFilter: function refreshFilter() {
-			var tempFilter = this.filter;
-			this.filter = "";
-
-			if (tempFilter == null) {
-				this.filter = null;
-			} else {
-				this.filter = tempFilter;
-			}
-		},
-		edit: function edit(data) {
-			var index = this.items.indexOf(data.item);
-			this.editing[data.field.key].push(index);
-			this.refreshFilter();
-		},
-		saveEdit: function saveEdit(data) {
-			this.editing[data.field.key].pop(data.item);
-			this.refreshFilter();
 		}
 	}
 });
@@ -63847,104 +63798,6 @@ var render = function() {
         },
         on: { filtered: _vm.onFiltered },
         scopedSlots: _vm._u([
-          _vm._l(_vm.editableFields, function(editable) {
-            return {
-              key: editable,
-              fn: function(data) {
-                return [
-                  _c("div", [
-                    _vm.editing[data.field.key].indexOf(
-                      _vm.items.indexOf(data.item)
-                    ) == -1
-                      ? _c(
-                          "div",
-                          {
-                            staticClass:
-                              "d-flex w-100 flex-row justify-content-between"
-                          },
-                          [
-                            _c("span", [_vm._v(_vm._s(data.value))]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                on: {
-                                  click: function($event) {
-                                    _vm.edit(data)
-                                  }
-                                }
-                              },
-                              [
-                                _c("i", {
-                                  staticClass:
-                                    "opacity-hover pointer fas fa-pencil-alt"
-                                })
-                              ]
-                            )
-                          ]
-                        )
-                      : _c(
-                          "div",
-                          {
-                            staticClass:
-                              "d-flex w-100 flex-row justify-content-between"
-                          },
-                          [
-                            _c("input", {
-                              staticClass: "form-control",
-                              attrs: { type: "text" },
-                              domProps: { value: data.value }
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "d-flex flex-row vdivide align-items-center"
-                              },
-                              [
-                                _c(
-                                  "span",
-                                  {
-                                    on: {
-                                      click: function($event) {
-                                        _vm.saveEdit(data)
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass:
-                                        "pointer color-primary-0 mx-2 fas fa-lg fa-check-circle"
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "span",
-                                  {
-                                    on: {
-                                      click: function($event) {
-                                        _vm.saveEdit(data)
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass:
-                                        "pointer color-secondary-1-0 fas fa-lg fa-times"
-                                    })
-                                  ]
-                                )
-                              ]
-                            )
-                          ]
-                        )
-                  ])
-                ]
-              }
-            }
-          }),
           {
             key: "mentoring",
             fn: function(row) {
@@ -64059,6 +63912,649 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(312)
+  __webpack_require__(314)
+}
+var normalizeComponent = __webpack_require__(37)
+/* script */
+var __vue_script__ = __webpack_require__(316)
+/* template */
+var __vue_template__ = __webpack_require__(317)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-9fed9e44"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\StudentsOptionsModal.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-9fed9e44", Component.options)
+  } else {
+    hotAPI.reload("data-v-9fed9e44", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 312 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(313);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(25)("533d0482", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9fed9e44\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./StudentsOptionsModal.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9fed9e44\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./StudentsOptionsModal.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 313 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(10)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\nform .form-group[data-v-9fed9e44] {\n\tmargin-bottom: 2rem;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 314 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(315);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(25)("4be12cd2", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9fed9e44\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./StudentsOptionsModal.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9fed9e44\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./StudentsOptionsModal.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 315 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(10)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n#case-options-modal form, #case-options-modal .modal-title {\n    padding-left: .25rem !important;\n}\n@media (min-width: 576px) {\n#case-options-modal form, #case-options-modal .modal-title {\n\t\tpadding-left: 3rem !important;\n}\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 316 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(195);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	props: {
+		initialData: Object,
+		categories: Array,
+		locations: Array,
+		mentors: Array,
+		maximumMentors: Number,
+		useLocations: {
+			type: Boolean,
+			required: false,
+			default: function _default() {
+				return false;
+			}
+		}
+	},
+	data: function data() {
+		return {
+			caseData: this.initialData
+		};
+	},
+
+	methods: {
+		saveSettings: function saveSettings() {
+			var _this = this;
+
+			var data = _.cloneDeep(this.caseData);
+			data.mentors = data.mentors.map(function (mentor) {
+				return mentor.id;
+			});
+
+			var reportedCase = new __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].ReportedCase();
+			reportedCase.edit(data, function () {
+				console.log("RELOAD");
+				_this.closeModal();
+				location.reload();
+			}, function (error) {
+				console.log(error.response);
+			});
+		},
+		closeModal: function closeModal() {
+			this.$refs.modal.hide('header-close');
+		}
+	}
+});
+
+/***/ }),
+/* 317 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "d-inline" },
+    [
+      _c(
+        "a",
+        {
+          directives: [
+            {
+              name: "b-modal",
+              rawName: "v-b-modal.case-options-modal",
+              modifiers: { "case-options-modal": true }
+            }
+          ],
+          staticClass: "float-md-right ml-3 cta cta-secondary",
+          attrs: {
+            href: "#",
+            "data-toggle": "modal",
+            "data-target": "#case-options-modal"
+          }
+        },
+        [_vm._v("\n\t\t" + _vm._s(_vm.lang("messages.options")) + "\n\t")]
+      ),
+      _vm._v(" "),
+      _c(
+        "b-modal",
+        {
+          ref: "modal",
+          attrs: { id: "case-options-modal", title: "Optionen" }
+        },
+        [
+          _c(
+            "form",
+            { staticClass: "px-sm-5 px-1", attrs: { autocomplete: "off" } },
+            [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "case-title" } }, [
+                  _vm._v(
+                    "\n\t\t\t\t\t" +
+                      _vm._s(_vm.lang("messages.casetitle")) +
+                      "\n\t\t\t\t"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model.trim",
+                      value: _vm.caseData.title,
+                      expression: "caseData.title",
+                      modifiers: { trim: true }
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", id: "case-title" },
+                  domProps: { value: _vm.caseData.title },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.caseData,
+                        "title",
+                        $event.target.value.trim()
+                      )
+                    },
+                    blur: function($event) {
+                      _vm.$forceUpdate()
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "category-select" } }, [
+                  _vm._v(
+                    "\n\t\t\t\t\t" +
+                      _vm._s(_vm.lang("messages.category")) +
+                      "\n\t\t\t\t"
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.caseData.category,
+                        expression: "caseData.category"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { id: "category-select" },
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.caseData,
+                          "category",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      }
+                    }
+                  },
+                  _vm._l(_vm.categories, function(category) {
+                    return _c("option", { domProps: { value: category } }, [
+                      _vm._v(_vm._s(category))
+                    ])
+                  })
+                )
+              ]),
+              _vm._v(" "),
+              _vm.useLocations
+                ? _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "location-select" } }, [
+                      _vm._v(
+                        "\n\t\t\t\t\t" +
+                          _vm._s(_vm.lang("messages.location")) +
+                          "\n\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.caseData.location_id,
+                            expression: "caseData.location_id"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { id: "location-select" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.caseData,
+                              "location_id",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          }
+                        }
+                      },
+                      _vm._l(_vm.locations, function(location) {
+                        return _c(
+                          "option",
+                          { domProps: { value: location.id } },
+                          [_vm._v(_vm._s(location.name))]
+                        )
+                      })
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c(
+                  "div",
+                  { attrs: { id: "case-modal-mentors-div" } },
+                  [
+                    _c("label", [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t" +
+                          _vm._s(_vm.lang("messages.mentors")) +
+                          "\n\t\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("mentor-select-field", {
+                      attrs: {
+                        mentors: _vm.mentors,
+                        selected: _vm.caseData.mentors,
+                        "max-selected": _vm.maximumMentors
+                      },
+                      model: {
+                        value: _vm.caseData.mentors,
+                        callback: function($$v) {
+                          _vm.$set(_vm.caseData, "mentors", $$v)
+                        },
+                        expression: "caseData.mentors"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group form-check" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.caseData.anonymous,
+                      expression: "caseData.anonymous"
+                    }
+                  ],
+                  staticClass: "form-check-input",
+                  attrs: { type: "checkbox", id: "case-modal-anonymous" },
+                  domProps: {
+                    checked: Array.isArray(_vm.caseData.anonymous)
+                      ? _vm._i(_vm.caseData.anonymous, null) > -1
+                      : _vm.caseData.anonymous
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.caseData.anonymous,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = null,
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(
+                              _vm.caseData,
+                              "anonymous",
+                              $$a.concat([$$v])
+                            )
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.caseData,
+                              "anonymous",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.caseData, "anonymous", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-check-label",
+                    attrs: { for: "case-modal-anonymous" }
+                  },
+                  [
+                    _vm._v(
+                      "\n\t\t\t\t\t\t" +
+                        _vm._s(_vm.lang("messages.case_is_anonymous")) +
+                        "\n\t\t\t\t"
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group form-check" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.caseData.solved,
+                      expression: "caseData.solved"
+                    }
+                  ],
+                  staticClass: "form-check-input",
+                  attrs: { type: "checkbox", id: "case-modal-solved" },
+                  domProps: {
+                    checked: Array.isArray(_vm.caseData.solved)
+                      ? _vm._i(_vm.caseData.solved, null) > -1
+                      : _vm.caseData.solved
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.caseData.solved,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = null,
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.caseData, "solved", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.caseData,
+                              "solved",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.caseData, "solved", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-check-label",
+                    attrs: { for: "case-modal-solved" }
+                  },
+                  [
+                    _vm._v(
+                      "\n\t\t\t\t\t" +
+                        _vm._s(_vm.lang("messages.case_is_solved")) +
+                        "\n\t\t\t\t"
+                    )
+                  ]
+                )
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c("template", { slot: "modal-footer" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "form-inline button-div bordered white hover justify-content-center",
+                on: { click: _vm.saveSettings }
+              },
+              [
+                _c("a", { staticClass: "mx-3", attrs: { href: "#" } }, [
+                  _vm._v(
+                    "\n\t\t\t\t\t" +
+                      _vm._s(_vm.lang("messages.save")) +
+                      "\n\t\t\t\t"
+                  )
+                ])
+              ]
+            )
+          ])
+        ],
+        2
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-9fed9e44", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
