@@ -27,6 +27,8 @@
 			</div>
 		</div>
 
+		<students-options-modal ref="editModal" />
+
 		<!-- Main table element -->
 		<b-table show-empty
 			stacked="md"
@@ -43,13 +45,13 @@
 		    <template slot='mentoring' slot-scope='row'>
 				<span class="text-center w-100 d-inline-block" v-html='formatters["mentoring"](row.value)'></span>
 		    </template>
-			<template slot="actions" slot-scope="row">
+			<template slot="actions" slot-scope="data">
 				<div class="text-center">
 					<b-dropdown id="ddown1" variant="link" no-caret class="actions-button">
 						<template slot="button-content" class="text-center">
 							<i class="fas fa-ellipsis-v secondary-color"></i>
 						</template>
-					    <b-dropdown-item>First Action</b-dropdown-item>
+					    <b-dropdown-item @click="openEditModal(data)">Edit</b-dropdown-item>
 					    <b-dropdown-item>Second Action</b-dropdown-item>
 					    <b-dropdown-item>Third Action</b-dropdown-item>
 					    <b-dropdown-divider></b-dropdown-divider>
@@ -126,6 +128,11 @@
 				// Trigger pagination to update the number of buttons/pages due to filtering
 				this.totalRows = filteredItems.length
 				this.currentPage = 1
+			},
+			openEditModal(data) {
+				let student = data.item
+				this.$refs.editModal.student = student
+				this.$refs.editModal.showModal()
 			}
 		}
 	}

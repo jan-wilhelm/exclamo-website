@@ -63,9 +63,10 @@ return [
 	'first_name' => 'Vorname',
 	'last_name' => 'Nachname',
 	'email' => 'E-Mail',
-	'mentoring' => 'verfügbar',
+	'mentoring' => 'Als Mentor verfügbar',
 	'clear' => 'Leeren',
 	'type_to_search' => 'Suchen',
 	'per_page' => 'Einträge pro Seite',
-	'actions'=> 'Aktionen'
+	'actions'=> 'Aktionen',
+	'edit_student_data'=> 'Schüler :first_name :last_name bearbeiten'
 ];

@@ -119,10 +119,6 @@
 	form .form-group {
 		margin-bottom: 2rem;
 	}
-</style>
-<style>
-	
-
 	#case-options-modal form, #case-options-modal .modal-title {
 	    padding-left: .25rem !important;
 	}

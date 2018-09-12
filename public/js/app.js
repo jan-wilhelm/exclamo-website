@@ -62032,7 +62032,6 @@ var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(281)
-  __webpack_require__(283)
 }
 var normalizeComponent = __webpack_require__(37)
 /* script */
@@ -62111,52 +62110,14 @@ exports = module.exports = __webpack_require__(10)(false);
 
 
 // module
-exports.push([module.i, "\nform .form-group[data-v-5db98414] {\n\tmargin-bottom: 2rem;\n}\n", ""]);
+exports.push([module.i, "\nform .form-group[data-v-5db98414] {\n\tmargin-bottom: 2rem;\n}\n#case-options-modal form[data-v-5db98414], #case-options-modal .modal-title[data-v-5db98414] {\n    padding-left: .25rem !important;\n}\n@media (min-width: 576px) {\n#case-options-modal form[data-v-5db98414], #case-options-modal .modal-title[data-v-5db98414] {\n\t\tpadding-left: 3rem !important;\n}\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 283 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(284);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(25)("2b572b0f", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5db98414\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./CaseOptionsModal.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5db98414\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./CaseOptionsModal.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 284 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(10)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n#case-options-modal form, #case-options-modal .modal-title {\n    padding-left: .25rem !important;\n}\n@media (min-width: 576px) {\n#case-options-modal form, #case-options-modal .modal-title {\n\t\tpadding-left: 3rem !important;\n}\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 283 */,
+/* 284 */,
 /* 285 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -63634,6 +63595,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
@@ -63685,6 +63648,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			// Trigger pagination to update the number of buttons/pages due to filtering
 			this.totalRows = filteredItems.length;
 			this.currentPage = 1;
+		},
+		openEditModal: function openEditModal(data) {
+			var student = data.item;
+			this.$refs.editModal.student = student;
+			this.$refs.editModal.showModal();
 		}
 	}
 });
@@ -63783,6 +63751,8 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
+      _c("students-options-modal", { ref: "editModal" }),
+      _vm._v(" "),
       _c("b-table", {
         ref: "students-table",
         attrs: {
@@ -63813,7 +63783,7 @@ var render = function() {
           },
           {
             key: "actions",
-            fn: function(row) {
+            fn: function(data) {
               return [
                 _c(
                   "div",
@@ -63839,7 +63809,17 @@ var render = function() {
                           ]
                         ),
                         _vm._v(" "),
-                        _c("b-dropdown-item", [_vm._v("First Action")]),
+                        _c(
+                          "b-dropdown-item",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openEditModal(data)
+                              }
+                            }
+                          },
+                          [_vm._v("Edit")]
+                        ),
                         _vm._v(" "),
                         _c("b-dropdown-item", [_vm._v("Second Action")]),
                         _vm._v(" "),
@@ -63925,22 +63905,17 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(312)
-  __webpack_require__(314)
-}
 var normalizeComponent = __webpack_require__(37)
 /* script */
 var __vue_script__ = __webpack_require__(316)
 /* template */
-var __vue_template__ = __webpack_require__(317)
+var __vue_template__ = __webpack_require__(318)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
-var __vue_scopeId__ = "data-v-9fed9e44"
+var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -63973,86 +63948,10 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 312 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(313);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(25)("533d0482", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9fed9e44\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./StudentsOptionsModal.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9fed9e44\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./StudentsOptionsModal.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 313 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(10)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\nform .form-group[data-v-9fed9e44] {\n\tmargin-bottom: 2rem;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 314 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(315);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(25)("4be12cd2", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9fed9e44\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./StudentsOptionsModal.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9fed9e44\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./StudentsOptionsModal.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 315 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(10)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n#case-options-modal form, #case-options-modal .modal-title {\n    padding-left: .25rem !important;\n}\n@media (min-width: 576px) {\n#case-options-modal form, #case-options-modal .modal-title {\n\t\tpadding-left: 3rem !important;\n}\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */,
 /* 316 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -64099,86 +63998,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	props: {
-		initialData: Object,
-		categories: Array,
-		locations: Array,
-		mentors: Array,
-		maximumMentors: Number,
-		useLocations: {
-			type: Boolean,
-			required: false,
-			default: function _default() {
-				return false;
-			}
-		}
-	},
+	props: {},
 	data: function data() {
 		return {
-			caseData: this.initialData
+			student: {
+				first_name: ''
+			}
 		};
 	},
 
 	methods: {
-		saveSettings: function saveSettings() {
-			var _this = this;
-
-			var data = _.cloneDeep(this.caseData);
-			data.mentors = data.mentors.map(function (mentor) {
-				return mentor.id;
-			});
-
-			var reportedCase = new __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].ReportedCase();
-			reportedCase.edit(data, function () {
-				console.log("RELOAD");
-				_this.closeModal();
-				location.reload();
-			}, function (error) {
-				console.log(error.response);
-			});
-		},
 		closeModal: function closeModal() {
 			this.$refs.modal.hide('header-close');
+		},
+		showModal: function showModal() {
+			this.$refs.modal.show();
 		}
 	}
 });
 
 /***/ }),
-/* 317 */
+/* 317 */,
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -64186,364 +64031,191 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
-    { staticClass: "d-inline" },
+    "b-modal",
+    {
+      ref: "modal",
+      attrs: {
+        id: "students-options-modal",
+        title: _vm.lang("messages.edit_student_data", {
+          first_name: _vm.student.first_name,
+          last_name: _vm.student.last_name
+        })
+      }
+    },
     [
-      _c(
-        "a",
-        {
-          directives: [
-            {
-              name: "b-modal",
-              rawName: "v-b-modal.case-options-modal",
-              modifiers: { "case-options-modal": true }
-            }
-          ],
-          staticClass: "float-md-right ml-3 cta cta-secondary",
-          attrs: {
-            href: "#",
-            "data-toggle": "modal",
-            "data-target": "#case-options-modal"
-          }
-        },
-        [_vm._v("\n\t\t" + _vm._s(_vm.lang("messages.options")) + "\n\t")]
-      ),
-      _vm._v(" "),
-      _c(
-        "b-modal",
-        {
-          ref: "modal",
-          attrs: { id: "case-options-modal", title: "Optionen" }
-        },
-        [
-          _c(
-            "form",
-            { staticClass: "px-sm-5 px-1", attrs: { autocomplete: "off" } },
-            [
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "case-title" } }, [
-                  _vm._v(
-                    "\n\t\t\t\t\t" +
-                      _vm._s(_vm.lang("messages.casetitle")) +
-                      "\n\t\t\t\t"
+      _c("form", { attrs: { autocomplete: "off" } }, [
+        _c("div", { staticClass: "form-row mb-3" }, [
+          _c("div", { staticClass: "col-lg mb-3" }, [
+            _c("label", { attrs: { for: "student-firstname" } }, [
+              _vm._v(
+                "\n\t\t\t\t\t" +
+                  _vm._s(_vm.lang("messages.first_name")) +
+                  "\n\t\t\t\t"
+              )
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.trim",
+                  value: _vm.student.first_name,
+                  expression: "student.first_name",
+                  modifiers: { trim: true }
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", id: "student-firstname" },
+              domProps: { value: _vm.student.first_name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.student,
+                    "first_name",
+                    $event.target.value.trim()
                   )
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model.trim",
-                      value: _vm.caseData.title,
-                      expression: "caseData.title",
-                      modifiers: { trim: true }
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { type: "text", id: "case-title" },
-                  domProps: { value: _vm.caseData.title },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.caseData,
-                        "title",
-                        $event.target.value.trim()
-                      )
-                    },
-                    blur: function($event) {
-                      _vm.$forceUpdate()
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "category-select" } }, [
-                  _vm._v(
-                    "\n\t\t\t\t\t" +
-                      _vm._s(_vm.lang("messages.category")) +
-                      "\n\t\t\t\t"
-                  )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.caseData.category,
-                        expression: "caseData.category"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { id: "category-select" },
-                    on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.$set(
-                          _vm.caseData,
-                          "category",
-                          $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        )
-                      }
-                    }
-                  },
-                  _vm._l(_vm.categories, function(category) {
-                    return _c("option", { domProps: { value: category } }, [
-                      _vm._v(_vm._s(category))
-                    ])
-                  })
-                )
-              ]),
-              _vm._v(" "),
-              _vm.useLocations
-                ? _c("div", { staticClass: "form-group" }, [
-                    _c("label", { attrs: { for: "location-select" } }, [
-                      _vm._v(
-                        "\n\t\t\t\t\t" +
-                          _vm._s(_vm.lang("messages.location")) +
-                          "\n\t\t\t\t"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.caseData.location_id,
-                            expression: "caseData.location_id"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: { id: "location-select" },
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.$set(
-                              _vm.caseData,
-                              "location_id",
-                              $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            )
-                          }
-                        }
-                      },
-                      _vm._l(_vm.locations, function(location) {
-                        return _c(
-                          "option",
-                          { domProps: { value: location.id } },
-                          [_vm._v(_vm._s(location.name))]
-                        )
-                      })
-                    )
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c(
-                  "div",
-                  { attrs: { id: "case-modal-mentors-div" } },
-                  [
-                    _c("label", [
-                      _vm._v(
-                        "\n\t\t\t\t\t\t" +
-                          _vm._s(_vm.lang("messages.mentors")) +
-                          "\n\t\t\t\t\t"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("mentor-select-field", {
-                      attrs: {
-                        mentors: _vm.mentors,
-                        selected: _vm.caseData.mentors,
-                        "max-selected": _vm.maximumMentors
-                      },
-                      model: {
-                        value: _vm.caseData.mentors,
-                        callback: function($$v) {
-                          _vm.$set(_vm.caseData, "mentors", $$v)
-                        },
-                        expression: "caseData.mentors"
-                      }
-                    })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group form-check" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.caseData.anonymous,
-                      expression: "caseData.anonymous"
-                    }
-                  ],
-                  staticClass: "form-check-input",
-                  attrs: { type: "checkbox", id: "case-modal-anonymous" },
-                  domProps: {
-                    checked: Array.isArray(_vm.caseData.anonymous)
-                      ? _vm._i(_vm.caseData.anonymous, null) > -1
-                      : _vm.caseData.anonymous
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.caseData.anonymous,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = null,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 &&
-                            _vm.$set(
-                              _vm.caseData,
-                              "anonymous",
-                              $$a.concat([$$v])
-                            )
-                        } else {
-                          $$i > -1 &&
-                            _vm.$set(
-                              _vm.caseData,
-                              "anonymous",
-                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                            )
-                        }
-                      } else {
-                        _vm.$set(_vm.caseData, "anonymous", $$c)
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "label",
-                  {
-                    staticClass: "form-check-label",
-                    attrs: { for: "case-modal-anonymous" }
-                  },
-                  [
-                    _vm._v(
-                      "\n\t\t\t\t\t\t" +
-                        _vm._s(_vm.lang("messages.case_is_anonymous")) +
-                        "\n\t\t\t\t"
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group form-check" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.caseData.solved,
-                      expression: "caseData.solved"
-                    }
-                  ],
-                  staticClass: "form-check-input",
-                  attrs: { type: "checkbox", id: "case-modal-solved" },
-                  domProps: {
-                    checked: Array.isArray(_vm.caseData.solved)
-                      ? _vm._i(_vm.caseData.solved, null) > -1
-                      : _vm.caseData.solved
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.caseData.solved,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = null,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 &&
-                            _vm.$set(_vm.caseData, "solved", $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            _vm.$set(
-                              _vm.caseData,
-                              "solved",
-                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                            )
-                        }
-                      } else {
-                        _vm.$set(_vm.caseData, "solved", $$c)
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "label",
-                  {
-                    staticClass: "form-check-label",
-                    attrs: { for: "case-modal-solved" }
-                  },
-                  [
-                    _vm._v(
-                      "\n\t\t\t\t\t" +
-                        _vm._s(_vm.lang("messages.case_is_solved")) +
-                        "\n\t\t\t\t"
-                    )
-                  ]
-                )
-              ])
-            ]
-          ),
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            })
+          ]),
           _vm._v(" "),
-          _c("template", { slot: "modal-footer" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "form-inline button-div bordered white hover justify-content-center",
-                on: { click: _vm.saveSettings }
-              },
-              [
-                _c("a", { staticClass: "mx-3", attrs: { href: "#" } }, [
-                  _vm._v(
-                    "\n\t\t\t\t\t" +
-                      _vm._s(_vm.lang("messages.save")) +
-                      "\n\t\t\t\t"
-                  )
-                ])
-              ]
-            )
+          _c("div", { staticClass: "col-md" }, [
+            _c("label", { attrs: { for: "student-lastname" } }, [
+              _vm._v(
+                "\n\t\t\t\t\t" +
+                  _vm._s(_vm.lang("messages.last_name")) +
+                  "\n\t\t\t\t"
+              )
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.trim",
+                  value: _vm.student.last_name,
+                  expression: "student.last_name",
+                  modifiers: { trim: true }
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", id: "student-lastname" },
+              domProps: { value: _vm.student.last_name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.student, "last_name", $event.target.value.trim())
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            })
           ])
-        ],
-        2
-      )
-    ],
-    1
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "student-email" } }, [
+            _vm._v(
+              "\n\t\t\t\t" + _vm._s(_vm.lang("messages.email")) + "\n\t\t\t"
+            )
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model.trim",
+                value: _vm.student.email,
+                expression: "student.email",
+                modifiers: { trim: true }
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text", id: "student-email" },
+            domProps: { value: _vm.student.email },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.student, "email", $event.target.value.trim())
+              },
+              blur: function($event) {
+                _vm.$forceUpdate()
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group form-check" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.student.mentoring,
+                expression: "student.mentoring"
+              }
+            ],
+            staticClass: "form-check-input",
+            attrs: { type: "checkbox", id: "student-mentoring" },
+            domProps: {
+              checked: Array.isArray(_vm.student.mentoring)
+                ? _vm._i(_vm.student.mentoring, null) > -1
+                : _vm.student.mentoring
+            },
+            on: {
+              change: function($event) {
+                var $$a = _vm.student.mentoring,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 &&
+                      _vm.$set(_vm.student, "mentoring", $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      _vm.$set(
+                        _vm.student,
+                        "mentoring",
+                        $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                      )
+                  }
+                } else {
+                  _vm.$set(_vm.student, "mentoring", $$c)
+                }
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "form-check-label",
+              attrs: { for: "student-mentoring" }
+            },
+            [
+              _vm._v(
+                "\n\t\t\t\t" +
+                  _vm._s(_vm.lang("messages.mentoring")) +
+                  "\n\t\t\t"
+              )
+            ]
+          )
+        ])
+      ])
+    ]
   )
 }
 var staticRenderFns = []
