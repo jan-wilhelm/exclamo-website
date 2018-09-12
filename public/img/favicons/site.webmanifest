@@ -1,6 +1,6 @@
 {
-    "name": "Exclamo",
-    "short_name": "Exclamo",
+    "name": "exclamo",
+    "short_name": "exclamo",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#009489",
+    "background_color": "#009489",
     "display": "standalone"
 }
