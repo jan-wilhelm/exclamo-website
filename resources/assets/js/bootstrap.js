@@ -27,12 +27,6 @@ window.axios.defaults.headers.common = {
     'Accept':'application/json'
 };
 
-let jwtToken = localStorage.getItem('jwtToken');
-
-if (jwtToken) {
-	axios.defaults.headers.common['Authorization'] = 'Bearer ' + jwtToken;
-}
-
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just
