@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Crypt;
 class SendApiTokenMiddleware
 {
     /**
-     * Send the api_token cookie to all the incoming HTTP requests so that
+     * Send the token cookie to all the incoming HTTP requests so that
      * it can be used in AJAX API requests
      *
      * @param  \Illuminate\Http\Request  $request

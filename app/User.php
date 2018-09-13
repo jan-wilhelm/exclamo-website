@@ -6,13 +6,11 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
-use AustinHeap\Database\Encryption\Traits\HasEncryptedAttributes;
 
 class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
     use HasRoles;
-    use HasEncryptedAttributes;
 
     /**
      * The attributes that are mass assignable.
@@ -36,12 +34,7 @@ class User extends Authenticatable implements JWTSubject
      */
     protected $hidden = [
         'password',
-        'remember_token',
-        'api_token'
-    ];
-
-    protected $encrypted = [
-        "api_token"
+        'remember_token'
     ];
 
     /**
