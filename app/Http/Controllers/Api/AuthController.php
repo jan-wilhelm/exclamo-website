@@ -27,6 +27,9 @@ class AuthController extends Controller
     {
         $credentials = request(['email', 'password']);
 
+        \JWTAuth::factory()->validator()->setRequiredClaims(['iss', 'iat', 'nbf', 'jti']);
+        \JWTAuth::factory()->setTTL(null);
+        
         if (! $token = auth('api')->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
