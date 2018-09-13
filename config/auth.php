@@ -42,7 +42,7 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token-and-cookie',
+            'driver' => 'jwt',
             'provider' => 'users',
         ],
     ],

@@ -37263,10 +37263,16 @@ window.Vue.use(window.BootstrapVue);
 window.axios = __webpack_require__(219);
 
 window.axios.defaults.headers.common = {
-    'X-Requested-With': 'XMLHttpRequest',
-    'Content-Type': 'application/json',
-    'Accept': 'application/json'
+  'X-Requested-With': 'XMLHttpRequest',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
 };
+
+var jwtToken = localStorage.getItem('jwtToken');
+
+if (jwtToken) {
+  axios.defaults.headers.common['Authorization'] = 'Bearer ' + jwtToken;
+}
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
@@ -37277,9 +37283,9 @@ window.axios.defaults.headers.common = {
 var token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
-    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
 
@@ -37287,8 +37293,8 @@ if (token) {
 window.io = __webpack_require__(239);
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
-    broadcaster: 'socket.io',
-    host: window.location.hostname + ':6001'
+  broadcaster: 'socket.io',
+  host: window.location.hostname + ':6001'
 });
 
 /***/ }),

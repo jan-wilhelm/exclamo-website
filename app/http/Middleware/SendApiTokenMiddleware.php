@@ -21,10 +21,10 @@ class SendApiTokenMiddleware
     public function handle($request, Closure $next)
     {
         if (Auth::check()) {
-            $token = Crypt::encryptString(Auth::user()->getOriginal('api_token'));
+            $token = \JWTAuth::fromUser(Auth::user());
             $cookie = Cookie::make(
-                'api_token',        // name
-                $token,             // value
+                'token',            // name
+                $token,    // value
                 0,                  // expire
                 "/",                // path
                 "",                 // domain
