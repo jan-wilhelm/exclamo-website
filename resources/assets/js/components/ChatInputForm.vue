@@ -1,9 +1,9 @@
 <template>
 	<form @submit.prevent="onSubmit" class="form-inline message-form" autocomplete="off">
-		<textarea type="text" ref="message" class="form-control col-sm chat-input" name="message" autocomplete="off">
+		<textarea type="text" ref="message" class="form-control col chat-input" name="message" autocomplete="off">
 		</textarea>
 		<input type="text" class="d-none">
-		<div class="col-sm-auto chat-send">
+		<div class="col-auto chat-send">
 			<button type="submit" class="chat-send-button cta cta-primary text-white m-0 p-0">
 				<i class="fas fa-paper-plane"></i>
 			</button>

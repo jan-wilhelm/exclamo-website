@@ -62024,7 +62024,7 @@ var render = function() {
     [
       _c("textarea", {
         ref: "message",
-        staticClass: "form-control col-sm chat-input",
+        staticClass: "form-control col chat-input",
         attrs: { type: "text", name: "message", autocomplete: "off" }
       }),
       _vm._v(" "),
@@ -62039,7 +62039,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-auto chat-send" }, [
+    return _c("div", { staticClass: "col-auto chat-send" }, [
       _c(
         "button",
         {
