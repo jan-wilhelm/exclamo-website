@@ -83,18 +83,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $this->authorize('delete', $user);
-        $user->messages()->delete();
-        $user->logins()->delete();
-        $user->reportedCases->each(function ($reportedCase) {
-            $reportedCase->messages()->delete();
-            $reportedCase->mentors()->detach();
-        });
-        $user->mentorCases->each(function ($reportedCase) {
-            $reportedCase->messages()->delete();
-            $reportedCase->mentors()->detach();
-        });
-        $user->reportedCases()->delete();
-        $user->mentorCases()->delete();
         $user->delete();
+        return response()->json(['result'=> "Success"]); 
     }
 }
