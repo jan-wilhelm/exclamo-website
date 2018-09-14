@@ -15,11 +15,9 @@
 		@endbigstatistic
 	@endexclamosection
 	@exclamoflexsection
-		<div class="row">
-			<h4 class="col">
-				@lang('messages.students')
-			</h4>
-		</div>
+		<h3>
+			@lang('messages.students')
+		</h3>
 		<students-table
 			:students='@json($studentsCollection)'
 		/>

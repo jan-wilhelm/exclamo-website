@@ -9,6 +9,7 @@ require('./bootstrap');
 
 import Multiselect from 'vue-multiselect';
 import Datepicker from 'vuejs-datepicker';
+import VueApexCharts from 'vue-apexcharts'
 
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
@@ -49,6 +50,7 @@ Vue.prototype.lang = (string, props = {}) => {
 	return translation
 }
 
+Vue.use(VueApexCharts);
 Vue.component('multiselect', Multiselect);
 Vue.component('chat-message', require('./components/ChatMessage.vue'));
 Vue.component('chat-messages-container', require('./components/ChatMessagesContainer.vue'));
