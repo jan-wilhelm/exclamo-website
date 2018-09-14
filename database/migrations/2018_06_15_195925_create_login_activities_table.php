@@ -17,7 +17,7 @@ class CreateLoginActivitiesTable extends Migration
             $table->increments('id');
 
             $table->unsignedInteger('user_id')->index()->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             
             $table->string('user_agent');
             $table->string('ip_address', 45);

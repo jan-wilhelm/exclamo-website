@@ -27,8 +27,8 @@ class CreateUsersTable extends Migration
             
             $table->unsignedInteger('school_id')->nullable();
             $table->index('school_id');
-            $table->foreign('school_id')->references('id')->on('schools');
-
+            $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
+            
             $table->boolean('mentoring')->default(false);
 
             $table->string('language')->default(config('app.locale'));

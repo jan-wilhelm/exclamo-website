@@ -17,7 +17,7 @@ class CreateLocationsTable extends Migration
             $table->increments('id');
 
             $table->unsignedInteger('school_id');
-            $table->foreign('school_id')->references('id')->on('schools');
+            $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
 
             $table->string('title');
 

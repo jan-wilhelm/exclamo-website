@@ -17,10 +17,10 @@ class CreateMessagesTable extends Migration
             $table->increments('id');
 
             $table->unsignedInteger('user_id')->index();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->unsignedInteger('reported_case_id')->index();
-            $table->foreign('reported_case_id')->references('id')->on('reported_cases');
+            $table->foreign('reported_case_id')->references('id')->on('reported_cases')->onDelete('cascade');
 
             $table->text('body');
 

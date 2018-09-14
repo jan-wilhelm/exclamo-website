@@ -19,10 +19,10 @@ class CreateReportedCasesTable extends Migration
             $table->string('title', 300);
 
             $table->unsignedInteger('student_id')->index();
-            $table->foreign('student_id')->references('id')->on('users');
+            $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->unsignedInteger('location_id')->nullable();
-            $table->foreign('location_id')->references('id')->on('locations');
+            $table->foreign('location_id')->references('id')->on('locations')->onDelete('set null');
 
             $table->boolean('solved')->default(false);
 
