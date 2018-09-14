@@ -63711,8 +63711,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "b-container",
-    { staticClass: "text-left", attrs: { fluid: "" } },
+    "div",
+    { staticClass: "text-left" },
     [
       _c("div", { staticClass: "d-flex" }, [
         _c("div", { staticClass: "my-1 d-flex mr-auto" }, [

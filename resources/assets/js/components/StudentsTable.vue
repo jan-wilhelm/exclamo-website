@@ -1,5 +1,5 @@
 <template>
-	<b-container fluid class="text-left">
+	<div class="text-left">
 	<!-- User Interface controls -->
 		<div class="d-flex">
 			<div class="my-1 d-flex mr-auto">
@@ -68,7 +68,7 @@
 			</b-col>
 		</b-row>
 
-	</b-container>
+	</div>
 </template>
 
 <script>
