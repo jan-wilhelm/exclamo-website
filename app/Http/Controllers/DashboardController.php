@@ -49,9 +49,6 @@ class DashboardController extends Controller
 
     public function principleDashboardView(Request $request)
     {
-    	$students = $this->userService->getUsersForTable(auth()->user()->school);
-    	$studentsCollection = FullDataUserResource::collection($students);
-
-    	return view("schulleiter.dashboard", compact('studentsCollection'));
+        return view("schulleiter.dashboard");
     }
 }

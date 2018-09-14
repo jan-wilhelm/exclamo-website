@@ -4,19 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
+use App\Services\UserService;
+
+use App\Http\Resources\FullDataUserResource;
+
 use App\User;
 use App\School;
 
 class UserController extends Controller
 {
+
+    protected $userService;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-    	$this->middleware(['auth', 'role:schulleiter']);
+    public function __construct(UserService $userService) {
+        $this->middleware(['auth', 'role:schulleiter']);
+        $this->userService = $userService;
     }
 
     /**
@@ -26,33 +34,19 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        // Set the number of elements shown per page to a minimum of 1 and a default of 10
-        $elementsPerPage = max(1, $request->query('entries', 10));
-        $firstName = $request->query('search-vorname', '');
-        $lastName = $request->query('search-nachname', '');
-
-        // Pass the data to the view
-        \Session::flash('usersPerPage', $elementsPerPage);
-        \Session::flash('firstName', $firstName);
-        \Session::flash('lastName', $lastName);
-
         $school = Auth::user()->school;
 
         // Get the counts of the user types of the school
         $schoolCounts = $school->withCount(['students', 'teachers', 'admins'])->find($school)->first();
 
-        // Get the students and paginate them
-        $users = $this->getFilteredStudents($school, $firstName, $lastName)->withCount('reportedCases')->simplePaginate($elementsPerPage);
-
-        // The old input query to pass on to the view
-        $oldInput = \Illuminate\Support\Facades\Input::except('page');
+        $students = $this->userService->getUsersForTable(auth()->user()->school);
+        $studentsCollection = FullDataUserResource::collection($students);
 
         return view("schulleiter.users")->with([
             "numberOfUsers" => $schoolCounts->students_count,
             "numberOfTeachers" => $schoolCounts->teachers_count,
             "numberOfPrinciples" => $schoolCounts->admins_count,
-            "users" => $users,
-            "oldInput" => $oldInput
+            "studentsCollection" => $studentsCollection
         ]);
     }
 

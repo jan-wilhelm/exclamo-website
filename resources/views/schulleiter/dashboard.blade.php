@@ -10,9 +10,6 @@
 			<p>
 				@lang('messages.welcome_messages', ['name'=> auth()->user()->full_name])
 			</p>
-			<students-table
-				:students='@json($studentsCollection)'
-			/>
 		</div>
 	@endexclamoflexsection
 @endsection
