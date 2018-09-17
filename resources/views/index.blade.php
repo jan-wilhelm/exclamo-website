@@ -69,6 +69,11 @@
 			<div class="container mt-auto mb-5" id="page-links">
 				<ul class="nav w-100 justify-content-center nav-fill flex-column flex-md-row">
 					<li class="nav-item">
+						<a class="nav-link" href="#vision">
+							@lang('landing_page.vision')
+						</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="#what">
 							@lang('landing_page.what')
 						</a>
@@ -92,7 +97,7 @@
 			</div>
 		</section>
 
-		<section class="landing-section">
+		<section class="landing-section" id="vision">
 			<div class="wrapper">
 				<div class="container-fluid">
 					<div class="row">
