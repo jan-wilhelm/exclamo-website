@@ -19,14 +19,7 @@
 					<ul class="list-unstyled text-small">
 						<li><a class="text-muted" href="{{ route('impressum') }}">Impressum</a></li>
 						<li><a class="text-muted" href="{{ route('privacy_policy') }}">Privacy Policy</a></li>
-					</ul>
-				</div>
-				<div class="col-6 col-md">
-					<h5>About</h5>
-					<ul class="list-unstyled text-small">
-						<li><a class="text-muted" href="#team">Team</a></li>
-						<li><a class="text-muted" href="#">Privacy</a></li>
-						<li><a class="text-muted" href="#">Terms</a></li>
+						<li><a class="text-muted" href="{{ route('faq') }}">Frequently asked questions</a></li>
 					</ul>
 				</div>
 			</div>

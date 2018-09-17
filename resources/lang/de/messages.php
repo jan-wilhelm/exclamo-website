@@ -68,5 +68,6 @@ return [
 	'type_to_search' => 'Suchen',
 	'per_page' => 'Einträge pro Seite',
 	'actions'=> 'Aktionen',
-	'edit_student_data'=> 'Schüler :first_name :last_name bearbeiten'
+	'edit_student_data'=> 'Schüler :first_name :last_name bearbeiten',
+	'faq'=> 'Häufig gestellte Fragen'
 ];

@@ -66,5 +66,6 @@ return [
 	'clear' => 'Clear',
 	'type_to_search' => 'Type to Search',
 	'per_page' => 'Per Page',
-	'actions'=> 'Actions'
+	'actions'=> 'Actions',
+	'faq'=> 'Frequently Asked Questions'
 ];

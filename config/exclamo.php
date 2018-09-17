@@ -21,5 +21,11 @@ return [
         'other',
     ],
 
-    'number_of_mentors' => 1
+    'number_of_mentors' => 1,
+
+    'faq_questions' => [
+        "exclamo_as_a_student",
+        "exclamo_as_a_school",
+        "differences_from_usual_methods",
+    ]
 ];

@@ -89,7 +89,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">
+						<a class="nav-link" href="{{ route('faq') }}">
 							@lang('landing_page.faq')
 						</a>
 					</li>
