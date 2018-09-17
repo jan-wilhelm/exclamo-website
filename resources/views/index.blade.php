@@ -92,6 +92,25 @@
 			</div>
 		</section>
 
+		<section class="landing-section">
+			<div class="wrapper">
+				<div class="container-fluid">
+					<div class="row">
+						<h2 class="col-sm-3 promo-question">
+							@lang('landing_page.vision')
+						</h2>
+						<div class="col-sm-9 promo-text" data-aos="fade-up">
+							@if (app()->getLocale() == "de")
+								@include('landing_page.de.vision')
+							@else
+								@include('landing_page.en.vision')
+							@endif
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<section class="landing-section" id="what">
 			<div class="wrapper">
 				<div class="container-fluid">
@@ -108,8 +127,12 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</section>
 
-				<div class="container-fluid pt-0">
+		<section class="landing-section">
+			<div class="wrapper">
+				<div class="container-fluid">
 					<div class="row advantage">
 						<div class="col-sm-9 text-div" data-aos="fade-up">
 							<h2>

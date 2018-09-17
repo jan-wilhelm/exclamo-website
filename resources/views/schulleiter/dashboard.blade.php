@@ -11,5 +11,6 @@
 				@lang('messages.welcome_messages', ['name'=> auth()->user()->full_name])
 			</p>
 		</div>
+		<user-login-statistics />
 	@endexclamoflexsection
 @endsection

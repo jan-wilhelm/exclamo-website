@@ -11,5 +11,6 @@ return [
 	"faq"=> "FAQ",
 	"anonymous_heading"=> "Low inhibition threshold due to anonymity",
 	"easy_access"=> "Easy access through app and web app",
-	"experts_heading"=> "Support from bullying experts"
+	"experts_heading"=> "Support from bullying experts",
+	"vision"=> "Our Vision"
 ];

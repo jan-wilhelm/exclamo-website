@@ -11,5 +11,6 @@ return [
 	"faq"=> "FAQ",
 	"anonymous_heading"=> "Niedrige Hemmschwelle durch Anonymität",
 	"easy_access"=> "Einfacher Zugang durch App und Webapp",
-	"experts_heading"=> "Unterstützung von Mobbing-Experten"
+	"experts_heading"=> "Unterstützung von Mobbing-Experten",
+	"vision"=> "Unsere Vision"
 ];
