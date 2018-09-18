@@ -34,4 +34,8 @@ class School extends Model
 	public function locations() {
 		return $this->hasMany('App\Location');
 	}
+
+	public function logins() {
+		return $this->hasManyThrough('App\LoginActivity', 'App\User');
+	}
 }

@@ -9,7 +9,8 @@ require('./bootstrap');
 
 import Multiselect from 'vue-multiselect';
 import Datepicker from 'vuejs-datepicker';
-import VueApexCharts from 'vue-apexcharts'
+import VueApexCharts from 'vue-apexcharts';
+Vue.use(VueApexCharts);
 
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
@@ -50,7 +51,6 @@ Vue.prototype.lang = (string, props = {}) => {
 	return translation
 }
 
-Vue.use(VueApexCharts);
 Vue.component('multiselect', Multiselect);
 Vue.component('chat-message', require('./components/ChatMessage.vue'));
 Vue.component('chat-messages-container', require('./components/ChatMessagesContainer.vue'));
@@ -60,6 +60,7 @@ Vue.component('mentor-select-field', require('./components/MentorSelectField.vue
 Vue.component('report-case-form', require('./components/ReportCaseForm.vue'));
 Vue.component('students-table', require('./components/StudentsTable.vue'));
 Vue.component('students-options-modal', require('./components/StudentsOptionsModal.vue'));
+Vue.component('user-login-statistics', require('./components/UserLoginStatistics.vue'));
 
 const app = new Vue({
     el: '#app',
