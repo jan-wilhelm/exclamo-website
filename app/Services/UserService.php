@@ -33,9 +33,11 @@ class UserService
 		return $school->users()->studentOrTeacher()->get();
 	}
 
-	public function getLoginStatisticsFromSchool(School $school)
+	public function getLoginStatisticsFromSchool(School $school, $days = 30)
 	{
 		$data = $school->logins()->select('login_activities.created_at')
+			->latest()
+			->whereDate('login_activities.created_at', '>', Carbon::now()->subDays($days))
 		    ->get()
 		    ->groupBy(function($date) {
 		        return Carbon::parse($date->created_at)->startOfDay()->timestamp; // grouping by months
@@ -49,7 +51,7 @@ class UserService
 			$dataToReturn[] = [$date * 1000, $dataCount];
 		}
 
-		return $dataToReturn;
+		return collect($dataToReturn);
 	}
 
 }
