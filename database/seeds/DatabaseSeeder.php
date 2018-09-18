@@ -53,6 +53,10 @@ class DatabaseSeeder extends Seeder
                 $school->students()->save($user);
 
                 $roleCounts[$role]++;
+
+                $logins = factory(App\LoginActivity::class, 50)->create([
+                    'user_id'=> $user->id
+                ]);
             }
 
             echo "Creating locations... \n";
