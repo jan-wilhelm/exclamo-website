@@ -10,7 +10,7 @@
 					<h5>Features</h5>
 					<ul class="list-unstyled text-small">
 						<li><a class="text-muted" href="{{ route('login') }}">Login</a></li>
-						<li><a class="text-muted" href="{{ route('incidents') }}">Cases</a></li>
+						<li><a class="text-muted" href="{{ route('dashboard') }}">Dashboard</a></li>
 						<li><a class="text-muted" href="{{ route('incidents.report') }}">Report Incident</a></li>
 					</ul>
 				</div>
