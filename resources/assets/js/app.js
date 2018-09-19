@@ -9,8 +9,6 @@ require('./bootstrap');
 
 import Multiselect from 'vue-multiselect';
 import Datepicker from 'vuejs-datepicker';
-import VueApexCharts from 'vue-apexcharts';
-Vue.use(VueApexCharts);
 
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);

@@ -48,7 +48,7 @@ class UserService
 		$dataToReturn = [];
 
 		foreach ($data as $date => $dataCount) {
-			$dataToReturn[] = [$date * 1000, $dataCount];
+			$dataToReturn[] = ["x" => $date * 1000, "y" => $dataCount];
 		}
 
 		return collect($dataToReturn);

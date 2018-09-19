@@ -50,7 +50,7 @@ class DashboardController extends Controller
     public function principleDashboardView(Request $request)
     {
         $loginStatistics = $this->userService
-            ->getLoginStatisticsFromSchool(auth()->user()->school);
+            ->getLoginStatisticsFromSchool(auth()->user()->school, 14);
         return view("schulleiter.dashboard", compact("loginStatistics"));
     }
 }

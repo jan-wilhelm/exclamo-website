@@ -1,19 +1,12 @@
 <template>
 	<div>
-		<apexcharts
-			:height="chartHeight"
-			:class="('statistic-' + variant)"
-			type="area"
-			:options="chartOptions"
-			:series="series"
-			id="vuechart-example"
-		>
-		</apexcharts>
+		<h5 class="pl-2 pr-2 pt-2 font-weight-bold pb-0 mb-0">Logins an Ihrer Schule</h5>
+		<canvas ref="canvas" :width="chartWidth" :height="chartHeight"></canvas>
 	</div>
 </template>
 
 <script>
-	import VueApexCharts from 'vue-apexcharts'
+	import { Line } from 'vue-chartjs'
 
 	export default {
 		props: {
@@ -25,45 +18,64 @@
 				default() {
 					return []
 				}
+			},
+			chartWidth: {
+				default: 600
+			},
+			chartHeight: {
+				default: 400
 			}
 		},
-		components: {
-			apexcharts: VueApexCharts,
-		},
-		data () {
+		data() {
 			return {
-	        	chartOptions: {
-					chart: {
-						toolbar: {
-							show: false
+				dataForChart: {
+					datasets: [
+						{
+							label: false,
+							backgroundColor: 'rgba(0,0,0,0)',
+				            data: this.chartData,
+							lineTension: 0.2,
+							borderColor: 'rgb(0,149,138)',
+							borderWidth: 4,
+							pointStyle: false
+						}
+					]
+				},
+				options: {
+					elements: {
+						point: {
+							hitRadius: 15,
+							hoverRadius: 3,
+							radius: 0
 						}
 					},
-					xaxis: {
-						type: 'datetime'
+					legend: {
+						display: false
 					},
-		            dataLabels: {
-		                enabled: false
-		            },
-		            stroke: {
-		                curve: 'straight'
-		            },
-		            grid: {
-		            	show: false
+		            scales: {
+		                yAxes: [{
+			            	display: false,
+		                    ticks: {
+		                        beginAtZero: true
+		                    }
+		                }],
+			            xAxes: [{
+			            	display: false,
+			                type: 'time',
+			                time: {
+			                    displayFormats: {day:'MMM D'
+			                    }
+			                },
+			                distribution: 'linear'
+			            }]
 		            }
-				},
-				series: [{
-					name: Vue.prototype.lang('messages.user_logins'),
-					data: this.chartData
-				}]
+				}
 			}
 		},
-		computed: {
-			chartHeight() {
-				if (this.variant == "small") {
-					return 200
-				}
-				return 'auto'
-			}
+		extends: Line,
+		mounted () {
+			// Overwriting base render method with actual data.
+			this.renderChart(this.dataForChart, this.options)
 		},
 		methods: {
 		}
@@ -71,8 +83,4 @@
 </script>
 
 <style>
-
-	.statistic-small > div {
-		height: 200px !important;
-	}
 </style>
