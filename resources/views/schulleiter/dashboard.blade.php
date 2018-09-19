@@ -2,15 +2,25 @@
 
 @section('content')
 	<div class="row d-flex">
-		<div class="col-6 py-0">
-			<user-login-statistics
-				:chart-data='@json($loginStatistics)'
-				variant="small"
-				class="shadow">
-			</user-login-statistics>
+		<div class="col-4 py-0">
+			<div class="shadow stats-container">
+				<user-login-statistics
+					chart-width='auto'
+					chart-height='auto'
+					:chart-data='@json($loginStatistics)'
+					variant="small">
+				</user-login-statistics>
+			</div>
 		</div>
-		<div class="col-6 py-0">
-			<user-login-statistics variant="small" class="shadow" />
+		<div class="col-4 py-0">
+			<div class="shadow stats-container">
+				<user-login-statistics
+					chart-width='auto'
+					chart-height='auto'
+					:chart-data='@json($loginStatistics)'
+					variant="small">
+				</user-login-statistics>
+			</div>
 		</div>
 	</div>
 

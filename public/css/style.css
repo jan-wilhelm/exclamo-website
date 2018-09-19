@@ -672,6 +672,15 @@ hr {
   box-shadow: 0 15px 35px 0 rgba(42, 51, 83, 0.12), 0 5px 15px rgba(0, 0, 0, 0.06);
 }
 
+.stats-container {
+  position: relative;
+}
+
+.stats-header {
+  position: absolute;
+  padding: 20px;
+}
+
 .tag {
   height: 30px;
   border-radius: 15px;
