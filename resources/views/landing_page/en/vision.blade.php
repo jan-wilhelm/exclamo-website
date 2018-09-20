@@ -1,6 +1,6 @@
 <p>
-	Wir haben die Vision von Schulen, in denen jeder Schüler jeden anderen Schüler gleichwertig und respektvoll behandelt. Deshalb kämpfen wir gegen Rassismus, Sexismus, Antisemitismus und alle anderen Formen der Diskriminierung.
+	We have the vision of schools in which students treat each other equally and with respect. That is why we fight against racism, sexism, anti-semitism and all other forms of discrimination.
 </p>
 <p>
-	Wir hoffen, dass wir auch Sie für den Kampf gegen Mobbing begeistern können!
+	We hope that we can inspire you to fight bullying, too!
 </p>
