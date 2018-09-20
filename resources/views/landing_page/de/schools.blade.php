@@ -7,6 +7,3 @@
 <p>
 	exclamo basiert auf einem jährlichen Lizenzierungsmodell, die Kosten werden nach Schulgröße berechnet.
 </p>
-<p>
-	Haben wir Ihr Interesse geweckt? Füllen Sie doch gerne das unverbindliche Formular unten aus und wir werden uns bei Ihnen melden! Machen Sie ihre Schule zum Vorreiter gegen Mobbing!
-</p>
