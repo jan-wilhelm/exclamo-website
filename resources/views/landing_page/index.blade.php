@@ -13,7 +13,7 @@
 	<div id="app-content" class="h-100" v-cloak>
 
 		<section class="landing-section full d-flex flex-column white" id="first-section">
-			<b-navbar toggleable="xl" class="white fixed-top">
+			<b-navbar toggleable="xl" class="white fixed-lg-top">
 				<b-container fluid class="px-xl-5 px-lg-2 px-md-1 px-0 py-3">
 					<b-navbar-brand href="{{ route('home') }}" class="mr-md-5">
 						<img src="{{ asset('img/logo/logo_text_rounded.png') }}" height="45px">

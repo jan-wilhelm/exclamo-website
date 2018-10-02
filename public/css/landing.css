@@ -10907,6 +10907,11 @@ section > div a {
 }
 
 @media (min-width: 992px) {
+  .fixed-lg-top {
+    z-index: 99;
+    position: fixed;
+  }
+
   .timeline-wrapper {
     overflow-x: auto;
     white-space: nowrap;
