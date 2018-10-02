@@ -157,6 +157,7 @@ return [
          */
         RenatoMarinho\LaravelPageSpeed\ServiceProvider::class,
         AustinHeap\Database\Encryption\EncryptionServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -214,8 +215,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'DatabaseEncryption' => AustinHeap\Database\EncryptionFacade::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];
