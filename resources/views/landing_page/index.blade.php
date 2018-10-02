@@ -12,7 +12,6 @@
 	<div class="w-100 h-100" id="app" >
 	<div id="app-content" class="h-100" v-cloak>
 
-
 		<section class="landing-section full d-flex flex-column white" id="first-section">
 			<b-navbar toggleable="lg" class="white fixed-top">
 				<b-container fluid class="px-5 py-3">
@@ -196,7 +195,19 @@
 						<i class="color-secondary-1-0 fas fa-chart-line fa-sm mr-1"></i>
 						Timeline - Die nächsten Schritte
 					</h1>
-					<div class="row justify-content-center">
+					<div class="row timeline-wrapper">
+						<div class="col-lg-4 col-12 timeline-div timeline-past">
+							<h4 class="timeline-quarter">Q1</h4>
+							<h4 class="timeline-year">2018</h4>
+							<div class="timeline-content">
+								<ul>
+									<li>Dies ist ein Stichpunkt</li>
+									<li>Dies ist ein Stichpunkt</li>
+									<li>Dies ist ein Stichpunkt</li>
+									<li>Dies ist ein Stichpunkt</li>
+								</ul>
+							</div>
+						</div>
 						<div class="col-lg-4 col-12 timeline-div timeline-past">
 							<h4 class="timeline-quarter">Q1</h4>
 							<h4 class="timeline-year">2018</h4>
@@ -252,41 +263,112 @@
 		</section>
 
 		<section class="landing-section" id="team">
-			<div class="wrapper">
-				<div class="container">
-					<div class="row">
-						<h2 class="col-sm-3 promo-question">
-							@lang('landing_page.who')
-						</h2>
-						<div class="col-sm-9 promo-text" data-aos="fade-up">
-							@if (app()->getLocale() == "de")
-								@include('landing_page.de.who')
-							@else
-								@include('landing_page.en.who')
-							@endif
-						</div>
+			<div class="container margin">
+				<h1 class="text-center promo-question">
+					<i class="color-secondary-1-0 far fa-lightbulb fa-sm mr-1"></i>
+					Das Team
+				</h1>
+				<div class="row justify-content-center">
+					<div class="col-sm-12 col-md-10 col-lg-8 promo-text" data-aos="fade-up">
+						@if (app()->getLocale() == "de")
+							@include('landing_page.de.who')
+						@else
+							@include('landing_page.en.who')
+						@endif
 					</div>
-					<div class="row align-content-center mt-5" data-aos="fade-up">
-						<div class="col-md-3 col-12 text-center avatar">
-							<img src="{{ asset('img/kai.jpg') }}" class="rounded-circle">
-							<div class="avatar-name">Kai Lanz</div>
-						</div>
-						<div class="col-md-3 col-12 text-center avatar">
-							<img src="{{ asset('img/margaretha.jpg') }}" class="rounded-circle">
-							<div class="avatar-name">Margaretha Raffauf</div>
-						</div>
-						<div class="col-md-3 col-12 text-center avatar">
-							<img src="{{ asset('img/julius.jpg') }}" class="rounded-circle">
-							<div class="avatar-name">Julius de Gruyter</div>
-						</div>
-						<div class="col-md-3 col-12 text-center avatar">
-							<img src="{{ asset('img/jan.jpg') }}" class="rounded-circle">
-							<div class="avatar-name">Jan Wilhelm</div>
-						</div>
+				</div>
+
+				<div class="row align-content-center mt-5" data-aos="fade-up">
+					<div class="col-md-3 col-12 text-center avatar">
+						<img src="{{ asset('img/kai.jpg') }}" class="rounded-circle">
+						<div class="avatar-name">Kai Lanz</div>
+					</div>
+					<div class="col-md-3 col-12 text-center avatar">
+						<img src="{{ asset('img/margaretha.jpg') }}" class="rounded-circle">
+						<div class="avatar-name">Margaretha Raffauf</div>
+					</div>
+					<div class="col-md-3 col-12 text-center avatar">
+						<img src="{{ asset('img/julius.jpg') }}" class="rounded-circle">
+						<div class="avatar-name">Julius de Gruyter</div>
+					</div>
+					<div class="col-md-3 col-12 text-center avatar">
+						<img src="{{ asset('img/jan.jpg') }}" class="rounded-circle">
+						<div class="avatar-name">Jan Wilhelm</div>
 					</div>
 				</div>
 			</div>
 		</section>
+
+		<hr>
+
+		<section class="landing-section" id="team">
+			<div class="container margin">
+				<h1 class="text-center promo-question">
+					<i class="color-secondary-1-0 far fa-lightbulb fa-sm mr-1"></i>
+					@lang('landing_page.for_schools')
+				</h1>
+				<div class="row justify-content-center">
+					<div class="col-sm-12 col-md-10 col-lg-8 promo-text" data-aos="fade-up">
+						@if (app()->getLocale() == "de")
+							@include('landing_page.de.schools')
+						@else
+							@include('landing_page.en.schools')
+						@endif
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<ul class="mt-5 col-md-8 col-12 list-unstyled font-weight-bold">
+						<li>
+							<i class="color-secondary-1-0 mr-3 far fa-lg fa-check-circle"></i>
+							Erstellen Sie einfach Accounts für Schüler und Lehrer
+						</li>
+						<li>
+							<i class="color-secondary-1-0 mr-3 far fa-lg fa-check-circle"></i>
+							Direkter Zugang zur Nummer-gegen-Kummer
+						</li>
+						<li>
+							<i class="color-secondary-1-0 mr-3 far fa-lg fa-check-circle"></i>
+							Übersichtliche Hilfsmaterialien für Lehrkräfte
+						</li>
+						<li>
+							<i class="color-secondary-1-0 mr-3 far fa-lg fa-check-circle"></i>
+							Jährliches Lizenzierungsmodell
+						</li>
+					</ul>
+					<h5 class="mt-4 col-sm-6 col-10 text-center color-secondary-1-0">
+						Bei Interesse schreiben Sie uns doch eine unverbindliche E-Mail!
+					</h5>
+				</div>
+			</div>
+		</section>
+
+		<hr>
+
+		<section class="landing-section" id="contact">
+			<div class="container margin">
+				<h1 class="text-center promo-question">
+					Kontakt
+				</h1>
+				<div class="row pt-md-5 justify-content-center text-center">
+					<a href="mailto:info@exclamo.org" target="_blank" class="col-md-4">
+						<i class="fas fa-envelope fa-5x"></i>
+						<p>Mail</p>
+					</a>
+					<a href="https://twitter.com/exclamo_org" target="_blank" class="col-md-4">
+						<i class="fab fa-twitter-square fa-5x"></i>
+						<p>Twitter</p>
+					</a>
+					<a href="https://www.instagram.com/exclamo_org/" target="_blank" class="col-md-4">
+						<i class="fab fa-instagram fa-5x"></i>
+						<p>Instagram</p>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<br class="my-5 py-5">
+
+{{-- 
 		<section class="landing-section" id="forschools">
 			<div class="wrapper">
 				<div class="container">
@@ -303,7 +385,7 @@
 						</div>
 					</div>
 					<hr class="my-5 bg-color-white">
-					{{-- <div class="row pt-md-5 justify-content-center">
+					<div class="row pt-md-5 justify-content-center">
 						<!--<h2 class="mb-4 col-12 text-center">Kontakt aufnehmen</h2>-->
 						<form class="col-sm-10 col-12 signup-form bg-color-white" data-aos="slide-up" data-aos-duration="800">
 							<div class="form-group row">
@@ -342,7 +424,7 @@
 							</fieldset>
 							<button type="submit" class="w-100 cta cta-large cta-primary">Jetzt Ihre Schüler schützen!</button>
 						</form>
-					</div> --}}
+					</div>
 					<div class="row pt-md-5 justify-content-center text-center">
 						<a href="mailto:info@exclamo.org" target="_blank" class="col-md-4">
 							<i class="fas fa-envelope fa-5x"></i>
@@ -359,7 +441,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> --}}
 		@include('layouts.footer')
 	</div>
 	</div>

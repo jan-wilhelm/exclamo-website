@@ -10888,14 +10888,38 @@ section > div a {
   border: 4px solid #54D400;
 }
 
-.timeline-past {
-  border-color: #54D400;
+.timeline-last {
+  -o-border-image: linear-gradient(to bottom, #54D400, #54D400 40%, #fff) 0 100%;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(#54D400), color-stop(40%, #54D400), to(#fff)) 0 100%;
+     border-image: linear-gradient(to bottom, #54D400, #54D400 40%, #fff) 0 100%;
 }
 
-.timeline-last {
-  -o-border-image: linear-gradient(to bottom, #54D400, #54D400 50%, #fff) 0 100%;
-     border-image: -webkit-gradient(linear, left top, left bottom, from(#54D400), color-stop(50%, #54D400), to(#fff)) 0 100%;
-     border-image: linear-gradient(to bottom, #54D400, #54D400 50%, #fff) 0 100%;
+@media (min-width: 992px) {
+  .timeline-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+
+  .timeline-div {
+    border-top: 4px solid #fff;
+    border-left: none;
+  }
+
+  .timeline-div:before {
+    left: 6px;
+  }
+
+  .timeline-last {
+    -o-border-image: none;
+       border-image: none;
+    border-color: #54D400;
+  }
+}
+
+.timeline-past {
+  border-color: #54D400;
 }
 
 .timeline-quarter {
@@ -10906,6 +10930,10 @@ section > div a {
 .timeline-year {
   margin-left: 5px;
   display: inline;
+}
+
+#contact a {
+  color: #005C55;
 }
 
 #page-links .nav-item:after {
