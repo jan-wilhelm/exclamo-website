@@ -196,12 +196,12 @@
 		<section class="landing-section margin" id="timeline">
 			<img src="img/timeline_border.svg" id="timeline-top" />
 			<div class="wrapper w-100">
-				<div class="container p-5">
+				<div class="container px-md-5">
 					<h1 class="text-center promo-question text-white">
 						<i class="color-secondary-1-0 fas fa-chart-line fa-sm mr-1"></i>
 						Timeline - Die nächsten Schritte
 					</h1>
-					<div class="row timeline-wrapper px-5 px-lg-0">
+					<div class="row timeline-wrapper px-sm-5 px-1 px-lg-0">
 						<div class="col-lg-4 col-12 timeline-div timeline-past">
 							<h4 class="timeline-quarter">Q1</h4>
 							<h4 class="timeline-year">2018</h4>
