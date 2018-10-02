@@ -60,7 +60,7 @@
 				
 				<li class="nav-item">
 				@guest
-					<div class="shadow-sm form-inline button-div  bg-color-primary-0 px-3 hover-white">
+					<div class="shadow-sm form-inline button-div bg-color-primary-0 px-3 hover-white">
 						<a href="{{ url('login') }}" class="text-white mx-auto">
 							@lang('messages.login')
 						</a>

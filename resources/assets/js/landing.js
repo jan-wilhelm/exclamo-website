@@ -5,7 +5,6 @@ require('vue-multiselect');
 window.Vue.use(window.BootstrapVue);
 window.AOS = require('aos');
 
-
 const app = new Vue({
     el: '#app',
     data () {

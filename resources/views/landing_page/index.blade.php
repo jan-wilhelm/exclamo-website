@@ -3,7 +3,6 @@
 @section('head')
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/all.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/landing.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/fonts.min.css') }}" />
     <link rel="stylesheet" href="css/aos.css" />
@@ -12,184 +11,249 @@
 @section("body")
 	<div class="w-100 h-100" id="app" >
 	<div id="app-content" class="h-100" v-cloak>
-		<b-navbar toggleable="lg" style="position: fixed; z-index: 1; top:0; width: 100%;">
-			<b-container fluid>
-				<b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-				<b-collapse is-nav id="nav_collapse">
-
-					<!-- Right aligned nav items -->
-					<b-navbar-nav class="ml-auto">
-						<b-nav-item-dropdown right>
-							<!-- Using button-content slot -->
-							<template slot="button-content">
-					        	<img 
-						        	@if ( app()->getLocale() == 'de')
-						        		src="{{ asset('img/germany_small.png') }}"
-						        	@else
-										src="{{ asset('img/uk_small.png') }}"
-						        	@endif
-					        	height="24px" width="40px">
-							</template>
-				        	<form action="{{ route('language') }}" method="post">
-				        		@csrf
-								@langoption(["locale"=>"de"])
-									Deutsch
-								@endlangoption
-					        	<div class="dropdown-divider"></div>
-								@langoption(["locale"=>"en"])
-									English
-								@endlangoption
-							</form>
-						</b-nav-item-dropdown>
-					</b-navbar-nav>
-				</b-collapse>
-			</b-container>
-		</b-navbar>
 
 
-		<section class="landing-section full d-flex flex-column">
+		<section class="landing-section full d-flex flex-column white" id="first-section">
+			<b-navbar toggleable="lg" class="white fixed-top">
+				<b-container fluid class="px-5 py-3">
+					<b-navbar-brand href="{{ route('home') }}" class="mr-md-5">
+						<img src="{{ asset('img/logo/logo_text_rounded.png') }}" height="45px">
+					</b-navbar-brand>
+					<b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-			<div class="brand my-auto text-center">
-				<div class="d-flex justify-content-center">
-					<img src="{{ asset('img/logo/logo_text_rounded_dark.png') }}" class="">
+					<b-collapse is-nav id="nav_collapse">
+
+						<b-navbar-nav class="mr-auto">
+							<li class="nav-item">
+								<a class="nav-link color-primary-0" href="#">Erster Link</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link color-primary-0" href="#">Erster Link</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link color-primary-0" href="#">Erster Link</a>
+							</li>
+						</b-navbar-nav>
+
+						<!-- Right aligned nav items -->
+						<b-navbar-nav class="ml-auto">
+							<b-nav-item-dropdown right>
+								<!-- Using button-content slot -->
+								<template slot="button-content">
+						        	<img 
+							        	@if ( app()->getLocale() == 'de')
+							        		src="{{ asset('img/germany_small.png') }}"
+							        	@else
+											src="{{ asset('img/uk_small.png') }}"
+							        	@endif
+						        	height="24px" width="40px">
+								</template>
+					        	<form action="{{ route('language') }}" method="post">
+					        		@csrf
+									@langoption(["locale"=>"de"])
+										Deutsch
+									@endlangoption
+						        	<div class="dropdown-divider"></div>
+									@langoption(["locale"=>"en"])
+										English
+									@endlangoption
+								</form>
+							</b-nav-item-dropdown>
+							
+							@guest
+							<li class="nav-item">
+								<a href="#" class="nav-link color-primary-0 mx-auto">
+									Anmelden
+								</a>
+							</li>
+							<li class="nav-item cta cta-primary">
+								<a href="#" class="text-white mx-auto">
+									exclamo nutzen!
+								</a>
+							</li>
+							@else
+							<li class="nav-item">
+								<a href="{{ route('dashboard') }}" class="nav-link color-primary-0 mx-auto">
+									Zum Dashboard
+								</a>
+							</li>
+							@endguest
+						</b-navbar-nav>
+					</b-collapse>
+				</b-container>
+			</b-navbar>
+			<div class="my-auto container-fluid row">
+				<div class="offset-md-2 offset-1 col-10 col-md-7 col-lg-6">
+					<h1 class=" display-4 my-5 py-1 color-primary-0 font-weight-bold ">
+						@lang('landing_page.slogan')
+					</h1>
+					<p class="color-primary-4">
+						Mit einem einzigartigen Ansatz helfen wir Schulen, Mobbing zu bekämpfen: Ihre Schüler wenden sich per exclamo an ausgewählte Lehrer und professionelle Mobbing-Experten und erhalten so schnelle und anonyme Hilfe!
+					</p>
+					<a class="cta cta-primary cta-large mb-3 d-lg-inline-block" href="#forschools">
+						@lang('landing_page.protect_your_students')
+					</a>
+					<a class="ml-lg-5 ml-sm-3 d-block d-lg-inline-block" href="#">
+						&#9658 Warum exclamo?
+					</a>
 				</div>
-				<h2 class="my-5 py-3 font-weight-bold">
-					@lang('landing_page.slogan')
-				</h2>
-				<a class="cta cta-primary cta-large mb-3" href="#forschools">
-					@lang('landing_page.protect_your_students')
-				</a>
-				<br>
-				<span>
-					@lang('landing_page.or') <a href="{{ route('login') }}"> @lang('landing_page.login_here') </a>
-				</span>
-				
-			</div>
-			<div class="py-5 my-5 p-lg-0 m-lg-0"></div>
-			<div class="container mt-auto mb-5" id="page-links">
-				<ul class="nav w-100 justify-content-center nav-fill flex-column flex-md-row">
-					<li class="nav-item">
-						<a class="nav-link" href="#vision">
-							@lang('landing_page.vision')
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#what">
-							@lang('landing_page.what')
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#team">
-							@lang('landing_page.who')
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#forschools">
-							@lang('landing_page.for_schools')
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ route('faq') }}">
-							@lang('landing_page.faq')
-						</a>
-					</li>
-				</ul>
 			</div>
 		</section>
 
 		<section class="landing-section" id="vision">
-			<div class="wrapper">
-				<div class="container-fluid">
-					<div class="row">
-						<h2 class="col-sm-3 promo-question">
-							@lang('landing_page.vision')
-						</h2>
-						<div class="col-sm-9 promo-text" data-aos="fade-up">
-							@if (app()->getLocale() == "de")
-								@include('landing_page.de.vision')
-							@else
-								@include('landing_page.en.vision')
-							@endif
-						</div>
+			<img src="img/landing_background_2.svg" />
+			<div class="container margin">
+				<h1 class="text-center promo-question">
+					<i class="color-secondary-1-0 far fa-lightbulb fa-sm mr-1"></i>
+					@lang('landing_page.vision')
+				</h1>
+				<div class="row justify-content-center">
+					<div class="col-sm-12 col-md-10 col-lg-8 promo-text" data-aos="fade-up">
+						@if (app()->getLocale() == "de")
+							@include('landing_page.de.vision')
+						@else
+							@include('landing_page.en.vision')
+						@endif
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="landing-section" id="what">
-			<div class="wrapper">
-				<div class="container-fluid">
-					<div class="row">
-						<h2 class="col-sm-3 promo-question">
-							@lang('landing_page.what')
-						</h2>
-						<div class="col-sm-9 promo-text" data-aos="fade-up">
-							@if (app()->getLocale() == "de")
-								@include('landing_page.de.what')
-							@else
-								@include('landing_page.en.what')
-							@endif
-						</div>
+		<section class="landing-section margin">
+			<div class="container">
+				<h1 class="text-center promo-question">
+					Warum Exclamo?
+				</h1>
+				<div class="row advantage">
+					<div class="col-sm-9 text-div" data-aos="fade-up">
+						<h1 class="heading">
+							@lang('landing_page.anonymous_heading')
+						</h1>
+						@if (app()->getLocale() == "de")
+							@include('landing_page.de.advantages.anonymous')
+						@else
+							@include('landing_page.en.advantages.anonymous')
+						@endif
+					</div>
+					<div class="col-sm-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
+						<img src="{{ asset('img/iPhoneMessages.png') }}" class="advantage-img align-middle">
+					</div>
+				</div>
+				<div class="row advantage text-div">
+					<div class="col-sm-9 text-div order-sm-1" data-aos="fade-up">
+						<h1 class="heading">
+							@lang('landing_page.easy_access')
+						</h1>
+						@if (app()->getLocale() == "de")
+							@include('landing_page.de.advantages.app')
+						@else
+							@include('landing_page.en.advantages.app')
+						@endif
+					</div>
+					<div class="col-sm-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
+						<img src="{{ asset('img/iPhoneCases.png') }}" class="advantage-img">
+					</div>
+				</div>
+				<div class="row advantage text-div">
+					<div class="col-sm-9 text-div" data-aos="fade-up">
+						<h1 class="heading">
+							@lang('landing_page.experts_heading')
+						</h1>
+						@if (app()->getLocale() == "de")
+							@include('landing_page.de.advantages.experts')
+						@else
+							@include('landing_page.en.advantages.experts')
+						@endif
+					</div>
+					<div class="col-sm-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
+						<i class="fas fa-users color-primary-1 fa-10x"></i>
+					</div>
+				</div>
+				<div class="row advantage text-div">
+					<div class="col-sm-9 text-div order-sm-1" data-aos="fade-up">
+						<h1 class="heading">
+							Hohe Datensicherheit
+						</h1>
+						<p>
+							Alle kritischen Daten sind mit einer AES-256 Verschlüsselung auf Top-Secret-Niveau gesichert! Wir wissen, dass Datenschutz und -sicherheit Faktoren sind, bei denen man Qualität nicht vernachlässigen darf - insbesondere bei privaten Nachrichten an Vertrauenspersonen.
+						</p>
+						<p>
+							Exclamo setzt sich zum Ziel, eine sichere Plattform als Grundlage zur Mobbinghilfe zu bieten. Dadurch gehört auch Datenschutz zu unserer obersten Priorität!
+						</p>
+					</div>
+					<div class="col-sm-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
+						<img src="{{ asset('img/lock.svg') }}" class="advantage-img">
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="landing-section">
-			<div class="wrapper">
-				<div class="container-fluid">
-					<div class="row advantage">
-						<div class="col-sm-9 text-div" data-aos="fade-up">
-							<h2>
-								@lang('landing_page.anonymous_heading')
-							</h2>
-							@if (app()->getLocale() == "de")
-								@include('landing_page.de.advantages.anonymous')
-							@else
-								@include('landing_page.en.advantages.anonymous')
-							@endif
+		<section class="landing-section margin" id="timeline">
+			<img src="img/timeline_border.svg" id="timeline-top" />
+			<div class="wrapper w-100">
+				<div class="container p-5">
+					<h1 class="text-center promo-question text-white">
+						<i class="color-secondary-1-0 fas fa-chart-line fa-sm mr-1"></i>
+						Timeline - Die nächsten Schritte
+					</h1>
+					<div class="row justify-content-center">
+						<div class="col-lg-4 col-12 timeline-div timeline-past">
+							<h4 class="timeline-quarter">Q1</h4>
+							<h4 class="timeline-year">2018</h4>
+							<div class="timeline-content">
+								<ul>
+									<li>Dies ist ein Stichpunkt</li>
+									<li>Dies ist ein Stichpunkt</li>
+									<li>Dies ist ein Stichpunkt</li>
+									<li>Dies ist ein Stichpunkt</li>
+								</ul>
+							</div>
 						</div>
-						<div class="col-sm-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
-							<img src="{{ asset('img/lock.png') }}" class="advantage-img align-middle">
+						<div class="col-lg-4 col-12 timeline-div timeline-last">
+							<h4 class="timeline-quarter">Q2</h4>
+							<h4 class="timeline-year">2018</h4>
+							<div class="timeline-content">
+								<ul>
+									<li>Dies ist ein Stichpunkt</li>
+									<li>Dies ist ein Stichpunkt</li>
+									<li>Dies ist ein Stichpunkt</li>
+									<li>Dies ist ein Stichpunkt</li>
+								</ul>
+							</div>
 						</div>
-					</div>
-					<div class="row advantage text-div">
-						<div class="col-sm-9 text-div order-sm-1" data-aos="fade-up">
-							<h2>
-								@lang('landing_page.easy_access')
-							</h2>
-							@if (app()->getLocale() == "de")
-								@include('landing_page.de.advantages.app')
-							@else
-								@include('landing_page.en.advantages.app')
-							@endif
+						<div class="col-lg-4 col-12 timeline-div">
+							<h4 class="timeline-quarter">Q3</h4>
+							<h4 class="timeline-year">2018</h4>
+							<div class="timeline-content">
+								<ul>
+									<li>Dies ist ein Stichpunkt</li>
+									<li>Dies ist ein Stichpunkt</li>
+									<li>Dies ist ein Stichpunkt</li>
+									<li>Dies ist ein Stichpunkt</li>
+								</ul>
+							</div>
 						</div>
-						<div class="col-sm-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
-							<img src="{{ asset('img/devices.png') }}" class="advantage-img-big">
-						</div>
-					</div>
-					<div class="row advantage text-div">
-						<div class="col-sm-9 text-div" data-aos="fade-up">
-							<h2>
-								@lang('landing_page.experts_heading')
-							</h2>
-							@if (app()->getLocale() == "de")
-								@include('landing_page.de.advantages.experts')
-							@else
-								@include('landing_page.en.advantages.experts')
-							@endif
-						</div>
-						<div class="col-sm-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
-							<img src="{{ asset('img/talking.png') }}" class="advantage-img">
+						<div class="col-lg-4 col-12 timeline-div">
+							<h4 class="timeline-quarter">Q4</h4>
+							<h4 class="timeline-year">2018</h4>
+							<div class="timeline-content">
+								<ul>
+									<li>Dies ist ein Stichpunkt</li>
+									<li>Dies ist ein Stichpunkt</li>
+									<li>Dies ist ein Stichpunkt</li>
+									<li>Dies ist ein Stichpunkt</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<img src="img/timeline_border.svg" id="timeline-bottom" />
 		</section>
 
 		<section class="landing-section" id="team">
 			<div class="wrapper">
-				<div class="container-fluid">
+				<div class="container">
 					<div class="row">
 						<h2 class="col-sm-3 promo-question">
 							@lang('landing_page.who')
@@ -225,7 +289,7 @@
 		</section>
 		<section class="landing-section" id="forschools">
 			<div class="wrapper">
-				<div class="container-fluid">
+				<div class="container">
 					<div class="row pb-sm-5">
 						<h2 class="col-md-auto promo-question">
 							@lang('landing_page.for_schools')
