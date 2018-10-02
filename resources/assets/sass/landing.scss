@@ -23,10 +23,19 @@ body, html {
     font-weight: 700;
 }
 
+#nav-links {
+    display: inline-block;
+    text-transform: uppercase;
+	white-space: nowrap;
+}
+
+#nav-links li {
+	display: inline-block;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	color: $color-primary-0;
     font-weight: 700;
-
 }
 
 section > div a {
@@ -36,17 +45,17 @@ section > div a {
 
 #first-section {
 	background: url('/img/landing_background_1.svg') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 #vision {
 	padding: 0;
 	margin: 0;
-	margin-top: -4px;
 	overflow: hidden;
+	position: relative;
 }
 
 #vision .container .row {
@@ -55,6 +64,8 @@ section > div a {
 }
 
 #vision>img {
+	position: absolute;
+	top: -2px;
 	width: calc(100% + 10px);
 	margin-left: -5px;
 }
@@ -128,12 +139,14 @@ $timeline-border-width: 4px;
 	}
 
 	.timeline-div {
+		padding-top: 10px;
 		border-top: $timeline-border-width solid $color-white;
 		border-left: none;
 	}
 
 	.timeline-div:before {
 		left: -($timeline-circle-size - $timeline-border-width) / 2 + 16;
+		top: -15px;
 	}
 
 	.timeline-last {
@@ -167,24 +180,6 @@ $timeline-border-width: 4px;
 
 #contact a {
 	color: $color-primary-4;
-}
-
-#page-links .nav-item:after {
-	content: '';
-	display: block;
-	width: 50%;
-	height: 1px;
-	background-color: $color-white;
-	margin: auto;
-	margin-top: 0.3rem;
-	opacity: 0;
-    -webkit-transition: opacity 0.3s, margin-top 0.3s; /* Safari */
-    transition: opacity 0.3s, margin-top 0.3s;
-}
-
-#page-links .nav-item:hover:after {
-	opacity: 1;
-	margin-top: 0;
 }
 
 .nav-item:not(:last-of-type) {

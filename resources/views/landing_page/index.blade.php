@@ -13,8 +13,8 @@
 	<div id="app-content" class="h-100" v-cloak>
 
 		<section class="landing-section full d-flex flex-column white" id="first-section">
-			<b-navbar toggleable="lg" class="white fixed-top">
-				<b-container fluid class="px-5 py-3">
+			<b-navbar toggleable="xl" class="white fixed-top">
+				<b-container fluid class="px-xl-5 px-lg-2 px-md-1 px-0 py-3">
 					<b-navbar-brand href="{{ route('home') }}" class="mr-md-5">
 						<img src="{{ asset('img/logo/logo_text_rounded.png') }}" height="45px">
 					</b-navbar-brand>
@@ -22,15 +22,21 @@
 
 					<b-collapse is-nav id="nav_collapse">
 
-						<b-navbar-nav class="mr-auto">
+						<b-navbar-nav class="mr-auto" id="nav-links">
 							<li class="nav-item">
-								<a class="nav-link color-primary-0" href="#">Erster Link</a>
+								<a class="nav-link color-primary-0" href="#vision">Unsere Vision</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link color-primary-0" href="#">Erster Link</a>
+								<a class="nav-link color-primary-0" href="#what">Was?</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link color-primary-0" href="#">Erster Link</a>
+								<a class="nav-link color-primary-0" href="#team">Wer?</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link color-primary-0" href="#forschools">Für Schulen</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link color-primary-0" href="{{ route('faq') }}">FAQ</a>
 							</li>
 						</b-navbar-nav>
 
@@ -81,7 +87,7 @@
 					</b-collapse>
 				</b-container>
 			</b-navbar>
-			<div class="my-auto container-fluid row">
+			<div class="my-auto container-fluid row pt-5">
 				<div class="offset-md-2 offset-1 col-10 col-md-7 col-lg-6">
 					<h1 class=" display-4 my-5 py-1 color-primary-0 font-weight-bold ">
 						@lang('landing_page.slogan')
@@ -118,7 +124,7 @@
 			</div>
 		</section>
 
-		<section class="landing-section margin">
+		<section class="landing-section margin" id="what">
 			<div class="container">
 				<h1 class="text-center promo-question">
 					Warum Exclamo?
@@ -195,7 +201,7 @@
 						<i class="color-secondary-1-0 fas fa-chart-line fa-sm mr-1"></i>
 						Timeline - Die nächsten Schritte
 					</h1>
-					<div class="row timeline-wrapper">
+					<div class="row timeline-wrapper px-5 px-lg-0">
 						<div class="col-lg-4 col-12 timeline-div timeline-past">
 							<h4 class="timeline-quarter">Q1</h4>
 							<h4 class="timeline-year">2018</h4>
@@ -284,16 +290,16 @@
 						<div class="avatar-name">Kai Lanz</div>
 					</div>
 					<div class="col-md-3 col-12 text-center avatar">
-						<img src="{{ asset('img/margaretha.jpg') }}" class="rounded-circle">
-						<div class="avatar-name">Margaretha Raffauf</div>
+						<img src="{{ asset('img/jan.jpg') }}" class="rounded-circle">
+						<div class="avatar-name">Jan Wilhelm</div>
 					</div>
 					<div class="col-md-3 col-12 text-center avatar">
 						<img src="{{ asset('img/julius.jpg') }}" class="rounded-circle">
 						<div class="avatar-name">Julius de Gruyter</div>
 					</div>
 					<div class="col-md-3 col-12 text-center avatar">
-						<img src="{{ asset('img/jan.jpg') }}" class="rounded-circle">
-						<div class="avatar-name">Jan Wilhelm</div>
+						<img src="{{ asset('img/margaretha.jpg') }}" class="rounded-circle">
+						<div class="avatar-name">Margaretha Raffauf</div>
 					</div>
 				</div>
 			</div>
