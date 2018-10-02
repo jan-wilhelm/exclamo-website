@@ -10910,6 +10910,8 @@ section > div a {
   .fixed-lg-top {
     z-index: 99;
     position: fixed;
+    right: 0;
+    left: 0;
   }
 
   .timeline-wrapper {
