@@ -44,11 +44,15 @@ section > div a {
 }
 
 #first-section {
-	background: url('/img/landing_background_1.svg') no-repeat center center;
+	background: url('/img/upper_background.svg') no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	border: none;
+	padding: 0;
+	margin: 0;
+	z-index: 1;
 }
 
 #vision {
@@ -56,6 +60,8 @@ section > div a {
 	margin: 0;
 	overflow: hidden;
 	position: relative;
+	border: none;
+	z-index: 9999;
 }
 
 #vision .container .row {
@@ -64,8 +70,9 @@ section > div a {
 }
 
 #vision>img {
+	border-top: 1px solid #11705D;
 	position: absolute;
-	top: -2px;
+	top: 0px;
 	width: calc(100% + 10px);
 	margin-left: -5px;
 }

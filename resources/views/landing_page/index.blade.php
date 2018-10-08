@@ -106,7 +106,7 @@
 		</section>
 
 		<section class="landing-section" id="vision">
-			<img src="img/landing_background_2.svg" />
+			<img src="img/lower_background.svg" />
 			<div class="container margin">
 				<h1 class="text-center promo-question">
 					<i class="color-secondary-1-0 far fa-lightbulb fa-sm mr-1"></i>
