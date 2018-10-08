@@ -67,12 +67,12 @@
 							
 							@guest
 							<li class="nav-item">
-								<a href="#" class="nav-link color-primary-0 mx-auto">
+								<a href="{{ route('login') }}" class="nav-link color-primary-0 mx-auto">
 									Anmelden
 								</a>
 							</li>
 							<li class="nav-item cta cta-primary">
-								<a href="#" class="text-white mx-auto">
+								<a href="#forschools" class="text-white mx-auto">
 									exclamo nutzen!
 								</a>
 							</li>
@@ -98,7 +98,7 @@
 					<a class="cta cta-primary cta-large mb-3 d-lg-inline-block" href="#forschools">
 						@lang('landing_page.protect_your_students')
 					</a>
-					<a class="ml-lg-5 ml-sm-3 d-block d-lg-inline-block" href="#">
+					<a class="ml-lg-5 ml-sm-3 d-block d-lg-inline-block" href="#what">
 						&#9658 Warum exclamo?
 					</a>
 				</div>
@@ -307,7 +307,7 @@
 
 		<hr>
 
-		<section class="landing-section" id="team">
+		<section class="landing-section" id="forschools">
 			<div class="container margin">
 				<h1 class="text-center promo-question">
 					<i class="color-secondary-1-0 far fa-lightbulb fa-sm mr-1"></i>
