@@ -145,7 +145,7 @@
 					</div>
 				</div>
 				<div class="row advantage text-div">
-					<div class="col-sm-9 text-div order-sm-1" data-aos="fade-up">
+					<div class="col-lg-9 text-div order-sm-1" data-aos="fade-up">
 						<h1 class="heading">
 							@lang('landing_page.easy_access')
 						</h1>
@@ -155,12 +155,12 @@
 							@include('landing_page.en.advantages.app')
 						@endif
 					</div>
-					<div class="col-sm-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
+					<div class="col-lg-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
 						<img src="{{ asset('img/iPhoneCases.png') }}" class="advantage-img">
 					</div>
 				</div>
 				<div class="row advantage text-div">
-					<div class="col-sm-9 text-div" data-aos="fade-up">
+					<div class="col-lg-9 text-div" data-aos="fade-up">
 						<h1 class="heading">
 							@lang('landing_page.experts_heading')
 						</h1>
@@ -170,12 +170,12 @@
 							@include('landing_page.en.advantages.experts')
 						@endif
 					</div>
-					<div class="col-sm-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
+					<div class="col-lg-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
 						<i class="fas fa-users color-primary-1 fa-10x"></i>
 					</div>
 				</div>
 				<div class="row advantage text-div">
-					<div class="col-sm-9 text-div order-sm-1" data-aos="fade-up">
+					<div class="col-lg-9 text-div order-sm-1" data-aos="fade-up">
 						<h1 class="heading">
 							Hohe Datensicherheit
 						</h1>
@@ -186,7 +186,7 @@
 							Exclamo setzt sich zum Ziel, eine sichere Plattform als Grundlage zur Mobbinghilfe zu bieten. Dadurch gehört auch Datenschutz zu unserer obersten Priorität!
 						</p>
 					</div>
-					<div class="col-sm-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
+					<div class="col-lg-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
 						<img src="{{ asset('img/lock.svg') }}" class="advantage-img">
 					</div>
 				</div>
