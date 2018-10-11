@@ -145,7 +145,7 @@
 					</div>
 				</div>
 				<div class="row advantage text-div">
-					<div class="col-lg-9 text-div order-sm-1" data-aos="fade-up">
+					<div class="col-lg-9 text-div" data-aos="fade-up">
 						<h1 class="heading">
 							@lang('landing_page.easy_access')
 						</h1>
@@ -175,7 +175,7 @@
 					</div>
 				</div>
 				<div class="row advantage text-div">
-					<div class="col-lg-9 text-div order-sm-1" data-aos="fade-up">
+					<div class="col-lg-9 text-div" data-aos="fade-up">
 						<h1 class="heading">
 							Hohe Datensicherheit
 						</h1>

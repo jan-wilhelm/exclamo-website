@@ -11049,7 +11049,9 @@ section > div a {
   .brand img {
     height: 80px;
   }
+}
 
+@media (min-width: 768px) {
   .advantage:nth-of-type(even) .img-div {
     text-align: left;
   }
@@ -11067,9 +11069,7 @@ section > div a {
     text-align: left;
     padding-right: 20px;
   }
-}
 
-@media (min-width: 768px) {
   .brand {
     padding-top: 150px;
   }
