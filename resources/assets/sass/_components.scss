@@ -2,21 +2,27 @@
 @import "~bootstrap/scss/functions"; 
 @import "~bootstrap/scss/variables";
 
-@mixin respond-to($breakpoint) { 
+@mixin min-width($breakpoint) { 
     @media (min-width: $breakpoint) {
       @content;
     }
 }
 
+@mixin max-width($breakpoint) { 
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+}
+
 .nounderline {
-  text-decoration: none !important
+	text-decoration: none !important;
 }
 
 .navbar-nav {
-	display: block !important;
 
-	@include respond-to(map-get($grid-breakpoints, lg)) {
-		 display: inline-block;
+	display: flex;
+	@include max-width(map-get($grid-breakpoints, lg)) {
+		 display: block;
 	}
 }
 
@@ -41,7 +47,7 @@
 	border-radius: 2rem;
 	float: left;
 
-	@include respond-to(map-get($grid-breakpoints, lg)) {
+	@include min-width(map-get($grid-breakpoints, lg)) {
 		 display: inline-block;
 	}
 }

@@ -87,20 +87,24 @@
 					</b-collapse>
 				</b-container>
 			</b-navbar>
-			<div class="my-auto container-fluid row pt-5">
-				<div class="offset-md-2 offset-1 col-10 col-md-7 col-lg-6">
-					<h1 class=" display-4 my-5 py-1 color-primary-0 font-weight-bold ">
+			<div class="my-2 my-md-auto container-fluid row pt-md-5 pt-3">
+				<div class="offset-md-2 col-md-7 col-lg-6 flex-column">
+					<h1 class="my-md-5 my-3 py-1 color-primary-0 font-weight-bold" id="slogan">
 						@lang('landing_page.slogan')
 					</h1>
 					<p class="color-primary-4">
 						Mit einem einzigartigen Ansatz helfen wir Schulen, Mobbing zu bekämpfen: Ihre Schüler wenden sich per exclamo an ausgewählte Lehrer und professionelle Mobbing-Experten und erhalten so schnelle und anonyme Hilfe!
 					</p>
-					<a class="cta cta-primary cta-large mb-3 d-lg-inline-block" href="#forschools">
-						@lang('landing_page.protect_your_students')
-					</a>
-					<a class="ml-lg-5 ml-sm-3 d-block d-lg-inline-block" href="#what">
-						&#9658 Warum exclamo?
-					</a>
+					<p class="d-flex d-lg-inline-block">
+						<a class="cta cta-primary cta-large mb-3" href="#forschools">
+							@lang('landing_page.protect_your_students')
+						</a>
+					</p>
+					<p class="d-flex d-lg-inline-block">
+						<a class="ml-lg-5 ml-sm-3" href="#what">
+							&#9658 Warum exclamo?
+						</a>
+					</p>
 				</div>
 			</div>
 		</section>
