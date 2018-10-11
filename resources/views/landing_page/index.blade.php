@@ -130,7 +130,7 @@
 					Warum Exclamo?
 				</h1>
 				<div class="row advantage">
-					<div class="col-sm-9 text-div" data-aos="fade-up">
+					<div class="col-lg-9 text-div" data-aos="fade-up">
 						<h1 class="heading">
 							@lang('landing_page.anonymous_heading')
 						</h1>
@@ -140,7 +140,7 @@
 							@include('landing_page.en.advantages.anonymous')
 						@endif
 					</div>
-					<div class="col-sm-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
+					<div class="col-lg-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
 						<img src="{{ asset('img/iPhoneMessages.png') }}" class="advantage-img align-middle">
 					</div>
 				</div>

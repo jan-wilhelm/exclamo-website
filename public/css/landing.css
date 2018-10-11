@@ -11019,8 +11019,9 @@ section > div a {
 }
 
 .advantage-img {
+  width: 400px;
   max-height: 100%;
-  max-width: 400px;
+  max-width: 100%;
 }
 
 .signup-form {
