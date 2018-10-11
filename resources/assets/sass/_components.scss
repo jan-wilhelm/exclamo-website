@@ -1,7 +1,23 @@
 @import "colors_1";
+@import "~bootstrap/scss/functions"; 
+@import "~bootstrap/scss/variables";
+
+@mixin respond-to($breakpoint) { 
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+}
 
 .nounderline {
   text-decoration: none !important
+}
+
+.navbar-nav {
+	display: block !important;
+
+	@include respond-to(map-get($grid-breakpoints, lg)) {
+		 display: inline-block;
+	}
 }
 
 .cta {
@@ -10,7 +26,6 @@
 	font-size: 0.85rem;
 	height: 2.55rem;
 	border-radius: 1.7rem;
-	display: inline-block;
 	width: auto;
 	font-weight: 700;
 	cursor: pointer;
@@ -24,6 +39,11 @@
     -webkit-transition: background-color 0.3s, color 0.3s; /* Safari */
     transition: background-color 0.3s, color 0.3s;
 	border-radius: 2rem;
+	float: left;
+
+	@include respond-to(map-get($grid-breakpoints, lg)) {
+		 display: inline-block;
+	}
 }
 
 .cta-large {

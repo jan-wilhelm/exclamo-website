@@ -390,13 +390,22 @@
   text-decoration: none !important;
 }
 
+.navbar-nav {
+  display: block !important;
+}
+
+@media (min-width: 992px) {
+  .navbar-nav {
+    display: inline-block;
+  }
+}
+
 .cta {
   padding: 0.85rem 1.7rem;
   line-height: 0.85rem;
   font-size: 0.85rem;
   height: 2.55rem;
   border-radius: 1.7rem;
-  display: inline-block;
   width: auto;
   font-weight: 700;
   cursor: pointer;
@@ -411,6 +420,13 @@
   /* Safari */
   transition: background-color 0.3s, color 0.3s;
   border-radius: 2rem;
+  float: left;
+}
+
+@media (min-width: 992px) {
+  .cta {
+    display: inline-block;
+  }
 }
 
 .cta-large {
