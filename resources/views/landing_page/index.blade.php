@@ -193,7 +193,7 @@
 			</div>
 		</section>
 
-		<section class="landing-section margin" id="timeline">
+		<!--<section class="landing-section margin" id="timeline">
 			<img src="img/timeline_border.svg" id="timeline-top" />
 			<div class="wrapper w-100">
 				<div class="container px-md-5">
@@ -267,6 +267,7 @@
 			</div>
 			<img src="img/timeline_border.svg" id="timeline-bottom" />
 		</section>
+		-->
 
 		<section class="landing-section" id="team">
 			<div class="container margin">
