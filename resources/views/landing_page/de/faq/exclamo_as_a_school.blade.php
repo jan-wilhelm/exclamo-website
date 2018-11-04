@@ -1,1 +1,1 @@
-Wenn Sie sich als Schule oder Schulträger für exclamo interessieren, können Sie sich hier(Link) informieren und das Kontakt-Formular ausfüllen. Exclamo basiert auf einem Lizenzierungsmodell, der Preis variiert individuell je nach Schul- und Trägergröße.
+Wenn Sie sich als Schule oder Schulträger für exclamo interessieren, können Sie sich <a href="{{ route('home') }}#forschools">hier informieren</a> und das Kontakt-Formular ausfüllen. Exclamo basiert auf einem Lizenzierungsmodell, der Preis variiert individuell je nach Schul- und Trägergröße.
