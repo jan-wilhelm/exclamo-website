@@ -7,7 +7,7 @@ return [
 	"password"=> "Password",
 	"confirm-password"=> "Confirm Password",
 	"remember"=> "Remember me",
-	'login'=> "Login",
+	'login'=> "Sign in",
 	'logout'=> "Logout",
 	'forgot-password'=> "Forgot your Password?",
 	'firstname'=> "First name",

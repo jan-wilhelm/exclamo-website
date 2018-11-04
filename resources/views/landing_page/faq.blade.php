@@ -18,7 +18,7 @@
 				</b-card-header>
 				<b-collapse id="accordion-{{ $question }}" visible accordion="questions-accordion" role="tabpanel">
 					<b-card-body>
-						@include('landing_page.' . app()->getLocale() . '.faq.' . $question)
+						@include('landing_page.' . 'de' . '.faq.' . $question)
 					</b-card-body>
 				</b-collapse>
 			</b-card>

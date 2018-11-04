@@ -1,0 +1,1 @@
+With our unique approach we support schools in fighting bullying: Your students resort to selected teachers and professional bullying-experts in order to receive swift and anonymous assistance!

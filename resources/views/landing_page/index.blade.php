@@ -24,19 +24,19 @@
 
 						<b-navbar-nav class="mr-auto" id="nav-links">
 							<li class="nav-item">
-								<a class="nav-link color-primary-0" href="#vision">Unsere Vision</a>
+								<a class="nav-link color-primary-0" href="#vision">@lang('landing_page.vision')</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link color-primary-0" href="#what">Was?</a>
+								<a class="nav-link color-primary-0" href="#what">@lang('landing_page.what')</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link color-primary-0" href="#team">Wer?</a>
+								<a class="nav-link color-primary-0" href="#team">@lang('landing_page.who')</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link color-primary-0" href="#forschools">Für Schulen</a>
+								<a class="nav-link color-primary-0" href="#forschools">@lang('landing_page.for_schools')</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link color-primary-0" href="{{ route('faq') }}">FAQ</a>
+								<a class="nav-link color-primary-0" href="{{ route('faq') }}">@lang('landing_page.faq')</a>
 							</li>
 						</b-navbar-nav>
 
@@ -68,18 +68,18 @@
 							@guest
 							<li class="nav-item">
 								<a href="{{ route('login') }}" class="nav-link color-primary-0 mx-auto">
-									Anmelden
+									@lang('messages.login')
 								</a>
 							</li>
 							<li class="nav-item cta cta-primary">
 								<a href="#forschools" class="text-white mx-auto">
-									exclamo nutzen!
+									@lang('landing_page.use_exclamo')
 								</a>
 							</li>
 							@else
 							<li class="nav-item">
 								<a href="{{ route('dashboard') }}" class="nav-link color-primary-0 mx-auto">
-									Zum Dashboard
+									@lang('landing_page.to_the_dashboard')
 								</a>
 							</li>
 							@endguest
@@ -93,7 +93,7 @@
 						@lang('landing_page.slogan')
 					</h1>
 					<p class="color-primary-4">
-						Mit einem einzigartigen Ansatz helfen wir Schulen, Mobbing zu bekämpfen: Ihre Schüler wenden sich per exclamo an ausgewählte Lehrer und professionelle Mobbing-Experten und erhalten so schnelle und anonyme Hilfe!
+						@include('landing_page.' . app()->getLocale() . '.slogan')
 					</p>
 					<p class="d-flex d-lg-inline-block">
 						<a class="cta cta-primary cta-large mb-3" href="#forschools">
@@ -102,7 +102,7 @@
 					</p>
 					<p class="d-flex d-lg-inline-block">
 						<a class="ml-lg-5 ml-sm-3" href="#what">
-							&#9658 Warum exclamo?
+							&#9658 @lang('landing_page.why_choose_exclamo')
 						</a>
 					</p>
 				</div>
@@ -118,11 +118,7 @@
 				</h1>
 				<div class="row justify-content-center">
 					<div class="col-sm-12 col-md-10 col-lg-8 promo-text" data-aos="fade-up">
-						@if (app()->getLocale() == "de")
-							@include('landing_page.de.vision')
-						@else
-							@include('landing_page.en.vision')
-						@endif
+						@include('landing_page.' . app()->getLocale() . '.vision')
 					</div>
 				</div>
 			</div>
@@ -131,33 +127,25 @@
 		<section class="landing-section margin" id="what">
 			<div class="container">
 				<h1 class="text-center promo-question">
-					Warum Exclamo?
+					@lang('landing_page.why_choose_exclamo')
 				</h1>
 				<div class="row advantage">
 					<div class="col-lg-9 text-div" data-aos="fade-up">
 						<h1 class="heading">
 							@lang('landing_page.anonymous_heading')
 						</h1>
-						@if (app()->getLocale() == "de")
-							@include('landing_page.de.advantages.anonymous')
-						@else
-							@include('landing_page.en.advantages.anonymous')
-						@endif
+						@include('landing_page.' . app()->getLocale() . '.advantages.anonymous')
 					</div>
 					<div class="col-lg-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
 						<img src="{{ asset('img/iPhoneMessages.png') }}" class="advantage-img align-middle">
 					</div>
 				</div>
 				<div class="row advantage text-div">
-					<div class="col-lg-9 text-div" data-aos="fade-up">
+					<div class="col-lg-9 text-div order-2" data-aos="fade-up">
 						<h1 class="heading">
 							@lang('landing_page.easy_access')
 						</h1>
-						@if (app()->getLocale() == "de")
-							@include('landing_page.de.advantages.app')
-						@else
-							@include('landing_page.en.advantages.app')
-						@endif
+						@include('landing_page.' . app()->getLocale() . '.advantages.app')
 					</div>
 					<div class="col-lg-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
 						<img src="{{ asset('img/iPhoneCases.png') }}" class="advantage-img">
@@ -168,27 +156,18 @@
 						<h1 class="heading">
 							@lang('landing_page.experts_heading')
 						</h1>
-						@if (app()->getLocale() == "de")
-							@include('landing_page.de.advantages.experts')
-						@else
-							@include('landing_page.en.advantages.experts')
-						@endif
+						@include('landing_page.' . app()->getLocale() . '.advantages.experts')
 					</div>
 					<div class="col-lg-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
 						<i class="fas fa-users color-primary-1 fa-10x"></i>
 					</div>
 				</div>
 				<div class="row advantage text-div">
-					<div class="col-lg-9 text-div" data-aos="fade-up">
+					<div class="col-lg-9 text-div order-2" data-aos="fade-up">
 						<h1 class="heading">
-							Hohe Datensicherheit
+							@lang('landing_page.data_security_heading')
 						</h1>
-						<p>
-							Alle kritischen Daten sind mit einer AES-256 Verschlüsselung auf Top-Secret-Niveau gesichert! Wir wissen, dass Datenschutz und -sicherheit Faktoren sind, bei denen man Qualität nicht vernachlässigen darf - insbesondere bei privaten Nachrichten an Vertrauenspersonen.
-						</p>
-						<p>
-							Exclamo setzt sich zum Ziel, eine sichere Plattform als Grundlage zur Mobbinghilfe zu bieten. Dadurch gehört auch Datenschutz zu unserer obersten Priorität!
-						</p>
+						@include('landing_page.' . app()->getLocale() . '.advantages.security')
 					</div>
 					<div class="col-lg-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
 						<img src="{{ asset('img/lock.svg') }}" class="advantage-img">
@@ -277,15 +256,11 @@
 			<div class="container margin">
 				<h1 class="text-center promo-question">
 					<i class="color-secondary-1-0 far fa-lightbulb fa-sm mr-1"></i>
-					Das Team
+					@lang('landing_page.the_team')
 				</h1>
 				<div class="row justify-content-center">
 					<div class="col-sm-12 col-md-10 col-lg-8 promo-text" data-aos="fade-up">
-						@if (app()->getLocale() == "de")
-							@include('landing_page.de.who')
-						@else
-							@include('landing_page.en.who')
-						@endif
+						@include('landing_page.' . app()->getLocale() . '.who')
 					</div>
 				</div>
 
@@ -320,11 +295,7 @@
 				</h1>
 				<div class="row justify-content-center">
 					<div class="col-sm-12 col-md-10 col-lg-8 promo-text" data-aos="fade-up">
-						@if (app()->getLocale() == "de")
-							@include('landing_page.de.schools')
-						@else
-							@include('landing_page.en.schools')
-						@endif
+						@include('landing_page.' . app()->getLocale() . '.schools')
 					</div>
 				</div>
 				<div class="row justify-content-center">
@@ -358,7 +329,7 @@
 		<section class="landing-section" id="contact">
 			<div class="container margin">
 				<h1 class="text-center promo-question">
-					Kontakt
+					@lang('landing_page.contact')
 				</h1>
 				<div class="row pt-md-5 justify-content-center text-center">
 					<a href="mailto:info@exclamo.org" target="_blank" class="col-md-4">

@@ -12,5 +12,11 @@ return [
 	"anonymous_heading"=> "Niedrige Hemmschwelle durch Anonymität",
 	"easy_access"=> "Einfacher Zugang durch App und Webapp",
 	"experts_heading"=> "Unterstützung von Mobbing-Experten",
-	"vision"=> "Unsere Vision"
+	"vision"=> "Unsere Vision",
+	"use_exclamo"=> "exclamo nutzen!",
+	"contact"=> "Kontakt",
+	"data_security_heading"=> "Hohe Datensicherheit",
+	"to_the_dashboard"=>"Zum Dashboard",
+	"why_choose_exclamo"=> "Warum exclamo?",
+	"the_team"=> "Das Team"
 ];
