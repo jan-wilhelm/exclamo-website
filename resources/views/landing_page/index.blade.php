@@ -95,13 +95,13 @@
 					<p class="color-primary-4">
 						@include('landing_page.' . app()->getLocale() . '.slogan')
 					</p>
-					<p class="d-flex d-lg-inline-block">
-						<a class="cta cta-primary cta-large mb-3" href="#forschools">
+					<p class="d-flex">
+						<a class="cta cta-primary cta-large" href="#forschools">
 							@lang('landing_page.protect_your_students')
 						</a>
 					</p>
-					<p class="d-flex d-lg-inline-block">
-						<a class="ml-lg-5 ml-sm-3" href="#what">
+					<p class="d-flex">
+						<a href="#what">
 							&#9658 @lang('landing_page.why_choose_exclamo')
 						</a>
 					</p>
