@@ -69,5 +69,8 @@ return [
 	'per_page' => 'Einträge pro Seite',
 	'actions'=> 'Aktionen',
 	'edit_student_data'=> 'Schüler :first_name :last_name bearbeiten',
-	'faq'=> 'Häufig gestellte Fragen'
+	'faq'=> 'Häufig gestellte Fragen',
+	'report_incident'=> 'Melde einen Vorfall',
+	'features'=> 'Features',
+	'resources'=> 'Nützliche Links'
 ];

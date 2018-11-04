@@ -67,5 +67,8 @@ return [
 	'type_to_search' => 'Type to Search',
 	'per_page' => 'Per Page',
 	'actions'=> 'Actions',
-	'faq'=> 'Frequently Asked Questions'
+	'faq'=> 'Frequently Asked Questions',
+	'report_incident'=> 'Report an Incident',
+	'features'=> 'Features',
+	'resources'=> 'Resources'
 ];

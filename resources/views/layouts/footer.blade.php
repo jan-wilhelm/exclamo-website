@@ -7,19 +7,19 @@
 					<small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
 				</div>
 				<div class="col-6 col-md">
-					<h5>Features</h5>
+					<h5>@lang('messages.features')</h5>
 					<ul class="list-unstyled text-small">
-						<li><a class="text-muted" href="{{ route('login') }}">Login</a></li>
-						<li><a class="text-muted" href="{{ route('dashboard') }}">Dashboard</a></li>
-						<li><a class="text-muted" href="{{ route('incidents.report') }}">Report Incident</a></li>
+						<li><a class="text-muted" href="{{ route('login') }}">@lang('messages.login')</a></li>
+						<li><a class="text-muted" href="{{ route('dashboard') }}">@lang('messages.dashboard')</a></li>
+						<li><a class="text-muted" href="{{ route('incidents.report') }}">@lang('messages.report_incident')</a></li>
 					</ul>
 				</div>
 				<div class="col-6 col-md">
-					<h5>Resources</h5>
+					<h5>@lang('messages.resources')</h5>
 					<ul class="list-unstyled text-small">
-						<li><a class="text-muted" href="{{ route('impressum') }}">Impressum</a></li>
-						<li><a class="text-muted" href="{{ route('privacy_policy') }}">Privacy Policy</a></li>
-						<li><a class="text-muted" href="{{ route('faq') }}">Frequently asked questions</a></li>
+						<li><a class="text-muted" href="{{ route('impressum') }}">@lang('messages.impressum')</a></li>
+						<li><a class="text-muted" href="{{ route('privacy_policy') }}">@lang('messages.privacy_policy')</a></li>
+						<li><a class="text-muted" href="{{ route('faq') }}">@lang('messages.faq')</a></li>
 					</ul>
 				</div>
 			</div>
