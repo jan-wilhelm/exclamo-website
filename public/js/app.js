@@ -83641,6 +83641,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -83671,6 +83672,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		return {
 			value: this.selected
 		};
+	},
+
+	methods: {
+		concatenateNames: function concatenateNames(_ref) {
+			var first_name = _ref.first_name,
+			    last_name = _ref.last_name;
+
+			return first_name + ' ' + last_name;
+		}
 	}
 });
 
@@ -83698,7 +83708,7 @@ var render = function() {
             max: _vm.maxSelected,
             placeholder: "",
             "select-label": "",
-            label: "name",
+            "custom-label": _vm.concatenateNames,
             "track-by": "id",
             "block-keys": ["Tab", "Enter"]
           },
@@ -83718,7 +83728,9 @@ var render = function() {
                     [
                       _vm._v(
                         "\n\t    \t\t" +
-                          _vm._s(props.option.name) +
+                          _vm._s(props.option.first_name) +
+                          " \n\t    \t\t" +
+                          _vm._s(props.option.last_name) +
                           "\n\t    \t\t"
                       ),
                       _c(
@@ -84904,6 +84916,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			this.$refs.modal.hide('header-close');
 		},
 		showModal: function showModal() {
+			console.log("showModal");
 			this.$refs.modal.show();
 		},
 		saveSettings: function saveSettings() {

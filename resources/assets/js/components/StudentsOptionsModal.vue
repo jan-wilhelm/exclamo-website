@@ -64,6 +64,7 @@
 				this.$refs.modal.hide('header-close')
 			},
 			showModal() {
+				console.log("showModal")
 				this.$refs.modal.show()
 			},
 			saveSettings() {

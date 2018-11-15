@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\ReportedCase;
 use App\Http\Requests\ReportCaseRequest;
 use App\Http\Resources\ReportedCaseResource;
+use App\Http\Resources\ConfidentialUserResource;
 
 use App\User;
 use App\Location;
@@ -132,7 +133,7 @@ class ReportedCaseController extends Controller
         
         // Mentors
         $allMentors = auth()->user()->school->mentors()->mentoring()->get();
-        $possibleMentors = $this->userService->getInJSONFormat($allMentors);
+        $possibleMentors = ConfidentialUserResource::collection($allMentors);
 
         $locations = $this->locationService->getLocationDataForUser(auth()->user());
         $clientData = new ReportedCaseResource($case);
@@ -156,7 +157,12 @@ class ReportedCaseController extends Controller
     public function report()
     {
         $this->authorize('create', ReportedCase::class);
-        return view("schueler.report");
+        
+        // Mentors
+        $allMentors = auth()->user()->school->mentors()->mentoring()->get();
+        $possibleMentors = ConfidentialUserResource::collection($allMentors);
+
+        return view("schueler.report", compact('possibleMentors'));
     }
 
 }

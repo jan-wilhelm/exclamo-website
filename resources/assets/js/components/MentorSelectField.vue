@@ -12,13 +12,14 @@
 	    	:max="maxSelected"
 	    	placeholder=""
 	    	select-label=""
-	    	label="name"
+	    	:custom-label="concatenateNames"
 	    	track-by="id"
 	    	:block-keys="['Tab', 'Enter']">
 
 	    	<template slot="tag" slot-scope="props">
 				<span class="mentor-tag bg-color-primary-1 text-white">
-		    		{{ props.option.name }}
+		    		{{ props.option.first_name }} 
+		    		{{ props.option.last_name }}
 		    		<span class="tag-remove" @click="props.remove(props.option)">
 		    			<i class="fas fa-times-circle"></i>
 		    		</span>
@@ -73,6 +74,11 @@
 		data() {
 			return {
 				value: this.selected
+			}
+		},
+		methods: {
+			concatenateNames ({ first_name, last_name }) {
+				return `${first_name} ${last_name}`
 			}
 		}
 	};
