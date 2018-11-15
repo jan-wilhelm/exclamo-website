@@ -1,8 +1,8 @@
 <template>
 	<div class="text-left">
 	<!-- User Interface controls -->
-		<div class="d-flex">
-			<div class="my-1 d-flex mr-auto">
+		<div class="d-flex my-1">
+			<div class="d-flex mr-auto">
 				<div class="form-inline form-group horizontal">
 					<label class="form-control-label mr-2">
 						Filter
@@ -17,17 +17,25 @@
 					</b-input-group>
 				</div>
 			</div>
-			<div class="my-1 d-flex flex-row">
+			<div class="d-flex flex-row">
 				<div class="form-inline form-group horizontal">
 					<label class="form-control-label mr-2">
 						{{ lang('messages.per_page') }}
 					</label>
 					<b-form-select :options="pageOptions" v-model="perPage" />
 				</div>
+			</div>		
+			<div
+				class="ml-sm-1 d-flex flex-row cta cta-rounded cta-secondary mb-3"
+				@click="addStudent()"
+			>
+				<i class="fas fa-plus"></i>
+				{{ lang('messages.create_student') }}
 			</div>
 		</div>
 
 		<students-options-modal ref="editModal" />
+		<add-student-modal ref="addStudentModal" />
 
 		<!-- Main table element -->
 		<b-table show-empty
@@ -136,6 +144,9 @@
 				let student = data.item
 				this.$refs.editModal.student = student
 				this.$refs.editModal.showModal()
+			},
+			addStudent() {
+				this.$refs.addStudentModal.showModal()
 			},
 			deleteStudent(data) {
 				let studentId = data.item.id

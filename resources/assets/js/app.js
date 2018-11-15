@@ -59,6 +59,7 @@ Vue.component('report-case-form', require('./components/ReportCaseForm.vue'));
 Vue.component('students-table', require('./components/StudentsTable.vue'));
 Vue.component('students-options-modal', require('./components/StudentsOptionsModal.vue'));
 Vue.component('user-login-statistics', require('./components/UserLoginStatistics.vue'));
+Vue.component('add-student-modal', require('./components/AddStudentModal.vue'));
 
 const app = new Vue({
     el: '#app',

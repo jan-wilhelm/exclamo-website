@@ -58062,6 +58062,7 @@ Vue.component('report-case-form', __webpack_require__(430));
 Vue.component('students-table', __webpack_require__(435));
 Vue.component('students-options-modal', __webpack_require__(440));
 Vue.component('user-login-statistics', __webpack_require__(443));
+Vue.component('add-student-modal', __webpack_require__(503));
 
 var app = new Vue({
 	el: '#app',
@@ -84488,6 +84489,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -84547,6 +84556,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			this.$refs.editModal.student = student;
 			this.$refs.editModal.showModal();
 		},
+		addStudent: function addStudent() {
+			this.$refs.addStudentModal.showModal();
+		},
 		deleteStudent: function deleteStudent(data) {
 			var studentId = data.item.id;
 			var studentsTable = this;
@@ -84575,8 +84587,8 @@ var render = function() {
     "div",
     { staticClass: "text-left" },
     [
-      _c("div", { staticClass: "d-flex" }, [
-        _c("div", { staticClass: "my-1 d-flex mr-auto" }, [
+      _c("div", { staticClass: "d-flex my-1" }, [
+        _c("div", { staticClass: "d-flex mr-auto" }, [
           _c(
             "div",
             { staticClass: "form-inline form-group horizontal" },
@@ -84628,7 +84640,7 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "my-1 d-flex flex-row" }, [
+        _c("div", { staticClass: "d-flex flex-row" }, [
           _c(
             "div",
             { staticClass: "form-inline form-group horizontal" },
@@ -84654,10 +84666,33 @@ var render = function() {
             ],
             1
           )
-        ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "ml-sm-1 d-flex flex-row cta cta-rounded cta-secondary mb-3",
+            on: {
+              click: function($event) {
+                _vm.addStudent()
+              }
+            }
+          },
+          [
+            _c("i", { staticClass: "fas fa-plus" }),
+            _vm._v(
+              "\n\t\t\t" +
+                _vm._s(_vm.lang("messages.create_student")) +
+                "\n\t\t"
+            )
+          ]
+        )
       ]),
       _vm._v(" "),
       _c("students-options-modal", { ref: "editModal" }),
+      _vm._v(" "),
+      _c("add-student-modal", { ref: "addStudentModal" }),
       _vm._v(" "),
       _c("b-table", {
         ref: "students-table",
@@ -96143,6 +96178,381 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 496 */,
+/* 497 */,
+/* 498 */,
+/* 499 */,
+/* 500 */,
+/* 501 */,
+/* 502 */,
+/* 503 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(29)
+/* script */
+var __vue_script__ = __webpack_require__(504)
+/* template */
+var __vue_template__ = __webpack_require__(505)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\AddStudentModal.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7a13c668", Component.options)
+  } else {
+    hotAPI.reload("data-v-7a13c668", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 504 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(77);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	props: {},
+	data: function data() {
+		return {
+			student: {},
+			roles: ["Schüler", "Lehrer"]
+		};
+	},
+
+	methods: {
+		closeModal: function closeModal() {
+			this.$refs.modal.hide('header-close');
+		},
+		showModal: function showModal() {
+			this.$refs.modal.show();
+		},
+		saveSettings: function saveSettings() {}
+	}
+});
+
+/***/ }),
+/* 505 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "b-modal",
+    {
+      ref: "modal",
+      attrs: {
+        id: "students-options-modal",
+        title: _vm.lang("messages.create_student")
+      }
+    },
+    [
+      _c(
+        "form",
+        { attrs: { autocomplete: "off" } },
+        [
+          _c("div", { staticClass: "form-row mb-3" }, [
+            _c("div", { staticClass: "col-lg mb-3" }, [
+              _c("label", { attrs: { for: "student-firstname" } }, [
+                _vm._v(
+                  "\n\t\t\t\t\t" +
+                    _vm._s(_vm.lang("messages.first_name")) +
+                    "\n\t\t\t\t"
+                )
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model.trim",
+                    value: _vm.student.first_name,
+                    expression: "student.first_name",
+                    modifiers: { trim: true }
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text", id: "student-firstname" },
+                domProps: { value: _vm.student.first_name },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(
+                      _vm.student,
+                      "first_name",
+                      $event.target.value.trim()
+                    )
+                  },
+                  blur: function($event) {
+                    _vm.$forceUpdate()
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md" }, [
+              _c("label", { attrs: { for: "student-lastname" } }, [
+                _vm._v(
+                  "\n\t\t\t\t\t" +
+                    _vm._s(_vm.lang("messages.last_name")) +
+                    "\n\t\t\t\t"
+                )
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model.trim",
+                    value: _vm.student.last_name,
+                    expression: "student.last_name",
+                    modifiers: { trim: true }
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text", id: "student-lastname" },
+                domProps: { value: _vm.student.last_name },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(
+                      _vm.student,
+                      "last_name",
+                      $event.target.value.trim()
+                    )
+                  },
+                  blur: function($event) {
+                    _vm.$forceUpdate()
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "student-email" } }, [
+              _vm._v(
+                "\n\t\t\t\t" + _vm._s(_vm.lang("messages.email")) + "\n\t\t\t"
+              )
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.trim",
+                  value: _vm.student.email,
+                  expression: "student.email",
+                  modifiers: { trim: true }
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", id: "student-email" },
+              domProps: { value: _vm.student.email },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.student, "email", $event.target.value.trim())
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group form-check" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.student.mentoring,
+                  expression: "student.mentoring"
+                }
+              ],
+              staticClass: "form-check-input",
+              attrs: { type: "checkbox", id: "student-mentoring" },
+              domProps: {
+                checked: Array.isArray(_vm.student.mentoring)
+                  ? _vm._i(_vm.student.mentoring, null) > -1
+                  : _vm.student.mentoring
+              },
+              on: {
+                change: function($event) {
+                  var $$a = _vm.student.mentoring,
+                    $$el = $event.target,
+                    $$c = $$el.checked ? true : false
+                  if (Array.isArray($$a)) {
+                    var $$v = null,
+                      $$i = _vm._i($$a, $$v)
+                    if ($$el.checked) {
+                      $$i < 0 &&
+                        _vm.$set(_vm.student, "mentoring", $$a.concat([$$v]))
+                    } else {
+                      $$i > -1 &&
+                        _vm.$set(
+                          _vm.student,
+                          "mentoring",
+                          $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                        )
+                    }
+                  } else {
+                    _vm.$set(_vm.student, "mentoring", $$c)
+                  }
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass: "form-check-label",
+                attrs: { for: "student-mentoring" }
+              },
+              [
+                _vm._v(
+                  "\n\t\t\t\t" +
+                    _vm._s(_vm.lang("messages.mentoring")) +
+                    "\n\t\t\t"
+                )
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("b-form-select", {
+            staticClass: "form-group",
+            attrs: { options: _vm.roles },
+            model: {
+              value: _vm.student.role,
+              callback: function($$v) {
+                _vm.$set(_vm.student, "role", $$v)
+              },
+              expression: "student.role"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "modal-footer" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "form-inline button-div bordered white hover justify-content-center",
+            on: { click: _vm.saveSettings }
+          },
+          [
+            _c("a", { staticClass: "mx-3", attrs: { href: "#" } }, [
+              _vm._v(
+                "\n\t\t\t\t" + _vm._s(_vm.lang("messages.save")) + "\n\t\t\t"
+              )
+            ])
+          ]
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7a13c668", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

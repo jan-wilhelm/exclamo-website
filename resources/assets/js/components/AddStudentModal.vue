@@ -2,10 +2,7 @@
 	<b-modal
 		ref="modal"
 		id="students-options-modal"
-		:title="lang('messages.edit_student_data', {
-			'first_name': student.first_name,
-			'last_name': student.last_name
-		})"
+		:title="lang('messages.create_student')"
 	>
 		<form autocomplete="off">
 			<div class="form-row mb-3">
@@ -34,6 +31,9 @@
 					{{ lang('messages.mentoring') }}
 				</label>
 			</div>
+
+		    <b-form-select v-model="student.role" :options="roles" class="form-group">
+		    </b-form-select>
 		</form>
 
 		<template slot="modal-footer">
@@ -55,7 +55,11 @@
 		data() {
 			return {
 				student: {
-				}
+				},
+				roles: [
+					"Schüler",
+					"Lehrer"
+				]
 			}
 		},
 		methods: {
@@ -63,19 +67,10 @@
 				this.$refs.modal.hide('header-close')
 			},
 			showModal() {
-				console.log("showModal")
 				this.$refs.modal.show()
 			},
 			saveSettings() {
-				let studentsModal = this
-				ExclamoApi.User.edit(this.student.id, this.student)
-					.then(function(response) {
-						console.log(response)
-						studentsModal.closeModal()
-					}).catch(function(error) {
-						console.log(error);
-	    				console.log(error.response)
-					})
+
 			}
 		},
 	};
