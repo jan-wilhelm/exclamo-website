@@ -21,12 +21,6 @@ Route::view('/', 'landing_page.index')->name('home');
 Route::view('/faq', 'landing_page.faq')->name('faq');
 Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
 
-
-// SCHOOLS
-Route::get('schools', 'SchoolController@index')->name('schools');
-Route::get('schools/{school}', 'SchoolController@showSchool')->name('schools.show');
-
-
 // PRINCIPLES
 Route::get('users', 'UserController@index')->name('users');
 Route::get('users/{user}', 'UserController@show')->name('users.show');
