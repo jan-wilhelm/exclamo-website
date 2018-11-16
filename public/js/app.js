@@ -85278,7 +85278,7 @@ exports = module.exports = __webpack_require__(13)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -85290,6 +85290,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(447);
+//
+//
+//
 //
 //
 //
@@ -85333,6 +85336,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 						hitRadius: 15,
 						hoverRadius: 3,
 						radius: 0
+					}
+				},
+				layout: {
+					padding: {
+						top: 5,
+						bottom: 5
 					}
 				},
 				legend: {
@@ -96151,9 +96160,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h5", { staticClass: "pl-2 pr-2 pt-2 font-weight-bold pb-0 mb-0" }, [
-      _vm._v("Logins an Ihrer Schule")
-    ]),
+    _vm._m(0),
     _vm._v(" "),
     _c("canvas", {
       ref: "canvas",
@@ -96161,7 +96168,20 @@ var render = function() {
     })
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d-flex pl-2 pr-2 pt-2 mb-0" }, [
+      _c("h5", { staticClass: " font-weight-bold mr-auto" }, [
+        _vm._v("Logins an Ihrer Schule")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "small" }, [_vm._v("14 days")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

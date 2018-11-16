@@ -1,6 +1,9 @@
 <template>
 	<div>
-		<h5 class="pl-2 pr-2 pt-2 font-weight-bold pb-0 mb-0">Logins an Ihrer Schule</h5>
+		<div class="d-flex pl-2 pr-2 pt-2 mb-0">
+			<h5 class=" font-weight-bold mr-auto">Logins an Ihrer Schule</h5>
+			<span class="small">14 days</span>
+		</div>
 		<canvas ref="canvas" :width="chartWidth" :height="chartHeight"></canvas>
 	</div>
 </template>
@@ -43,6 +46,12 @@
 							hitRadius: 15,
 							hoverRadius: 3,
 							radius: 0
+						}
+					},
+					layout: {
+						padding: {
+							top: 5,
+							bottom: 5
 						}
 					},
 					legend: {
