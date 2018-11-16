@@ -14,11 +14,7 @@
 				type: String,
 				default: ""
 			},
-			chartData: {
-				default() {
-					return []
-				}
-			},
+			chartData: Array,
 			chartWidth: {
 				default: 600
 			},
@@ -33,7 +29,7 @@
 						{
 							label: false,
 							backgroundColor: 'rgba(0,0,0,0)',
-				            data: this.chartData,
+				            data: this.filledChartData(),
 							lineTension: 0.2,
 							borderColor: 'rgb(0,149,138)',
 							borderWidth: 4,
@@ -78,6 +74,11 @@
 			this.renderChart(this.dataForChart, this.options)
 		},
 		methods: {
+			filledChartData() {
+				let data = this.chartData.sort((a,b) => a.x - b.x)
+				console.log(data);
+				return data
+			}
 		}
 	}
 </script>

@@ -25,15 +25,26 @@ class UserService
 
 	public function getLoginStatisticsFromSchool(School $school, $days = 30)
 	{
+		$startDate = Carbon::now()->subDays($days - 1)->startOfDay();
 		$data = $school->logins()->select('login_activities.created_at')
 			->latest()
-			->whereDate('login_activities.created_at', '>', Carbon::now()->subDays($days))
+			->whereDate('login_activities.created_at', '>', $startDate)
 		    ->get()
 		    ->groupBy(function($date) {
 		        return Carbon::parse($date->created_at)->startOfDay()->timestamp; // grouping by months
 		    })->map(function ($date) {
 		    	return $date->count();
 		    });
+
+		$end = Carbon::now();
+
+		while($startDate <= $end) {
+			if(!array_key_exists( $startDate->timestamp, $data->toArray())) {
+			$data[$startDate->timestamp] = 0;
+			}
+
+			$startDate->addDay();
+		}
 
 		$dataToReturn = [];
 
