@@ -12,26 +12,26 @@
 */
 
 // Allow GET requests to log out. By default, only POST requests are enabled
-Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 Auth::routes();
 
+Route::middleware('auth')->group(function() {
+	Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
+	Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
+
+	// PRINCIPLES
+	Route::get('users', 'UserController@index')->name('users');
+	Route::get('users/{user}', 'UserController@show')->name('users.show');
+
+	// STUDENTS
+	Route::get('cases', 'ReportedCaseController@index')->name('incidents');
+	Route::get('cases/{case}', 'ReportedCaseController@showIncident')->name('incidents.show');
+	Route::get('report', 'ReportedCaseController@report')->name('incidents.report');
+	Route::post('create', 'ReportedCaseController@store')->name('incidents.store');
+});
 
 // HOME
 Route::view('/', 'landing_page.index')->name('home');
 Route::view('/faq', 'landing_page.faq')->name('faq');
-Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
-
-// PRINCIPLES
-Route::get('users', 'UserController@index')->name('users');
-Route::get('users/{user}', 'UserController@show')->name('users.show');
-
-
-// STUDENTS
-Route::get('cases', 'ReportedCaseController@index')->name('incidents');
-Route::get('cases/{case}', 'ReportedCaseController@showIncident')->name('incidents.show');
-Route::get('report', 'ReportedCaseController@report')->name('incidents.report');
-Route::post('create', 'ReportedCaseController@store')->name('incidents.store');
-
 
 // OTHER
 Route::post('language', 'LanguageController@changeLanguage')->name('language');

@@ -35,8 +35,6 @@ class ReportedCaseController extends Controller
      * @return void
      */
     public function __construct(ReportedCaseService $caseService, LocationService $locationService, UserService $userService, MessageService $messageService) {
-        $this->middleware('auth');
-
         $this->reportedCases = $caseService->cases;
 
         $this->caseService = $caseService;

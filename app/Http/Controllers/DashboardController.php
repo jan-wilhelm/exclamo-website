@@ -20,7 +20,6 @@ class DashboardController extends Controller
      * @return void
      */
     public function __construct(UserService $userService) {
-        $this->middleware('auth');
         $this->userService = $userService;
     }
 
