@@ -31,6 +31,8 @@ class CreateUsersTable extends Migration
             
             $table->boolean('mentoring')->default(false);
 
+            $table->longText('notes')->nullable();
+
             $table->string('language')->default(config('app.locale'));
 
             $table->rememberToken();
