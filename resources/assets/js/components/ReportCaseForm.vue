@@ -141,7 +141,7 @@
 				    formData.append('mentors[]', this.selectedMentors[i].id);
 				}
 				
-				formData.append('incident_date', this.incidentDate);
+				formData.append('incident_date', this.incidentDate.toUTCString());
 
 				ExclamoApi.ReportedCase.create(formData,
 				(response)=> {
