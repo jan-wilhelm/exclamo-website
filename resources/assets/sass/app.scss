@@ -1,6 +1,13 @@
 @import 'colors_1';
 @import 'components';
+@import "~bootstrap/scss/functions"; 
 @import "~bootstrap/scss/bootstrap";
+@import "components";
+@mixin respond-to($breakpoint) { 
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+}
 
 
 /*@font-face {
@@ -22,6 +29,17 @@ h1,h2,h3,h4,h5,h6, .navbar-brand {
 	font-stretch: normal;
 	font-style: normal;
 }*/
+
+
+
+body, html {
+	height: 100%;
+
+	@include respond-to(map-get($grid-breakpoints, lg)) {
+		font-size: 18px;
+	}
+	color: $color-primary-4;
+}
 
 [v-cloak] {
   display: none;
