@@ -111,7 +111,7 @@
 
 		<section class="landing-section" id="vision">
 			<img src="img/lower_background.svg" />
-			<div class="container margin">
+			<div class="container" id="vision-container">
 				<h1 class="text-center promo-question">
 					<i class="color-secondary-1-0 far fa-lightbulb fa-sm mr-1"></i>
 					@lang('landing_page.vision')

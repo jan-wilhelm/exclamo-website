@@ -68,9 +68,21 @@ section > div a {
 #vision {
 	padding: 0;
 	margin: 0;
-	overflow: hidden;
 	position: relative;
 	border: none;
+}
+
+#vision:before {
+	position: absolute;
+	content: '';
+	top: -5px;
+	left: 0;
+	height: 20px;
+	width: 100%;
+	z-index: 2;
+	border-bottom-left-radius: 40%;
+	border-bottom-right-radius: 40%;
+	border-top: 11px solid #11705D;
 }
 
 #vision .container .row {
@@ -80,10 +92,16 @@ section > div a {
 
 #vision>img {
 	border-top: 1px solid #11705D;
+	width: calc(100% + 40px);
+	margin: 0;
+	padding: 0;
+	margin-left: -20px;
 	position: absolute;
-	top: 0px;
-	width: calc(100% + 10px);
-	margin-left: -5px;
+	top: 0;
+}
+
+#vision-container {
+	padding-top: 250px;
 }
 
 #timeline .wrapper {

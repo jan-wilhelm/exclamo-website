@@ -1,6 +1,6 @@
 <template>
-	<div class="d-inline">
-		<a href="#" v-b-modal.case-options-modal class="float-md-right ml-3 cta cta-secondary"  data-toggle="modal" data-target="#case-options-modal">
+	<div class="d-md-inline">
+		<a href="#" v-b-modal.case-options-modal class="float-md-right ml-md-3 cta cta-secondary"  data-toggle="modal" data-target="#case-options-modal">
 			{{ lang('messages.options') }}
 		</a>
 		<b-modal ref="modal" id="case-options-modal" title="Optionen">

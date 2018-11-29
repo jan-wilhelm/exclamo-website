@@ -83131,7 +83131,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "d-inline" },
+    { staticClass: "d-md-inline" },
     [
       _c(
         "a",
@@ -83143,7 +83143,7 @@ var render = function() {
               modifiers: { "case-options-modal": true }
             }
           ],
-          staticClass: "float-md-right ml-3 cta cta-secondary",
+          staticClass: "float-md-right ml-md-3 cta cta-secondary",
           attrs: {
             href: "#",
             "data-toggle": "modal",
