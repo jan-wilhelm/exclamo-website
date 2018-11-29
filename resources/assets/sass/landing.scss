@@ -326,7 +326,7 @@ $timeline-border-width: 4px;
 }
 
 .advantage div {
-	text-align: center;
+	text-align: left;
 }
 
 .advantage .heading {
@@ -334,9 +334,8 @@ $timeline-border-width: 4px;
 }
 
 .advantage-img {
-	width: 400px;
-	max-height: 100%;
-	max-width: 100%;
+	max-height: 600px;
+	max-width: 400px;
 }
 
 .signup-form {

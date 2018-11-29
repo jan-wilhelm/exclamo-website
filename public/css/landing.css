@@ -11157,7 +11157,7 @@ h6 {
 }
 
 .advantage div {
-  text-align: center;
+  text-align: left;
 }
 
 .advantage .heading {
@@ -11165,9 +11165,8 @@ h6 {
 }
 
 .advantage-img {
-  width: 400px;
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 600px;
+  max-width: 400px;
 }
 
 .signup-form {

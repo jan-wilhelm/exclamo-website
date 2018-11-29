@@ -89,7 +89,7 @@
 			</b-navbar>
 			<div class="my-2 my-md-auto container-fluid row pt-xl-5 pt-md-4 pt-3">
 				<div class="offset-md-2 col-md-7 col-lg-6 flex-column">
-					<h1 class="my-md-5 my-3 py-1 color-primary-0 font-weight-bold" id="slogan">
+					<h1 class="my-lg-5 my-md-3 my-1 py-1 color-primary-0 font-weight-bold" id="slogan">
 						@lang('landing_page.slogan')
 					</h1>
 					<p class="color-primary-4">
@@ -146,7 +146,7 @@
 					</div>
 				</div>
 				<div class="row advantage text-div">
-					<div class="col-lg-9 text-div order-sm-2" data-aos="fade-up">
+					<div class="col-lg-9 text-div order-lg-2" data-aos="fade-up">
 						<h1 class="heading">
 							@lang('landing_page.easy_access')
 						</h1>
@@ -168,7 +168,7 @@
 					</div>
 				</div>
 				<div class="row advantage text-div">
-					<div class="col-lg-9 text-div order-sm-2" data-aos="fade-up">
+					<div class="col-lg-9 text-div order-lg-2" data-aos="fade-up">
 						<h1 class="heading">
 							@lang('landing_page.data_security_heading')
 						</h1>
