@@ -79,15 +79,13 @@ section > div a {
 #vision:before {
 	position: absolute;
 	content: '';
-	top: -5px;
+	top: -10px;
 	left: 0;
 	height: 20px;
 	width: 100%;
 	z-index: 2;
-	border-bottom-left-radius: 40%;
-	border-bottom-right-radius: 40%;
-	border-top: 11px solid #11705D;
-	overflow-x: hidden;
+	background-color: #11705D;
+	overflow: hidden;
 }
 
 #vision .container .row {
@@ -101,17 +99,14 @@ section > div a {
 	margin: 0;
 	padding: 0;
 	margin-left: -20px;
-	position: absolute;
 	top: 0;
 }
 
 #vision-image-wrapper {
-	position: relative;
 	top: 0;
 	left: 0;
 	width: 100%;
 	overflow: hidden;
-	height: 130px;
 }
 
 #vision-container {
@@ -239,7 +234,7 @@ $timeline-border-width: 4px;
 
 .landing-section.full {
 	@include respond-to(map-get($grid-breakpoints, md)) {
-	min-height: 100%;
+	min-height: 100vh;
 	}
 }
 
