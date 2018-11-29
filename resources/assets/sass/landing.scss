@@ -296,15 +296,22 @@ $timeline-border-width: 4px;
 	height: 100%;
 	padding: 15px;
 	background-color: transparentize($color-primary-4, 0.2);
-    -webkit-transition: opacity 0.4s;
-    transition: opacity 0.4s;
+	outline: 0px solid white;
+	outline-offset: 0px;
+    -webkit-transition: opacity 0.4s, outline 0.4s, outline-offset 0.4s;
+    transition: opacity 0.4s, outline 0.4s, outline-offset 0.4s;
     opacity: 0;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .avatar-content:hover > .description {
 	opacity: 1;
+	outline-offset: -7px;
+	outline: 7px solid $color-secondary-1-1;
 }
 
 .avatar-content .description .avatar-name {

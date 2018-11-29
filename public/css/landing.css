@@ -11122,8 +11122,10 @@ h6 {
   height: 100%;
   padding: 15px;
   background-color: rgba(0, 92, 85, 0.8);
-  -webkit-transition: opacity 0.4s;
-  transition: opacity 0.4s;
+  outline: 0px solid white;
+  outline-offset: 0px;
+  -webkit-transition: opacity 0.4s, outline 0.4s, outline-offset 0.4s;
+  transition: opacity 0.4s, outline 0.4s, outline-offset 0.4s;
   opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11132,10 +11134,15 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 .avatar-content:hover > .description {
   opacity: 1;
+  outline-offset: -7px;
+  outline: 7px solid #EE5279;
 }
 
 .avatar-content .description .avatar-name {
