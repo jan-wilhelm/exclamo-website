@@ -268,19 +268,44 @@
 						@include('landing_page.' . app()->getLocale() . '.who')
 					</div>
 				</div>
-
+			</div>
+			<div id="avatar-container" class="container-fluid">
 				<div class="row align-content-center mt-5" data-aos="fade-up">
-					<div class="col-md-4 col-12 text-center avatar">
-						<img src="{{ asset('img/kai.jpg') }}" class="rounded-circle">
-						<div class="avatar-name">Kai Lanz</div>
+					<div class="m-auto col-lg-4 col-md-8 col-12 avatar">
+						<div class="avatar-content">
+							<img src="{{ asset('img/kai.jpg') }}">
+							<div class="description">
+								<h3 class="avatar-name">Kai Lanz</h3>
+								<span class="m-0 p-0">
+									<strong>E-Mail: </strong>
+									<a href="mailto:kai.lanz@exclamo.org">kai.lanz@exclamo.org</a>
+								</span> 
+							</div>
+						</div>
 					</div>
-					<div class="col-md-4 col-12 text-center avatar">
-						<img src="{{ asset('img/jan.jpg') }}" class="rounded-circle">
-						<div class="avatar-name">Jan Wilhelm</div>
+					<div class="m-auto col-lg-4 col-md-8 col-12 avatar">
+						<div class="avatar-content">
+							<img src="{{ asset('img/jan.jpg') }}">
+							<div class="description">
+								<h3 class="avatar-name">Jan Wilhelm</h3>
+								<span class="m-0 p-0">
+									<strong>E-Mail: </strong>
+									<a href="mailto:jan.wilhelm@exclamo.org">jan.wilhelm@exclamo.org</a>
+								</span> 
+							</div>
+						</div>
 					</div>
-					<div class="col-md-4 col-12 text-center avatar">
-						<img src="{{ asset('img/julius.jpg') }}" class="rounded-circle">
-						<div class="avatar-name">Julius de Gruyter</div>
+					<div class="m-auto col-lg-4 col-md-8 col-12 avatar">
+						<div class="avatar-content">
+							<img src="{{ asset('img/julius.jpg') }}">
+							<div class="description">
+								<h3 class="avatar-name">Julius de Gruyter</h3>
+								<span class="m-0 p-0">
+									<strong>E-Mail: </strong>
+									<a href="mailto:julius.degruyter@exclamo.org">julius.degruyter@exclamo.org</a>
+								</span> 
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
