@@ -11071,6 +11071,10 @@ h6 {
   height: 60px;
 }
 
+.avatar {
+  cursor: pointer;
+}
+
 .avatar-name {
   margin-top: 20px;
 }
