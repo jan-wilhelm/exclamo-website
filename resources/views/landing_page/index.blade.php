@@ -10,7 +10,7 @@
 
 @section("body")
 	<div class="w-100 h-100" id="app" >
-	<div id="app-content" class="h-100" v-cloak>
+	<div id="app-content" v-cloak>
 
 		<section class="landing-section full d-flex flex-column white" id="first-section">
 			<b-navbar toggleable="xl" class="white fixed-lg-top">
