@@ -87,7 +87,7 @@
 					</b-collapse>
 				</b-container>
 			</b-navbar>
-			<div class="my-2 my-md-auto container-fluid row pt-md-5 pt-3">
+			<div class="my-2 my-md-auto container-fluid row pt-xl-5 pt-md-4 pt-3">
 				<div class="offset-md-2 col-md-7 col-lg-6 flex-column">
 					<h1 class="my-md-5 my-3 py-1 color-primary-0 font-weight-bold" id="slogan">
 						@lang('landing_page.slogan')
@@ -106,6 +106,9 @@
 						</a>
 					</p>
 				</div>
+			</div>
+			<div class="mt-auto align-text-bottom align-self-end d-lg-none w-100 p-0 m-0">
+				<img src="img/small_background.svg" class="w-100">
 			</div>
 		</section>
 

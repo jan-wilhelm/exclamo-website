@@ -10667,6 +10667,10 @@ a.text-dark:focus {
   color: #111111 !important;
 }
 
+.nav-item {
+  white-space: nowrap;
+}
+
 .nounderline {
   text-decoration: none !important;
 }
@@ -10824,6 +10828,13 @@ html {
   color: #005C55;
 }
 
+@media (min-width: 768px) {
+  body,
+  html {
+    font-size: 18px;
+  }
+}
+
 @media (min-width: 992px) {
   body,
   html {
@@ -10865,12 +10876,17 @@ h6 {
 }
 
 #first-section {
-  background: url("/img/upper_background.svg") no-repeat center center;
-  background-size: cover;
   border: none;
   padding: 0;
   margin: 0;
   z-index: 1;
+}
+
+@media (min-width: 992px) {
+  #first-section {
+    background: url("/img/upper_background.svg") no-repeat center center;
+    background-size: cover;
+  }
 }
 
 #vision {
@@ -11041,8 +11057,10 @@ h6 {
   margin-right: 40px;
 }
 
-.landing-section.full {
-  min-height: 100%;
+@media (min-width: 768px) {
+  .landing-section.full {
+    min-height: 100%;
+  }
 }
 
 .margin {

@@ -18,7 +18,9 @@
 
 body, html {
 	height: 100%;
-
+	@include respond-to(map-get($grid-breakpoints, md)) {
+		font-size: 18px;
+	}
 	@include respond-to(map-get($grid-breakpoints, lg)) {
 		font-size: 20px;
 	}
@@ -54,11 +56,13 @@ section > div a {
 }
 
 #first-section {
-	background: url('/img/upper_background.svg') no-repeat center center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	@include respond-to(map-get($grid-breakpoints, lg)) {
+		background: url('/img/upper_background.svg') no-repeat center center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
 	border: none;
 	padding: 0;
 	margin: 0;
@@ -225,15 +229,6 @@ $timeline-border-width: 4px;
 	display: inline;
 }
 
-
-
-
-
-
-
-
-
-
 #contact a {
 	color: $color-primary-4;
 }
@@ -243,7 +238,9 @@ $timeline-border-width: 4px;
 }
 
 .landing-section.full {
+	@include respond-to(map-get($grid-breakpoints, md)) {
 	min-height: 100%;
+	}
 }
 
 .margin {

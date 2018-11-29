@@ -386,6 +386,10 @@
   color: #111111 !important;
 }
 
+.nav-item {
+  white-space: nowrap;
+}
+
 .nounderline {
   text-decoration: none !important;
 }
@@ -11201,6 +11205,10 @@ a.text-dark:focus {
 
 .text-black {
   color: #111111 !important;
+}
+
+.nav-item {
+  white-space: nowrap;
 }
 
 .nounderline {
