@@ -10891,6 +10891,7 @@ h6 {
   border-bottom-left-radius: 40%;
   border-bottom-right-radius: 40%;
   border-top: 11px solid #11705D;
+  overflow-x: hidden;
 }
 
 #vision .container .row {
@@ -10898,7 +10899,7 @@ h6 {
   background-size: contain;
 }
 
-#vision > img {
+#vision-image-wrapper > img {
   border-top: 1px solid #11705D;
   width: calc(100% + 40px);
   margin: 0;
@@ -10908,8 +10909,17 @@ h6 {
   top: 0;
 }
 
+#vision-image-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 130px;
+}
+
 #vision-container {
-  padding-top: 250px;
+  padding-top: 120px;
 }
 
 #timeline .wrapper {
