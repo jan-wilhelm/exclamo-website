@@ -10875,6 +10875,13 @@ h6 {
   }
 }
 
+#why-exclamo {
+  background-color: white;
+  padding: 20px;
+  display: inline;
+  border-radius: 40px;
+}
+
 #first-section {
   border: none;
   padding: 0;

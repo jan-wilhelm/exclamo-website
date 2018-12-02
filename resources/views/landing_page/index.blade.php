@@ -100,7 +100,7 @@
 							@lang('landing_page.protect_your_students')
 						</a>
 					</p>
-					<p class="d-flex">
+					<p class="" id="why-exclamo">
 						<a href="#what">
 							&#9658 @lang('landing_page.why_choose_exclamo')
 						</a>

@@ -55,6 +55,13 @@ section > div a {
 	}
 }
 
+#why-exclamo {
+	background-color: white;
+	padding: 20px;
+	display: inline;
+	border-radius: 40px;
+}
+
 #first-section {
 	@include respond-to(map-get($grid-breakpoints, lg)) {
 		background: url('/img/upper_background.svg') no-repeat center center;
