@@ -1,3 +1,3 @@
-<li class="nav-item {{ explode('.', Request::route()->getName() )[0] == $route ? 'active' : '' }}">
+<li class="nav-item {{ explode('.', Route::currentRouteName() )[0] == $route ? 'active' : '' }}">
 	<a class="nav-link" href="{{ route($route) }}">{{ $slot }}</a>
  </li>

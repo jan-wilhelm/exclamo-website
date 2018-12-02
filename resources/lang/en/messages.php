@@ -70,5 +70,7 @@ return [
 	'faq'=> 'Frequently Asked Questions',
 	'report_incident'=> 'Report an Incident',
 	'features'=> 'Features',
-	'resources'=> 'Resources'
+	'resources'=> 'Resources',
+	'notes'=> 'Notes',
+	'your_private_notes'=> 'Keep your thoughts and notes safe by using our encrypted application!'
 ];

@@ -2,6 +2,6 @@
 	@lang('messages.incidents')
 @endnavlink
 
-@navlink(["route"=>"incidents"])
+@navlink(["route"=>"notes"])
 	@lang('messages.notes')
 @endnavlink

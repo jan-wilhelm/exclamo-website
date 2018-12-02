@@ -72,5 +72,7 @@ return [
 	'faq'=> 'Häufig gestellte Fragen',
 	'report_incident'=> 'Melde einen Vorfall',
 	'features'=> 'Features',
-	'resources'=> 'Nützliche Links'
+	'resources'=> 'Nützliche Links',
+	'notes'=> 'Notizen',
+	'your_private_notes'=> 'Halte hier deine privaten Notizen fest.'
 ];

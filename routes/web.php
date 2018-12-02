@@ -27,6 +27,9 @@ Route::middleware('auth')->group(function() {
 	Route::get('cases/{case}', 'ReportedCaseController@showIncident')->name('incidents.show');
 	Route::get('report', 'ReportedCaseController@report')->name('incidents.report');
 	Route::post('create', 'ReportedCaseController@store')->name('incidents.store');
+
+	Route::get('notes', 'NoteController@index')->name('notes');
+	Route::match(['post', 'put', 'patch'], 'notes', 'NoteController@update')->name('notes.edit');
 });
 
 // HOME

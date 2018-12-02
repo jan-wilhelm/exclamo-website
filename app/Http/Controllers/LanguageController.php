@@ -10,8 +10,6 @@ class LanguageController extends Controller
     
     /**
      * Change the language of the user and save his settings
-     * @param  Request $request [description]
-     * @return [type]           [description]
      */
 	public function changeLanguage(Request $request)
 	{
