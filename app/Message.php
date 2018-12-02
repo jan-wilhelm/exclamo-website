@@ -9,7 +9,6 @@ use Illuminate\Notifications\Notifiable;
 
 class Message extends Model
 {
-
     use HasEncryptedAttributes;
 
 	protected $fillable = [
