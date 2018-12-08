@@ -68,6 +68,16 @@ class User extends Authenticatable implements JWTSubject
      * /////////////////    METHODS    //////////////////
      * //////////////////////////////////////////////////
      */
+    
+    public function caseNotifications($caseId)
+    {
+        $unreadNotifications = $this->unreadNotifications;
+        $unreadNotifications = $unreadNotifications->filter(function($notification) use ($caseId) {
+            return $notification->data['case_id'] == $caseId;
+        });
+
+        return $unreadNotifications;
+    }
 
     /**
      * Get the full name of the user connected with a space

@@ -19,6 +19,8 @@ use App\Services\MessageService;
 
 use App\Repositories\ReportedCaseRepository;
 
+use Auth;
+
 class ReportedCaseController extends Controller
 {
 
@@ -111,6 +113,7 @@ class ReportedCaseController extends Controller
     public function showIncident(Request $request, ReportedCase $case)
     {
         $this->authorize('view', $case);
+        Auth::user()->caseNotifications($case->id)->markAsRead();
 
         // Transform the collection of messages into a dictionary that
         // can be read by the vue components

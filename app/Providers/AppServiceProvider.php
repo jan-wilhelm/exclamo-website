@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Blade;
 use DB;
 use Log;
+use App\Message;
+use App\Observers\MessageObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('components.exclamosection', 'exclamosection');
         Blade::component('components.exclamoflexsection', 'exclamoflexsection');
         Blade::component('components.cases.casesview', 'casesview');
+
+        Message::observe(MessageObserver::class);
     }
 
     /**
