@@ -1,0 +1,13 @@
+@import "colors_lightblue";
+
+%back-gradient {
+	background: $color-one;
+	background: -moz-linear-gradient(-45deg, $color-one 0%, $color-two 100%);
+	background: -webkit-linear-gradient(-45deg, $color-one 0%, $color-two 100%);
+	background: linear-gradient(135deg, $color-one 0%, $color-two 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-one', endColorstr='$color-two',GradientType=1 );
+}
+
+.back-gradient {
+	@extend %back-gradient;
+}
