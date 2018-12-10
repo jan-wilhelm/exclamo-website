@@ -12,9 +12,9 @@
 	<div class="w-100 h-100" id="app">
 		<div id="app-content" v-cloak>
 			<b-navbar toggleable="xl" class="white fixed-lg-top back-gradient">
-				<b-container class="py-3">
+				<b-container class="py-2">
 					<b-navbar-brand href="{{ route('home') }}" class="mr-md-5">
-						<img src="{{ asset('img/logo/logo_text_rounded.png') }}" height="45px">
+						<img src="{{ asset('img/logo/logo_text_rounded.png') }}" height="35px">
 					</b-navbar-brand>
 					<b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
