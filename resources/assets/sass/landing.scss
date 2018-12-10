@@ -29,7 +29,7 @@ body, html {
 		font-size: 18px;
 	}
 
-	line-height: 1.8rem;
+	line-height: 1.9rem;
 }
 
 .nav-item, .nav-link {
@@ -78,4 +78,13 @@ h1, h2, h3, h4, h5, h6 {
 		left: 0;
 		right: 0;
 	}	
+}
+
+section {
+	margin-bottom: 80px;
+}
+
+section:not(.back-gradient) h1 {
+	@extend %underlined;
+	margin-bottom: 20px;
 }

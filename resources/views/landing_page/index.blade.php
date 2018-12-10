@@ -99,6 +99,27 @@
 						<img src="/img/iPhoneCases.png">
 					</div>
 				</section>
+				<section class="pt-5 row">
+					<div class="col-lg-6">
+						<h1><i class="far fa-lightbulb"></i> Unsere Vision</h1>
+						<div class="font-weight-medium">
+							Wir haben die Vision von Schulen, in denen jeder Schüler jeden anderen
+							Schüler gleichwertig und respektvoll behandelt. Deshalb kämpfen wir
+							gegen Rassismus, Sexismus, Antisemitismus und alle anderen Formen der
+							Diskriminierung.
+							Wir hoffen, dass wir auch Sie für den Kampf gegen Mobbing begeistern
+							können!
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<h1><i class="far fa-newspaper"></i> Aktuelles</h1>
+						<div class="font-weight-medium">
+							<div class="col-12">
+								
+							</div>
+						</div>
+					</div>
+				</section>
 			</div>
 
 		</div>

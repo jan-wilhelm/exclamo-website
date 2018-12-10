@@ -31,6 +31,12 @@
   box-shadow: 12px 12px 0px 0px #004058;
 }
 
+.underlined,
+section:not(.back-gradient) h1 {
+  display: inline-block;
+  border-bottom: 8px solid #004058;
+}
+
 /* increase container width for the wider lg and xl breakpoints */
 
 /*!
@@ -10534,6 +10540,12 @@ a.text-dark:focus {
   box-shadow: 12px 12px 0px 0px #004058;
 }
 
+.underlined,
+section:not(.back-gradient) h1 {
+  display: inline-block;
+  border-bottom: 8px solid #004058;
+}
+
 #app-content {
   min-height: 100vh;
 }
@@ -10704,7 +10716,7 @@ a.text-dark:focus {
 body,
 html {
   height: 100%;
-  line-height: 1.8rem;
+  line-height: 1.9rem;
 }
 
 @media (min-width: 992px) {
@@ -10768,5 +10780,13 @@ h6 {
     left: 0;
     right: 0;
   }
+}
+
+section {
+  margin-bottom: 80px;
+}
+
+section:not(.back-gradient) h1 {
+  margin-bottom: 20px;
 }
 

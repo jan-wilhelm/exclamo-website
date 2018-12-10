@@ -31,6 +31,11 @@
   box-shadow: 12px 12px 0px 0px #004058;
 }
 
+.underlined {
+  display: inline-block;
+  border-bottom: 8px solid #004058;
+}
+
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -10530,6 +10535,11 @@ a.text-dark:focus {
 .back-borders {
   -webkit-box-shadow: 12px 12px 0px 0px #004058;
   box-shadow: 12px 12px 0px 0px #004058;
+}
+
+.underlined {
+  display: inline-block;
+  border-bottom: 8px solid #004058;
 }
 
 #app-content {

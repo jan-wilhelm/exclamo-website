@@ -18,10 +18,19 @@
 	box-shadow: 12px 12px 0px 0px $color-secondary;
 }
 
+%underlined {
+    display: inline-block;
+    border-bottom: 8px solid $color-secondary;
+}
+
 .back-gradient {
 	@extend %back-gradient;
 }
 
 .back-borders {
 	@extend %back-borders;
+}
+
+.underlined {
+	@extend %underlined;
 }
