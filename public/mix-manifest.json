@@ -1,10 +1,10 @@
 {
     "/js/app.js": "/js/app.js",
+    "/css/landing.css": "/css/landing.css",
+    "/css/style.css": "/css/style.css",
     "/js/landing.js": "/js/landing.js",
     "/js/cases.js": "/js/cases.js",
     "/css/bootstrap.css": "/css/bootstrap.css",
     "/css/vue-multiselect.css": "/css/vue-multiselect.css",
-    "/css/aos.css": "/css/aos.css",
-    "/css/landing.css": "/css/landing.css",
-    "/css/style.css": "/css/style.css"
+    "/css/aos.css": "/css/aos.css"
 }

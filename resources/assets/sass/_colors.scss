@@ -8,6 +8,20 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-one', endColorstr='$color-two',GradientType=1 );
 }
 
+%back-gradient * {
+	color: $color-secondary;
+}
+
+%back-borders {
+	-webkit-box-shadow: 12px 12px 0px 0px $color-secondary;
+	-moz-box-shadow: 12px 12px 0px 0px $color-secondary;
+	box-shadow: 12px 12px 0px 0px $color-secondary;
+}
+
 .back-gradient {
 	@extend %back-gradient;
+}
+
+.back-borders {
+	@extend %back-borders;
 }

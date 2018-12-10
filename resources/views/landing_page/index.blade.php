@@ -12,7 +12,7 @@
 	<div class="w-100 h-100" id="app">
 		<div id="app-content" v-cloak>
 			<b-navbar toggleable="xl" class="white fixed-lg-top back-gradient">
-				<b-container class="py-2">
+				<b-container fluid class="py-2">
 					<b-navbar-brand href="{{ route('home') }}" class="mr-md-5">
 						<img src="{{ asset('img/logo/logo_text_rounded.png') }}" height="35px">
 					</b-navbar-brand>
@@ -20,7 +20,7 @@
 
 					<b-collapse is-nav id="nav_collapse">
 
-						<b-navbar-nav class="mr-auto" id="nav-links">
+						<b-navbar-nav class="mx-auto" id="nav-links">
 							<li class="nav-item"><a class="nav-link" href="#vision">@lang('landing_page.vision')</a></li>
 							<li class="nav-item"><a class="nav-link" href="#what">@lang('landing_page.what')</a></li>
 							<li class="nav-item"><a class="nav-link" href="#forschools">@lang('landing_page.for_schools')</a></li>
@@ -29,7 +29,7 @@
 						</b-navbar-nav>
 
 						<!-- Right aligned nav items -->
-						<b-navbar-nav class="ml-auto">
+						<b-navbar-nav>
 							<b-nav-item-dropdown right>
 								<!-- Using button-content slot -->
 								<template slot="button-content">
@@ -59,9 +59,11 @@
 									@lang('messages.login')
 								</a>
 							</li>
-							<a href="#forschools" class="nav-item cta cta-primary">
-								@lang('landing_page.use_exclamo')
-							</a>
+							<li class="nav-item">
+								<a href="#forschools" class="nav-link cta cta-primary">
+									@lang('landing_page.use_exclamo')
+								</a>
+							</li>
 							@else
 							<li class="nav-item">
 								<a href="{{ route('dashboard') }}" class="nav-item nav-link color-primary-0 mx-auto">
@@ -75,11 +77,32 @@
 			</b-navbar>
 
 			<div class="container">
-				<section>awdawd</section>
+				<section class="mt-5 back-gradient back-borders row">
+					<div class="col-lg-6 p-5 my-auto">
+						<div class="col-12 pl-1 py-4 pr-0">
+							<h1 class="mt-lg-4">Die App für Schulen gegen Mobbing</h1>
+							<div class="mt-4 font-weight-medium">
+								Mit einem einzigartigen Ansatz helfen wir Schulen, Mobbing zu
+								bekämpfen: Ihre Schüler wenden sich per exclamo an
+								ausgewählte Lehrer und professionelle Mobbing-Experten und
+								erhalten so schnelle und anonyme Hilfe!
+							</div>
+							<div>
+								<a href="#forschools" class="mt-3 cta cta-primary">
+									Jetzt Ihre Schule anmelden!
+								</a>
+								<a href="#what" class="d-inline-block p-3">&#9658 Warum exclamo?</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 p-0 m-0" id="image-placeholder">
+						<img src="/img/iPhoneCases.png">
+					</div>
+				</section>
 			</div>
 
-			@include('layouts.footer')
 		</div>
+		@include('layouts.footer')
 	</div>
 @endsection
 

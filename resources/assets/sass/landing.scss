@@ -16,9 +16,27 @@
     }
 }
 
+@mixin breakpoint($breakpoint) { 
+	@include respond-to(map-get($grid-breakpoints, $breakpoint)) {
+    	@content;
+    }
+}
+
+body, html {
+	height: 100%;
+
+	@include breakpoint(lg) {
+		font-size: 18px;
+	}
+
+	line-height: 1.8rem;
+}
+
 .nav-item, .nav-link {
     font-weight: 700;
     font-size: 12px;
+    padding: 0;
+    margin: 0.5rem, 1rem;
 }
 
 #nav-links {
@@ -26,7 +44,7 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-	color: $color-one	;
+	color: $color-black;
     font-weight: 700;
 }
 
@@ -37,4 +55,27 @@ h1, h2, h3, h4, h5, h6 {
 	    text-transform: uppercase;
 		white-space: nowrap;
 	}
+}
+
+#image-placeholder img {
+	max-height: 500px;
+
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+}
+
+@include breakpoint(lg) {
+	#image-placeholder {
+		position: relative;
+	}
+
+	#image-placeholder img {
+		position: absolute;
+		max-height: 120%;
+		max-width: 100%;
+		top: -10%;
+		left: 0;
+		right: 0;
+	}	
 }

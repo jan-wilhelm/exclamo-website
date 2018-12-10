@@ -22,6 +22,15 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-one', endColorstr='$color-two',GradientType=1 );
 }
 
+.back-gradient * {
+  color: #004058;
+}
+
+.back-borders {
+  -webkit-box-shadow: 12px 12px 0px 0px #004058;
+  box-shadow: 12px 12px 0px 0px #004058;
+}
+
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -10514,6 +10523,19 @@ a.text-dark:focus {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-one', endColorstr='$color-two',GradientType=1 );
 }
 
+.back-gradient * {
+  color: #004058;
+}
+
+.back-borders {
+  -webkit-box-shadow: 12px 12px 0px 0px #004058;
+  box-shadow: 12px 12px 0px 0px #004058;
+}
+
+#app-content {
+  min-height: 100vh;
+}
+
 .nav-item {
   white-space: nowrap;
   display: -webkit-box;
@@ -10554,7 +10576,7 @@ a.text-dark:focus {
 }
 
 .cta {
-  padding: 0.6rem 1.2rem;
+  padding: 0.1rem 1.2rem !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10624,10 +10646,25 @@ a.text-dark:focus {
 .cta-primary {
   background-color: #FFEE00 !important;
   color: #004058 !important;
+  -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+
+.cta-primary:hover {
+  -webkit-box-shadow: rgba(34, 50, 84, 0.22) 0px 4px 12px;
+          box-shadow: rgba(34, 50, 84, 0.22) 0px 4px 12px;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
 
 .nav-link {
   color: #004058 !important;
+}
+
+.font-weight-medium {
+  font-weight: 500 !important;
 }
 
 .opacity-hover {
