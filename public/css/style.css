@@ -3,7 +3,8 @@
   background-color: white;
 }
 
-.text-white {
+.text-white,
+.text-white > * {
   color: white !important;
 }
 
@@ -66,6 +67,12 @@
 .underlined {
   display: inline-block;
   border-bottom: 8px solid #004058;
+}
+
+.back-gradient-accent {
+  background: #485DCF;
+  background: linear-gradient(135deg, #485DCF 0%, #23A8D8 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-accent-one', endColorstr='$color-accent-two',GradientType=1 );
 }
 
 .back-borders-small {
@@ -10556,7 +10563,8 @@ a.text-dark:focus {
   background-color: white;
 }
 
-.text-white {
+.text-white,
+.text-white > * {
   color: white !important;
 }
 
@@ -10621,6 +10629,12 @@ a.text-dark:focus {
   border-bottom: 8px solid #004058;
 }
 
+.back-gradient-accent {
+  background: #485DCF;
+  background: linear-gradient(135deg, #485DCF 0%, #23A8D8 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-accent-one', endColorstr='$color-accent-two',GradientType=1 );
+}
+
 .back-borders-small {
   -webkit-box-shadow: 7px 7px 0px 0px #004058;
   box-shadow: 7px 7px 0px 0px #004058;
@@ -10638,6 +10652,14 @@ a.text-dark:focus {
 
 #app-content {
   min-height: 100vh;
+}
+
+form label {
+  font-weight: 500;
+}
+
+form input {
+  border-radius: 0 !important;
 }
 
 .nav-item {

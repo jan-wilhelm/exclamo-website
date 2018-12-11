@@ -18,6 +18,14 @@
 	min-height: 100vh;
 }
 
+form label {
+	font-weight: 500;
+}
+
+form input {
+	border-radius: 0 !important;
+}
+
 .nav-item {
 	white-space: nowrap;
 	display: flex;

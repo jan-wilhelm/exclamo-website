@@ -7,48 +7,5 @@ $color-contrast: #FFEE00;
 $color-white: white;
 $color-black: black;
 
-.bg-color-white, .white {
-	background-color: $color-white;
-}
-.text-white {
-	color: $color-white !important;
-}
-
-.bg-color-black, .black {
-	background-color: $color-black;
-}
-.text-black {
-	color: $color-black !important;
-}
-
-.color-one {
-	color: $color-one;
-}
-
-.color-two {
-	color: $color-two;
-}
-
-.color-secondary {
-	color: $color-secondary;
-}
-
-.color-contrast {
-	color: $color-contrast;
-}
-
-.bg-color-one {
-	background-color: $color-one;
-}
-
-.bg-color-two {
-	background-color: $color-two;
-}
-
-.bg-color-secondary {
-	background-color: $color-secondary;
-}
-
-.bg-color-contrast {
-	background-color: $color-contrast;
-}
+$color-accent-one: #485DCF;
+$color-accent-two: #23A8D8;
