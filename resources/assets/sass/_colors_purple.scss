@@ -1,0 +1,22 @@
+$color-one: #5543CC;
+$color-two: #662266;
+
+$color-secondary: #FF5757;
+$color-contrast: #EA2758;
+
+$color-white: white;
+$color-black: black;
+
+.bg-color-white, .white {
+	background-color: $color-white;
+}
+.text-white {
+	color: $color-white !important;
+}
+
+.bg-color-black, .black {
+	background-color: $color-black;
+}
+.text-black {
+	color: $color-black !important;
+}
