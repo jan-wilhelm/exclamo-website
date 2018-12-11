@@ -127,7 +127,7 @@
 					</div>
 				</section>
 				<h1 class="underlined mb-3">Was ist exclamo?</h1>
-				<section class="back-gradient back-borders p-md-5 d-flex flex-column">
+				<section class="back-gradient back-borders p-3 py-md-4 p-lg-5 d-flex flex-column">
 					<div class="advantage">
 						<h5 class="advantage-heading">
 							<i class="fas fa-shield-alt"></i>

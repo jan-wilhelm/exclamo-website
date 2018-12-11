@@ -10865,10 +10865,22 @@ section:not(.back-gradient) h1 {
 }
 
 .advantage-heading svg {
-  width: 72px !important;
+  width: 50px !important;
+}
+
+@media (min-width: 768px) {
+  .advantage-heading svg {
+    width: 72px !important;
+  }
 }
 
 .advantage p {
-  padding-left: 80px;
+  padding-left: 6px;
+}
+
+@media (min-width: 768px) {
+  .advantage p {
+    padding-left: 80px;
+  }
 }
 
