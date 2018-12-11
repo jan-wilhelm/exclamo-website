@@ -128,8 +128,8 @@
 				</section>
 
 				<h1 class="underlined mb-3">Was ist exclamo?</h1>
-				<section class="back-gradient back-borders p-3 py-md-4 p-lg-5 d-flex flex-column">
-					<div class="advantage">
+				<section class="row back-gradient back-borders py-4 px-1  d-flex flex-column">
+					<div class="col-12 advantage">
 						<h5 class="advantage-heading">
 							<i class="fas fa-shield-alt"></i>
 							Anonyme Nachrichten
@@ -139,7 +139,7 @@
 							Schulsozialarbeiter senden.
 						</p>
 					</div>
-					<div class="advantage">
+					<div class="col-12 advantage">
 						<h5 class="advantage-heading">
 							<i class="fas fa-file-alt"></i>
 							Anonyme Nachrichten
@@ -148,7 +148,7 @@
 							Der Schüler kann in einem eigenen Notizbereiche Vorfälle für sich persönlich festhalten um die Ereignisse zu dokumentieren und reflektieren.
 						</p>
 					</div>
-					<div class="advantage">
+					<div class="col-12 advantage">
 						<h5 class="advantage-heading">
 							<i class="fas fa-users"></i>
 							Professionelle Unterstützung
@@ -157,7 +157,7 @@
 							Wenn die betroffenen Person seelische Unterstützung benötigt, stehen außerdem die Nummer von Sorgentelefonen, sowie der Kontakt zur psychotherapeutischen KV-Terminservicestelle zur Verfügung.
 						</p>
 					</div>
-					<div class="advantage">
+					<div class="col-12 advantage">
 						<h5 class="advantage-heading">
 							<i class="fas fa-comments"></i>
 							Material für Schüler und Lehrer
@@ -166,7 +166,7 @@
 							exclamo bietet Zugang zu Materialien zum Umgang mit Mobbing, die in ihrer gebündelter Form effektive Hilfsangebote für Lehrer und Schüler darstellen!
 						</p>
 					</div>
-					<div class="advantage">
+					<div class="col-12 advantage">
 						<h5 class="advantage-heading">
 							<i class="fas fa-check-circle"></i>
 							Mobbingprävention
