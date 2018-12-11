@@ -126,6 +126,7 @@
 						</div>
 					</div>
 				</section>
+
 				<h1 class="underlined mb-3">Was ist exclamo?</h1>
 				<section class="back-gradient back-borders p-3 py-md-4 p-lg-5 d-flex flex-column">
 					<div class="advantage">
@@ -171,7 +172,7 @@
 							Mobbingprävention
 						</h5>
 						<p>
-							Durch eine so einfach Möglichkeit für Betroffene, Mobbing zu melden, wird dieHemmschwelle für Täter deutlich größer!	
+							Durch eine so einfach Möglichkeit für Betroffene, Mobbing zu melden, wird die Hemmschwelle für Täter deutlich größer!	
 						</p>
 					</div>
 					<div class="mx-auto">
@@ -179,6 +180,25 @@
 						<a href="#forschools" class="cta cta-primary">
 							Melden Sie sich jetzt an!
 						</a>
+					</div>
+				</section>
+
+				<h1 class="underlined mb-3">Wer sind wir?</h1>
+				<p class="font-weight-medium">
+					Wir, das Team, sind Berliner Schüler und haben uns überlegt, wie man Mobbing am besten bekämpfen kann. Da das Handy eines der Alltagsgegenstände schlechthin ist, schien außer Frage, dass eine App das beste Format ist. Wir sind derzeit in unserem letzten Schuljahr und möchten anderen Schülern und ihren Schulen helfen, Mobbing zu bekämpfen.
+				</p>
+				<section class="row">
+					<div class="col-md-4 px-3 mt-2">
+						<img src="/img/kai.jpg" class="w-100 mb-2">
+						<h3>Kai Lanz</h3>
+					</div>
+					<div class="col-md-4 px-3 mt-2">
+						<img src="/img/jan.jpg" class="w-100 mb-2">
+						<h3>Jan Wilhelm</h3>
+					</div>
+					<div class="col-md-4 px-3 mt-2">
+						<img src="/img/julius.jpg" class="w-100 mb-2">
+						<h3>Julius de Gruyter</h3>
 					</div>
 				</section>
 			</div>
