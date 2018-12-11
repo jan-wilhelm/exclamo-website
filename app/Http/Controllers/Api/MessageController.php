@@ -11,6 +11,9 @@ use App\ReportedCase;
 use App\Rules\ReportedCaseExistsAndBelongsToUser;
 use App\Events\MessageSent;
 
+use App\Actions\CreateMessageAction;
+use App\Actions\BroadcastMessageAction;
+
 class MessageController extends Controller
 {
     public function __construct()
@@ -28,11 +31,11 @@ class MessageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, CreateMessageAction $action)
     {
         $this->authorize('create', Message::class);
 
-        $validated = $request->validate([
+        $data = $request->validate([
             'message'=> 'required|string',
             'case'=> [
                 'required',
@@ -40,13 +43,8 @@ class MessageController extends Controller
             ]
         ]);
 
-        $message = Message::create([
-            'body' => $validated['message'],
-            'reported_case_id' => $validated['case'],
-            'user_id' => Auth::id()
-        ]);
-
-        broadcast(new MessageSent($message))->toOthers();
+        $message = $action->execute($data["message"], $data["case"], Auth::id());
+        (new BroadcastMessageAction)->execute($message)->toOthers();
 
         // Return the freshly created Message. This can be useful for the client
         // to know the message id etc.

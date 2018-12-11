@@ -5,30 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\Actions\ChangeLanguageAction;
+
 class LanguageController extends Controller
 {
     
     /**
      * Change the language of the user and save his settings
      */
-	public function changeLanguage(Request $request)
+	public function changeLanguage(Request $request, ChangeLanguageAction $action)
 	{
-		$language = $request->input('language', config('app.fallback_locale'));
-
-		// Default to the $defaultLanguage locale
-		if(!in_array($language, config('app.locales'))) {
-			$language = config('app.fallback_locale');
-		}
-
-		// Persist the language to the database
-		if (Auth::check()) {
-			Auth::user()->language = $language;
-			Auth::user()->save();
-		}
-
-		session(['locale'=> $language]);
-		app()->setLocale($language);
-
+		$language = $request->input('language');
+		$action->execute($language);
 		return redirect()->back()->withInput();
 	}
 
