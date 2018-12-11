@@ -88,3 +88,10 @@ section:not(.back-gradient) h1 {
 	@extend %underlined;
 	margin-bottom: 20px;
 }
+
+.news-article {
+	display: flex;
+	@extend %back-gradient;
+	padding: 20px;
+	cursor: pointer;
+}

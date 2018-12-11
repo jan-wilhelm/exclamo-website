@@ -78,7 +78,7 @@
 
 			<div class="container">
 				<section class="mt-5 back-gradient back-borders row">
-					<div class="col-lg-6 p-5 my-auto">
+					<div class="col-lg-7 p-md-5 my-auto">
 						<div class="col-12 pl-1 py-4 pr-0">
 							<h1 class="mt-lg-4">Die App für Schulen gegen Mobbing</h1>
 							<div class="mt-4 font-weight-medium">
@@ -88,36 +88,45 @@
 								erhalten so schnelle und anonyme Hilfe!
 							</div>
 							<div>
-								<a href="#forschools" class="mt-3 cta cta-primary">
+								<a href="#forschools" class="cta cta-primary">
 									Jetzt Ihre Schule anmelden!
 								</a>
 								<a href="#what" class="d-inline-block p-3">&#9658 Warum exclamo?</a>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-6 p-0 m-0" id="image-placeholder">
+					<div class="col-lg-5 p-0 m-0" id="image-placeholder">
 						<img src="/img/iPhoneCases.png">
 					</div>
 				</section>
-				<section class="pt-5 row">
-					<div class="col-lg-6">
+				<section class="row">
+					<div class="pt-5 col-lg-6">
 						<h1><i class="far fa-lightbulb"></i> Unsere Vision</h1>
-						<div class="font-weight-medium">
+						<div class="font-weight-medium d-flex flex-column align-items-start">
 							Wir haben die Vision von Schulen, in denen jeder Schüler jeden anderen
 							Schüler gleichwertig und respektvoll behandelt. Deshalb kämpfen wir
 							gegen Rassismus, Sexismus, Antisemitismus und alle anderen Formen der
 							Diskriminierung.
 							Wir hoffen, dass wir auch Sie für den Kampf gegen Mobbing begeistern
 							können!
+							<a href="#forschools" class="mt-2 cta cta-primary">
+								Jetzt Ihre Schule anmelden!
+							</a>
 						</div>
 					</div>
-					<div class="col-lg-6">
+					<div class="pt-5 col-lg-6">
 						<h1><i class="far fa-newspaper"></i> Aktuelles</h1>
-						<div class="font-weight-medium">
-							<div class="col-12">
-								
+						<div class="font-weight-medium d-flex flex-column align-items-stretch">
+							<div class="news-article col-12">
+								Testphase mit dem Canisius Kolleg in Berlin
 							</div>
 						</div>
+					</div>
+				</section>
+				<h1 class="underlined mb-3">Was ist exclamo?</h1>
+				<section class="row back-gradient back-borders p-md-5">
+					<div class="col-12">
+						
 					</div>
 				</section>
 			</div>

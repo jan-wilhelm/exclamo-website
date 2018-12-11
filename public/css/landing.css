@@ -16,13 +16,15 @@
   color: black !important;
 }
 
-.back-gradient {
+.back-gradient,
+.news-article {
   background: #23FFAC;
   background: linear-gradient(135deg, #23FFAC 0%, #63D3FD 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-one', endColorstr='$color-two',GradientType=1 );
 }
 
-.back-gradient * {
+.back-gradient *,
+.news-article * {
   color: #004058;
 }
 
@@ -10525,13 +10527,15 @@ a.text-dark:focus {
   color: black !important;
 }
 
-.back-gradient {
+.back-gradient,
+.news-article {
   background: #23FFAC;
   background: linear-gradient(135deg, #23FFAC 0%, #63D3FD 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-one', endColorstr='$color-two',GradientType=1 );
 }
 
-.back-gradient * {
+.back-gradient *,
+.news-article * {
   color: #004058;
 }
 
@@ -10591,9 +10595,7 @@ section:not(.back-gradient) h1 {
 
 .cta {
   padding: 0.1rem 1.2rem !important;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   font-size: 0.85rem;
   width: auto;
   font-weight: 700;
@@ -10608,7 +10610,6 @@ section:not(.back-gradient) h1 {
   -webkit-transition: background-color 0.3s, color 0.3s;
   /* Safari */
   transition: background-color 0.3s, color 0.3s;
-  float: left;
 }
 
 @media (min-width: 992px) {
@@ -10788,5 +10789,13 @@ section {
 
 section:not(.back-gradient) h1 {
   margin-bottom: 20px;
+}
+
+.news-article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  cursor: pointer;
 }
 

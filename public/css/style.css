@@ -10587,9 +10587,7 @@ a.text-dark:focus {
 
 .cta {
   padding: 0.1rem 1.2rem !important;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   font-size: 0.85rem;
   width: auto;
   font-weight: 700;
@@ -10604,7 +10602,6 @@ a.text-dark:focus {
   -webkit-transition: background-color 0.3s, color 0.3s;
   /* Safari */
   transition: background-color 0.3s, color 0.3s;
-  float: left;
 }
 
 @media (min-width: 992px) {
