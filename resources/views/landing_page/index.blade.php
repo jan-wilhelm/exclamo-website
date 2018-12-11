@@ -117,16 +117,68 @@
 					<div class="pt-5 col-lg-6">
 						<h1><i class="far fa-newspaper"></i> Aktuelles</h1>
 						<div class="font-weight-medium d-flex flex-column align-items-stretch">
-							<div class="news-article col-12">
+							<a class="news-article mb-2 d-flex col-12 color-secondary" href="canisius.de">
 								Testphase mit dem Canisius Kolleg in Berlin
-							</div>
+							</a>
+							<a class="news-article mb-2 d-flex col-12 color-secondary" href="canisius.de">
+								Crowdfunding durch GoFundMe
+							</a>
 						</div>
 					</div>
 				</section>
 				<h1 class="underlined mb-3">Was ist exclamo?</h1>
-				<section class="row back-gradient back-borders p-md-5">
-					<div class="col-12">
-						
+				<section class="back-gradient back-borders p-md-5 d-flex flex-column">
+					<div class="advantage">
+						<h5 class="advantage-heading">
+							<i class="fas fa-shield-alt"></i>
+							Anonyme Nachrichten
+						</h5>
+						<p>
+							Der Schüler kann, auch anonym, Nachrichten an Lehrer, Schüler-Mentoren oder
+							Schulsozialarbeiter senden.
+						</p>
+					</div>
+					<div class="advantage">
+						<h5 class="advantage-heading">
+							<i class="fas fa-file-alt"></i>
+							Anonyme Nachrichten
+						</h5>
+						<p>
+							Der Schüler kann in einem eigenen Notizbereiche Vorfälle für sich persönlich festhalten um die Ereignisse zu dokumentieren und reflektieren.
+						</p>
+					</div>
+					<div class="advantage">
+						<h5 class="advantage-heading">
+							<i class="fas fa-users"></i>
+							Professionelle Unterstützung
+						</h5>
+						<p>
+							Wenn die betroffenen Person seelische Unterstützung benötigt, stehen außerdem die Nummer von Sorgentelefonen, sowie der Kontakt zur psychotherapeutischen KV-Terminservicestelle zur Verfügung.
+						</p>
+					</div>
+					<div class="advantage">
+						<h5 class="advantage-heading">
+							<i class="fas fa-comments"></i>
+							Material für Schüler und Lehrer
+						</h5>
+						<p>
+							exclamo bietet Zugang zu Materialien zum Umgang mit Mobbing, die in ihrer gebündelter Form effektive Hilfsangebote für Lehrer und Schüler darstellen!
+						</p>
+					</div>
+					<div class="advantage">
+						<h5 class="advantage-heading">
+							<i class="fas fa-check-circle"></i>
+							Mobbingprävention
+						</h5>
+						<p>
+							Durch eine so einfach Möglichkeit für Betroffene, Mobbing zu melden, wird dieHemmschwelle für Täter deutlich größer!	
+						</p>
+					</div>
+					<div class="mx-auto">
+						<span class="pr-3">Wir konnten Sie überzeugen?</span>
+						<a href="#forschools" class="cta cta-primary">
+							Melden Sie sich jetzt an!
+						</a>
 					</div>
 				</section>
 			</div>
