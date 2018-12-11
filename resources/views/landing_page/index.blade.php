@@ -189,15 +189,15 @@
 				</p>
 				<section class="row">
 					<div class="col-md-4 px-3 mt-2">
-						<img src="/img/kai.jpg" class="w-100 mb-2">
+						<img src="/img/kai.jpg" class="back-borders-small w-100 mb-3">
 						<h3>Kai Lanz</h3>
 					</div>
 					<div class="col-md-4 px-3 mt-2">
-						<img src="/img/jan.jpg" class="w-100 mb-2">
+						<img src="/img/jan.jpg" class="back-borders-one w-100 mb-3">
 						<h3>Jan Wilhelm</h3>
 					</div>
 					<div class="col-md-4 px-3 mt-2">
-						<img src="/img/julius.jpg" class="w-100 mb-2">
+						<img src="/img/julius.jpg" class="back-borders-two w-100 mb-3">
 						<h3>Julius de Gruyter</h3>
 					</div>
 				</section>

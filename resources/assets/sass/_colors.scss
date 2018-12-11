@@ -31,6 +31,24 @@
 	@extend %back-borders;
 }
 
+.back-borders-small {
+	-webkit-box-shadow: 7px 7px 0px 0px $color-secondary;
+	-moz-box-shadow: 7px 7px 0px 0px $color-secondary;
+	box-shadow: 7px 7px 0px 0px $color-secondary;
+}
+
+.back-borders-one {
+	-webkit-box-shadow: 7px 7px 0px 0px $color-one;
+	-moz-box-shadow: 7px 7px 0px 0px $color-one;
+	box-shadow: 7px 7px 0px 0px $color-one;
+}
+
+.back-borders-two {
+	-webkit-box-shadow: 7px 7px 0px 0px $color-two;
+	-moz-box-shadow: 7px 7px 0px 0px $color-two;
+	box-shadow: 7px 7px 0px 0px $color-two;
+}
+
 .underlined {
 	@extend %underlined;
 }

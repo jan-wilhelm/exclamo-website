@@ -68,6 +68,21 @@
   border-bottom: 8px solid #004058;
 }
 
+.back-borders-small {
+  -webkit-box-shadow: 7px 7px 0px 0px #004058;
+  box-shadow: 7px 7px 0px 0px #004058;
+}
+
+.back-borders-one {
+  -webkit-box-shadow: 7px 7px 0px 0px #23FFAC;
+  box-shadow: 7px 7px 0px 0px #23FFAC;
+}
+
+.back-borders-two {
+  -webkit-box-shadow: 7px 7px 0px 0px #63D3FD;
+  box-shadow: 7px 7px 0px 0px #63D3FD;
+}
+
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -10604,6 +10619,21 @@ a.text-dark:focus {
 .underlined {
   display: inline-block;
   border-bottom: 8px solid #004058;
+}
+
+.back-borders-small {
+  -webkit-box-shadow: 7px 7px 0px 0px #004058;
+  box-shadow: 7px 7px 0px 0px #004058;
+}
+
+.back-borders-one {
+  -webkit-box-shadow: 7px 7px 0px 0px #23FFAC;
+  box-shadow: 7px 7px 0px 0px #23FFAC;
+}
+
+.back-borders-two {
+  -webkit-box-shadow: 7px 7px 0px 0px #63D3FD;
+  box-shadow: 7px 7px 0px 0px #63D3FD;
 }
 
 #app-content {
