@@ -78,6 +78,11 @@ class User extends Authenticatable implements JWTSubject
 
         return $unreadNotifications;
     }
+    
+    public function routeNotificationForSlack($notification)
+    {
+        return 'https://hooks.slack.com/services/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';
+    }
 
     /**
      * Get the full name of the user connected with a space

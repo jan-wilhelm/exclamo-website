@@ -36,6 +36,8 @@ Route::middleware('auth')->group(function() {
 Route::view('/', 'landing_page.index')->name('home');
 Route::view('/faq', 'landing_page.faq')->name('faq');
 
+Route::post('/schools/signup', 'SchoolSignupController@handle')->name('schools.signup');
+
 // OTHER
 Route::post('language', 'LanguageController@changeLanguage')->name('language');
 Route::get('js/lang-{locale}.js', 'LanguageController@getJavascriptLocale')->name('language.js');

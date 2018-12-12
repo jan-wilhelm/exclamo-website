@@ -246,32 +246,76 @@
 
 				<section class="back-gradient-accent back-borders p-3 p-md-4 text-white" data-aos="fade-right">
 					<h1 class="underlined mb-5">exclamo nutzen</h1>
-					<form>
-						<div class="form-group row">
-							<label for="name-of-school" class="col-md-3 col-form-label">Name Ihrer Schule</label>
-							<div class="col-md-9 col-lg-6">
-								<input type="text" class="form-control" id="name-of-school" placeholder="Goethe-Gymnasium">
+					@if(!session('school_sign_up'))
+						@foreach ($errors->all() as $message)
+							<div class="alert alert-warning text-black" role="alert">	
+						   		{{ $message }}
 							</div>
-						</div>
-						<div class="form-group row">
-							<label for="contact-name" class="col-md-3 col-form-label">Ansprechpartner</label>
-							<div class="col-md-9 col-lg-6">
-								<input type="text" class="form-control" id="contact-name" placeholder="Frau Schulze">
+						@endforeach
+						<form action="{{ route('schools.signup') }}" method="POST">
+							@csrf
+							<div class="form-group row">
+								<label for="school" class="col-md-3 col-form-label">Name Ihrer Schule</label>
+								<div class="col-md-9 col-lg-6">
+									<input
+										type="text" 
+										class="form-control"
+										name="school"
+										id="school"
+										placeholder="Goethe-Gymnasium"
+										value={{ old('school') }}
+									>
+								</div>
 							</div>
-						</div>
-						<div class="form-group row">
-							<label for="school-email" class="col-md-3 col-form-label">E-Mail-Adresse</label>
-							<div class="col-md-9 col-lg-6">
-								<input type="email" class="form-control" id="school-email" placeholder="schulleiter@gymnasium.de">
+							<div class="form-group row">
+								<label for="contact-person" class="col-md-3 col-form-label">Ansprechpartner</label>
+								<div class="col-md-9 col-lg-6">
+									<input
+										type="text" 
+										class="form-control"
+										name="contact_person"
+										id="contact-person"
+										placeholder="Frau Schulze"
+										value={{ old('contact_person') }}
+									>
+								</div>
 							</div>
-						</div>
+							<div class="form-group row">
+								<label for="email" class="col-md-3 col-form-label">E-Mail-Adresse</label>
+								<div class="col-md-9 col-lg-6">
+									<input
+										type="email"
+										class="form-control"
+										name="email"
+										id="email"
+										placeholder="schulleiter@gymnasium.de"
+									>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="email" class="col-md-3 col-form-label">E-Mail-Adresse bestätigen</label>
+								<div class="col-md-9 col-lg-6">
+									<input
+										type="email"
+										class="form-control"
+										name="email_confirmation"
+										id="email"
+										placeholder="schulleiter@gymnasium.de"
+									>
+								</div>
+							</div>
 
-						<div class="form-group row">
-							<div class="col-sm-10">
-								<button type="submit" class="cta cta-primary">Jetzt Ihre Schule anmelden!</button>
+							<div class="form-group row">
+								<div class="col-sm-10">
+									<button type="submit" class="cta cta-primary">Jetzt Ihre Schule anmelden!</button>
+								</div>
 							</div>
-						</div>
-					</form>
+						</form>
+					@else
+						<strong class="text-center d-block">
+							Vielen Dank, dass Sie Ihr Interesse an exclamo gezeigt haben!
+						</strong>
+					@endif
 				</section>
 			</div>
 
