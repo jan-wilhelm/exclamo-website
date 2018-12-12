@@ -6,6 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
+use App\Message;
+
 class MessageSent extends Notification
 {
     use Queueable;
@@ -15,7 +17,7 @@ class MessageSent extends Notification
      *
      * @return void
      */
-    public function __construct($message)
+    public function __construct(Message $message)
     {
         $this->message = $message;
     }
