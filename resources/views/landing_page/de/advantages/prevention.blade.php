@@ -1,1 +1,0 @@
-Durch eine so einfach Möglichkeit für Betroffene, Mobbing zu melden, wird die Hemmschwelle für Täter deutlich größer!

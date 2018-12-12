@@ -1,1 +1,3 @@
-When an afflicted person seeks mental assistance, they may choose from a list of supporting hotlines and psychotherapeutic services.
+<p>
+	Students can not only contact their teachers, but also to professional bullying experts and the "Nummer-gegen-Kummer". Everything built into our app!
+</p>

@@ -22,10 +22,10 @@
 
 						<b-navbar-nav class="mx-auto" id="nav-links">
 							<li class="nav-item"><a class="nav-link" href="#vision">@lang('landing_page.vision')</a></li>
-							<li class="nav-item"><a class="nav-link" href="#news">@lang('landing_page.news')</a></li>
 							<li class="nav-item"><a class="nav-link" href="#what">@lang('landing_page.what')</a></li>
-							<li class="nav-item"><a class="nav-link" href="#team">@lang('landing_page.who')</a></li>
+							<li class="nav-item"><a class="nav-link" href="#forschools">@lang('landing_page.for_schools')</a></li>
 							<li class="nav-item"><a class="nav-link" href="{{ route('faq') }}">@lang('landing_page.faq')</a></li>
+							<li class="nav-item"><a class="nav-link" href="#team">@lang('landing_page.who')</a></li>
 						</b-navbar-nav>
 
 						<!-- Right aligned nav items -->
@@ -80,19 +80,15 @@
 				<section class="mt-5 back-gradient back-borders row">
 					<div class="col-lg-7 p-md-5 my-auto" data-aos="zoom-in">
 						<div class="col-12 pl-1 py-4 pr-0">
-							<h1 class="mt-lg-4">
-								@lang('landing_page.slogan')
-							</h1>
+							<h1 class="mt-lg-4">Die App für Schulen gegen Mobbing</h1>
 							<div class="mt-4 font-weight-medium">
-								@include('landing_page.' . app()->getLocale() . '.slogan')
+								Mit einem einzigartigen Ansatz helfen wir Schulen, Mobbing zu bekämpfen. Mobbing melden - Lösung finden: Einfach. Schnell. Anonym. 
 							</div>
 							<div>
 								<a href="#forschools" class="cta cta-primary">
-									@lang('landing_page.protect_your_students')
+									Jetzt Ihre Schule anmelden!
 								</a>
-								<a href="#what" class="d-inline-block p-3">&#9658
-									@lang('landing_page.why_choose_exclamo')
-								</a>
+								<a href="#what" class="d-inline-block p-3">&#9658 Warum exclamo?</a>
 							</div>
 						</div>
 					</div>
@@ -100,101 +96,96 @@
 						<img src="/img/iPhoneCases.png">
 					</div>
 				</section>
-				<section class="row" data-aos="fade" id="vision">
+				<section class="row" data-aos="fade">
 					<div class="pt-5 col-lg-6">
-						<h1><i class="far fa-lightbulb"></i>
-							@lang('landing_page.vision')
-						</h1>
+						<h1><i class="far fa-lightbulb"></i> Unsere Vision</h1>
 						<div class="font-weight-medium d-flex flex-column align-items-start">
-							@include('landing_page.' . app()->getLocale() . '.vision')
+							Wir haben die Vision von Schulen, in denen jeder Schüler jeden anderen
+							Schüler gleichwertig und respektvoll behandelt. Deshalb kämpfen wir
+							gegen Rassismus, Sexismus, Antisemitismus und alle anderen Formen der
+							Diskriminierung.
+							Wir hoffen, dass wir auch Sie für den Kampf gegen Mobbing begeistern
+							können!
 							<a href="#forschools" class="mt-2 cta cta-primary">
-								@lang('landing_page.signup_your_school')
+								Jetzt Ihre Schule anmelden!
 							</a>
 						</div>
 					</div>
-					<div class="pt-5 col-lg-6" id="news">
-						<h1><i class="far fa-newspaper"></i>
-							@lang('landing_page.news')
-						</h1>
+					<div class="pt-5 col-lg-6">
+						<h1><i class="far fa-newspaper"></i> Aktuelles</h1>
 						<div class="font-weight-medium d-flex flex-column align-items-stretch">
-							<a target="_blank" class="news-article mb-2 d-flex col-12 color-secondary" href="https://www.canisius.de">
+							<a class="news-article mb-2 d-flex col-12 color-secondary" href="canisius.de">
 								Testphase mit dem Canisius Kolleg in Berlin
 							</a>
-							<a target="_blank" class="back-gradient-accent news-article mb-2 d-flex col-12 text-white"
-								href="https://www.gofundme.com/manage/anti-mobbing-app">
+							<a class="news-article mb-2 d-flex col-12 color-secondary" href="canisius.de">
 								Crowdfunding durch GoFundMe
 							</a>
 						</div>
 					</div>
 				</section>
 
-				<h1 class="underlined mb-3">
-					@lang('landing_page.what_is_exclamo')
-				</h1>
-				<section class="row back-gradient back-borders py-4 px-1  d-flex flex-column" id="what">
+				<h1 class="underlined mb-3">Was ist exclamo?</h1>
+				<section class="row back-gradient back-borders py-4 px-1  d-flex flex-column">
 					<div class="col-12 advantage" data-aos="fade">
 						<h5 class="advantage-heading">
 							<i class="fas fa-shield-alt"></i>
-							@lang('landing_page.anonymous_messages')
+							Anonyme Nachrichten
 						</h5>
 						<p>
-							@include('landing_page.' . app()->getLocale() . '.advantages.anonymous')
+							Der Schüler kann, auch anonym, Nachrichten an Lehrer, Schüler-Mentoren oder
+							Schulsozialarbeiter senden.
 						</p>
 					</div>
 					<div class="col-12 advantage" data-aos="fade">
 						<h5 class="advantage-heading">
 							<i class="fas fa-file-alt"></i>
-							@lang('landing_page.bullying_diary')
+							Anonyme Nachrichten
 						</h5>
 						<p>
-							@include('landing_page.' . app()->getLocale() . '.advantages.diary')
+							Der Schüler kann in einem eigenen Notizbereiche Vorfälle für sich persönlich festhalten um die Ereignisse zu dokumentieren und reflektieren.
 						</p>
 					</div>
 					<div class="col-12 advantage" data-aos="fade">
 						<h5 class="advantage-heading">
 							<i class="fas fa-users"></i>
-							@lang('landing_page.professional_support')
+							Professionelle Unterstützung
 						</h5>
 						<p>
-							@include('landing_page.' . app()->getLocale() . '.advantages.experts')
+							Wenn die betroffenen Person seelische Unterstützung benötigt, stehen außerdem die Nummer von Sorgentelefonen, sowie der Kontakt zur psychotherapeutischen KV-Terminservicestelle zur Verfügung.
 						</p>
 					</div>
 					<div class="col-12 advantage" data-aos="fade">
 						<h5 class="advantage-heading">
 							<i class="fas fa-comments"></i>
-							@lang('landing_page.material')
+							Material für Schüler und Lehrer
 						</h5>
 						<p>
-							@include('landing_page.' . app()->getLocale() . '.advantages.materials')
+							exclamo bietet Zugang zu Materialien zum Umgang mit Mobbing, die in ihrer gebündelter Form effektive Hilfsangebote für Lehrer und Schüler darstellen!
 						</p>
 					</div>
 					<div class="col-12 advantage" data-aos="fade">
 						<h5 class="advantage-heading">
 							<i class="fas fa-check-circle"></i>
-							@lang('landing_page.prevention')
+							Mobbingprävention
 						</h5>
 						<p>
-							@include('landing_page.' . app()->getLocale() . '.advantages.prevention')
+							Durch eine so einfach Möglichkeit für Betroffene, Mobbing zu melden, wird die Hemmschwelle für Täter deutlich größer!	
 						</p>
 					</div>
 					<div class="mx-auto"
 						data-aos="zoom-in"
 						data-aos-delay="300"
 					>
-						<span class="pr-3">
-							@lang('landing_page.could_we_convince_you')
-						</span>
+						<span class="pr-3">Wir konnten Sie überzeugen?</span>
 						<a href="#forschools" class="cta cta-primary">
-							@lang('landing_page.protect_your_students')
+							Melden Sie sich jetzt an!
 						</a>
 					</div>
 				</section>
 
-				<h1 class="underlined mb-3">
-					@lang('landing_page.who_are_we')
-				</h1>
+				<h1 class="underlined mb-3">Wer sind wir?</h1>
 				<p class="font-weight-medium" data-aos="fade">
-					@include('landing_page.' . app()->getLocale() . '.who')
+					Wir, das Team, sind Berliner Schüler und haben uns überlegt, wie man Mobbing am besten bekämpfen kann. Da das Handy eines der Alltagsgegenstände schlechthin ist, schien außer Frage, dass eine App das beste Format ist. Wir sind derzeit in unserem letzten Schuljahr und möchten anderen Schülern und ihren Schulen helfen, Mobbing zu bekämpfen.
 				</p>
 				<section class="row" data-aos="zoom-in" id="team">
 					<div class="col-6 col-lg-4 px-3 mt-2">
@@ -233,9 +224,7 @@
 				</section>
 
 				<section>
-					<h1><i class="far fa-newspaper"></i>
-						@lang('landing_page.as_seen_in')
-					</h1>
+					<h1><i class="far fa-newspaper"></i> Bekannt aus</h1>
 					<div class="known-from row d-flex flex-row">
 						<a data-aos="fade" class="col-4 p-1 align-items-center justify-content-center d-flex" target="_blank" href="https://www.business-at-school.net/">
 							<img src="img/media/business_at_school.png">
@@ -256,14 +245,8 @@
 				</section>
 
 				<section class="back-gradient-accent back-borders p-3 p-md-4 text-white" data-aos="fade-right">
-					<h1 class="underlined mb-2">
-						@lang('landing_page.use_exclamo_heading')
-					</h1>
+					<h1 class="underlined mb-5">exclamo nutzen</h1>
 					@if(!session('school_sign_up'))
-						<em class="d-block my-3">
-							@lang('landing_page.contact_disclaimer')
-						</em>
-
 						@foreach ($errors->all() as $message)
 							<div class="alert alert-warning text-black" role="alert">	
 						   		{{ $message }}
@@ -272,106 +255,67 @@
 						<form action="{{ route('schools.signup') }}" method="POST">
 							@csrf
 							<div class="form-group row">
-								<label for="school" class="col-md-3 col-form-label">
-									@lang('landing_page.name_of_your_school')
-								</label>
+								<label for="school" class="col-md-3 col-form-label">Name Ihrer Schule</label>
 								<div class="col-md-9 col-lg-6">
 									<input
 										type="text" 
 										class="form-control"
 										name="school"
 										id="school"
-										placeholder="@lang('landing_page.name_of_your_school_placeholder')"
+										placeholder="Goethe-Gymnasium"
 										value={{ old('school') }}
 									>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="contact-person" class="col-md-3 col-form-label">
-									@lang('landing_page.contact_person')
-								</label>
+								<label for="contact-person" class="col-md-3 col-form-label">Ansprechpartner</label>
 								<div class="col-md-9 col-lg-6">
 									<input
 										type="text" 
 										class="form-control"
 										name="contact_person"
 										id="contact-person"
-										placeholder="@lang('landing_page.contact_person_placeholder')"
+										placeholder="Frau Schulze"
 										value={{ old('contact_person') }}
 									>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="email" class="col-md-3 col-form-label">
-									@lang('landing_page.email')
-								</label>
+								<label for="email" class="col-md-3 col-form-label">E-Mail-Adresse</label>
 								<div class="col-md-9 col-lg-6">
 									<input
 										type="email"
 										class="form-control"
 										name="email"
 										id="email"
-										placeholder="@lang('landing_page.email_placeholder')"
+										placeholder="schulleiter@gymnasium.de"
 									>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="email" class="col-md-3 col-form-label">
-									@lang('landing_page.email_confirmation')
-								</label>
+								<label for="email" class="col-md-3 col-form-label">E-Mail-Adresse bestätigen</label>
 								<div class="col-md-9 col-lg-6">
 									<input
 										type="email"
 										class="form-control"
 										name="email_confirmation"
 										id="email"
-										placeholder="@lang('landing_page.email_placeholder')"
+										placeholder="schulleiter@gymnasium.de"
 									>
 								</div>
 							</div>
 
 							<div class="form-group row">
 								<div class="col-sm-10">
-									<button type="submit" class="cta cta-primary">
-										@lang('landing_page.signup_your_school')
-									</button>
+									<button type="submit" class="cta cta-primary">Jetzt Ihre Schule anmelden!</button>
 								</div>
 							</div>
 						</form>
 					@else
 						<strong class="text-center d-block">
-							@lang('landing_page.thank_your_for_your_interest')
+							Vielen Dank, dass Sie Ihr Interesse an exclamo gezeigt haben!
 						</strong>
 					@endif
-				</section>
-
-				<section id="contact" class="">
-					<h1 class="underlined mb-3 row">
-						@lang('messages.contact')
-					</h1>
-					<div class="row font-weight-medium d-flex align-items-stretch">
-						<a
-							target="_blank"
-							class="news-article mb-2 d-flex col-12 col-md-6 col-lg-4 color-secondary"
-							href="http://instagram.com/exclamo_org/"
-						>
-							<i class="fab fa-instagram fa-2x mr-2"></i><h4>Instagram</h4>
-						</a>
-						<a
-							target="_blank"
-							class="news-article mb-2 d-flex col-12 col-md-6 col-lg-4 color-secondary"
-							href="http://twitter.com/exclamo_org"
-						>
-							<i class="fab fa-twitter fa-2x mr-2"></i><h4>Twitter</h4>
-						</a>
-						<a
-							target="_blank"
-							class="news-article mb-2 d-flex col-12 col-md-6 col-lg-4 color-secondary"
-							href="mailto:info@exclamo.org"
-						>
-							<i class="far fa-envelope fa-2x mr-2"></i><h4>E-Mail</h4>
-						</a>
-					</div>
 				</section>
 			</div>
 
