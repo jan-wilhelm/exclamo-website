@@ -1,4 +1,4 @@
-@import "colors_1";
+@import "colors";
 @import "~bootstrap/scss/functions"; 
 @import "~bootstrap/scss/variables";
 
@@ -14,8 +14,29 @@
     }
 }
 
+#app-content {
+	min-height: 100vh;
+}
+
+form label {
+	font-weight: 500;
+}
+
+form input {
+	border-radius: 0 !important;
+}
+
 .nav-item {
 	white-space: nowrap;
+	display: flex;
+}
+
+.nav-item * {
+    margin: auto; /* Important */
+}
+
+.nav-item:not(:last-child) {
+	margin-right: 20px;
 }
 
 .nounderline {
@@ -38,11 +59,10 @@
 }
 
 .cta {
-	padding: 0.85rem 1.7rem;
-	line-height: 0.85rem;
+	line-height: initial;
+	padding: 0.6rem 1.2rem !important;
+	display: inline-block;
 	font-size: 0.85rem;
-	height: 2.55rem;
-	border-radius: 1.7rem;
 	width: auto;
 	font-weight: 700;
 	cursor: pointer;
@@ -55,12 +75,14 @@
 	border: 1px solid transparent;
     -webkit-transition: background-color 0.3s, color 0.3s; /* Safari */
     transition: background-color 0.3s, color 0.3s;
-	border-radius: 2rem;
-	float: left;
 
 	@include min-width(map-get($grid-breakpoints, lg)) {
 		 display: inline-block;
 	}
+}
+
+.cta * {
+	margin: auto;
 }
 
 .cta-large {
@@ -101,32 +123,46 @@
 }
 
 .cta-primary {
-	background-color: $color-secondary-1-0 !important;
-	color: $color-white !important;
+	background-color: $color-contrast !important;
+	color: $color-secondary !important;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-primary:hover {
-	background-color: $color-secondary-1-2 !important;
-	color: $color-white-darker !important;
+	box-shadow: rgba(34, 50, 84, 0.22) 0px 4px 12px;
+	transform: scale(1.03);
 }
 
-.cta-secondary, .secondary-color {
-	background-color: $color-white !important;
-	color: $color-secondary-1-0 !important;
+.nav-link {
+	color: $color-secondary !important;
 }
 
-.cta-secondary {
-	border: 1px solid $color-secondary-1-0 !important;
+.font-weight-medium {
+	font-weight: 500 !important;
 }
 
-.cta-secondary:hover, .secondary-color:hover {
-	background-color: $color-secondary-1-2 !important;
-	color: $color-white !important;
-}
+// .cta-primary:hover {
+// 	background-color: $color-secondary-1-2 !important;
+// 	color: $color-white-darker !important;
+// }
 
-.cta-tertiary {
-	text-decoration: underline;
-}
+// .cta-secondary, .secondary-color {
+// 	background-color: $color-white !important;
+// 	color: $color-secondary-1-0 !important;
+// }
+
+// .cta-secondary {
+// 	border: 1px solid $color-secondary-1-0 !important;
+// }
+
+// .cta-secondary:hover, .secondary-color:hover {
+// 	background-color: $color-secondary-1-2 !important;
+// 	color: $color-white !important;
+// }
+
+// .cta-tertiary {
+// 	text-decoration: underline;
+// }
 
 .opacity-hover {
 	opacity: 0.2;

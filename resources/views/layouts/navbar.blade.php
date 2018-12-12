@@ -1,7 +1,7 @@
 <b-navbar toggleable="lg">
 	<b-container>
 		<b-navbar-brand href="{{ route('home') }}">
-			<img src="{{ asset('img/logo/logo_text_rounded.png') }}" height="45px">
+			<img src="{{ asset('img/logo/logo.svg') }}" height="45px">
 		</b-navbar-brand>
 		<b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 

@@ -1,0 +1,108 @@
+@import "colors_lightblue";
+
+.bg-color-white, .white {
+	background-color: $color-white;
+}
+.text-white, .text-white > * {
+	color: $color-white !important;
+}
+
+.bg-color-black, .black {
+	background-color: $color-black;
+}
+.text-black {
+	color: $color-black !important;
+}
+
+.color-one {
+	color: $color-one;
+}
+
+.color-two {
+	color: $color-two;
+}
+
+.color-secondary {
+	color: $color-secondary;
+}
+
+.color-contrast {
+	color: $color-contrast;
+}
+
+.bg-color-one {
+	background-color: $color-one;
+}
+
+.bg-color-two {
+	background-color: $color-two;
+}
+
+.bg-color-secondary {
+	background-color: $color-secondary;
+}
+
+.bg-color-contrast {
+	background-color: $color-contrast;
+}
+
+%back-gradient {
+	background: $color-one;
+	background: -moz-linear-gradient(-45deg, $color-one 0%, $color-two 100%);
+	background: -webkit-linear-gradient(-45deg, $color-one 0%, $color-two 100%);
+	background: linear-gradient(135deg, $color-one 0%, $color-two 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-one', endColorstr='$color-two',GradientType=1 );
+}
+
+%back-gradient * {
+	color: $color-secondary;
+}
+
+%back-borders {
+	-webkit-box-shadow: 12px 12px 0px 0px $color-secondary;
+	-moz-box-shadow: 12px 12px 0px 0px $color-secondary;
+	box-shadow: 12px 12px 0px 0px $color-secondary;
+}
+
+%underlined {
+    display: inline-block;
+    border-bottom: 8px solid $color-secondary;
+}
+
+.back-gradient {
+	@extend %back-gradient;
+}
+
+.back-borders {
+	@extend %back-borders;
+}
+
+.back-gradient-accent {
+	background: $color-accent-one;
+	background: -moz-linear-gradient(-45deg, $color-accent-one 0%, $color-accent-two 100%);
+	background: -webkit-linear-gradient(-45deg, $color-accent-one 0%, $color-accent-two 100%);
+	background: linear-gradient(135deg, $color-accent-one 0%, $color-accent-two 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-accent-one', endColorstr='$color-accent-two',GradientType=1 );
+}
+
+.back-borders-small {
+	-webkit-box-shadow: 7px 7px 0px 0px $color-secondary;
+	-moz-box-shadow: 7px 7px 0px 0px $color-secondary;
+	box-shadow: 7px 7px 0px 0px $color-secondary;
+}
+
+.back-borders-one {
+	-webkit-box-shadow: 7px 7px 0px 0px $color-one;
+	-moz-box-shadow: 7px 7px 0px 0px $color-one;
+	box-shadow: 7px 7px 0px 0px $color-one;
+}
+
+.back-borders-two {
+	-webkit-box-shadow: 7px 7px 0px 0px $color-two;
+	-moz-box-shadow: 7px 7px 0px 0px $color-two;
+	box-shadow: 7px 7px 0px 0px $color-two;
+}
+
+.underlined {
+	@extend %underlined;
+}

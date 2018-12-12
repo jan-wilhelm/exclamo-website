@@ -9,39 +9,27 @@
 @endsection
 
 @section("body")
-	<div class="w-100 h-100" id="app" >
-	<div id="app-content" v-cloak>
-
-		<section class="landing-section full d-flex flex-column white" id="first-section">
-			<b-navbar toggleable="xl" class="white fixed-lg-top">
-				<b-container fluid class="px-xl-5 px-lg-2 px-md-1 px-0 py-3">
+	<div class="w-100 h-100" id="app">
+		<div id="app-content" v-cloak>
+			<b-navbar toggleable="xl" class="white fixed-lg-top back-gradient">
+				<b-container fluid class="py-2">
 					<b-navbar-brand href="{{ route('home') }}" class="mr-md-5">
-						<img src="{{ asset('img/logo/logo_text_rounded.png') }}" height="45px">
+						<img src="{{ asset('img/logo/logo.svg') }}" height="50px">
 					</b-navbar-brand>
 					<b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
 					<b-collapse is-nav id="nav_collapse">
 
-						<b-navbar-nav class="mr-auto" id="nav-links">
-							<li class="nav-item">
-								<a class="nav-link color-primary-0" href="#vision">@lang('landing_page.vision')</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link color-primary-0" href="#what">@lang('landing_page.what')</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link color-primary-0" href="#team">@lang('landing_page.who')</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link color-primary-0" href="#forschools">@lang('landing_page.for_schools')</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link color-primary-0" href="{{ route('faq') }}">@lang('landing_page.faq')</a>
-							</li>
+						<b-navbar-nav class="mx-auto" id="nav-links">
+							<li class="nav-item"><a class="nav-link" href="#vision">@lang('landing_page.vision')</a></li>
+							<li class="nav-item"><a class="nav-link" href="#what">@lang('landing_page.what')</a></li>
+							<li class="nav-item"><a class="nav-link" href="#forschools">@lang('landing_page.for_schools')</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ route('faq') }}">@lang('landing_page.faq')</a></li>
+							<li class="nav-item"><a class="nav-link" href="#team">@lang('landing_page.who')</a></li>
 						</b-navbar-nav>
 
 						<!-- Right aligned nav items -->
-						<b-navbar-nav class="ml-auto">
+						<b-navbar-nav>
 							<b-nav-item-dropdown right>
 								<!-- Using button-content slot -->
 								<template slot="button-content">
@@ -71,14 +59,14 @@
 									@lang('messages.login')
 								</a>
 							</li>
-							<li class="nav-item cta cta-primary">
-								<a href="#forschools" class="text-white mx-auto">
+							<li class="nav-item">
+								<a href="#forschools" class="nav-link cta cta-primary">
 									@lang('landing_page.use_exclamo')
 								</a>
 							</li>
 							@else
 							<li class="nav-item">
-								<a href="{{ route('dashboard') }}" class="nav-link color-primary-0 mx-auto">
+								<a href="{{ route('dashboard') }}" class="nav-item nav-link color-primary-0 mx-auto">
 									@lang('landing_page.to_the_dashboard')
 								</a>
 							</li>
@@ -87,371 +75,252 @@
 					</b-collapse>
 				</b-container>
 			</b-navbar>
-			<div class="my-2 my-md-auto container-fluid row pt-xl-5 pt-md-4 pt-3">
-				<div class="offset-md-2 col-md-7 col-lg-6 flex-column">
-					<h1 class="my-lg-5 my-md-3 my-1 py-1 color-primary-0 font-weight-bold" id="slogan">
-						@lang('landing_page.slogan')
-					</h1>
-					<p class="color-primary-4">
-						@include('landing_page.' . app()->getLocale() . '.slogan')
-					</p>
-					<p class="d-flex">
-						<a class="cta cta-primary cta-large" href="#forschools">
-							@lang('landing_page.protect_your_students')
+
+			<div class="container mt-lg-5 pt-lg-5">
+				<section class="mt-5 back-gradient back-borders row">
+					<div class="col-lg-7 p-md-5 my-auto" data-aos="zoom-in">
+						<div class="col-12 pl-1 py-4 pr-0">
+							<h1 class="mt-lg-4">Die App für Schulen gegen Mobbing</h1>
+							<div class="mt-4 font-weight-medium">
+								Mit einem einzigartigen Ansatz helfen wir Schulen, Mobbing zu bekämpfen. Mobbing melden - Lösung finden: Einfach. Schnell. Anonym. 
+							</div>
+							<div>
+								<a href="#forschools" class="cta cta-primary">
+									Jetzt Ihre Schule anmelden!
+								</a>
+								<a href="#what" class="d-inline-block p-3">&#9658 Warum exclamo?</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-5 p-0 m-0" id="image-placeholder" data-aos="fade-left">
+						<img src="/img/iPhoneCases.png">
+					</div>
+				</section>
+				<section class="row" data-aos="fade">
+					<div class="pt-5 col-lg-6">
+						<h1><i class="far fa-lightbulb"></i> Unsere Vision</h1>
+						<div class="font-weight-medium d-flex flex-column align-items-start">
+							Wir haben die Vision von Schulen, in denen jeder Schüler jeden anderen
+							Schüler gleichwertig und respektvoll behandelt. Deshalb kämpfen wir
+							gegen Rassismus, Sexismus, Antisemitismus und alle anderen Formen der
+							Diskriminierung.
+							Wir hoffen, dass wir auch Sie für den Kampf gegen Mobbing begeistern
+							können!
+							<a href="#forschools" class="mt-2 cta cta-primary">
+								Jetzt Ihre Schule anmelden!
+							</a>
+						</div>
+					</div>
+					<div class="pt-5 col-lg-6">
+						<h1><i class="far fa-newspaper"></i> Aktuelles</h1>
+						<div class="font-weight-medium d-flex flex-column align-items-stretch">
+							<a class="news-article mb-2 d-flex col-12 color-secondary" href="canisius.de">
+								Testphase mit dem Canisius Kolleg in Berlin
+							</a>
+							<a class="news-article mb-2 d-flex col-12 color-secondary" href="canisius.de">
+								Crowdfunding durch GoFundMe
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<h1 class="underlined mb-3">Was ist exclamo?</h1>
+				<section class="row back-gradient back-borders py-4 px-1  d-flex flex-column">
+					<div class="col-12 advantage" data-aos="fade">
+						<h5 class="advantage-heading">
+							<i class="fas fa-shield-alt"></i>
+							Anonyme Nachrichten
+						</h5>
+						<p>
+							Der Schüler kann, auch anonym, Nachrichten an Lehrer, Schüler-Mentoren oder
+							Schulsozialarbeiter senden.
+						</p>
+					</div>
+					<div class="col-12 advantage" data-aos="fade">
+						<h5 class="advantage-heading">
+							<i class="fas fa-file-alt"></i>
+							Anonyme Nachrichten
+						</h5>
+						<p>
+							Der Schüler kann in einem eigenen Notizbereiche Vorfälle für sich persönlich festhalten um die Ereignisse zu dokumentieren und reflektieren.
+						</p>
+					</div>
+					<div class="col-12 advantage" data-aos="fade">
+						<h5 class="advantage-heading">
+							<i class="fas fa-users"></i>
+							Professionelle Unterstützung
+						</h5>
+						<p>
+							Wenn die betroffenen Person seelische Unterstützung benötigt, stehen außerdem die Nummer von Sorgentelefonen, sowie der Kontakt zur psychotherapeutischen KV-Terminservicestelle zur Verfügung.
+						</p>
+					</div>
+					<div class="col-12 advantage" data-aos="fade">
+						<h5 class="advantage-heading">
+							<i class="fas fa-comments"></i>
+							Material für Schüler und Lehrer
+						</h5>
+						<p>
+							exclamo bietet Zugang zu Materialien zum Umgang mit Mobbing, die in ihrer gebündelter Form effektive Hilfsangebote für Lehrer und Schüler darstellen!
+						</p>
+					</div>
+					<div class="col-12 advantage" data-aos="fade">
+						<h5 class="advantage-heading">
+							<i class="fas fa-check-circle"></i>
+							Mobbingprävention
+						</h5>
+						<p>
+							Durch eine so einfach Möglichkeit für Betroffene, Mobbing zu melden, wird die Hemmschwelle für Täter deutlich größer!	
+						</p>
+					</div>
+					<div class="mx-auto"
+						data-aos="zoom-in"
+						data-aos-delay="300"
+					>
+						<span class="pr-3">Wir konnten Sie überzeugen?</span>
+						<a href="#forschools" class="cta cta-primary">
+							Melden Sie sich jetzt an!
 						</a>
-					</p>
-					<p class="" id="why-exclamo">
-						<a href="#what">
-							&#9658 @lang('landing_page.why_choose_exclamo')
+					</div>
+				</section>
+
+				<h1 class="underlined mb-3">Wer sind wir?</h1>
+				<p class="font-weight-medium" data-aos="fade">
+					Wir, das Team, sind Berliner Schüler und haben uns überlegt, wie man Mobbing am besten bekämpfen kann. Da das Handy eines der Alltagsgegenstände schlechthin ist, schien außer Frage, dass eine App das beste Format ist. Wir sind derzeit in unserem letzten Schuljahr und möchten anderen Schülern und ihren Schulen helfen, Mobbing zu bekämpfen.
+				</p>
+				<section class="row" data-aos="zoom-in" id="team">
+					<div class="col-6 col-lg-4 px-3 mt-2">
+						<div class="avatar">
+							<img src="/img/kai.jpg" class="back-borders-small w-100">
+							<div class="description">
+								<span class="m-0 p-0">
+									<strong>E-Mail: </strong> <a href="mailto:kai.lanz@exclamo.org">kai.lanz@exclamo.org</a>
+								</span>
+							</div>
+						</div>
+						<h3 class="mt-3">Kai Lanz</h3>
+					</div>
+					<div class="col-6 col-lg-4 px-3 mt-2">
+						<div class="avatar">
+							<img src="/img/jan.jpg" class="back-borders-one w-100">
+							<div class="description">
+								<span class="m-0 p-0">
+									<strong>E-Mail: </strong> <a href="mailto:jan.wilhelm@exclamo.org">jan.wilhelm@exclamo.org</a>
+								</span>
+							</div>
+						</div>
+						<h3 class="mt-3">Jan Wilhelm</h3>
+					</div>
+					<div class="col-6 col-lg-4 px-3 mt-2">
+						<div class="avatar">
+							<img src="/img/julius.jpg" class="back-borders-two w-100">
+							<div class="description">
+								<span class="m-0 p-0">
+									<strong>E-Mail: </strong> <a href="mailto:julius.degruyter@exclamo.org">julius.degruyter@exclamo.org</a>
+								</span>
+							</div>
+						</div>
+						<h3 class="mt-3">Julius de Gruyter</h3>
+					</div>
+				</section>
+
+				<section>
+					<h1><i class="far fa-newspaper"></i> Bekannt aus</h1>
+					<div class="known-from row d-flex flex-row">
+						<a data-aos="fade" class="col-4 p-1 align-items-center justify-content-center d-flex" target="_blank" href="https://www.business-at-school.net/">
+							<img src="img/media/business_at_school.png">
 						</a>
-					</p>
-				</div>
-			</div>
-			<div class="mt-auto align-text-bottom align-self-end d-lg-none w-100 p-0 m-0">
-				<img src="img/small_background.svg" class="w-100">
-			</div>
-		</section>
+						<a data-aos="fade" class="col-4 p-1 align-items-center justify-content-center d-flex" target="_blank" href="https://www.faz.net/aktuell/gesellschaft/menschen/berliner-schueler-arbeiten-an-app-gegen-mobbing-15936418.html">
+							<img src="img/media/faz.png">
+						</a>
+						<a data-aos="fade" class="col-4 p-1 align-items-center justify-content-center d-flex" target="_blank" href="https://www.handelsblatt.com/unternehmen/mittelstand/start-up-100-000-deutsche-spenden-fuenf-millionen-euro-ueber-gofundme/23716676.html">
+							<img src="img/media/handelsblatt.png">
+						</a>
+						<a data-aos="fade" class="col-4 p-1 align-items-center justify-content-center d-flex" target="_blank" href="https://www.huffingtonpost.de/entry/aufschrei-gegen-mobbing-wie-die-generation-z-die-digitalisierung_de_5b266806e4b08e7f7dea01ca">
+							<img src="img/media/huffpost.png">
+						</a>
+						<a data-aos="fade" class="col-4 p-1 align-items-center justify-content-center d-flex" target="_blank" href="https://www.jetzt.de/digital/ein-aufschrei-fuer-mehr-aufmerksamkeit">
+							<img src="img/media/jetzt.png">
+						</a>
+					</div>
+				</section>
 
-		<section class="landing-section" id="vision">
-			<div id="vision-image-wrapper">
-				<img src="img/lower_background.svg" />
-			</div>
-			<div class="container" id="vision-container">
-				<h1 class="text-center promo-question">
-					<i class="color-secondary-1-0 far fa-lightbulb fa-sm mr-1"></i>
-					@lang('landing_page.vision')
-				</h1>
-				<div class="row justify-content-center">
-					<div class="col-sm-12 col-md-10 col-lg-8 promo-text" data-aos="fade-up">
-						@include('landing_page.' . app()->getLocale() . '.vision')
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="landing-section margin" id="what">
-			<div class="container">
-				<h1 class="text-center promo-question">
-					@lang('landing_page.why_choose_exclamo')
-				</h1>
-				<div class="row advantage">
-					<div class="col-lg-9 text-div" data-aos="fade-up">
-						<h1 class="heading">
-							@lang('landing_page.anonymous_heading')
-						</h1>
-						@include('landing_page.' . app()->getLocale() . '.advantages.anonymous')
-					</div>
-					<div class="col-lg-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
-						<img src="{{ asset('img/iPhoneMessages.png') }}" class="advantage-img align-middle">
-					</div>
-				</div>
-				<div class="row advantage text-div">
-					<div class="col-lg-9 text-div order-lg-2" data-aos="fade-up">
-						<h1 class="heading">
-							@lang('landing_page.easy_access')
-						</h1>
-						@include('landing_page.' . app()->getLocale() . '.advantages.app')
-					</div>
-					<div class="col-lg-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
-						<img src="{{ asset('img/iPhoneCases.png') }}" class="advantage-img">
-					</div>
-				</div>
-				<div class="row advantage text-div">
-					<div class="col-lg-9 text-div" data-aos="fade-up">
-						<h1 class="heading">
-							@lang('landing_page.experts_heading')
-						</h1>
-						@include('landing_page.' . app()->getLocale() . '.advantages.experts')
-					</div>
-					<div class="col-lg-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
-						<i class="fas fa-users color-primary-1 fa-10x"></i>
-					</div>
-				</div>
-				<div class="row advantage text-div">
-					<div class="col-lg-9 text-div order-lg-2" data-aos="fade-up">
-						<h1 class="heading">
-							@lang('landing_page.data_security_heading')
-						</h1>
-						@include('landing_page.' . app()->getLocale() . '.advantages.security')
-					</div>
-					<div class="col-lg-3 img-div d-flex justify-content-center align-items-center" data-aos="fade-in">
-						<img src="{{ asset('img/lock.svg') }}" class="advantage-img">
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!--<section class="landing-section margin" id="timeline">
-			<img src="img/timeline_border.svg" id="timeline-top" />
-			<div class="wrapper w-100">
-				<div class="container px-md-5">
-					<h1 class="text-center promo-question text-white">
-						<i class="color-secondary-1-0 fas fa-chart-line fa-sm mr-1"></i>
-						Timeline - Die nächsten Schritte
-					</h1>
-					<div class="row timeline-wrapper px-sm-5 px-1 px-lg-0">
-						<div class="col-lg-4 col-12 timeline-div timeline-past">
-							<h4 class="timeline-quarter">Q1</h4>
-							<h4 class="timeline-year">2018</h4>
-							<div class="timeline-content">
-								<ul>
-									<li>Dies ist ein Stichpunkt</li>
-									<li>Dies ist ein Stichpunkt</li>
-									<li>Dies ist ein Stichpunkt</li>
-									<li>Dies ist ein Stichpunkt</li>
-								</ul>
+				<section class="back-gradient-accent back-borders p-3 p-md-4 text-white" data-aos="fade-right">
+					<h1 class="underlined mb-5">exclamo nutzen</h1>
+					@if(!session('school_sign_up'))
+						@foreach ($errors->all() as $message)
+							<div class="alert alert-warning text-black" role="alert">	
+						   		{{ $message }}
 							</div>
-						</div>
-						<div class="col-lg-4 col-12 timeline-div timeline-past">
-							<h4 class="timeline-quarter">Q1</h4>
-							<h4 class="timeline-year">2018</h4>
-							<div class="timeline-content">
-								<ul>
-									<li>Dies ist ein Stichpunkt</li>
-									<li>Dies ist ein Stichpunkt</li>
-									<li>Dies ist ein Stichpunkt</li>
-									<li>Dies ist ein Stichpunkt</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-lg-4 col-12 timeline-div timeline-last">
-							<h4 class="timeline-quarter">Q2</h4>
-							<h4 class="timeline-year">2018</h4>
-							<div class="timeline-content">
-								<ul>
-									<li>Dies ist ein Stichpunkt</li>
-									<li>Dies ist ein Stichpunkt</li>
-									<li>Dies ist ein Stichpunkt</li>
-									<li>Dies ist ein Stichpunkt</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-lg-4 col-12 timeline-div">
-							<h4 class="timeline-quarter">Q3</h4>
-							<h4 class="timeline-year">2018</h4>
-							<div class="timeline-content">
-								<ul>
-									<li>Dies ist ein Stichpunkt</li>
-									<li>Dies ist ein Stichpunkt</li>
-									<li>Dies ist ein Stichpunkt</li>
-									<li>Dies ist ein Stichpunkt</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-lg-4 col-12 timeline-div">
-							<h4 class="timeline-quarter">Q4</h4>
-							<h4 class="timeline-year">2018</h4>
-							<div class="timeline-content">
-								<ul>
-									<li>Dies ist ein Stichpunkt</li>
-									<li>Dies ist ein Stichpunkt</li>
-									<li>Dies ist ein Stichpunkt</li>
-									<li>Dies ist ein Stichpunkt</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<img src="img/timeline_border.svg" id="timeline-bottom" />
-		</section>
-		-->
-
-		<section class="landing-section" id="team">
-			<div class="container margin">
-				<h1 class="text-center promo-question">
-					<i class="color-secondary-1-0 far fa-lightbulb fa-sm mr-1"></i>
-					@lang('landing_page.the_team')
-				</h1>
-				<div class="row justify-content-center">
-					<div class="col-sm-12 col-md-10 col-lg-8 promo-text" data-aos="fade-up">
-						@include('landing_page.' . app()->getLocale() . '.who')
-					</div>
-				</div>
-			</div>
-			<div id="avatar-container" class="container-fluid">
-				<div class="row align-content-center mt-5" data-aos="fade-up">
-					<div class="m-auto col-lg-4 col-md-8 col-12 avatar">
-						<div class="avatar-content">
-							<img src="{{ asset('img/kai.jpg') }}">
-							<div class="description">
-								<h3 class="avatar-name">Kai Lanz</h3>
-								<span class="m-0 p-0">
-									<strong>E-Mail: </strong>
-									<a href="mailto:kai.lanz@exclamo.org">kai.lanz@exclamo.org</a>
-								</span> 
-							</div>
-						</div>
-					</div>
-					<div class="m-auto col-lg-4 col-md-8 col-12 avatar">
-						<div class="avatar-content">
-							<img src="{{ asset('img/jan.jpg') }}">
-							<div class="description">
-								<h3 class="avatar-name">Jan Wilhelm</h3>
-								<span class="m-0 p-0">
-									<strong>E-Mail: </strong>
-									<a href="mailto:jan.wilhelm@exclamo.org">jan.wilhelm@exclamo.org</a>
-								</span> 
-							</div>
-						</div>
-					</div>
-					<div class="m-auto col-lg-4 col-md-8 col-12 avatar">
-						<div class="avatar-content">
-							<img src="{{ asset('img/julius.jpg') }}">
-							<div class="description">
-								<h3 class="avatar-name">Julius de Gruyter</h3>
-								<span class="m-0 p-0">
-									<strong>E-Mail: </strong>
-									<a href="mailto:julius.degruyter@exclamo.org">julius.degruyter@exclamo.org</a>
-								</span> 
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<hr>
-
-		<section class="landing-section" id="forschools">
-			<div class="container margin">
-				<h1 class="text-center promo-question">
-					<i class="color-secondary-1-0 far fa-lightbulb fa-sm mr-1"></i>
-					@lang('landing_page.for_schools')
-				</h1>
-				<div class="row justify-content-center">
-					<div class="col-sm-12 col-md-10 col-lg-8 promo-text" data-aos="fade-up">
-						@include('landing_page.' . app()->getLocale() . '.schools')
-					</div>
-				</div>
-				<div class="row justify-content-center">
-					<ul class="mt-5 col-md-8 col-12 list-unstyled font-weight-bold">
-						<li>
-							<i class="color-secondary-1-0 mr-3 far fa-lg fa-check-circle"></i>
-							Erstellen Sie einfach Accounts für Schüler und Lehrer
-						</li>
-						<li>
-							<i class="color-secondary-1-0 mr-3 far fa-lg fa-check-circle"></i>
-							Direkter Zugang zur Nummer-gegen-Kummer
-						</li>
-						<li>
-							<i class="color-secondary-1-0 mr-3 far fa-lg fa-check-circle"></i>
-							Übersichtliche Hilfsmaterialien für Lehrkräfte
-						</li>
-						<li>
-							<i class="color-secondary-1-0 mr-3 far fa-lg fa-check-circle"></i>
-							Jährliches Lizenzierungsmodell
-						</li>
-					</ul>
-					<h5 class="mt-4 col-sm-6 col-10 text-center color-secondary-1-0">
-						Bei Interesse schreiben Sie uns doch eine unverbindliche E-Mail!
-					</h5>
-				</div>
-			</div>
-		</section>
-
-		<hr>
-
-		<section class="landing-section" id="contact">
-			<div class="container margin">
-				<h1 class="text-center promo-question">
-					@lang('landing_page.contact')
-				</h1>
-				<div class="row pt-md-5 justify-content-center text-center">
-					<a href="mailto:info@exclamo.org" target="_blank" class="col-md-4">
-						<i class="fas fa-envelope fa-5x"></i>
-						<p>Mail</p>
-					</a>
-					<a href="https://twitter.com/exclamo_org" target="_blank" class="col-md-4">
-						<i class="fab fa-twitter-square fa-5x"></i>
-						<p>Twitter</p>
-					</a>
-					<a href="https://www.instagram.com/exclamo_org/" target="_blank" class="col-md-4">
-						<i class="fab fa-instagram fa-5x"></i>
-						<p>Instagram</p>
-					</a>
-				</div>
-			</div>
-		</section>
-
-		<br class="my-5 py-5">
-
-{{-- 
-		<section class="landing-section" id="forschools">
-			<div class="wrapper">
-				<div class="container">
-					<div class="row pb-sm-5">
-						<h2 class="col-md-auto promo-question">
-							@lang('landing_page.for_schools')
-						</h2>
-						<div class="col-md promo-text" data-aos="fade-up">
-							@if (app()->getLocale() == "de")
-								@include('landing_page.de.schools')
-							@else
-								@include('landing_page.en.schools')
-							@endif
-						</div>
-					</div>
-					<hr class="my-5 bg-color-white">
-					<div class="row pt-md-5 justify-content-center">
-						<!--<h2 class="mb-4 col-12 text-center">Kontakt aufnehmen</h2>-->
-						<form class="col-sm-10 col-12 signup-form bg-color-white" data-aos="slide-up" data-aos-duration="800">
+						@endforeach
+						<form action="{{ route('schools.signup') }}" method="POST">
+							@csrf
 							<div class="form-group row">
-								<label for="school-name" class="col-md-4 col-form-label">Name der Schule</label>
-								<div class="input-group col-md-8">
-									<input type="text" class="form-control" id="school-name" name="school-name">
+								<label for="school" class="col-md-3 col-form-label">Name Ihrer Schule</label>
+								<div class="col-md-9 col-lg-6">
+									<input
+										type="text" 
+										class="form-control"
+										name="school"
+										id="school"
+										placeholder="Goethe-Gymnasium"
+										value={{ old('school') }}
+									>
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="contact-email" class="col-md-4 col-form-label">Email</label>
-								<div class="input-group col-md-8">
-							        <div class="input-group-prepend">
-							        	<div class="input-group-text">@</div>
-							        </div>
-									<input type="email" class="form-control" id="contact-email" name="contact-email">
+								<label for="contact-person" class="col-md-3 col-form-label">Ansprechpartner</label>
+								<div class="col-md-9 col-lg-6">
+									<input
+										type="text" 
+										class="form-control"
+										name="contact_person"
+										id="contact-person"
+										placeholder="Frau Schulze"
+										value={{ old('contact_person') }}
+									>
 								</div>
 							</div>
-							<fieldset class="form-group">
-								<div class="row">
-							    	<legend class="col-form-label col-md-4 pt-0">Ihre Schule ist</legend>
-							    	<div class="col-md-8">
-							    		<div class="form-check">
-							    			<input class="form-check-input" type="radio" name="school-type" id="public-school" value="0" checked>
-							    			<label class="form-check-label" for="public-school">
-							    				eine staatliche Schule
-							    			</label>
-							    		</div>
-							    		<div class="form-check">
-								    		<input class="form-check-input" type="radio" name="school-type" id="private-school" value="1">
-								    		<label class="form-check-label" for="private-school">
-								    			privat geführt
-								    		</label>
-							    		</div>
-									</div>
+							<div class="form-group row">
+								<label for="email" class="col-md-3 col-form-label">E-Mail-Adresse</label>
+								<div class="col-md-9 col-lg-6">
+									<input
+										type="email"
+										class="form-control"
+										name="email"
+										id="email"
+										placeholder="schulleiter@gymnasium.de"
+									>
 								</div>
-							</fieldset>
-							<button type="submit" class="w-100 cta cta-large cta-primary">Jetzt Ihre Schüler schützen!</button>
+							</div>
+							<div class="form-group row">
+								<label for="email" class="col-md-3 col-form-label">E-Mail-Adresse bestätigen</label>
+								<div class="col-md-9 col-lg-6">
+									<input
+										type="email"
+										class="form-control"
+										name="email_confirmation"
+										id="email"
+										placeholder="schulleiter@gymnasium.de"
+									>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<div class="col-sm-10">
+									<button type="submit" class="cta cta-primary">Jetzt Ihre Schule anmelden!</button>
+								</div>
+							</div>
 						</form>
-					</div>
-					<div class="row pt-md-5 justify-content-center text-center">
-						<a href="mailto:info@exclamo.org" target="_blank" class="col-md-4">
-							<i class="fas fa-envelope fa-5x"></i>
-							<p>Mail</p>
-						</a>
-						<a href="https://twitter.com/exclamo_org" target="_blank" class="col-md-4">
-							<i class="fab fa-twitter-square fa-5x"></i>
-							<p>Twitter</p>
-						</a>
-						<a href="https://www.instagram.com/exclamo_org/" target="_blank" class="col-md-4">
-							<i class="fab fa-instagram fa-5x"></i>
-							<p>Instagram</p>
-						</a>
-					</div>
-				</div>
+					@else
+						<strong class="text-center d-block">
+							Vielen Dank, dass Sie Ihr Interesse an exclamo gezeigt haben!
+						</strong>
+					@endif
+				</section>
 			</div>
-		</section> --}}
+
+		</div>
 		@include('layouts.footer')
-	</div>
 	</div>
 @endsection
 
