@@ -1,1 +1,1 @@
-Mit einem einzigartigen Ansatz helfen wir Schulen, Mobbing zu bekämpfen. Mobbing melden - Lösung finden: Einfach. Schnell. Anonym.
+Mit einem einzigartigen Ansatz helfen wir Schulen, Mobbing zu bekämpfen.<br><strong>Mobbing melden - Lösung finden: Einfach. Schnell. Anonym.</strong>
