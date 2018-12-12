@@ -1,1 +1,0 @@
-By providing an easy way for afflicted individuals to report bullying, the inhibition threshold for offenders gets increased!
