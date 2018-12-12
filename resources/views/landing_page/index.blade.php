@@ -347,7 +347,7 @@
 
 				<section id="contact" class="">
 					<h1 class="underlined mb-3 row">
-						@lang('messages.contact')
+						@lang('landing_page.contact')
 					</h1>
 					<div class="row font-weight-medium d-flex align-items-stretch">
 						<a
