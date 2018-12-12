@@ -82,10 +82,7 @@
 						<div class="col-12 pl-1 py-4 pr-0">
 							<h1 class="mt-lg-4">Die App für Schulen gegen Mobbing</h1>
 							<div class="mt-4 font-weight-medium">
-								Mit einem einzigartigen Ansatz helfen wir Schulen, Mobbing zu
-								bekämpfen: Ihre Schüler wenden sich per exclamo an
-								ausgewählte Lehrer und professionelle Mobbing-Experten und
-								erhalten so schnelle und anonyme Hilfe!
+								Mit einem einzigartigen Ansatz helfen wir Schulen, Mobbing zu bekämpfen. Mobbing melden - Lösung finden: Einfach. Schnell. Anonym. 
 							</div>
 							<div>
 								<a href="#forschools" class="cta cta-primary">
