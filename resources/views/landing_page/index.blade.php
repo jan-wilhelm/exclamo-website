@@ -14,7 +14,7 @@
 			<b-navbar toggleable="xl" class="white fixed-lg-top back-gradient">
 				<b-container fluid class="py-2">
 					<b-navbar-brand href="{{ route('home') }}" class="mr-md-5">
-						<img src="{{ asset('img/logo/logo_text_rounded.png') }}" height="35px">
+						<img src="{{ asset('img/logo/logo.svg') }}" height="50px">
 					</b-navbar-brand>
 					<b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
@@ -76,9 +76,9 @@
 				</b-container>
 			</b-navbar>
 
-			<div class="container">
+			<div class="container mt-lg-5 pt-lg-5">
 				<section class="mt-5 back-gradient back-borders row">
-					<div class="col-lg-7 p-md-5 my-auto">
+					<div class="col-lg-7 p-md-5 my-auto" data-aos="zoom-in">
 						<div class="col-12 pl-1 py-4 pr-0">
 							<h1 class="mt-lg-4">Die App für Schulen gegen Mobbing</h1>
 							<div class="mt-4 font-weight-medium">
@@ -95,11 +95,11 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-5 p-0 m-0" id="image-placeholder">
+					<div class="col-lg-5 p-0 m-0" id="image-placeholder" data-aos="fade-left">
 						<img src="/img/iPhoneCases.png">
 					</div>
 				</section>
-				<section class="row">
+				<section class="row" data-aos="fade">
 					<div class="pt-5 col-lg-6">
 						<h1><i class="far fa-lightbulb"></i> Unsere Vision</h1>
 						<div class="font-weight-medium d-flex flex-column align-items-start">
@@ -129,7 +129,7 @@
 
 				<h1 class="underlined mb-3">Was ist exclamo?</h1>
 				<section class="row back-gradient back-borders py-4 px-1  d-flex flex-column">
-					<div class="col-12 advantage">
+					<div class="col-12 advantage" data-aos="fade">
 						<h5 class="advantage-heading">
 							<i class="fas fa-shield-alt"></i>
 							Anonyme Nachrichten
@@ -139,7 +139,7 @@
 							Schulsozialarbeiter senden.
 						</p>
 					</div>
-					<div class="col-12 advantage">
+					<div class="col-12 advantage" data-aos="fade">
 						<h5 class="advantage-heading">
 							<i class="fas fa-file-alt"></i>
 							Anonyme Nachrichten
@@ -148,7 +148,7 @@
 							Der Schüler kann in einem eigenen Notizbereiche Vorfälle für sich persönlich festhalten um die Ereignisse zu dokumentieren und reflektieren.
 						</p>
 					</div>
-					<div class="col-12 advantage">
+					<div class="col-12 advantage" data-aos="fade">
 						<h5 class="advantage-heading">
 							<i class="fas fa-users"></i>
 							Professionelle Unterstützung
@@ -157,7 +157,7 @@
 							Wenn die betroffenen Person seelische Unterstützung benötigt, stehen außerdem die Nummer von Sorgentelefonen, sowie der Kontakt zur psychotherapeutischen KV-Terminservicestelle zur Verfügung.
 						</p>
 					</div>
-					<div class="col-12 advantage">
+					<div class="col-12 advantage" data-aos="fade">
 						<h5 class="advantage-heading">
 							<i class="fas fa-comments"></i>
 							Material für Schüler und Lehrer
@@ -166,7 +166,7 @@
 							exclamo bietet Zugang zu Materialien zum Umgang mit Mobbing, die in ihrer gebündelter Form effektive Hilfsangebote für Lehrer und Schüler darstellen!
 						</p>
 					</div>
-					<div class="col-12 advantage">
+					<div class="col-12 advantage" data-aos="fade">
 						<h5 class="advantage-heading">
 							<i class="fas fa-check-circle"></i>
 							Mobbingprävention
@@ -175,7 +175,10 @@
 							Durch eine so einfach Möglichkeit für Betroffene, Mobbing zu melden, wird die Hemmschwelle für Täter deutlich größer!	
 						</p>
 					</div>
-					<div class="mx-auto">
+					<div class="mx-auto"
+						data-aos="zoom-in"
+						data-aos-delay="300"
+					>
 						<span class="pr-3">Wir konnten Sie überzeugen?</span>
 						<a href="#forschools" class="cta cta-primary">
 							Melden Sie sich jetzt an!
@@ -184,29 +187,67 @@
 				</section>
 
 				<h1 class="underlined mb-3">Wer sind wir?</h1>
-				<p class="font-weight-medium">
+				<p class="font-weight-medium" data-aos="fade">
 					Wir, das Team, sind Berliner Schüler und haben uns überlegt, wie man Mobbing am besten bekämpfen kann. Da das Handy eines der Alltagsgegenstände schlechthin ist, schien außer Frage, dass eine App das beste Format ist. Wir sind derzeit in unserem letzten Schuljahr und möchten anderen Schülern und ihren Schulen helfen, Mobbing zu bekämpfen.
 				</p>
-				<section class="row">
-					<div class="col-md-4 px-3 mt-2">
-						<img src="/img/kai.jpg" class="back-borders-small w-100 mb-3">
-						<h3>Kai Lanz</h3>
+				<section class="row" data-aos="zoom-in" id="team">
+					<div class="col-6 col-lg-4 px-3 mt-2">
+						<div class="avatar">
+							<img src="/img/kai.jpg" class="back-borders-small w-100">
+							<div class="description">
+								<span class="m-0 p-0">
+									<strong>E-Mail: </strong> <a href="mailto:kai.lanz@exclamo.org">kai.lanz@exclamo.org</a>
+								</span>
+							</div>
+						</div>
+						<h3 class="mt-3">Kai Lanz</h3>
 					</div>
-					<div class="col-md-4 px-3 mt-2">
-						<img src="/img/jan.jpg" class="back-borders-one w-100 mb-3">
-						<h3>Jan Wilhelm</h3>
+					<div class="col-6 col-lg-4 px-3 mt-2">
+						<div class="avatar">
+							<img src="/img/jan.jpg" class="back-borders-one w-100">
+							<div class="description">
+								<span class="m-0 p-0">
+									<strong>E-Mail: </strong> <a href="mailto:jan.wilhelm@exclamo.org">jan.wilhelm@exclamo.org</a>
+								</span>
+							</div>
+						</div>
+						<h3 class="mt-3">Jan Wilhelm</h3>
 					</div>
-					<div class="col-md-4 px-3 mt-2">
-						<img src="/img/julius.jpg" class="back-borders-two w-100 mb-3">
-						<h3>Julius de Gruyter</h3>
+					<div class="col-6 col-lg-4 px-3 mt-2">
+						<div class="avatar">
+							<img src="/img/julius.jpg" class="back-borders-two w-100">
+							<div class="description">
+								<span class="m-0 p-0">
+									<strong>E-Mail: </strong> <a href="mailto:julius.degruyter@exclamo.org">julius.degruyter@exclamo.org</a>
+								</span>
+							</div>
+						</div>
+						<h3 class="mt-3">Julius de Gruyter</h3>
 					</div>
 				</section>
 
 				<section>
 					<h1><i class="far fa-newspaper"></i> Bekannt aus</h1>
+					<div class="known-from row d-flex flex-row">
+						<a data-aos="fade" class="col-4 p-1 align-items-center justify-content-center d-flex" target="_blank" href="https://www.business-at-school.net/">
+							<img src="img/media/business_at_school.png">
+						</a>
+						<a data-aos="fade" class="col-4 p-1 align-items-center justify-content-center d-flex" target="_blank" href="https://www.faz.net/aktuell/gesellschaft/menschen/berliner-schueler-arbeiten-an-app-gegen-mobbing-15936418.html">
+							<img src="img/media/faz.png">
+						</a>
+						<a data-aos="fade" class="col-4 p-1 align-items-center justify-content-center d-flex" target="_blank" href="https://www.handelsblatt.com/unternehmen/mittelstand/start-up-100-000-deutsche-spenden-fuenf-millionen-euro-ueber-gofundme/23716676.html">
+							<img src="img/media/handelsblatt.png">
+						</a>
+						<a data-aos="fade" class="col-4 p-1 align-items-center justify-content-center d-flex" target="_blank" href="https://www.huffingtonpost.de/entry/aufschrei-gegen-mobbing-wie-die-generation-z-die-digitalisierung_de_5b266806e4b08e7f7dea01ca">
+							<img src="img/media/huffpost.png">
+						</a>
+						<a data-aos="fade" class="col-4 p-1 align-items-center justify-content-center d-flex" target="_blank" href="https://www.jetzt.de/digital/ein-aufschrei-fuer-mehr-aufmerksamkeit">
+							<img src="img/media/jetzt.png">
+						</a>
+					</div>
 				</section>
 
-				<section class="back-gradient-accent back-borders p-3 p-md-4 text-white">
+				<section class="back-gradient-accent back-borders p-3 p-md-4 text-white" data-aos="fade-right">
 					<h1 class="underlined mb-5">exclamo nutzen</h1>
 					<form>
 						<div class="form-group row">

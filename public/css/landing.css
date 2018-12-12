@@ -10900,6 +10900,16 @@ h6 {
   }
 }
 
+@media (min-width: 992px) {
+  .fixed-lg-top {
+    z-index: 99;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+}
+
 section {
   margin-bottom: 80px;
 }
@@ -10934,5 +10944,60 @@ section:not(.back-gradient) h1 {
   .advantage p {
     padding-left: 80px;
   }
+}
+
+.known-from a img {
+  max-height: 100px;
+  max-width: 100%;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  margin: 0 auto;
+}
+
+.known-from a img:hover {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.avatar {
+  cursor: pointer;
+  position: relative;
+}
+
+.avatar .description {
+  text-align: left;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  background-color: rgba(72, 93, 207, 0.9);
+  -webkit-transition: opacity 0.4s, outline 0.4s, outline-offset 0.4s;
+  transition: opacity 0.4s, outline 0.4s, outline-offset 0.4s;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-filter: none;
+          filter: none;
+}
+
+.avatar:hover > .description {
+  opacity: 1;
+}
+
+.avatar .description span {
+  margin-top: auto !important;
+  font-size: 24px !important;
+}
+
+.avatar .description a {
+  color: #FFEE00 !important;
 }
 
