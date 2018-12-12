@@ -1,3 +1,1 @@
-<p>
-	Schüler können sich nicht nur direkt an ihre Lehrer, sondern auch an professionelle Mobbing-Experten und die Nummer-gegen-Kummer wenden. Alles eingebaut in unserer App!
-</p>
+Wenn die betroffenen Person seelische Unterstützung benötigt, stehen außerdem die Nummer von Sorgentelefonen, sowie der Kontakt zur psychotherapeutischen KV-Terminservicestelle zur Verfügung.
