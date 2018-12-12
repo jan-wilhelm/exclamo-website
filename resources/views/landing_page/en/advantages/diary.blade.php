@@ -1,0 +1,1 @@
+In his own private diary, a student gets the chance to keep track of personal events in order to document and reflect them.
