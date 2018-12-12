@@ -60,7 +60,7 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a href="#forschools" class="nav-link cta cta-primary">
+								<a href="#get_exclamo" class="nav-link cta cta-primary">
 									@lang('landing_page.use_exclamo')
 								</a>
 							</li>
@@ -87,7 +87,7 @@
 								@include('landing_page.' . app()->getLocale() . '.slogan')
 							</div>
 							<div>
-								<a href="#forschools" class="cta cta-primary">
+								<a href="#get_exclamo" class="cta cta-primary">
 									@lang('landing_page.protect_your_students')
 								</a>
 								<a href="#what" class="d-inline-block p-3">&#9658
@@ -107,7 +107,7 @@
 						</h1>
 						<div class="font-weight-medium d-flex flex-column align-items-start">
 							@include('landing_page.' . app()->getLocale() . '.vision')
-							<a href="#forschools" class="mt-2 cta cta-primary">
+							<a href="#get_exclamo" class="mt-2 cta cta-primary">
 								@lang('landing_page.signup_your_school')
 							</a>
 						</div>
@@ -184,7 +184,7 @@
 						<span class="pr-3">
 							@lang('landing_page.could_we_convince_you')
 						</span>
-						<a href="#forschools" class="cta cta-primary">
+						<a href="#get_exclamo" class="cta cta-primary">
 							@lang('landing_page.protect_your_students')
 						</a>
 					</div>
@@ -255,7 +255,7 @@
 					</div>
 				</section>
 
-				<section class="back-gradient-accent back-borders p-3 p-md-4 text-white" data-aos="fade-right">
+				<section id="get_exclamo" class="back-gradient-accent back-borders p-3 p-md-4 text-white" data-aos="fade-right">
 					<h1 class="underlined mb-2">
 						@lang('landing_page.use_exclamo_heading')
 					</h1>
