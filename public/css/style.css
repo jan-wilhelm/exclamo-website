@@ -10650,12 +10650,9 @@ a.text-dark:focus {
   box-shadow: 7px 7px 0px 0px #63D3FD;
 }
 
-#app {
-  overflow-x: hidden;
-}
-
 #app-content {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 form label {
