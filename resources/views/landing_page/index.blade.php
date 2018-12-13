@@ -121,7 +121,7 @@
 								Testphase mit dem Canisius Kolleg in Berlin
 							</a>
 							<a target="_blank" class="back-gradient-accent news-article mb-2 d-flex col-12 text-white"
-								href="https://www.gofundme.com/manage/anti-mobbing-app">
+								href="https://www.gofundme.com/anti-mobbing-app">
 								Crowdfunding durch GoFundMe
 							</a>
 						</div>
