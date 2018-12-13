@@ -197,7 +197,7 @@
 					@include('landing_page.' . app()->getLocale() . '.who')
 				</p>
 				<section class="row" data-aos="zoom-in" id="team">
-					<div class="col-6 col-lg-4 px-3 mt-2">
+					<div class="col-10 col-md-8 col-lg-4 px-3 mt-2">
 						<div class="avatar">
 							<img src="/img/kai.jpg" class="back-borders-small w-100">
 							<div class="description">
@@ -208,7 +208,7 @@
 						</div>
 						<h3 class="mt-3">Kai Lanz</h3>
 					</div>
-					<div class="col-6 col-lg-4 px-3 mt-2">
+					<div class="col-10 col-md-8 col-lg-4 px-3 mt-2">
 						<div class="avatar">
 							<img src="/img/jan.jpg" class="back-borders-one w-100">
 							<div class="description">
@@ -219,7 +219,7 @@
 						</div>
 						<h3 class="mt-3">Jan Wilhelm</h3>
 					</div>
-					<div class="col-6 col-lg-4 px-3 mt-2">
+					<div class="col-10 col-md-8 col-lg-4 px-3 mt-2">
 						<div class="avatar">
 							<img src="/img/julius.jpg" class="back-borders-two w-100">
 							<div class="description">
