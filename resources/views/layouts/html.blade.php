@@ -30,6 +30,17 @@
         </script>
         <title>{{ config('app.name', 'Laravel') }}</title>
         @yield('head')
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131051441-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-131051441-1');
+        </script>
+
         <link href="//fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
         <style type="text/css">
             body, html {
